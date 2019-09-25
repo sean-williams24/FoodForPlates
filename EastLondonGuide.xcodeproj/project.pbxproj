@@ -14,6 +14,12 @@
 		CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */; };
 		CE9C6C84233A23D300BD70CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6C83233A23D300BD70CE /* Assets.xcassets */; };
 		CE9C6C87233A23D300BD70CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6C85233A23D300BD70CE /* LaunchScreen.storyboard */; };
+		CE9C6CB2233A6E4800BD70CE /* GuidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CB1233A6E4800BD70CE /* GuidesVC.swift */; };
+		CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */; };
+		CE9C6CB9233B645F00BD70CE /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */; };
+		CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */; };
+		CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */; };
+		CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		CE9C6C83233A23D300BD70CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9C6C86233A23D300BD70CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9C6C88233A23D300BD70CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9C6CB1233A6E4800BD70CE /* GuidesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidesVC.swift; sourceTree = "<group>"; };
+		CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCell.swift; sourceTree = "<group>"; };
+		CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesVC.swift; sourceTree = "<group>"; };
+		CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +73,43 @@
 				CE9C6C77233A23D000BD70CE /* AppDelegate.swift */,
 				CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */,
 				CE9C6C7B233A23D000BD70CE /* ViewController.swift */,
-				CE9C6C7D233A23D000BD70CE /* Main.storyboard */,
+				CE9C6CB7233B630E00BD70CE /* Model */,
+				CE9C6CB5233B62A300BD70CE /* View Controllers */,
+				CE9C6CB6233B62E600BD70CE /* Storyboards */,
 				CE9C6C83233A23D300BD70CE /* Assets.xcassets */,
-				CE9C6C85233A23D300BD70CE /* LaunchScreen.storyboard */,
 				CE9C6C88233A23D300BD70CE /* Info.plist */,
-				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
 			);
 			path = EastLondonGuide;
+			sourceTree = "<group>";
+		};
+		CE9C6CB5233B62A300BD70CE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C6CB1233A6E4800BD70CE /* GuidesVC.swift */,
+				CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */,
+				CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CE9C6CB6233B62E600BD70CE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C6C7D233A23D000BD70CE /* Main.storyboard */,
+				CE9C6C85233A23D300BD70CE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CE9C6CB7233B630E00BD70CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
+				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
+				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
+				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +184,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9C6C7C233A23D000BD70CE /* ViewController.swift in Sources */,
+				CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */,
+				CE9C6CB2233A6E4800BD70CE /* GuidesVC.swift in Sources */,
 				CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */,
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
+				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
+				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
+				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */,
+				CE9C6CB9233B645F00BD70CE /* CategoriesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
