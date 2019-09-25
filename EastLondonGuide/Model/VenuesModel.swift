@@ -24,7 +24,6 @@ struct Venue {
     let name: String
     let area: String
     let category: String
-//    let image: UIImage?
 //    let description: String
 //    let website: URL?
 //    let instagram: String
@@ -33,6 +32,7 @@ struct Venue {
     static let NameKey = "NameKey"
     static let AreaKey = "AreaKey"
     static let CategoryKey = "CategoryKey"
+    static let ImageKey = "ImageKey"
 
     
     
@@ -42,6 +42,7 @@ struct Venue {
         self.name = dictionary[Venue.NameKey]!
         self.area = dictionary[Venue.AreaKey]!
         self.category = dictionary[Venue.CategoryKey]!
+//        self.image = dictionary[Venue.ImageKey]!
     }
     
 }

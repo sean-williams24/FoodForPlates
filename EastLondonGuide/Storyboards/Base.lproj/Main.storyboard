@@ -239,7 +239,7 @@
         <scene sceneID="9VP-nL-kv0">
             <objects>
                 <tableViewController title="Venues" id="VOj-6G-v7q" customClass="VenuesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2m-Ov-Q2e">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2m-Ov-Q2e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -286,6 +286,9 @@
                     <navigationItem key="navigationItem" id="kLA-QG-wJv">
                         <barButtonItem key="backBarButtonItem" title="-" id="fgM-h8-dYv"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="lBu-fG-6Cm" kind="show" identifier="VenueDetails" id="xFl-ym-UUc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-z9-ohN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,10 +353,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ciP-TE-lno"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Yyi-HN-GMZ">
+                        <barButtonItem key="backBarButtonItem" title="-" id="HEL-PC-B3z"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMc-qx-Yhv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3164" y="1340"/>
+            <point key="canvasLocation" x="3145" y="1341"/>
         </scene>
         <!--Map-->
         <scene sceneID="RoU-iF-kNz">

@@ -14,6 +14,7 @@ class VenuesVC: UITableViewController {
     var category: String!
     var allVenues = Venue.allVenues
     var venuesToDisplay: [Venue] = []
+    var chosenVenue: Venue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +47,15 @@ class VenuesVC: UITableViewController {
 
         // Configure the cell...
         cell.customTextLabel.text = venuesToDisplay[indexPath.row].name
-
+        cell.customImageView.image = UIImage(named: venuesToDisplay[indexPath.row].name)
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenVenue = venuesToDisplay[indexPath.row]
+        performSegue(withIdentifier: "VenueDetails", sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,7 +92,7 @@ class VenuesVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -95,6 +100,6 @@ class VenuesVC: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
