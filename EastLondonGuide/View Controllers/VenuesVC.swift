@@ -12,40 +12,45 @@ class VenuesVC: UITableViewController {
 
     var area: String!
     var category: String!
+    var allVenues = Venue.allVenues
+    var venuesToDisplay: [Venue] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 300   
-        print(area)
-        print(category)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = 350
+        
+        for venue in allVenues! {
+            if venue.area == area && venue.category == category {
+                venuesToDisplay.append(venue)
+            }
+        }
+        
+        
+        
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return venuesToDisplay.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VenuesCell", for: indexPath) as! VenuesCell
 
         // Configure the cell...
+        cell.customTextLabel.text = venuesToDisplay[indexPath.row].name
+
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

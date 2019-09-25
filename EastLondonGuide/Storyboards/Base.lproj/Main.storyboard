@@ -224,7 +224,9 @@
                             <outlet property="delegate" destination="PVl-Wz-qzS" id="aZR-Jk-kGt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dUc-dU-2J4"/>
+                    <navigationItem key="navigationItem" id="dUc-dU-2J4">
+                        <barButtonItem key="backBarButtonItem" title="-" id="OJh-1u-Bzp"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="VOj-6G-v7q" kind="show" identifier="Venues" id="imh-z4-a1J"/>
                     </connections>
@@ -242,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenuesCell" rowHeight="200" id="jVM-e5-4qO" customClass="CategoriesCell" customModule="EastLondonGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenuesCell" rowHeight="200" id="jVM-e5-4qO" customClass="VenuesCell" customModule="EastLondonGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jVM-e5-4qO" id="fAV-DF-eIn">
@@ -259,7 +261,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="WUw-DT-FwL" secondAttribute="bottom" id="4Z4-W4-Adg"/>
                                         <constraint firstItem="WUw-DT-FwL" firstAttribute="leading" secondItem="fAV-DF-eIn" secondAttribute="leadingMargin" id="BCS-6j-Tau"/>
@@ -272,8 +273,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="customImageView" destination="WUw-DT-FwL" id="aS1-dw-WgZ"/>
-                                    <outlet property="customTextLabel" destination="qJC-As-tLK" id="hIz-AY-lQk"/>
+                                    <outlet property="customImageView" destination="WUw-DT-FwL" id="taN-am-HJo"/>
+                                    <outlet property="customTextLabel" destination="qJC-As-tLK" id="wll-Qc-NwS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -282,7 +283,9 @@
                             <outlet property="delegate" destination="VOj-6G-v7q" id="9Od-8W-XvE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kLA-QG-wJv"/>
+                    <navigationItem key="navigationItem" id="kLA-QG-wJv">
+                        <barButtonItem key="backBarButtonItem" title="-" id="fgM-h8-dYv"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-z9-ohN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

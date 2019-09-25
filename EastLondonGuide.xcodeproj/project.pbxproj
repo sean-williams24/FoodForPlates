@@ -20,6 +20,7 @@
 		CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */; };
 		CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */; };
 		CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */; };
+		CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
 		CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesVC.swift; sourceTree = "<group>"; };
 		CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesModel.swift; sourceTree = "<group>"; };
+		CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
+				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
 				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
 				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
-				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
+				CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
 				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
+				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */,
 				CE9C6CB9233B645F00BD70CE /* CategoriesVC.swift in Sources */,
