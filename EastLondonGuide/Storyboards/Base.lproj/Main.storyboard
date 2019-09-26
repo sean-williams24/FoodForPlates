@@ -317,19 +317,72 @@
         <!--Browse-->
         <scene sceneID="1bQ-Ui-mbh">
             <objects>
-                <tableViewController title="Browse" id="Ktn-LF-Qrg" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cGe-UG-W51">
+                <tableViewController title="Browse" id="Ktn-LF-Qrg" customClass="BrowseVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cGe-UG-W51">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fDI-vd-G14">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowseCell" rowHeight="211" id="xJm-ul-6ox" customClass="BrowseCell" customModule="EastLondonGuide" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fDI-vd-G14" id="eRw-sJ-AQ3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJm-ul-6ox" id="NFS-vg-mL1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AfA-G5-jxv">
+                                            <rect key="frame" x="10" y="10" width="394" height="134"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="134" id="fTu-Zd-CWV"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoreditch &amp; Hoxton" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-pO-geX">
+                                            <rect key="frame" x="10" y="152" width="394" height="2"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dishoom" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkm-xh-bll">
+                                            <rect key="frame" x="10" y="159" width="394" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="mCH-yQ-iMi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jW-bW-9P2">
+                                            <rect key="frame" x="10" y="180" width="394" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="5Nd-Ku-mnw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AfA-G5-jxv" firstAttribute="top" secondItem="NFS-vg-mL1" secondAttribute="top" constant="10" id="0kq-dH-Dmy"/>
+                                        <constraint firstItem="AfA-G5-jxv" firstAttribute="leading" secondItem="NFS-vg-mL1" secondAttribute="leading" constant="10" id="6t2-jH-Gjl"/>
+                                        <constraint firstItem="gkm-xh-bll" firstAttribute="leading" secondItem="NFS-vg-mL1" secondAttribute="leadingMargin" constant="-10" id="E78-iz-dEE"/>
+                                        <constraint firstAttribute="trailing" secondItem="4jW-bW-9P2" secondAttribute="trailing" constant="10" id="SuL-YB-cDC"/>
+                                        <constraint firstAttribute="bottom" secondItem="4jW-bW-9P2" secondAttribute="bottom" constant="10" id="Ty6-u8-HQ9"/>
+                                        <constraint firstItem="YvE-pO-geX" firstAttribute="trailing" secondItem="gkm-xh-bll" secondAttribute="trailing" id="VSK-HK-NCy"/>
+                                        <constraint firstItem="4jW-bW-9P2" firstAttribute="top" secondItem="gkm-xh-bll" secondAttribute="bottom" id="aIZ-Fi-et8"/>
+                                        <constraint firstItem="gkm-xh-bll" firstAttribute="top" secondItem="YvE-pO-geX" secondAttribute="bottom" constant="5" id="cQQ-ah-5fF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gkm-xh-bll" secondAttribute="trailing" constant="-10" id="fcL-TH-ix2"/>
+                                        <constraint firstItem="4jW-bW-9P2" firstAttribute="leading" secondItem="NFS-vg-mL1" secondAttribute="leading" constant="10" id="lNG-dS-vMm"/>
+                                        <constraint firstItem="YvE-pO-geX" firstAttribute="leading" secondItem="gkm-xh-bll" secondAttribute="leading" id="nKw-rq-vKA"/>
+                                        <constraint firstItem="YvE-pO-geX" firstAttribute="top" secondItem="AfA-G5-jxv" secondAttribute="bottom" constant="8" id="rBN-II-7iq"/>
+                                        <constraint firstAttribute="trailing" secondItem="AfA-G5-jxv" secondAttribute="trailing" constant="10" id="rZw-gm-Bl0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="areaLabel" destination="YvE-pO-geX" id="hNe-Na-2au"/>
+                                    <outlet property="categoryLabel" destination="4jW-bW-9P2" id="oT0-4O-10z"/>
+                                    <outlet property="customImageView" destination="AfA-G5-jxv" id="AIf-uV-Wgv"/>
+                                    <outlet property="venueLabel" destination="gkm-xh-bll" id="GQ0-jg-aAv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -341,7 +394,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4X-Gz-Lr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="929"/>
+            <point key="canvasLocation" x="1428.985507246377" y="928.79464285714278"/>
         </scene>
         <!--Venue Details-->
         <scene sceneID="P9Z-bf-yX4">

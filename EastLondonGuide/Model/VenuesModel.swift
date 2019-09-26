@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-enum Area: String {
-    case Shoreditch = "Shoreditch & Hoxton"
-    case BethnalGreen = "Bethnal Green"
-    case LondonFields = "London Fields & Hackney Central"
-    case HackneyWick = "Hackney Wick"
-    case Bow = "Bow & Mile End"
-}
 
 struct Venue {
     
@@ -24,7 +17,7 @@ struct Venue {
     let name: String
     let area: String
     let category: String
-//    let description: String
+    let description: String
 //    let website: URL?
 //    let instagram: String
 //    let menu: Menu
@@ -32,7 +25,7 @@ struct Venue {
     static let NameKey = "NameKey"
     static let AreaKey = "AreaKey"
     static let CategoryKey = "CategoryKey"
-    static let ImageKey = "ImageKey"
+    static let DescritptionKey = "DescriptionKey"
 
     
     
@@ -42,9 +35,17 @@ struct Venue {
         self.name = dictionary[Venue.NameKey]!
         self.area = dictionary[Venue.AreaKey]!
         self.category = dictionary[Venue.CategoryKey]!
-//        self.image = dictionary[Venue.ImageKey]!
+        self.description = dictionary[Venue.DescritptionKey]!
     }
     
+}
+
+enum Area: String {
+    case Shoreditch = "Shoreditch & Hoxton"
+    case BethnalGreen = "Bethnal Green"
+    case LondonFields = "London Fields & Hackney Central"
+    case HackneyWick = "Hackney Wick"
+    case Bow = "Bow & Mile End"
 }
 
 struct Menu {
@@ -73,12 +74,18 @@ extension Venue {
     
     static func venueData() -> [[String : String]] {
         return [
-            [Venue.NameKey : "SMOKESTAK", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food"],
-            [Venue.NameKey : "Dishoom", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food"],
+            
+            // Shoreditch & Hoxton
+            
+            [Venue.NameKey : "SMOKESTAK", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Smokestak.rawValue],
+            [Venue.NameKey : "Dishoom", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Dishoom.rawValue],
             [Venue.NameKey : "Well & Bucket", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Drinks"],
             [Venue.NameKey : "Shoreditch Grind", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Coffee"],
             [Venue.NameKey : "Goodhood", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Shopping"],
             [Venue.NameKey : "Brick Lane Market", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Markets"],
+            
+            // Bethnal Green
+            
             [Venue.NameKey : "The Marksman", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food"],
             [Venue.NameKey : "Bistrotheque", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food"],
             [Venue.NameKey : "Satan’s Whiskers", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Drinks"],
