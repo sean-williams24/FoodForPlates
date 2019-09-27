@@ -18,15 +18,20 @@ struct Venue {
     let area: String
     let category: String
     let description: String?
-//    let website: URL?
-//    let instagram: String
+    let address: String?
+    let openingTimes: String?
+    let book: String?
+    let phone: String?
 //    let menu: Menu
     
     static let NameKey = "NameKey"
     static let AreaKey = "AreaKey"
     static let CategoryKey = "CategoryKey"
     static let DescritptionKey = "DescriptionKey"
-
+    static let AddressKey = "AddressKey"
+    static let OpeningTimesKey = "OpeningTimesKey"
+    static let BookKey = "BookKey"
+    static let PhoneKey = "PhoneKey"
     
     
     // MARK: Initializer
@@ -36,6 +41,10 @@ struct Venue {
         self.area = dictionary[Venue.AreaKey]!
         self.category = dictionary[Venue.CategoryKey]!
         self.description = dictionary[Venue.DescritptionKey]
+        self.address = dictionary[Venue.AddressKey]
+        self.openingTimes = dictionary[Venue.OpeningTimesKey]
+        self.book = dictionary[Venue.BookKey]
+        self.phone = dictionary[Venue.PhoneKey]
     }
     
 }
@@ -77,7 +86,7 @@ extension Venue {
             
             // Shoreditch & Hoxton
             
-            [Venue.NameKey : "SMOKESTAK", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Smokestak.rawValue],
+            [Venue.NameKey : "SMOKESTAK", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Smokestak.rawValue, Venue.AddressKey : Address.Smokestak.rawValue, Venue.OpeningTimesKey : OpeningTimes.Smokestak.rawValue, Venue.BookKey : Book.Smokestak.rawValue, Venue.PhoneKey : Telephone.Smokestak.rawValue],
             [Venue.NameKey : "Dishoom", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Dishoom.rawValue],
             [Venue.NameKey : "Well & Bucket", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Drinks"],
             [Venue.NameKey : "Shoreditch Grind", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Coffee"],
@@ -86,8 +95,8 @@ extension Venue {
             
             // Bethnal Green
             
-            [Venue.NameKey : "The Marksman", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food"],
-            [Venue.NameKey : "Bistrotheque", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food"],
+            [Venue.NameKey : "The Marksman", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.TheMarksman.rawValue],
+            [Venue.NameKey : "Bistrotheque", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Bistrotheque.rawValue],
             [Venue.NameKey : "Satan’s Whiskers", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Drinks"],
             [Venue.NameKey : "The Royal Oak", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Drinks"],
             [Venue.NameKey : "Conservatory Archives", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Shopping"],

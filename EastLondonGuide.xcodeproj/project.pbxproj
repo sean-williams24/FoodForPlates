@@ -23,9 +23,24 @@
 		CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */; };
 		CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */; };
 		CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */; };
-		CE9C6CC7233CB5FF00BD70CE /* VenueDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC6233CB5FF00BD70CE /* VenueDetailsModel.swift */; };
-		CE9C6CC9233D241600BD70CE /* VenueDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC8233D241600BD70CE /* VenueDetailsVC.swift */; };
-		CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC2.swift */; };
+		CE9C6CC7233CB5FF00BD70CE /* VenueDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */; };
+		CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */; };
+		CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */; };
+		CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */; };
+		CE9C6CD1233E138E00BD70CE /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CD0233E138E00BD70CE /* BookModel.swift */; };
+		CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */; };
+		CE9C6CDF233E34ED00BD70CE /* JosefinSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD5233E34EC00BD70CE /* JosefinSans-Italic.ttf */; };
+		CE9C6CE0233E34ED00BD70CE /* JosefinSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD6233E34EC00BD70CE /* JosefinSans-Thin.ttf */; };
+		CE9C6CE1233E34ED00BD70CE /* JosefinSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD7233E34EC00BD70CE /* JosefinSans-ThinItalic.ttf */; };
+		CE9C6CE2233E34ED00BD70CE /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD8233E34EC00BD70CE /* JosefinSans-Regular.ttf */; };
+		CE9C6CE3233E34ED00BD70CE /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD9233E34EC00BD70CE /* JosefinSans-Bold.ttf */; };
+		CE9C6CE4233E34ED00BD70CE /* JosefinSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CDA233E34EC00BD70CE /* JosefinSans-BoldItalic.ttf */; };
+		CE9C6CE5233E34ED00BD70CE /* JosefinSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CDB233E34EC00BD70CE /* JosefinSans-SemiBoldItalic.ttf */; };
+		CE9C6CE6233E34ED00BD70CE /* JosefinSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CDC233E34ED00BD70CE /* JosefinSans-Light.ttf */; };
+		CE9C6CE7233E34ED00BD70CE /* JosefinSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CDD233E34ED00BD70CE /* JosefinSans-SemiBold.ttf */; };
+		CE9C6CE8233E34ED00BD70CE /* JosefinSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CDE233E34ED00BD70CE /* JosefinSans-LightItalic.ttf */; };
+		CE9C6CEA233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CE9233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf */; };
+		CE9C6CEC233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +62,24 @@
 		CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesCell.swift; sourceTree = "<group>"; };
 		CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
 		CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCell.swift; sourceTree = "<group>"; };
-		CE9C6CC6233CB5FF00BD70CE /* VenueDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsModel.swift; sourceTree = "<group>"; };
-		CE9C6CC8233D241600BD70CE /* VenueDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsVC.swift; sourceTree = "<group>"; };
-		CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsVC2.swift; sourceTree = "<group>"; };
+		CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDescriptionModel.swift; sourceTree = "<group>"; };
+		CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsVC.swift; sourceTree = "<group>"; };
+		CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAddressModel.swift; sourceTree = "<group>"; };
+		CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningTimesModel.swift; sourceTree = "<group>"; };
+		CE9C6CD0233E138E00BD70CE /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelephoneModel.swift; sourceTree = "<group>"; };
+		CE9C6CD5233E34EC00BD70CE /* JosefinSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic.ttf"; sourceTree = "<group>"; };
+		CE9C6CD6233E34EC00BD70CE /* JosefinSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Thin.ttf"; sourceTree = "<group>"; };
+		CE9C6CD7233E34EC00BD70CE /* JosefinSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		CE9C6CD8233E34EC00BD70CE /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		CE9C6CD9233E34EC00BD70CE /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
+		CE9C6CDA233E34EC00BD70CE /* JosefinSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CE9C6CDB233E34EC00BD70CE /* JosefinSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		CE9C6CDC233E34ED00BD70CE /* JosefinSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Light.ttf"; sourceTree = "<group>"; };
+		CE9C6CDD233E34ED00BD70CE /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		CE9C6CDE233E34ED00BD70CE /* JosefinSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		CE9C6CE9233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02c5086e8616653dade6e7cb3a1f0498.ttf; sourceTree = "<group>"; };
+		CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LTC Bodoni 175 W01 Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +119,7 @@
 				CE9C6CB5233B62A300BD70CE /* View Controllers */,
 				CE9C6CB6233B62E600BD70CE /* Storyboards */,
 				CE9C6C83233A23D300BD70CE /* Assets.xcassets */,
+				CE9C6CD4233E337300BD70CE /* Fonts */,
 				CE9C6C88233A23D300BD70CE /* Info.plist */,
 			);
 			path = EastLondonGuide;
@@ -101,8 +132,7 @@
 				CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */,
 				CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */,
 				CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */,
-				CE9C6CC8233D241600BD70CE /* VenueDetailsVC.swift */,
-				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC2.swift */,
+				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -121,13 +151,36 @@
 			children = (
 				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
 				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
-				CE9C6CC6233CB5FF00BD70CE /* VenueDetailsModel.swift */,
+				CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */,
+				CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */,
+				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
+				CE9C6CD0233E138E00BD70CE /* BookModel.swift */,
+				CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */,
 				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
 				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
 				CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */,
 				CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE9C6CD4233E337300BD70CE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C6CE9233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf */,
+				CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */,
+				CE9C6CD9233E34EC00BD70CE /* JosefinSans-Bold.ttf */,
+				CE9C6CDA233E34EC00BD70CE /* JosefinSans-BoldItalic.ttf */,
+				CE9C6CD5233E34EC00BD70CE /* JosefinSans-Italic.ttf */,
+				CE9C6CDC233E34ED00BD70CE /* JosefinSans-Light.ttf */,
+				CE9C6CDE233E34ED00BD70CE /* JosefinSans-LightItalic.ttf */,
+				CE9C6CD8233E34EC00BD70CE /* JosefinSans-Regular.ttf */,
+				CE9C6CDD233E34ED00BD70CE /* JosefinSans-SemiBold.ttf */,
+				CE9C6CDB233E34EC00BD70CE /* JosefinSans-SemiBoldItalic.ttf */,
+				CE9C6CD6233E34EC00BD70CE /* JosefinSans-Thin.ttf */,
+				CE9C6CD7233E34EC00BD70CE /* JosefinSans-ThinItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +241,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9C6CE8233E34ED00BD70CE /* JosefinSans-LightItalic.ttf in Resources */,
+				CE9C6CEA233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf in Resources */,
+				CE9C6CDF233E34ED00BD70CE /* JosefinSans-Italic.ttf in Resources */,
+				CE9C6CE5233E34ED00BD70CE /* JosefinSans-SemiBoldItalic.ttf in Resources */,
+				CE9C6CE6233E34ED00BD70CE /* JosefinSans-Light.ttf in Resources */,
+				CE9C6CE3233E34ED00BD70CE /* JosefinSans-Bold.ttf in Resources */,
 				CE9C6C87233A23D300BD70CE /* LaunchScreen.storyboard in Resources */,
 				CE9C6C84233A23D300BD70CE /* Assets.xcassets in Resources */,
+				CE9C6CE4233E34ED00BD70CE /* JosefinSans-BoldItalic.ttf in Resources */,
+				CE9C6CE7233E34ED00BD70CE /* JosefinSans-SemiBold.ttf in Resources */,
 				CE9C6C7F233A23D000BD70CE /* Main.storyboard in Resources */,
+				CE9C6CE2233E34ED00BD70CE /* JosefinSans-Regular.ttf in Resources */,
+				CE9C6CEC233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf in Resources */,
+				CE9C6CE0233E34ED00BD70CE /* JosefinSans-Thin.ttf in Resources */,
+				CE9C6CE1233E34ED00BD70CE /* JosefinSans-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,17 +268,20 @@
 			files = (
 				CE9C6C7C233A23D000BD70CE /* ViewController.swift in Sources */,
 				CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */,
-				CE9C6CC7233CB5FF00BD70CE /* VenueDetailsModel.swift in Sources */,
+				CE9C6CC7233CB5FF00BD70CE /* VenueDescriptionModel.swift in Sources */,
 				CE9C6CB2233A6E4800BD70CE /* GuidesVC.swift in Sources */,
-				CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC2.swift in Sources */,
-				CE9C6CC9233D241600BD70CE /* VenueDetailsVC.swift in Sources */,
+				CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC.swift in Sources */,
 				CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */,
 				CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */,
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
 				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
+				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
+				CE9C6CD1233E138E00BD70CE /* BookModel.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
+				CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */,
+				CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */,
 				CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */,
 				CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */,
 				CE9C6CB9233B645F00BD70CE /* CategoriesVC.swift in Sources */,

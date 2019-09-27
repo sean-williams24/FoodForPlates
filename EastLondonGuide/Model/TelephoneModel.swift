@@ -1,21 +1,19 @@
 //
-//  VenueDetailsModel.swift
+//  TelephoneModel.swift
 //  EastLondonGuide
 //
-//  Created by Sean Williams on 26/09/2019.
+//  Created by Sean Williams on 27/09/2019.
 //  Copyright © 2019 Sean Williams. All rights reserved.
 //
 
 import Foundation
 
-
-
-enum Description: String {
+enum Telephone: String {
     
 //Shoreditch & Hoxton
     
     //Food
-    case Smokestak = "A beautiful venue with great food"
+    case Smokestak = "020 3873 1733"
     case Dishoom = "Lovely Indian food"
     
     
@@ -121,6 +119,8 @@ enum Description: String {
     //Markets
     
 }
+
+
 
 
 
