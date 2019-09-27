@@ -24,6 +24,8 @@
 		CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */; };
 		CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */; };
 		CE9C6CC7233CB5FF00BD70CE /* VenueDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC6233CB5FF00BD70CE /* VenueDetailsModel.swift */; };
+		CE9C6CC9233D241600BD70CE /* VenueDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CC8233D241600BD70CE /* VenueDetailsVC.swift */; };
+		CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
 		CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCell.swift; sourceTree = "<group>"; };
 		CE9C6CC6233CB5FF00BD70CE /* VenueDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsModel.swift; sourceTree = "<group>"; };
+		CE9C6CC8233D241600BD70CE /* VenueDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsVC.swift; sourceTree = "<group>"; };
+		CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsVC2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */,
 				CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */,
 				CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */,
+				CE9C6CC8233D241600BD70CE /* VenueDetailsVC.swift */,
+				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC2.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 				CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */,
 				CE9C6CC7233CB5FF00BD70CE /* VenueDetailsModel.swift in Sources */,
 				CE9C6CB2233A6E4800BD70CE /* GuidesVC.swift in Sources */,
+				CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC2.swift in Sources */,
+				CE9C6CC9233D241600BD70CE /* VenueDetailsVC.swift in Sources */,
 				CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */,
 				CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */,
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,

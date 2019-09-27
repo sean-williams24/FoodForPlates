@@ -287,7 +287,7 @@
                         <barButtonItem key="backBarButtonItem" title="-" id="fgM-h8-dYv"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="lBu-fG-6Cm" kind="show" identifier="VenueDetails" id="xFl-ym-UUc"/>
+                        <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails" id="yrD-25-A2T"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-z9-ohN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -399,20 +399,179 @@
         <!--Venue Details-->
         <scene sceneID="P9Z-bf-yX4">
             <objects>
-                <viewController title="Venue Details" id="lBu-fG-6Cm" sceneMemberID="viewController">
+                <viewController title="Venue Details" id="lBu-fG-6Cm" customClass="VenueDetailsVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Gb-Ec-gxZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-Iv-PMp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LTR-Ar-XP6">
+                                        <rect key="frame" x="10" y="10" width="394" height="337"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9F-DQ-cai">
+                                        <rect key="frame" x="10" y="551" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWE-fg-l4L">
+                                        <rect key="frame" x="10" y="579" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FbT-nQ-ebX">
+                                        <rect key="frame" x="10" y="611" width="414" height="198.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-cP-NJ8" userLabel="Address">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">68 Laura Grove
+Paignton
+Devon
+TQ32LP</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-zK-ess" userLabel="OpeningTimes">
+                                                <rect key="frame" x="0.0" y="83" width="414" height="49.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">OPENING TIMES:
+MONDAY TO FRIDAY 10 - 10PM</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="BOOK: WILMSLO@GMAIL.COM" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIe-zG-M4b" userLabel="Book">
+                                                <rect key="frame" x="0.0" y="132.5" width="414" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="TEL: 020 1010 0101" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lx-pU-aFR" userLabel="Telephone">
+                                                <rect key="frame" x="0.0" y="165.5" width="414" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FbT-nQ-ebX" firstAttribute="leading" secondItem="A8p-wc-667" secondAttribute="leading" constant="10" id="8eN-7p-Z6r"/>
+                                    <constraint firstItem="z9F-DQ-cai" firstAttribute="top" secondItem="LTR-Ar-XP6" secondAttribute="bottom" constant="20" id="CTd-is-RHw"/>
+                                    <constraint firstItem="FbT-nQ-ebX" firstAttribute="width" secondItem="fVn-Iv-PMp" secondAttribute="width" id="EF6-tW-IrU"/>
+                                    <constraint firstItem="QWE-fg-l4L" firstAttribute="leading" secondItem="fVn-Iv-PMp" secondAttribute="leading" constant="10" id="GcM-zs-ed1"/>
+                                    <constraint firstItem="FbT-nQ-ebX" firstAttribute="top" secondItem="QWE-fg-l4L" secondAttribute="bottom" constant="11.5" id="Hz5-Xa-jHc"/>
+                                    <constraint firstAttribute="trailing" secondItem="QWE-fg-l4L" secondAttribute="trailing" constant="10" id="Nlj-j0-vl1"/>
+                                    <constraint firstItem="A8p-wc-667" firstAttribute="trailing" secondItem="z9F-DQ-cai" secondAttribute="trailing" constant="10" id="U1b-pe-exr"/>
+                                    <constraint firstItem="A8p-wc-667" firstAttribute="trailing" secondItem="LTR-Ar-XP6" secondAttribute="trailing" constant="10" id="Vcs-cJ-kRN"/>
+                                    <constraint firstItem="z9F-DQ-cai" firstAttribute="trailing" secondItem="QWE-fg-l4L" secondAttribute="trailing" id="izc-Xp-5JG"/>
+                                    <constraint firstItem="A8p-wc-667" firstAttribute="bottom" secondItem="FbT-nQ-ebX" secondAttribute="bottom" constant="8.5" id="jLF-1q-16C"/>
+                                    <constraint firstItem="QWE-fg-l4L" firstAttribute="top" secondItem="z9F-DQ-cai" secondAttribute="bottom" constant="7.5" id="p49-QX-DAz"/>
+                                    <constraint firstItem="LTR-Ar-XP6" firstAttribute="leading" secondItem="A8p-wc-667" secondAttribute="leading" constant="10" id="rsa-1M-0P1"/>
+                                    <constraint firstAttribute="bottom" secondItem="FbT-nQ-ebX" secondAttribute="bottom" constant="8.5" id="tkq-7j-dqB"/>
+                                    <constraint firstItem="z9F-DQ-cai" firstAttribute="leading" secondItem="A8p-wc-667" secondAttribute="leading" constant="10" id="vtX-f9-e72"/>
+                                    <constraint firstItem="LTR-Ar-XP6" firstAttribute="top" secondItem="d0R-ft-aC5" secondAttribute="top" constant="10" id="zL1-Vi-RNi"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="d0R-ft-aC5"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="A8p-wc-667"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fVn-Iv-PMp" firstAttribute="top" secondItem="ciP-TE-lno" secondAttribute="top" id="cUv-Na-vKd"/>
+                            <constraint firstItem="fVn-Iv-PMp" firstAttribute="bottom" secondItem="ciP-TE-lno" secondAttribute="bottom" id="dDm-ih-jlp"/>
+                            <constraint firstItem="fVn-Iv-PMp" firstAttribute="leading" secondItem="ciP-TE-lno" secondAttribute="leading" id="hQS-PA-ndx"/>
+                            <constraint firstItem="fVn-Iv-PMp" firstAttribute="centerX" secondItem="9Gb-Ec-gxZ" secondAttribute="centerX" id="uJi-Xx-xgl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ciP-TE-lno"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yyi-HN-GMZ">
                         <barButtonItem key="backBarButtonItem" title="-" id="HEL-PC-B3z"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="IpB-cP-NJ8" id="naU-Zz-b0D"/>
+                        <outlet property="bookLabel" destination="IIe-zG-M4b" id="8pR-PN-qNn"/>
+                        <outlet property="openingTimes" destination="oxL-zK-ess" id="cxY-mu-apE"/>
+                        <outlet property="telephoneLabel" destination="5lx-pU-aFR" id="soF-x2-rqx"/>
+                        <outlet property="venueDescriptionLabel" destination="QWE-fg-l4L" id="hpf-bb-C7y"/>
+                        <outlet property="venueImageView" destination="LTR-Ar-XP6" id="mkD-IZ-Yan"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMc-qx-Yhv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3145" y="1341"/>
+            <point key="canvasLocation" x="3144.9275362318845" y="1340.625"/>
+        </scene>
+        <!--Venue DetailsVC2-->
+        <scene sceneID="1Ko-5l-0hF">
+            <objects>
+                <viewController id="LRO-7z-mCz" customClass="VenueDetailsVC2" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o54-aw-pny">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fxp-HA-N6u">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USd-ya-orb" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SMOKESTAK" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-ff-omc">
+                                                <rect key="frame" x="8" y="8" width="398" height="320"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Venue Name" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-Nr-9aA">
+                                                <rect key="frame" x="8" y="338" width="398" height="20.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Descritption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hiw-5z-HqQ">
+                                                <rect key="frame" x="8" y="379" width="398" height="351"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6he-Od-7td"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="JLp-EA-Ep2"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fxp-HA-N6u" firstAttribute="bottom" secondItem="tO6-vM-ru7" secondAttribute="bottom" id="Spk-Wr-CpX"/>
+                            <constraint firstItem="Fxp-HA-N6u" firstAttribute="leading" secondItem="tO6-vM-ru7" secondAttribute="leading" id="fPR-ic-Kkk"/>
+                            <constraint firstItem="Fxp-HA-N6u" firstAttribute="top" secondItem="tO6-vM-ru7" secondAttribute="top" id="jtT-K9-iBB"/>
+                            <constraint firstItem="Fxp-HA-N6u" firstAttribute="trailing" secondItem="tO6-vM-ru7" secondAttribute="trailing" id="qem-Pi-KoE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tO6-vM-ru7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xk4-NB-dtG"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="QHB-Nr-9aA" id="wvS-zT-QmZ"/>
+                        <outlet property="descriptionTextView" destination="hiw-5z-HqQ" id="437-Y2-fu2"/>
+                        <outlet property="venueImageView" destination="tV9-ff-omc" id="UfP-UQ-Blc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZH4-oq-lld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3900.0000000000005" y="1340.625"/>
         </scene>
         <!--Map-->
         <scene sceneID="RoU-iF-kNz">
@@ -436,6 +595,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SMOKESTAK" width="600" height="400"/>
         <image name="book" catalog="system" width="64" height="52"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="eye" catalog="system" width="64" height="40"/>

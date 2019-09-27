@@ -17,7 +17,7 @@ struct Venue {
     let name: String
     let area: String
     let category: String
-    let description: String
+    let description: String?
 //    let website: URL?
 //    let instagram: String
 //    let menu: Menu
@@ -35,7 +35,7 @@ struct Venue {
         self.name = dictionary[Venue.NameKey]!
         self.area = dictionary[Venue.AreaKey]!
         self.category = dictionary[Venue.CategoryKey]!
-        self.description = dictionary[Venue.DescritptionKey]!
+        self.description = dictionary[Venue.DescritptionKey]
     }
     
 }
