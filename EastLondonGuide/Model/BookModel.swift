@@ -36,20 +36,20 @@ enum Book: String {
 //Bethnal Green
     
     //Food
-    case TheMarksman = "A beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible food"
-    case Bistrotheque = "yummmmmmmy"
+    case TheMarksman = "bookings@marksmanpublichouse.com"
+    case Bistrotheque = "reception@bistrotheque.com"
     
     
     // Drinks
-    case SatansWhiskers
-    case TheRoyalOak
+    case SatansWhiskers = ""
+    case TheRoyalOak = "http://royaloaklondon.com/contact"
     
     
     //Coffee
     
     
     //Shopping
-    case ConservatoryArchives
+    case ConservatoryArchives = "info@conservatoryarchives.co.uk"
     
     
     //Markets
@@ -58,15 +58,15 @@ enum Book: String {
 //London Fields & Hackney Central
     
     //Food
-    case ElGansoCafe
+    case ElGansoCafe = "http://elgansocafe.co.uk/booking/"
     
     
     // Drinks
-    case NTs
+    case NTs = "INFO@NTBAR.CO.UK"
     
     
     //Coffee
-    case ClimpsonAndSons
+    case ClimpsonAndSons = "sales@climpsonandsons.com"
     
     
     //Shopping

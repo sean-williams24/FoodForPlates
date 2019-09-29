@@ -36,20 +36,20 @@ enum Telephone: String {
 //Bethnal Green
     
     //Food
-    case TheMarksman = "A beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible foodA beautiful venue with terrible food"
-    case Bistrotheque = "yummmmmmmy"
+    case TheMarksman = "020 7739 7393"
+    case Bistrotheque = "020 8983 7900"
     
     
     // Drinks
-    case SatansWhiskers
-    case TheRoyalOak
+    case SatansWhiskers = "020 7739 8362"
+    case TheRoyalOak = "020 7729 2220"
     
     
     //Coffee
     
     
     //Shopping
-    case ConservatoryArchives
+    case ConservatoryArchives = "07444 760607"
     
     
     //Markets
@@ -58,15 +58,15 @@ enum Telephone: String {
 //London Fields & Hackney Central
     
     //Food
-    case ElGansoCafe
+    case ElGansoCafe = "020 7241 1793"
     
     
     // Drinks
-    case NTs
+    case NTs = "020 3976 9605"
     
     
     //Coffee
-    case ClimpsonAndSons
+    case ClimpsonAndSons = "020 7254 7199"
     
     
     //Shopping
