@@ -10,6 +10,9 @@
         <array key="JosefinSans-Light.ttf">
             <string>JosefinSans-Light</string>
         </array>
+        <array key="JosefinSans-Thin.ttf">
+            <string>JosefinSans-Thin</string>
+        </array>
         <array key="LTC Bodoni 175 W01 Regular.ttf">
             <string>LTCBodoni175W01-Regular</string>
         </array>
@@ -19,7 +22,7 @@
         <scene sceneID="cW6-mm-hJG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kga-wP-H6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController title="Inspiration" id="qn6-tK-Fmw" sceneMemberID="viewController">
+                <viewController title="Inspiration" id="qn6-tK-Fmw" customClass="InspirationVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvA-pV-zGZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,9 +68,10 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vdT-69-ZUd">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="HQI-Rr-DBJ" kind="relationship" relationship="viewControllers" id="h6h-Ia-NGd"/>
@@ -85,13 +89,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQI-Rr-DBJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inspiration" image="wand.and.rays.inverse" catalog="system" selectedImage="wand.and.rays" id="cTi-9Y-HIe">
-                        <color key="badgeColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulU-B3-ULe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -106,13 +110,15 @@
         <scene sceneID="L1Y-iz-v1F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Kk-xw-Z1v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Guides" image="book.fill" catalog="system" selectedImage="book" id="80g-J5-IxD"/>
+                    <tabBarItem key="tabBarItem" title="Guides" image="book.fill" catalog="system" selectedImage="book" id="80g-J5-IxD">
+                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tu-fv-Mub">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -130,7 +136,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="15" sectionFooterHeight="15" id="SWy-Se-8cD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AreaCell" rowHeight="200" id="6XR-j1-bEo" customClass="AreaCell" customModule="EastLondonGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -142,9 +148,10 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBh-k6-w2a">
                                             <rect key="frame" x="20" y="11" width="374" height="178"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
-                                            <rect key="frame" x="40" y="41" width="334" height="118"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
+                                            <rect key="frame" x="180" y="88.5" width="54.5" height="23"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -153,11 +160,11 @@
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="wBh-k6-w2a" secondAttribute="bottom" id="0Xy-c5-ySp"/>
                                         <constraint firstItem="wBh-k6-w2a" firstAttribute="top" secondItem="cSN-3D-pYK" secondAttribute="topMargin" id="0x8-Pg-nfV"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="cTt-S2-OQb" secondAttribute="trailing" constant="20" id="30k-dH-iNm"/>
-                                        <constraint firstItem="cTt-S2-OQb" firstAttribute="top" secondItem="cSN-3D-pYK" secondAttribute="topMargin" constant="30" id="626-Up-B5f"/>
-                                        <constraint firstItem="cTt-S2-OQb" firstAttribute="leading" secondItem="cSN-3D-pYK" secondAttribute="leadingMargin" constant="20" id="8rj-9r-g4r"/>
+                                        <constraint firstItem="cTt-S2-OQb" firstAttribute="centerX" secondItem="cSN-3D-pYK" secondAttribute="centerX" id="9Jj-9A-yrv"/>
                                         <constraint firstItem="wBh-k6-w2a" firstAttribute="leading" secondItem="cSN-3D-pYK" secondAttribute="leadingMargin" id="Mrg-uv-ROP"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cTt-S2-OQb" secondAttribute="bottom" constant="30" id="N4g-lU-ptF"/>
+                                        <constraint firstItem="cTt-S2-OQb" firstAttribute="centerY" secondItem="cSN-3D-pYK" secondAttribute="centerY" id="Tcr-RV-UEh"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cTt-S2-OQb" secondAttribute="trailing" id="j6v-0H-6wX"/>
+                                        <constraint firstItem="cTt-S2-OQb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cSN-3D-pYK" secondAttribute="leadingMargin" id="rIT-qM-tIN"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="wBh-k6-w2a" secondAttribute="trailing" id="vJh-sH-FE1"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -190,7 +197,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6cd-lw-4bL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoriesCell" rowHeight="200" id="Qyf-9m-VRd" customClass="CategoriesCell" customModule="EastLondonGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -203,22 +210,23 @@
                                             <rect key="frame" x="20" y="11" width="374" height="178"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
-                                            <rect key="frame" x="40" y="41" width="334" height="118"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                            <rect key="frame" x="180" y="88.5" width="54" height="23"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="woe-J1-S23" secondAttribute="trailing" constant="20" id="15l-BZ-2CP"/>
+                                        <constraint firstItem="woe-J1-S23" firstAttribute="centerX" secondItem="sFC-Tz-Z5l" secondAttribute="centerX" id="48T-MC-tSp"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="woe-J1-S23" secondAttribute="trailing" id="91h-UY-il1"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="jrV-Mr-RZp" secondAttribute="bottom" id="Fat-d4-EUE"/>
                                         <constraint firstItem="jrV-Mr-RZp" firstAttribute="top" secondItem="sFC-Tz-Z5l" secondAttribute="topMargin" id="OCr-Zc-hXP"/>
-                                        <constraint firstItem="woe-J1-S23" firstAttribute="leading" secondItem="sFC-Tz-Z5l" secondAttribute="leadingMargin" constant="20" id="Pgb-uE-5aR"/>
                                         <constraint firstItem="jrV-Mr-RZp" firstAttribute="leading" secondItem="sFC-Tz-Z5l" secondAttribute="leadingMargin" id="XgC-c2-mZw"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="woe-J1-S23" secondAttribute="bottom" constant="30" id="tdr-ug-1cx"/>
+                                        <constraint firstItem="woe-J1-S23" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sFC-Tz-Z5l" secondAttribute="leadingMargin" id="kqB-ri-ldZ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="jrV-Mr-RZp" secondAttribute="trailing" id="uWW-bG-p2a"/>
-                                        <constraint firstItem="woe-J1-S23" firstAttribute="top" secondItem="sFC-Tz-Z5l" secondAttribute="topMargin" constant="30" id="wEM-Jb-cZD"/>
+                                        <constraint firstItem="woe-J1-S23" firstAttribute="centerY" secondItem="sFC-Tz-Z5l" secondAttribute="centerY" id="vjC-Pd-Qdx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -250,7 +258,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2m-Ov-Q2e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenuesCell" rowHeight="200" id="jVM-e5-4qO" customClass="VenuesCell" customModule="EastLondonGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -262,9 +270,10 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WUw-DT-FwL">
                                             <rect key="frame" x="20" y="11" width="374" height="178"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
-                                            <rect key="frame" x="40" y="41" width="334" height="118"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
+                                            <rect key="frame" x="167" y="83" width="80" height="34"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="34"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -272,11 +281,11 @@
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="WUw-DT-FwL" secondAttribute="bottom" id="4Z4-W4-Adg"/>
                                         <constraint firstItem="WUw-DT-FwL" firstAttribute="leading" secondItem="fAV-DF-eIn" secondAttribute="leadingMargin" id="BCS-6j-Tau"/>
+                                        <constraint firstItem="qJC-As-tLK" firstAttribute="centerX" secondItem="fAV-DF-eIn" secondAttribute="centerX" id="C5P-4d-xYh"/>
                                         <constraint firstItem="WUw-DT-FwL" firstAttribute="top" secondItem="fAV-DF-eIn" secondAttribute="topMargin" id="FmA-hP-SBw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qJC-As-tLK" secondAttribute="trailing" constant="20" id="Pc0-9W-prc"/>
-                                        <constraint firstItem="qJC-As-tLK" firstAttribute="top" secondItem="fAV-DF-eIn" secondAttribute="topMargin" constant="30" id="VAv-KE-c9X"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qJC-As-tLK" secondAttribute="bottom" constant="30" id="bc3-mY-Ntu"/>
-                                        <constraint firstItem="qJC-As-tLK" firstAttribute="leading" secondItem="fAV-DF-eIn" secondAttribute="leadingMargin" constant="20" id="jVU-0j-pxK"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qJC-As-tLK" secondAttribute="trailing" id="Pc0-9W-prc"/>
+                                        <constraint firstItem="qJC-As-tLK" firstAttribute="centerY" secondItem="fAV-DF-eIn" secondAttribute="centerY" id="Qni-YT-cCi"/>
+                                        <constraint firstItem="qJC-As-tLK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fAV-DF-eIn" secondAttribute="leadingMargin" id="jVU-0j-pxK"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="WUw-DT-FwL" secondAttribute="trailing" id="q7t-8M-lEw"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -312,7 +321,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="si5-lA-PhH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -330,7 +340,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cGe-UG-W51">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowseCell" rowHeight="211" id="xJm-ul-6ox" customClass="BrowseCell" customModule="EastLondonGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="211"/>
@@ -347,7 +357,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoreditch &amp; Hoxton" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-pO-geX">
                                             <rect key="frame" x="10" y="152" width="394" height="2"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -356,7 +366,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="mCH-yQ-iMi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                            <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -365,7 +375,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="5Nd-Ku-mnw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -399,7 +409,12 @@
                             <outlet property="delegate" destination="Ktn-LF-Qrg" id="2z3-5I-NeA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DYC-Wd-QY8"/>
+                    <navigationItem key="navigationItem" id="DYC-Wd-QY8">
+                        <barButtonItem key="backBarButtonItem" title="-" id="Tln-PJ-aPC"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails2" id="VpC-wn-2Ys"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4X-Gz-Lr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,33 +526,8 @@
                                                     <constraint firstItem="hcm-y3-dWY" firstAttribute="top" secondItem="vEt-pD-6IQ" secondAttribute="top" id="pan-xn-aYe"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-gZ-f0M">
-                                                <rect key="frame" x="0.0" y="834" width="374" height="40"/>
-                                                <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="azc-N8-TT3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
-                                                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="4d2-Y2-tK4"/>
-                                                        </constraints>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                    </textView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="azc-N8-TT3" secondAttribute="bottom" id="RLC-FN-HfL"/>
-                                                    <constraint firstItem="azc-N8-TT3" firstAttribute="top" secondItem="WoC-gZ-f0M" secondAttribute="top" id="aRV-l5-7ty"/>
-                                                    <constraint firstItem="azc-N8-TT3" firstAttribute="leading" secondItem="WoC-gZ-f0M" secondAttribute="leading" id="bbR-YV-On3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="azc-N8-TT3" secondAttribute="trailing" id="mvW-3n-ahY"/>
-                                                    <constraint firstItem="azc-N8-TT3" firstAttribute="height" secondItem="WoC-gZ-f0M" secondAttribute="height" id="sJh-oi-mfY"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fp-6b-Lom">
-                                                <rect key="frame" x="0.0" y="884" width="374" height="40"/>
+                                                <rect key="frame" x="0.0" y="834" width="374" height="40"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8U-mC-4dv">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -561,6 +551,31 @@
                                                     <constraint firstItem="X8U-mC-4dv" firstAttribute="leading" secondItem="3Fp-6b-Lom" secondAttribute="leading" id="xSf-VM-hQK"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-gZ-f0M">
+                                                <rect key="frame" x="0.0" y="884" width="374" height="40"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="azc-N8-TT3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="4d2-Y2-tK4"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="azc-N8-TT3" secondAttribute="bottom" id="RLC-FN-HfL"/>
+                                                    <constraint firstItem="azc-N8-TT3" firstAttribute="top" secondItem="WoC-gZ-f0M" secondAttribute="top" id="aRV-l5-7ty"/>
+                                                    <constraint firstItem="azc-N8-TT3" firstAttribute="leading" secondItem="WoC-gZ-f0M" secondAttribute="leading" id="bbR-YV-On3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="azc-N8-TT3" secondAttribute="trailing" id="mvW-3n-ahY"/>
+                                                    <constraint firstItem="azc-N8-TT3" firstAttribute="height" secondItem="WoC-gZ-f0M" secondAttribute="height" id="sJh-oi-mfY"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
@@ -577,7 +592,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="JLp-EA-Ep2"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="bottom" secondItem="tO6-vM-ru7" secondAttribute="bottom" id="Spk-Wr-CpX"/>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="leading" secondItem="tO6-vM-ru7" secondAttribute="leading" id="fPR-ic-Kkk"/>
@@ -586,7 +601,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tO6-vM-ru7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xk4-NB-dtG"/>
+                    <navigationItem key="navigationItem" id="Xk4-NB-dtG">
+                        <rightBarButtonItems>
+                            <barButtonItem image="heart" catalog="system" id="81Z-TS-qX2">
+                                <connections>
+                                    <action selector="favouriteButtonTapped:" destination="LRO-7z-mCz" id="hmO-4I-Eus"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="book.circle" catalog="system" id="ejq-DV-lRo">
+                                <connections>
+                                    <action selector="menuButtonTapped:" destination="LRO-7z-mCz" id="dkr-TB-mbL"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressHeight" destination="C1b-Hh-TyP" id="IMA-UH-gvD"/>
                         <outlet property="addressTextView" destination="1HC-4e-tzu" id="lMC-51-Yav"/>
@@ -594,6 +622,8 @@
                         <outlet property="descriptionHeight" destination="aUf-8J-ssD" id="D1l-d3-4nA"/>
                         <outlet property="descriptionLabel" destination="QHB-Nr-9aA" id="wvS-zT-QmZ"/>
                         <outlet property="descriptionTextView" destination="hiw-5z-HqQ" id="437-Y2-fu2"/>
+                        <outlet property="favouriteButton" destination="81Z-TS-qX2" id="ojr-aa-EbK"/>
+                        <outlet property="menuButton" destination="ejq-DV-lRo" id="KDU-ah-jan"/>
                         <outlet property="openingTimesHeight" destination="x0D-9d-omf" id="EAL-NW-5TK"/>
                         <outlet property="openingTimesTextView" destination="hcm-y3-dWY" id="Moy-0B-plk"/>
                         <outlet property="telephoneTextView" destination="X8U-mC-4dv" id="f5w-uY-S4q"/>
@@ -602,7 +632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH4-oq-lld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900.0000000000005" y="1340.625"/>
+            <point key="canvasLocation" x="3145" y="1342"/>
         </scene>
         <!--Map-->
         <scene sceneID="RoU-iF-kNz">
@@ -613,7 +643,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PR7-Ps-Hbj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -628,12 +658,17 @@
     <resources>
         <image name="Bethnal Green" width="503" height="335"/>
         <image name="book" catalog="system" width="64" height="52"/>
+        <image name="book.circle" catalog="system" width="64" height="62"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="eye" catalog="system" width="64" height="40"/>
         <image name="eye.fill" catalog="system" width="64" height="40"/>
+        <image name="heart" catalog="system" width="64" height="58"/>
         <image name="map" catalog="system" width="64" height="58"/>
         <image name="map.fill" catalog="system" width="64" height="54"/>
         <image name="wand.and.rays" catalog="system" width="64" height="62"/>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VpC-wn-2Ys"/>
+    </inferredMetricsTieBreakers>
 </document>

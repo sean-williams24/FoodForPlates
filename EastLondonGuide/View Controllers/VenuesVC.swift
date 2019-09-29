@@ -20,6 +20,7 @@ class VenuesVC: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 350
         
+        
         for venue in allVenues! {
             if venue.area == area && venue.category == category {
                 venuesToDisplay.append(venue)
@@ -46,7 +47,7 @@ class VenuesVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VenuesCell", for: indexPath) as! VenuesCell
 
         // Configure the cell...
-        cell.customTextLabel.text = venuesToDisplay[indexPath.row].name
+        cell.customTextLabel.text = venuesToDisplay[indexPath.row].name.uppercased()    
         cell.customImageView.image = UIImage(named: venuesToDisplay[indexPath.row].name)
 
         return cell

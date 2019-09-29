@@ -20,12 +20,15 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var openingTimesHeight: NSLayoutConstraint!
     @IBOutlet var bookTextView: UITextView!
     @IBOutlet var telephoneTextView: UITextView!
+    @IBOutlet var favouriteButton: UIBarButtonItem!
+    @IBOutlet var menuButton: UIBarButtonItem!
     
     var venue: Venue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(venue.name)
 
         // Set UI elements with venue model data.
         venueImageView.image = UIImage(named: venue.name)
@@ -42,7 +45,9 @@ class VenueDetailsVC: UIViewController {
         descriptionLabel.attributedText = attributedString
         
  
-        
+        if venue.category == "Shopping" || venue.category == "Markets" {
+            bookTextView.text = ""
+        }
         
         
         
@@ -59,7 +64,20 @@ class VenueDetailsVC: UIViewController {
         calculateTextViewHeights(textView: addressTextView, constraint: addressHeight)
         calculateTextViewHeights(textView: openingTimesTextView, constraint: openingTimesHeight)
     }
+    
+    
+    @IBAction func favouriteButtonTapped(_ sender: Any) {
+        
+        //TODO: PERSIST FAVOURITES TO CORE DATA OR USERDEFAULTS?
+    }
+    
+    
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        
+        //TODO: DOWNLOAD MENU FROM ZOMATO API, PRESENT ON SLIDING MODAL VC AND PERSIST IN CORE DATA
 
+    }
+    
     /*
     // MARK: - Navigation
 

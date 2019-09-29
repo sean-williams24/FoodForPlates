@@ -14,23 +14,23 @@ enum Telephone: String {
     
     //Food
     case Smokestak = "020 3873 1733"
-    case Dishoom = "Lovely Indian food"
+    case Dishoom = "020 7420 9324"
     
     
     // Drinks
-    case WellAndBucket
+    case WellAndBucket = "020 3664 6454"
     
     
     //Coffee
-    case ShoreditchGrind
+    case ShoreditchGrind = "020 7490 7490"
     
     
     //Shopping
-    case Goodhood
+    case Goodhood = "020 7729 3600"
     
     
     //Markets
-    case BricklaneMarket
+    case BricklaneMarket = "020 7770 6028"
     
 
 //Bethnal Green

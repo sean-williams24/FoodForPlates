@@ -14,23 +14,23 @@ enum Address: String {
     
     //Food
     case Smokestak = "35 Sclater St \nLondon \nE1 6LB"
-    case Dishoom = "Lovely Indian food"
+    case Dishoom = "7 Boundary Street \nLondon \nE2 7JE"
     
     
     // Drinks
-    case WellAndBucket
+    case WellAndBucket = "143 Bethnal Green Rd \nLondon \nE2 7DG"
     
     
     //Coffee
-    case ShoreditchGrind
+    case ShoreditchGrind = "213 Old St \nLondon \nEC1V 9NR"
     
     
     //Shopping
-    case Goodhood
+    case Goodhood = "151 Curtain Rd, \nHackney, \nLondon \nEC2A 3QE"
     
     
     //Markets
-    case BricklaneMarket
+    case BricklaneMarket = "Brick Ln, \nSpitalfields, \nLondon \nE1 6QR"
     
 
 //Bethnal Green

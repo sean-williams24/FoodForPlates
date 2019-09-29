@@ -14,15 +14,15 @@ enum Book: String {
     
     //Food
     case Smokestak = "book@smokestak.co.uk"
-    case Dishoom = "Lovely Indian food"
+    case Dishoom = "reservations@dishoom.com"
     
     
     // Drinks
-    case WellAndBucket
+    case WellAndBucket = "info@wellandbucket.com"
     
     
     //Coffee
-    case ShoreditchGrind
+    case ShoreditchGrind = "Walks in only"
     
     
     //Shopping

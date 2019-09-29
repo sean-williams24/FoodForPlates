@@ -42,10 +42,7 @@ class CategoriesVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
 
         // Configure the cell...
-        cell.customTextLabel.text = categories[indexPath.row]
-        if cell.customTextLabel.text == "Coffee" {
-            cell.customTextLabel.textColor = .black
-        }
+        cell.customTextLabel.text = categories[indexPath.row].uppercased()
         cell.customImageView.image = UIImage(named: categories[indexPath.row])
         
         return cell

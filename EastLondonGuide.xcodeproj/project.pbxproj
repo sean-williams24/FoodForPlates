@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C77233A23D000BD70CE /* AppDelegate.swift */; };
 		CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */; };
-		CE9C6C7C233A23D000BD70CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C7B233A23D000BD70CE /* ViewController.swift */; };
 		CE9C6C7F233A23D000BD70CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6C7D233A23D000BD70CE /* Main.storyboard */; };
 		CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */; };
 		CE9C6C84233A23D300BD70CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6C83233A23D300BD70CE /* Assets.xcassets */; };
@@ -41,13 +40,14 @@
 		CE9C6CE8233E34ED00BD70CE /* JosefinSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CDE233E34ED00BD70CE /* JosefinSans-LightItalic.ttf */; };
 		CE9C6CEA233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CE9233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf */; };
 		CE9C6CEC233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */; };
+		CE9C6CEE2340CB0300BD70CE /* Gradient Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CED2340CB0300BD70CE /* Gradient Extension.swift */; };
+		CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE9C6C74233A23D000BD70CE /* EastLondonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EastLondonGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9C6C77233A23D000BD70CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE9C6C7B233A23D000BD70CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE9C6C7E233A23D000BD70CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE9C6C81233A23D000BD70CE /* EastLondonGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EastLondonGuide.xcdatamodel; sourceTree = "<group>"; };
 		CE9C6C83233A23D300BD70CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +80,8 @@
 		CE9C6CDE233E34ED00BD70CE /* JosefinSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		CE9C6CE9233E38C600BD70CE /* 02c5086e8616653dade6e7cb3a1f0498.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02c5086e8616653dade6e7cb3a1f0498.ttf; sourceTree = "<group>"; };
 		CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LTC Bodoni 175 W01 Regular.ttf"; sourceTree = "<group>"; };
+		CE9C6CED2340CB0300BD70CE /* Gradient Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradient Extension.swift"; sourceTree = "<group>"; };
+		CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,6 @@
 			children = (
 				CE9C6C77233A23D000BD70CE /* AppDelegate.swift */,
 				CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */,
-				CE9C6C7B233A23D000BD70CE /* ViewController.swift */,
 				CE9C6CB7233B630E00BD70CE /* Model */,
 				CE9C6CB5233B62A300BD70CE /* View Controllers */,
 				CE9C6CB6233B62E600BD70CE /* Storyboards */,
@@ -128,11 +129,13 @@
 		CE9C6CB5233B62A300BD70CE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */,
 				CE9C6CB1233A6E4800BD70CE /* GuidesVC.swift */,
 				CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */,
 				CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */,
 				CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */,
 				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
+				CE9C6CED2340CB0300BD70CE /* Gradient Extension.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -266,11 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9C6C7C233A23D000BD70CE /* ViewController.swift in Sources */,
 				CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */,
 				CE9C6CC7233CB5FF00BD70CE /* VenueDescriptionModel.swift in Sources */,
 				CE9C6CB2233A6E4800BD70CE /* GuidesVC.swift in Sources */,
 				CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC.swift in Sources */,
+				CE9C6CEE2340CB0300BD70CE /* Gradient Extension.swift in Sources */,
 				CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */,
 				CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */,
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
@@ -281,6 +284,7 @@
 				CE9C6CD1233E138E00BD70CE /* BookModel.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */,
+				CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */,
 				CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */,
 				CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */,
 				CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */,
