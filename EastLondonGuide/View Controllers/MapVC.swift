@@ -10,22 +10,95 @@ import UIKit
 import MapKit
 
 class MapVC: UIViewController {
+    
+    @IBOutlet var mapView: MKMapView!
+    
+    let venues = Venue.allVenues
+    var chosenVenue: Venue!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Load venue annotations.
+        
+        for venue in venues! {
+            let address = venue.address?.replacingOccurrences(of: "\n", with: "")
+            
+            CLGeocoder().geocodeAddressString(address ?? "") { (placemarks, error) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        //TODO: show error alert
+                    }
+                }
+                
+                if let placemark = placemarks?.first, let location = placemark.location {
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location.coordinate
+                    annotation.title = venue.name.uppercased()
+                    annotation.subtitle = venue.category
+                    
+                    self.mapView.addAnnotation(annotation)
+                    
+                    if venue.name == "SMOKESTAK" {
+                        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 2500, longitudinalMeters: 2500)
+                        self.mapView.setRegion(region, animated: true)
+                    }
+                }
+            }
+            
+        }
+
+        
+        
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let vc = segue.destination as! VenueDetailsVC
+//        print(chosenVenue.name)
+        vc.venue = chosenVenue
     }
-    */
+    
 
+}
+
+//MARK: MapView Delegate
+
+extension MapVC: MKMapViewDelegate {
+    
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+                
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+          dequeuedView.annotation = annotation
+          view = dequeuedView
+        } else {
+          view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+          view.canShowCallout = true
+          view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .infoDark)
+        }
+        return view
+    }
+    
+    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let venueTitle = view.annotation?.title
+        if let venues = venues {
+            for venue in venues {
+                if venueTitle == venue.name.uppercased() {
+                    chosenVenue = venue
+                }
+            }
+        }
+        
+        if control == view.rightCalloutAccessoryView {
+            performSegue(withIdentifier: "VenueDetails3", sender: self)
+        }
+    }
 }

@@ -14,22 +14,13 @@ class InspirationVC: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var inspoTableView: UITableView!
     
-    
-    
+    let articleImages = ["Roast", "Breakfast", "Brewery", "Pizza"]
     let articles = ["THE BEST \nSUNDAY \nROASTS IN \nEAST LONDON",
                     "OUR \nFAVOURITE \nEAST LONDON \nBREAKFASTS",
                     "EAST LONDON \nBREWERIES \nAND \nTAPROOMS",
                     "BEST PIZZA IN \nEAST LONDON"]
-    let articleImages = ["Roast", "Breakfast", "Brewery", "Pizza"]
     
-    fileprivate func letterSpacing(label: UILabel, value: Double) {
-        // Do any additional setup after loading the view.
-        
-        // Set letter spacing
-        let attributedString = NSMutableAttributedString(string: label.text!)
-        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(value), range: NSRange(location: 0, length: attributedString.length))
-        label.attributedText = attributedString
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -119,6 +119,9 @@ PLATES</string>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-4k-jhY">
                                 <rect key="frame" x="0.0" y="108" width="414" height="705"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jOo-sd-yq5" id="oBW-S3-6Pb"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -130,7 +133,13 @@ PLATES</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dOZ-oD-uml"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9Ll-HN-Njn"/>
+                    <navigationItem key="navigationItem" id="9Ll-HN-Njn">
+                        <barButtonItem key="backBarButtonItem" title="-" id="NO0-IT-Cal"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="4rv-4k-jhY" id="lT9-YM-tsq"/>
+                        <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails3" id="zgK-WH-3pv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G5-2h-dSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -752,6 +761,6 @@ PLATES</string>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yrD-25-A2T"/>
+        <segue reference="zgK-WH-3pv"/>
     </inferredMetricsTieBreakers>
 </document>
