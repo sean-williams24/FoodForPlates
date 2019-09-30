@@ -16,7 +16,6 @@ class BrowseVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNavBarGradient()
 
     }
 

@@ -42,6 +42,8 @@
 		CE9C6CEC233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */; };
 		CE9C6CEE2340CB0300BD70CE /* Gradient Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CED2340CB0300BD70CE /* Gradient Extension.swift */; };
 		CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */; };
+		CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */; };
+		CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF423420E6800BD70CE /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		CE9C6CEB233E38EA00BD70CE /* LTC Bodoni 175 W01 Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LTC Bodoni 175 W01 Regular.ttf"; sourceTree = "<group>"; };
 		CE9C6CED2340CB0300BD70CE /* Gradient Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradient Extension.swift"; sourceTree = "<group>"; };
 		CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationVC.swift; sourceTree = "<group>"; };
+		CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
+		CE9C6CF423420E6800BD70CE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */,
 				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
 				CE9C6CED2340CB0300BD70CE /* Gradient Extension.swift */,
+				CE9C6CF423420E6800BD70CE /* MapVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -159,10 +164,7 @@
 				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
 				CE9C6CD0233E138E00BD70CE /* BookModel.swift */,
 				CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */,
-				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
-				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
-				CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */,
-				CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */,
+				CE9C6CF32341EF5800BD70CE /* Cells */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +186,18 @@
 				CE9C6CD7233E34EC00BD70CE /* JosefinSans-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE9C6CF32341EF5800BD70CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
+				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
+				CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */,
+				CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */,
+				CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,11 +288,13 @@
 				CE9C6CB2233A6E4800BD70CE /* GuidesVC.swift in Sources */,
 				CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC.swift in Sources */,
 				CE9C6CEE2340CB0300BD70CE /* Gradient Extension.swift in Sources */,
+				CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */,
 				CE9C6C82233A23D000BD70CE /* EastLondonGuide.xcdatamodeld in Sources */,
 				CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */,
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
 				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
+				CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */,
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
 				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
 				CE9C6CD1233E138E00BD70CE /* BookModel.swift in Sources */,

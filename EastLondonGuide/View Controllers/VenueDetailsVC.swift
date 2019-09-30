@@ -20,6 +20,7 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var openingTimesHeight: NSLayoutConstraint!
     @IBOutlet var bookTextView: UITextView!
     @IBOutlet var telephoneTextView: UITextView!
+    @IBOutlet var mapButton: UIBarButtonItem!
     @IBOutlet var favouriteButton: UIBarButtonItem!
     @IBOutlet var menuButton: UIBarButtonItem!
     
@@ -65,6 +66,10 @@ class VenueDetailsVC: UIViewController {
         calculateTextViewHeights(textView: openingTimesTextView, constraint: openingTimesHeight)
     }
     
+    @IBAction func viewOnMapTapped(_ sender: Any) {
+        
+        //TODO: NAVIGATE TO MAP VIEW AND SHOW THIS VENUE
+    }
     
     @IBAction func favouriteButtonTapped(_ sender: Any) {
         

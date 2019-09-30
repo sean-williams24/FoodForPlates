@@ -16,7 +16,6 @@ class GuidesVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNavBarGradient()
         tableView.rowHeight = 300
 
     }
