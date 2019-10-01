@@ -118,32 +118,56 @@ PLATES</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-4k-jhY">
-                                <rect key="frame" x="0.0" y="108" width="414" height="705"/>
+                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <connections>
                                     <outlet property="delegate" destination="jOo-sd-yq5" id="oBW-S3-6Pb"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Nn1-nl-ZQp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <segments>
+                                    <segment title="ALL"/>
+                                    <segment title="FOOD"/>
+                                    <segment title="DRINKS"/>
+                                    <segment title="COFFEE"/>
+                                    <segment title="SHOPPING"/>
+                                    <segment title="MARKETS"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categorySelection:" destination="jOo-sd-yq5" eventType="valueChanged" id="Fi9-5f-xhJ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4rv-4k-jhY" firstAttribute="top" secondItem="dOZ-oD-uml" secondAttribute="top" constant="20" id="Q9K-0I-aiu"/>
+                            <constraint firstItem="Nn1-nl-ZQp" firstAttribute="top" secondItem="dOZ-oD-uml" secondAttribute="top" id="7MX-nO-xwO"/>
+                            <constraint firstItem="4rv-4k-jhY" firstAttribute="top" secondItem="Nn1-nl-ZQp" secondAttribute="bottom" id="Q9K-0I-aiu"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="bottom" secondItem="4rv-4k-jhY" secondAttribute="bottom" id="WFO-r6-Prk"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="trailing" secondItem="4rv-4k-jhY" secondAttribute="trailing" id="bJ2-UC-6hG"/>
                             <constraint firstItem="4rv-4k-jhY" firstAttribute="leading" secondItem="dOZ-oD-uml" secondAttribute="leading" id="cUC-uu-3O8"/>
+                            <constraint firstItem="Nn1-nl-ZQp" firstAttribute="leading" secondItem="dOZ-oD-uml" secondAttribute="leading" id="mII-a0-cCd"/>
+                            <constraint firstItem="dOZ-oD-uml" firstAttribute="trailing" secondItem="Nn1-nl-ZQp" secondAttribute="trailing" id="pIl-nT-hYI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dOZ-oD-uml"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Ll-HN-Njn">
                         <barButtonItem key="backBarButtonItem" title="-" id="NO0-IT-Cal"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="location.fill" catalog="system" id="Fgx-Gf-9Ci">
+                            <connections>
+                                <action selector="areaButtonTapped:" destination="jOo-sd-yq5" id="VpS-AP-658"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="areaButton" destination="Fgx-Gf-9Ci" id="LUU-OJ-Zdq"/>
+                        <outlet property="categorySelector" destination="Nn1-nl-ZQp" id="ijl-Nb-8rV"/>
                         <outlet property="mapView" destination="4rv-4k-jhY" id="lT9-YM-tsq"/>
                         <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails3" id="zgK-WH-3pv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G5-2h-dSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="1600"/>
+            <point key="canvasLocation" x="1428.985507246377" y="1599.7767857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FUd-CT-ze9">
@@ -729,7 +753,9 @@ PLATES</string>
         <scene sceneID="RoU-iF-kNz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fG8-iO-aV9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" selectedImage="map" id="ALN-h3-v5a"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" selectedImage="map" id="ALN-h3-v5a">
+                        <color key="badgeColor" white="0.72999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PR7-Ps-Hbj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -755,6 +781,7 @@ PLATES</string>
         <image name="eye" catalog="system" width="64" height="40"/>
         <image name="eye.fill" catalog="system" width="64" height="40"/>
         <image name="heart" catalog="system" width="64" height="58"/>
+        <image name="location.fill" catalog="system" width="64" height="60"/>
         <image name="map" catalog="system" width="64" height="58"/>
         <image name="map.fill" catalog="system" width="64" height="54"/>
         <image name="wand.and.rays" catalog="system" width="64" height="62"/>
