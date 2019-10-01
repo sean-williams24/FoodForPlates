@@ -11,7 +11,7 @@ import UIKit
 class GuidesVC: UITableViewController {
 
     
-    let areaTitles = ["Shoreditch & Hoxton", "Bow & Mile End", "Bethnal Green", "London Fields & Hackney Central", "Hackney Wick"]
+    let areaTitles = ["Shoreditch & Hoxton", "Bethnal Green", "London Fields & Hackney Central", "Hackney Wick", "Bow & Mile End"]
     var chosenArea = ""
     
     override func viewDidLoad() {

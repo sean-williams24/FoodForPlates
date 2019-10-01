@@ -14,14 +14,23 @@ class MapVC: UIViewController {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var categorySelector: UISegmentedControl!
     @IBOutlet var areaButton: UIBarButtonItem!
+    @IBOutlet var centerPopupConstraint: NSLayoutConstraint!
+    @IBOutlet var areaMenu: UIView!
+    @IBOutlet var backgroundButton: UIButton!
     
     let venues = Venue.allVenues
-    var filteredVenues: [Venue]!
     var allAnnotations: [MKPointAnnotation] = []
     var chosenVenue: Venue!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let eastLondon = CLLocationCoordinate2D(latitude: 51.529330, longitude: -0.055910)
+        let region = MKCoordinateRegion(center: eastLondon, latitudinalMeters: 6000, longitudinalMeters: 6000)
+        self.mapView.setRegion(region, animated: true)
+        
+        areaMenu.layer.cornerRadius = 10
+        areaMenu.layer.masksToBounds = true
         
         // Set font for segmented selector
         
@@ -47,13 +56,13 @@ class MapVC: UIViewController {
                     annotation.coordinate = location.coordinate
                     annotation.title = venue.name.uppercased()
                     annotation.subtitle = venue.category
+                    
                                         
                     self.mapView.addAnnotation(annotation)
                     
-                    if venue.name == "SMOKESTAK" {
-                        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 2500, longitudinalMeters: 2500)
-                        self.mapView.setRegion(region, animated: true)
-                    }
+//                    if venue.name == "SMOKESTAK" {
+//
+//                    }
                     
                     self.allAnnotations.insert(annotation, at: 0)
                 }
@@ -128,15 +137,60 @@ class MapVC: UIViewController {
     
     
     @IBAction func areaButtonTapped(_ sender: Any) {
-        let ac = UIAlertController(title: "", message: "Shoreditch & Hoxton.", preferredStyle: .actionSheet)
-        let popover = ac.popoverPresentationController
-        popover?.sourceView = view
-        popover?.sourceRect = CGRect(x: 32, y: 32, width: 40, height: 40)
-
-        present(ac, animated: true)
+        centerPopupConstraint.constant = 0
         
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundButton.alpha = 0.3
+        }
     }
     
+    
+    @IBAction func areaSelected(_ sender: UIButton) {
+        centerPopupConstraint.constant = -380
+        
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }) { (tapped) in
+
+            switch sender.tag {
+                case 0:
+                    let shoreditch = CLLocationCoordinate2D(latitude: 51.5236637, longitude: -0.0729336)
+                    self.setMapRegion(shoreditch)
+        
+                case 1:
+                    let bethnalGreen = CLLocationCoordinate2D(latitude: 51.529330, longitude: -0.055910)
+                    self.setMapRegion(bethnalGreen)
+
+                case 2:
+                    let londonFields = CLLocationCoordinate2D(latitude: 51.540238, longitude: -0.057775)
+                    self.setMapRegion(londonFields)
+
+                case 3:
+                    let hackneyWick = CLLocationCoordinate2D(latitude: 51.545790, longitude: -0.055420)
+                    self.setMapRegion(hackneyWick)
+
+                case 4:
+                    let bowAndMileEnd = CLLocationCoordinate2D(latitude: 51.527500, longitude: -0.023540)
+                    self.setMapRegion(bowAndMileEnd)
+                    
+                default:
+                    break
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundButton.alpha = 0
+        }
+    }
+    
+    fileprivate func setMapRegion(_ area: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: area, latitudinalMeters: 2500, longitudinalMeters: 2500)
+        self.mapView.setRegion(region, animated: true)
+    }
     
 }
 
@@ -156,8 +210,9 @@ extension MapVC: MKMapViewDelegate {
           view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
           view.canShowCallout = true
           view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .infoDark)
+          view.rightCalloutAccessoryView = UIButton(type: .infoDark)
         }
+        
         return view
     }
     
