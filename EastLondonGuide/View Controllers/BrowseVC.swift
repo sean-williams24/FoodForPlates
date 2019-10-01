@@ -8,35 +8,43 @@
 
 import UIKit
 
-class BrowseVC: UITableViewController {
+class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
+    @IBOutlet var areaMenu: UIView!
+    @IBOutlet var backgroundButton: UIButton!
+    @IBOutlet var centerPopupConstraint: NSLayoutConstraint!
+    @IBOutlet var tableView: UITableView!
+    
+    
+    
     let allVenues = Venue.allVenues!
+    var filteredVenues = [Venue]()
     var chosenVenue: Venue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filteredVenues = allVenues
+        areaMenu.layer.cornerRadius = 10
+        areaMenu.layer.masksToBounds = true
 
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return allVenues.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredVenues.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BrowseCell", for: indexPath) as! BrowseCell
-        let venue = allVenues[indexPath.row]
+        let venue = filteredVenues[indexPath.row]
 
-        // Configure the cell...
         cell.areaLabel.text = venue.area
         cell.venueLabel.text = venue.name.uppercased()
         cell.categoryLabel.text = venue.category
@@ -45,8 +53,8 @@ class BrowseVC: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenVenue = allVenues[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenVenue = filteredVenues[indexPath.row]
         performSegue(withIdentifier: "VenueDetails2", sender: self)
     }
 
@@ -56,8 +64,73 @@ class BrowseVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         let vc = segue.destination as! VenueDetailsVC
-        // Pass the selected object to the new view controller.
         vc.venue = chosenVenue
+    }
+    
+    @IBAction func areaButtonTapped(_ sender: Any) {
+        centerPopupConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundButton.alpha = 0.6
+        }
+    }
+    
+
+    fileprivate func animateTableviewReload() {
+        let transition = CATransition()
+        transition.type = CATransitionType.push
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.fillMode = CAMediaTimingFillMode.forwards
+        transition.duration = 0.9
+        transition.subtype = CATransitionSubtype.fromBottom
+        self.tableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
+        self.tableView.reloadData()
+    }
+    
+    fileprivate func filterLocation(for venueName: String) {
+        self.filteredVenues = []
+        for venue in self.allVenues {
+            if venue.area == venueName {
+                print(venue.area)
+                self.filteredVenues.append(venue)
+            }
+        }
+        animateTableviewReload()
+    }
+    
+    
+    @IBAction func areaSelected(_ sender: UIButton) {
+        centerPopupConstraint.constant = 450
+        
+        UIView.animate(withDuration: 0.1, delay: 0.5, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }) { (tapped) in
+            if sender.tag == 0 {
+                self.filterLocation(for: Area.Shoreditch.rawValue)
+            } else if sender.tag == 1 {
+                self.filterLocation(for: Area.BethnalGreen.rawValue)
+            } else if sender.tag == 2 {
+                self.filterLocation(for: Area.LondonFields.rawValue)
+            } else if sender.tag == 3 {
+                self.filterLocation(for: Area.HackneyWick.rawValue)
+            }  else if sender.tag == 4 {
+                self.filterLocation(for: Area.Bow.rawValue)
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundButton.alpha = 0
+        }
+    }
+    
+    
+    @IBAction func resetToAllVenues(_ sender: Any) {
+        filteredVenues = allVenues
+        animateTableviewReload()
     }
     
 

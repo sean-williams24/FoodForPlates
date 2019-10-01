@@ -57,13 +57,7 @@ class MapVC: UIViewController {
                     annotation.title = venue.name.uppercased()
                     annotation.subtitle = venue.category
                     
-                                        
                     self.mapView.addAnnotation(annotation)
-                    
-//                    if venue.name == "SMOKESTAK" {
-//
-//                    }
-                    
                     self.allAnnotations.insert(annotation, at: 0)
                 }
             }

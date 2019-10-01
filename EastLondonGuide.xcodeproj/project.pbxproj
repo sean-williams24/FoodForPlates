@@ -138,8 +138,8 @@
 				CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */,
 				CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */,
 				CE9C6CC2233CA27A00BD70CE /* BrowseVC.swift */,
-				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
 				CE9C6CF423420E6800BD70CE /* MapVC.swift */,
+				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
 				CE9C6CED2340CB0300BD70CE /* Gradient & VC UI Extension.swift */,
 			);
 			path = "View Controllers";
