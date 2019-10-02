@@ -70,7 +70,7 @@ enum Telephone: String {
     
     
     //Shopping
-    case StrangerThanParadise
+    case StrangerThanParadise = "020 3745 2607"
     
     
     //Markets
@@ -80,17 +80,17 @@ enum Telephone: String {
 //Hackney Wick
     
     //Food
-    case CRATEBrewery
+    case CRATEBrewery = "020 8533 3331"
     
     
     // Drinks
-    case BeerMerchantsTap
-    case HowlingHops
+    case BeerMerchantsTap = "020 3222 5592"
+    case HowlingHops = "020 3583 8262"
     
     
     //Coffee
-    case HWK
-    case StourSpace
+    case HWK = "020 8533 4685"
+    case StourSpace = "020 8985 7827"
     
     //Shopping
     
@@ -101,13 +101,13 @@ enum Telephone: String {
 //Bow & Mile End
     
     //Food
-    case RustyBike
-    case LordMorpeth
+    case RustyBike = "020 8981 4100"
+    case LordMorpeth = "020 8980 3012"
     
     
     // Drinks
-    case EastLondonLiquorCompany
-    case TheMorganArms
+    case EastLondonLiquorCompany = "020 3011 0980"
+    case TheMorganArms = "020 8980 6389"
     
     
     //Coffee

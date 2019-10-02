@@ -1,5 +1,5 @@
 //
-//  BookModel.swift
+//  EmailModel.swift
 //  EastLondonGuide
 //
 //  Created by Sean Williams on 27/09/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Book: String {
+enum Email: String {
     
 //Shoreditch & Hoxton
     
@@ -70,27 +70,27 @@ enum Book: String {
     
     
     //Shopping
-    case StrangerThanParadise
+    case StrangerThanParadise = "info@strangerthanparadiserecords.com"
     
     
     //Markets
-    case BroadwayMarket
+    case BroadwayMarket 
     
 
 //Hackney Wick
     
     //Food
-    case CRATEBrewery
+    case CRATEBrewery = "bar@cratebrewery.com"
     
     
     // Drinks
-    case BeerMerchantsTap
+    case BeerMerchantsTap = "tap@beermerchants.com"
     case HowlingHops
     
     
     //Coffee
     case HWK
-    case StourSpace
+    case StourSpace = "info@stourspace.co.uk"
     
     //Shopping
     
@@ -101,17 +101,17 @@ enum Book: String {
 //Bow & Mile End
     
     //Food
-    case RustyBike
-    case LordMorpeth
+    case RustyBike = "info@rustybike.pub"
+    case LordMorpeth = "hello@lordmorpeth.co.uk"
     
     
     // Drinks
-    case EastLondonLiquorCompany
-    case TheMorganArms
+    case EastLondonLiquorCompany = "bar@eastlondonliquorcompany.com"
+    case TheMorganArms = "enquiries@morganarmsbow.com"
     
     
     //Coffee
-    case MaeAndHarvey
+    case MaeAndHarvey = "natasha@maeandharvey.com"
     
     //Shopping
     

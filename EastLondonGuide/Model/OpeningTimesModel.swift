@@ -71,27 +71,27 @@ enum OpeningTimes: String {
     
     
     //Shopping
-    case StrangerThanParadise
+    case StrangerThanParadise = "Monday 11am-4pm \nTuesday  11am-6.30pm \nWednesday 11am-6.30pm \nThursday 11am-8pm \nFriday 11am-8pm \nSaturday 10am-8pm \nSunday 11am-6pm"
     
     
     //Markets
-    case BroadwayMarket
+    case BroadwayMarket = "Sat: 9am-5pm"
     
 
 //Hackney Wick
     
     //Food
-    case CRATEBrewery
+    case CRATEBrewery = "Sunday-Thursday 12 - 11PM \nFriday & Saturday 12 - 12"
     
     
     // Drinks
-    case BeerMerchantsTap
-    case HowlingHops
+    case BeerMerchantsTap = "Sunday-Wednesday: 10am-11pm \nThursday-Saturday: 10am-11.30pm"
+    case HowlingHops = "Monday 12:00 – 23:00 \nTuesday 12:00 – 23:00 \nWednesday 12:00 – 23:00 \nThursday 12:00 – 23:00 \nFriday 12:00 – 01:00 \nSaturday 12:00 – 01:00 \nSunday 12:00 – 23:00"
     
     
     //Coffee
-    case HWK
-    case StourSpace
+    case HWK = "Mon-Fri 7am–4pm \nSat-Sun 10am–5pm"
+    case StourSpace = "Friday    8am –late \nSaturday    9am – late \nSunday    9am – late"
     
     //Shopping
     
@@ -102,17 +102,17 @@ enum OpeningTimes: String {
 //Bow & Mile End
     
     //Food
-    case RustyBike
-    case LordMorpeth
+    case RustyBike = "Sunday-Wednesday: Midday - 11PM \nThursday - Saturday: Midday - Midnight"
+    case LordMorpeth = "Tuesday    4–11:30pm \nWednesday    4–11:30pm \nThursday    4–11:30pm \nFriday    4pm–1am \nSaturday    12pm–1am \nSunday    12–11:30pm \nMonday    4–11:30pm \nSuggest an edit"
     
     
     // Drinks
-    case EastLondonLiquorCompany
-    case TheMorganArms
+    case EastLondonLiquorCompany = "Tuesday    5–11pm \nWednesday    5–11pm \nThursday    5–11pm \nFriday    5pm–12am \nSaturday    12pm–12:30am \nSunday    12–11pm \nMonday    Closed"
+    case TheMorganArms = "Open noon-11pm Mon-Thur, Sun; \nnoon-midnight Fri, Sat. \nFood served noon-3pm, 7-10pm Mon-Sat; \nnoon-3.30pm, 7-9pm Sun"
     
     
     //Coffee
-    case MaeAndHarvey
+    case MaeAndHarvey = "Mon 7:30-17:00 \nTue 7:30-21:00 \nWed, Thu, Fri 7:30-17:00 \nSat 9:00-17:00 \nSun 10:00-17:00"
     
     //Shopping
     

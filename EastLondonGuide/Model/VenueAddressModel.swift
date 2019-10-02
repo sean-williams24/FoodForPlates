@@ -70,27 +70,27 @@ enum Address: String {
     
     
     //Shopping
-    case StrangerThanParadise
+    case StrangerThanParadise = "Mare Street Market, \n117 Mare Street, \nHackney, \nLondon, \nE8 4RU"
     
     
     //Markets
-    case BroadwayMarket
+    case BroadwayMarket = "Broadway Market \nLondon \nE8 4PH"
     
 
 //Hackney Wick
     
     //Food
-    case CRATEBrewery
+    case CRATEBrewery = "Unit 7 Queen's Yard, \nHackney Wick, \nLondon E9 5EN"
     
     
     // Drinks
-    case BeerMerchantsTap
-    case HowlingHops
+    case BeerMerchantsTap = "99 Wallis Rd, \nHackney Wick, \nLondon \nE9 5LN"
+    case HowlingHops = "Unit 9A \nQueen's Yard, \nWhite Post Ln, \nLondon \nE9 5EN"
     
     
     //Coffee
-    case HWK
-    case StourSpace
+    case HWK = "29 White Post Ln, \nHackney Wick, \nLondon \nE9 5EN"
+    case StourSpace = "7 Roach Rd, \nOld Ford, \nLondon \nE3 2PA"
     
     //Shopping
     
@@ -101,17 +101,17 @@ enum Address: String {
 //Bow & Mile End
     
     //Food
-    case RustyBike
-    case LordMorpeth
+    case RustyBike = "588 Mile End Rd, \nMile End, \nLondon \nE3 4PH"
+    case LordMorpeth = "402 Old Ford Rd, \nBow, \nLondon \nE3 5NR"
     
     
     // Drinks
-    case EastLondonLiquorCompany
-    case TheMorganArms
+    case EastLondonLiquorCompany = "Unit GF1, \nBow Wharf \n221 Grove Road, \nLondon, E3 5SN"
+    case TheMorganArms = "43 Morgan St, \nBow, \nLondon \nE3 5AA"
     
     
     //Coffee
-    case MaeAndHarvey
+    case MaeAndHarvey = "414 Roman Rd, Bow, London E3 5LU"
     
     //Shopping
     

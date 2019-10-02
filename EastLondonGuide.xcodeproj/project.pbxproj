@@ -26,7 +26,7 @@
 		CE9C6CCB233D2F1E00BD70CE /* VenueDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */; };
 		CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */; };
 		CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */; };
-		CE9C6CD1233E138E00BD70CE /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CD0233E138E00BD70CE /* BookModel.swift */; };
+		CE9C6CD1233E138E00BD70CE /* EmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CD0233E138E00BD70CE /* EmailModel.swift */; };
 		CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */; };
 		CE9C6CDF233E34ED00BD70CE /* JosefinSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD5233E34EC00BD70CE /* JosefinSans-Italic.ttf */; };
 		CE9C6CE0233E34ED00BD70CE /* JosefinSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6CD6233E34EC00BD70CE /* JosefinSans-Thin.ttf */; };
@@ -68,7 +68,7 @@
 		CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsVC.swift; sourceTree = "<group>"; };
 		CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAddressModel.swift; sourceTree = "<group>"; };
 		CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningTimesModel.swift; sourceTree = "<group>"; };
-		CE9C6CD0233E138E00BD70CE /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		CE9C6CD0233E138E00BD70CE /* EmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailModel.swift; sourceTree = "<group>"; };
 		CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelephoneModel.swift; sourceTree = "<group>"; };
 		CE9C6CD5233E34EC00BD70CE /* JosefinSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic.ttf"; sourceTree = "<group>"; };
 		CE9C6CD6233E34EC00BD70CE /* JosefinSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Thin.ttf"; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */,
 				CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */,
 				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
-				CE9C6CD0233E138E00BD70CE /* BookModel.swift */,
+				CE9C6CD0233E138E00BD70CE /* EmailModel.swift */,
 				CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */,
 				CE9C6CF32341EF5800BD70CE /* Cells */,
 			);
@@ -297,7 +297,7 @@
 				CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */,
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
 				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
-				CE9C6CD1233E138E00BD70CE /* BookModel.swift in Sources */,
+				CE9C6CD1233E138E00BD70CE /* EmailModel.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */,
 				CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */,

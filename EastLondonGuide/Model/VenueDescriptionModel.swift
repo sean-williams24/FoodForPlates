@@ -72,27 +72,28 @@ enum Description: String {
     
     
     //Shopping
-    case StrangerThanParadise
+    case StrangerThanParadise = "Jim Jarmusch’s 1984 masterpiece Stranger Than Paradise is one of those films that does so much with so little. With the first third taking place almost entirely in one grimy New York apartment, the camera staying rooted in place and the characters being underacted to an extreme, it still manages to fill you with sentimentality in a way that’s truly unique to cinema, that gets right to the core of what makes the medium so special. And what an amazing soundtrack! So when Jarmusch himself gave them his blessing to use the name for their slowly budding dream of a record shop, they knew they had to honour that magic, and do their best to transfer it to what they're doing here.\n\nLike the film, all our favourite record shops are more than what they may seem. Whether it be through careful curation, passionate and friendly staff, or some ineffable nuance in the room, just flicking through the racks gives you a firm feeling of the importance of these places - as a social space, as an asset to their communities - and a compelling sense of potential for walking out with an object of future worship under your arm. That, to us, is the equivalent, the essence of a record shop’s distinctive allure, and that is what they hope to conjure up for you at Stranger Than Paradise."
     
     
     //Markets
-    case BroadwayMarket
+    case BroadwayMarket = "Arguably London’s hippest market, this Hackney stalwart is a weekend destination for fresh produce, vintage clothes and delicious street food.\n\nBroadway Market continues to thrive following its clever makeover nearly 15 years ago. This compact Hackney street, which neatly connects London Fields to the Regent’s Canal, has had a traditional fruit and veg market since the 1890s. But it went into steep decline in the ‘80s, and trade had all but petered out before the community relaunched it in 2004.\n\nNow taking place on Saturday from 9am-5pm, Broadway Market is a bustling hub for the Hackney hipsters and East End creatives who have settled down and started families. It now welcomes around 135 stalls selling a fabulous array of fresh produce, vintage clothes, flowers, coffee, books and groceries. There’s also plenty of delectable street food, including Deeney’s toasted sandwiches, Fin and Founder’s crab-cake burgers, Floris Bakery’s chocolate eclairs and the modern cult classic Yorkshire Burrito.\n\nAlthough there are no stalls during the week, Broadway Market is still worth visiting for its cute coffee shops, one-off restaurants and chic boutiques. Gentrification has more than crept in, but it still feels like a local high street complete with a kebab shop, post office, Costcutter, old-school barber shop and excellent hardware store. Even outside market day, you’ll find it buzzing with people pottering about, nattering over coffee and doing their weekly shop."
     
 
 //Hackney Wick
     
     //Food
-    case CRATEBrewery
+    case CRATEBrewery = "If you want to find the place where almost everything about hipster London peaked, it’s right here, on the banks of the Lea Navigation in Hackney Wick. This pizzeria and brewery is peak beard, peak tattoo, peak warehouse living and peak craft beer – but that’s no bad thing. Sure, the service can be a little surly and all the bar staff are better looking than you, but that’s life.\n\nThe beer, being visibly brewed on site, is varied and tasty, with a good selection of international craft ales on hand to boot. In the winter it’s all about the super-crispy pizzas with innovative toppings, and the live jazz; come summer though the crowds spill out on to the banks of the Lea, with families of fowl and narrowboats tootling past – this is proper East End bucolic."
     
     
     // Drinks
-    case BeerMerchantsTap
-    case HowlingHops
+    case BeerMerchantsTap = "The Tap describes itself as London's best craft beer selection. It's a bold claim, but one that might hold merit. Inside, you'll find 20 keg taps and 2 cask pumps. That's not quite so many as a couple of BrewDogs or Mother Kelly's, but the boast of selling 500 bottles and cans might just give them the title. Plus, the venue is home to 'London’s first dedicated sour beer blendery, making beers inspired by spontaneous fermentation all over the world'. \n\nIndeed, the bottles and cans will have you clapping your hands. Fridge after fridge displays more varieties of the good stuff than anyone could keep track of. All are available for takeaway or consumption on site. A further fridge, styled like a supermarket deli counter, holds meaty treats and cheeses. \n\nThe tap room is pretty spacious, with bench-style seating for dozens. A beer yard out front effectively doubles the floor space when the weather is right. This isn't a part of town with a roaring passing trade, but reputation alone should carry this place through."
+    
+    case HowlingHops = "‘The UK’s first dedicated tank bar’, says the inscription on the wall. Beer geeks, prepare to get excited by the row of big gleaming steel vats in the taproom of this Hackney Wick brewery. Everyone else, all we need to know is that by cutting out the bottles, cans, pipes or kegs of traditional dispense, we can drink the freshest beer possible. A couple of other brands have given us tank beer in pubs before (Pilsner Urquell, Meantime), but no one has done it with such a statement of intent.\n\nHops were originally put in beer partly for bittering and flavouring, partly because of their antibacterial properties. Howling Hops uses these dried flowers in great abundance, which means the quicker they can be drunk after production the better. So the American Pale XX explodes with the characteristics of the classic US hops Centennial, Cascade, Columbus and Citra; Riding Ale (Columbus, Cascade, Galena and Nugget, if you’re interested) is a 3 percent pale ale that also comes with a ton of hop flavours (and, without condoning drunken cycling, is probably light enough to have a half of then ride home). It’s all great, from the Victorian stout to the rye IPA; and, in groovy new label and container designs, it’s also now being bottled here, so look out for it in a fridge near you. Howling Hops was until recently made in the bowels of the Cock Tavern, a Mare Street sister pub to the estimable Southampton Arms, so it has a great pedigree. There’s food too – simple stuff like sausage baps, roasts or grilled cheese sandwiches, but made with decent ingredients.\n\nThis being Hackney Wick, the taproom itself is a former industrial premises probably once used for blubber-rendering or grain-winnowing or latten-furbishing, and now its concessions to comfort are not much more than long tables and sharing benches, with a few outside on the increasingly busy Queen’s Yard. But it’s the beer that’s the star here, and it’s brilliant to see so many people turning up to enjoy it straight from the source. "
     
     
     //Coffee
-    case HWK
-    case StourSpace
+    case HWK = "One of East London's hidden gems. Serving coffee, cocktails and food to a soulful playlist all day long."
+    case StourSpace = "Stour Space Café & Bar is located on the ground floor and includes an outdoor terrace overlooking the River Lea canal, opposite the London Stadium. The café & bar offers a number of tasty options made from seasonal and local ingredients, a wide range of drinks and cocktails as well as speciality grade coffee. All profits made by the Café & Bar are reinvested into the running of the Stour Space venue and fund its affordable spaces for creative industries."
     
     //Shopping
     
@@ -103,17 +104,17 @@ enum Description: String {
 //Bow & Mile End
     
     //Food
-    case RustyBike
-    case LordMorpeth
+    case RustyBike = "Now open again. This is a modern pub that has been through many names, from Cornucopia through Horn of Plenty, Flautist & Firkin, Matter of Time and Milestone. After a few years as a restaurant, it's now open again as a sports bar with Thai food. Run by the same people as the great little Thai restaurant of the same name in Islington, this Mile End branch combines a pub element with a Thai menu."
+    case LordMorpeth = "And East End boozer by Vicky Park and Hertford Union Canal. They also serve sourdough pizza here."
     
     
     // Drinks
-    case EastLondonLiquorCompany
-    case TheMorganArms
+    case EastLondonLiquorCompany = "East London Liquor Company is a distillery producing and importing a range of quality spirits including gin, vodka, rum and whisky. Bringing spirits production back to London’s East End after more than a century, we are reinstating an industry back to its roots."
+    case TheMorganArms = "There's more than a hint of the gastropub about this busy Bow boozer, with Sunday roasts proving particularly popular. The pub dates back to the late nineteenth century, and while there are a fair few aesthetic nods to its past, the modern artwork, covered al fresco decking and recent lick of paint keep things contemporary. \n\nAlthough much of the produce is sourced locally, the food menu takes its lead from a variety of cuisines. Expect, therefore, Italian charcuterie boards and coq au vin alongside Thai beef salads, pork bellies with anise and carrot purée, pumpkin and ricotta ravioli and 12oz rib-eye steaks. \n\nThe wine list focuses on the old world, with wines from Spain, France, Italy and Portugal dominating. There are a few organic options, too. Beer comes from five hand-pulls, with drops from London Fields Brewery, Truman's and Hackney Brewery alongside the odd guest. Bottled options include Brooklyn, Anchor Steam and plenty from local brewers, Redchurch.  "
     
     
     //Coffee
-    case MaeAndHarvey
+    case MaeAndHarvey = "Mae + Harvey is a neighbourhood cafe in East London open for all day brunch, morning coffee, fresh pastries and cakes, and a variety of special events. The cafe is a friendly environment with something on the menu for everyone to enjoy. /n/nAt first glance Mae + Harvey, with its dark blue exterior walls and a hipstery font, can easily fall into the trendy wave of East London’s foodie hotspots. A place where cereal is served in avocado skin and traces of cow’s milk are hard to find. Yes, avocado on toast is a part of the menu and the dishes always come out Insta-ready, but hip is the last thing this place is trying to be."
     
     //Shopping
     
