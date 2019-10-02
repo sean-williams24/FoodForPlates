@@ -144,7 +144,7 @@ class MapVC: UIViewController {
     
     
     @IBAction func areaSelected(_ sender: UIButton) {
-        centerPopupConstraint.constant = -380
+        centerPopupConstraint.constant = -1000
         
         UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()

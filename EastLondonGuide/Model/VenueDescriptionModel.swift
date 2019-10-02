@@ -114,7 +114,7 @@ enum Description: String {
     
     
     //Coffee
-    case MaeAndHarvey = "Mae + Harvey is a neighbourhood cafe in East London open for all day brunch, morning coffee, fresh pastries and cakes, and a variety of special events. The cafe is a friendly environment with something on the menu for everyone to enjoy. /n/nAt first glance Mae + Harvey, with its dark blue exterior walls and a hipstery font, can easily fall into the trendy wave of East London’s foodie hotspots. A place where cereal is served in avocado skin and traces of cow’s milk are hard to find. Yes, avocado on toast is a part of the menu and the dishes always come out Insta-ready, but hip is the last thing this place is trying to be."
+    case MaeAndHarvey = "Mae + Harvey is a neighbourhood cafe in East London open for all day brunch, morning coffee, fresh pastries and cakes, and a variety of special events. The cafe is a friendly environment with something on the menu for everyone to enjoy. \n\nAt first glance Mae + Harvey, with its dark blue exterior walls and a hipstery font, can easily fall into the trendy wave of East London’s foodie hotspots. A place where cereal is served in avocado skin and traces of cow’s milk are hard to find. Yes, avocado on toast is a part of the menu and the dishes always come out Insta-ready, but hip is the last thing this place is trying to be."
     
     //Shopping
     

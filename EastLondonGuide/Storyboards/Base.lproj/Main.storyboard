@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ULD-HF-x9b">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,11 +26,11 @@
             <objects>
                 <viewController title="Inspiration" id="qn6-tK-Fmw" customClass="InspirationVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvA-pV-zGZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-CH-SAz">
-                                <rect key="frame" x="15" y="88" width="399" height="269"/>
+                                <rect key="frame" x="15" y="50" width="1009" height="269"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="269" id="QMS-qO-b5F"/>
                                 </constraints>
@@ -42,21 +42,21 @@ PLATES</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SvV-E0-kWC">
-                                <rect key="frame" x="0.0" y="357" width="414" height="456"/>
+                                <rect key="frame" x="0.0" y="319" width="1024" height="982"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="EastLondonGuide" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gVN-uh-k3P" id="qKA-Tb-h5Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mGO-ce-e95">
-                                                    <rect key="frame" x="20" y="21" width="374" height="168"/>
+                                                    <rect key="frame" x="15" y="25" width="994" height="160"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-PH-xkP">
-                                                    <rect key="frame" x="185" y="91" width="44" height="18"/>
+                                                    <rect key="frame" x="490" y="91" width="44" height="18"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="18"/>
                                                     <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -114,17 +114,17 @@ PLATES</string>
             <objects>
                 <viewController title="Map" id="jOo-sd-yq5" customClass="MapVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zp7-Hb-ihM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-4k-jhY">
-                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
+                                <rect key="frame" x="0.0" y="81" width="1024" height="1220"/>
                                 <connections>
                                     <outlet property="delegate" destination="jOo-sd-yq5" id="oBW-S3-6Pb"/>
                                 </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Nn1-nl-ZQp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="50" width="1024" height="32"/>
                                 <segments>
                                     <segment title="ALL"/>
                                     <segment title="FOOD"/>
@@ -138,14 +138,14 @@ PLATES</string>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12y-Dn-mUz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="50" width="1024" height="1251"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="xfk-cx-Ivp"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdR-4j-cP2" userLabel="Area Menu">
-                                <rect key="frame" x="50" y="348" width="350" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdR-4j-cP2" userLabel="Area Menu">
+                                <rect key="frame" x="-400" y="583" width="350" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="5if-6O-Qad">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
@@ -232,7 +232,7 @@ PLATES</string>
                         <constraints>
                             <constraint firstItem="kdR-4j-cP2" firstAttribute="centerY" secondItem="Zp7-Hb-ihM" secondAttribute="centerY" id="2Ky-jw-w28"/>
                             <constraint firstItem="Nn1-nl-ZQp" firstAttribute="top" secondItem="dOZ-oD-uml" secondAttribute="top" id="7MX-nO-xwO"/>
-                            <constraint firstItem="kdR-4j-cP2" firstAttribute="centerX" secondItem="Zp7-Hb-ihM" secondAttribute="centerX" constant="-415" id="Anv-7r-Jqy"/>
+                            <constraint firstItem="kdR-4j-cP2" firstAttribute="centerX" secondItem="Zp7-Hb-ihM" secondAttribute="centerX" constant="-737" id="Anv-7r-Jqy"/>
                             <constraint firstItem="12y-Dn-mUz" firstAttribute="top" secondItem="dOZ-oD-uml" secondAttribute="top" id="BGf-vt-ezP"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="trailing" secondItem="12y-Dn-mUz" secondAttribute="trailing" id="Erc-Lh-kB1"/>
                             <constraint firstItem="4rv-4k-jhY" firstAttribute="top" secondItem="Nn1-nl-ZQp" secondAttribute="bottom" id="Q9K-0I-aiu"/>
@@ -301,7 +301,7 @@ PLATES</string>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulU-B3-ULe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -324,7 +324,7 @@ PLATES</string>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tu-fv-Mub">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -343,22 +343,22 @@ PLATES</string>
             <objects>
                 <tableViewController title="Guides" id="AYg-Ll-hu3" customClass="GuidesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="15" sectionFooterHeight="15" id="SWy-Se-8cD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AreaCell" rowHeight="200" id="6XR-j1-bEo" customClass="AreaCell" customModule="EastLondonGuide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="1024" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6XR-j1-bEo" id="cSN-3D-pYK">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBh-k6-w2a">
-                                            <rect key="frame" x="20" y="21" width="374" height="168"/>
+                                            <rect key="frame" x="20" y="25" width="984" height="160"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
-                                            <rect key="frame" x="179" y="88.5" width="56.5" height="23"/>
+                                            <rect key="frame" x="484" y="88.5" width="56.5" height="23"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -404,22 +404,22 @@ PLATES</string>
             <objects>
                 <tableViewController title="Categories" id="PVl-Wz-qzS" customClass="CategoriesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6cd-lw-4bL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoriesCell" rowHeight="200" id="Qyf-9m-VRd" customClass="CategoriesCell" customModule="EastLondonGuide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="1024" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qyf-9m-VRd" id="sFC-Tz-Z5l">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrV-Mr-RZp">
-                                            <rect key="frame" x="20" y="21" width="374" height="168"/>
+                                            <rect key="frame" x="20" y="25" width="984" height="160"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
-                                            <rect key="frame" x="179" y="88.5" width="56.5" height="23"/>
+                                            <rect key="frame" x="484" y="88.5" width="56.5" height="23"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -465,22 +465,22 @@ PLATES</string>
             <objects>
                 <tableViewController title="Venues" id="VOj-6G-v7q" customClass="VenuesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2m-Ov-Q2e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenuesCell" rowHeight="200" id="jVM-e5-4qO" customClass="VenuesCell" customModule="EastLondonGuide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="1024" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jVM-e5-4qO" id="fAV-DF-eIn">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WUw-DT-FwL">
-                                            <rect key="frame" x="20" y="21" width="374" height="168"/>
+                                            <rect key="frame" x="20" y="25" width="984" height="160"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
-                                            <rect key="frame" x="167" y="83" width="80" height="34"/>
+                                            <rect key="frame" x="472" y="83" width="80" height="34"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="34"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -528,7 +528,7 @@ PLATES</string>
                     <tabBarItem key="tabBarItem" title="Browse" image="eye.fill" catalog="system" selectedImage="eye" id="fpb-ne-kTk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="si5-lA-PhH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -547,38 +547,38 @@ PLATES</string>
             <objects>
                 <viewController id="fBw-xg-fI1" customClass="BrowseVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YRS-UN-y1K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWl-jg-axw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="50" width="1024" height="1251"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cGe-UG-W51">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1251"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowseCell" rowHeight="211" id="xJm-ul-6ox" customClass="BrowseCell" customModule="EastLondonGuide" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="211"/>
+                                                <rect key="frame" x="0.0" y="28" width="1024" height="211"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJm-ul-6ox" id="NFS-vg-mL1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="211"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AfA-G5-jxv">
-                                                            <rect key="frame" x="10" y="10" width="394" height="134"/>
+                                                            <rect key="frame" x="10" y="10" width="1004" height="134"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="134" id="fTu-Zd-CWV"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoreditch &amp; Hoxton" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-pO-geX">
-                                                            <rect key="frame" x="10" y="152" width="394" height="2"/>
+                                                            <rect key="frame" x="5" y="152" width="1014" height="2"/>
                                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dishoom" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkm-xh-bll">
-                                                            <rect key="frame" x="10" y="159" width="394" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dishoom" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gkm-xh-bll">
+                                                            <rect key="frame" x="5" y="159" width="1014" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="mCH-yQ-iMi"/>
                                                             </constraints>
@@ -587,7 +587,7 @@ PLATES</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jW-bW-9P2">
-                                                            <rect key="frame" x="10" y="180" width="394" height="21"/>
+                                                            <rect key="frame" x="10" y="180" width="1004" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="5Nd-Ku-mnw"/>
                                                             </constraints>
@@ -628,16 +628,15 @@ PLATES</string>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" alpha="0.0" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo6-tt-Na6">
-                                <rect key="frame" x="0.0" y="85" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" alpha="0.0" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo6-tt-Na6">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1301"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <action selector="areaSelected:" destination="fBw-xg-fI1" eventType="touchUpInside" id="Arx-9T-Eqw"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7p-ML-r63" userLabel="Area Menu">
-                                <rect key="frame" x="450" y="348" width="350" height="200"/>
+                                <rect key="frame" x="1200" y="583" width="350" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Big Ben" translatesAutoresizingMaskIntoConstraints="NO" id="Buk-sa-Jzl">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
@@ -729,9 +728,13 @@ PLATES</string>
                         <constraints>
                             <constraint firstItem="cgP-ls-V34" firstAttribute="bottom" secondItem="dWl-jg-axw" secondAttribute="bottom" id="4zW-ei-zK1"/>
                             <constraint firstItem="dWl-jg-axw" firstAttribute="leading" secondItem="cgP-ls-V34" secondAttribute="leading" id="I0g-hG-RXb"/>
-                            <constraint firstItem="v7p-ML-r63" firstAttribute="centerX" secondItem="YRS-UN-y1K" secondAttribute="centerX" constant="418" id="bqF-PO-ETJ"/>
+                            <constraint firstItem="lo6-tt-Na6" firstAttribute="leading" secondItem="cgP-ls-V34" secondAttribute="leading" id="Od3-Ns-isx"/>
+                            <constraint firstItem="v7p-ML-r63" firstAttribute="centerX" secondItem="YRS-UN-y1K" secondAttribute="centerX" constant="863" id="bqF-PO-ETJ"/>
                             <constraint firstItem="cgP-ls-V34" firstAttribute="trailing" secondItem="dWl-jg-axw" secondAttribute="trailing" id="dGU-Vj-xb2"/>
+                            <constraint firstItem="cgP-ls-V34" firstAttribute="bottom" secondItem="lo6-tt-Na6" secondAttribute="bottom" id="er6-zA-Q3d"/>
+                            <constraint firstItem="lo6-tt-Na6" firstAttribute="trailing" secondItem="cgP-ls-V34" secondAttribute="trailing" id="gii-hA-odM"/>
                             <constraint firstItem="v7p-ML-r63" firstAttribute="centerY" secondItem="YRS-UN-y1K" secondAttribute="centerY" id="hc0-R9-UFH"/>
+                            <constraint firstItem="lo6-tt-Na6" firstAttribute="top" secondItem="YRS-UN-y1K" secondAttribute="top" id="qMp-AN-N3u"/>
                             <constraint firstItem="dWl-jg-axw" firstAttribute="top" secondItem="cgP-ls-V34" secondAttribute="top" id="tzk-FJ-Jna"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgP-ls-V34"/>
@@ -768,20 +771,20 @@ PLATES</string>
             <objects>
                 <viewController id="LRO-7z-mCz" customClass="VenueDetailsVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o54-aw-pny">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxp-HA-N6u">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="50" width="1024" height="1251"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ua-Jic">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="920"/>
+                                        <rect key="frame" x="20" y="0.0" width="984" height="920"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duN-Be-DkZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="984" height="300"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bethnal Green" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-ff-omc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374.00000000000011" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="984.00000000000011" height="300"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -793,17 +796,17 @@ PLATES</string>
                                                     <constraint firstItem="tV9-ff-omc" firstAttribute="top" secondItem="duN-Be-DkZ" secondAttribute="top" id="uA2-OK-Uqk"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Venue Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-Nr-9aA">
-                                                <rect key="frame" x="0.0" y="310" width="374" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Venue Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-Nr-9aA">
+                                                <rect key="frame" x="0.0" y="310" width="984" height="22"/>
                                                 <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-I2-Ac8">
-                                                <rect key="frame" x="0.0" y="342" width="374" height="250"/>
+                                                <rect key="frame" x="0.0" y="342" width="984" height="250"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="Descritption" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hiw-5z-HqQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="984" height="250"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="250" id="aUf-8J-ssD"/>
@@ -823,10 +826,10 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-k1-y99">
-                                                <rect key="frame" x="0.0" y="602" width="374" height="128"/>
+                                                <rect key="frame" x="0.0" y="602" width="984" height="128"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Address:" translatesAutoresizingMaskIntoConstraints="NO" id="1HC-4e-tzu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="984" height="128"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="C1b-Hh-TyP"/>
@@ -847,10 +850,10 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEt-pD-6IQ">
-                                                <rect key="frame" x="0.0" y="740" width="374" height="80"/>
+                                                <rect key="frame" x="0.0" y="740" width="984" height="80"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-y3-dWY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="984" height="80"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="x0D-9d-omf"/>
@@ -870,10 +873,10 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fp-6b-Lom">
-                                                <rect key="frame" x="0.0" y="830" width="374" height="40"/>
+                                                <rect key="frame" x="0.0" y="830" width="984" height="40"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8U-mC-4dv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="984" height="40"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -895,10 +898,10 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-gZ-f0M">
-                                                <rect key="frame" x="0.0" y="880" width="374" height="40"/>
+                                                <rect key="frame" x="0.0" y="880" width="984" height="40"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="azc-N8-TT3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="984" height="40"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -992,7 +995,7 @@ PLATES</string>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PR7-Ps-Hbj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>

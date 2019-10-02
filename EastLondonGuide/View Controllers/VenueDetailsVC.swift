@@ -29,7 +29,6 @@ class VenueDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print(venue.name)
 
         // Set UI elements with venue model data.
         venueImageView.image = UIImage(named: venue.name)
@@ -37,7 +36,7 @@ class VenueDetailsVC: UIViewController {
         descriptionTextView.text = venue.description
         addressTextView.text = venue.address?.uppercased()
         openingTimesTextView.text = venue.openingTimes?.uppercased()
-        bookTextView.text = venue.book?.uppercased()
+        bookTextView.text = venue.email?.uppercased()
         telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
         
         letterSpacing(label: descriptionLabel, value: 5.0)
@@ -46,6 +45,7 @@ class VenueDetailsVC: UIViewController {
         if venue.category == "Shopping" || venue.category == "Markets" {
             bookTextView.text = ""
         }
+        
         
         
         

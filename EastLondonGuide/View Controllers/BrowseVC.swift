@@ -95,7 +95,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.filteredVenues = []
         for venue in self.allVenues {
             if venue.area == venueName {
-                print(venue.area)
                 self.filteredVenues.append(venue)
             }
         }
@@ -104,9 +103,9 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBAction func areaSelected(_ sender: UIButton) {
-        centerPopupConstraint.constant = 450
+        centerPopupConstraint.constant = 1200
         
-        UIView.animate(withDuration: 0.1, delay: 0.5, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }) { (tapped) in
             if sender.tag == 0 {
