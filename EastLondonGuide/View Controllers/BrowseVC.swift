@@ -12,21 +12,31 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     @IBOutlet var areaMenu: UIView!
-    @IBOutlet var backgroundButton: UIButton!
     @IBOutlet var centerPopupConstraint: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var backgroundButton: UIButton!
+    @IBOutlet var categorySelector: UISegmentedControl!
     
     
     
     let allVenues = Venue.allVenues!
     var filteredVenues = [Venue]()
     var chosenVenue: Venue!
+    var filteredByArea = false
+    var filteredByCategory = false
+    var alreadyFilteredByCategory = [Venue]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         filteredVenues = allVenues
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
+        
+        // Set font for segmented selector TODO: Refactor in MAPVC as well
+               
+               let font: [AnyHashable : Any] = [NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
+               categorySelector.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
+               categorySelector.backgroundColor = .clear
 
     }
 
@@ -67,6 +77,71 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         vc.venue = chosenVenue
     }
     
+    
+    
+    // MARK: - Helper Methods
+    
+    fileprivate func animateTableviewReload() {
+        let transition = CATransition()
+        transition.type = CATransitionType.push
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.fillMode = CAMediaTimingFillMode.forwards
+        transition.duration = 0.9
+        transition.subtype = CATransitionSubtype.fromTop
+        self.tableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
+        self.tableView.reloadData()
+    }
+    
+    fileprivate func filterLocation(for venueArea: String) {
+        
+        if filteredByCategory == false {
+            self.filteredVenues = []
+            for venue in self.allVenues {
+                if venue.area == venueArea {
+                    self.filteredVenues.append(venue)
+                }
+            }
+            animateTableviewReload()
+        } else {
+            // Filtered by category is TRUE
+
+            filteredVenues = alreadyFilteredByCategory
+            
+            var arrayPosition = 0
+            for venue in self.filteredVenues {
+                print(venue.name)
+                print(arrayPosition)
+                if venue.area != venueArea {
+                    // Remove venues from filtered venues array from other locations
+                    self.filteredVenues.remove(at: arrayPosition)
+                    arrayPosition -= 1
+                }
+                arrayPosition += 1
+                filteredByArea = true
+            }
+            animateTableviewReload()
+        }
+    }
+    
+    func filterCategory(for category: String) {
+        filteredByCategory = true
+        self.filteredVenues = []
+        self.alreadyFilteredByCategory = []
+        for venue in allVenues {
+            if venue.category == category {
+                filteredVenues.append(venue)
+                self.alreadyFilteredByCategory.append(venue)
+            }
+        }
+        animateTableviewReload()
+    }
+    
+    
+    
+    
+    
+    // MARK: - Action Methods
+    
     @IBAction func areaButtonTapped(_ sender: Any) {
         centerPopupConstraint.constant = 0
         
@@ -80,28 +155,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
 
-    fileprivate func animateTableviewReload() {
-        let transition = CATransition()
-        transition.type = CATransitionType.push
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.fillMode = CAMediaTimingFillMode.forwards
-        transition.duration = 0.9
-        transition.subtype = CATransitionSubtype.fromTop
-        self.tableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
-        self.tableView.reloadData()
-    }
-    
-    fileprivate func filterLocation(for venueName: String) {
-        self.filteredVenues = []
-        for venue in self.allVenues {
-            if venue.area == venueName {
-                self.filteredVenues.append(venue)
-            }
-        }
-        animateTableviewReload()
-    }
-    
-    
     @IBAction func areaSelected(_ sender: UIButton) {
         centerPopupConstraint.constant = 1200
         
@@ -126,8 +179,31 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @IBAction func categorySelection(_ sender: Any) {
+        
+        switch categorySelector.selectedSegmentIndex {
+        case 0: print("Show all")
+            filteredVenues = allVenues
+            animateTableviewReload()
+        case 1: print("Food")
+            filterCategory(for: "Food")
+        case 2: print("Drinks")
+            filterCategory(for: "Drinks")
+        case 3: print("Coffee")
+            filterCategory(for: "Coffee")
+        case 4: print("Shopping")
+            filterCategory(for: "Shopping")
+        case 5: print("Markets")
+            filterCategory(for: "Markets")
+        default:
+            print("No Selection")
+        }
+        
+    }
     
     @IBAction func resetToAllVenues(_ sender: Any) {
+        filteredByCategory = false
+        filteredByArea = false
         filteredVenues = allVenues
         animateTableviewReload()
     }
