@@ -15,12 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var venueForMap: Venue?
     static var viewVenueOnMap = false
 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        UITabBar.appearance().tintColor = .lightText
         
+        let userDefaultsArray = UserDefaults.standard.object(forKey: "Favourites") as? [String] ?? [String]()
+        let venues = Venue.allVenues
         
-        
+        for venue in venues! {
+            if userDefaultsArray.contains(venue.name) {
+                FavouritesModel.favourites.append(venue)
+            }
+        }
         
         return true
     }

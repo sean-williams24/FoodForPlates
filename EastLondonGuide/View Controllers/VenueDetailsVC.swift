@@ -24,8 +24,18 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var favouriteButton: UIBarButtonItem!
     @IBOutlet var menuButton: UIBarButtonItem!
     
+    let defaults = UserDefaults.standard
     var venue: Venue!
     var arrivedFromMapView = false
+    var venueIsFavourite: Bool {
+        return FavouritesModel.favourites.contains(venue)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +45,9 @@ class VenueDetailsVC: UIViewController {
             mapButton.isEnabled = false
         }
         
+
+        
+        
         // Set UI elements with venue model data.
         venueImageView.image = UIImage(named: venue.name)
         descriptionLabel.text = venue.name.uppercased()
@@ -42,8 +55,19 @@ class VenueDetailsVC: UIViewController {
         addressTextView.text = venue.address?.uppercased()
         openingTimesTextView.text = venue.openingTimes?.uppercased()
         telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
+        bookTextView.text = venue.email?.uppercased()
+        
+        if venue.email?.count ?? 10 > 22 {
+            bookTextView.font = UIFont(name: bookTextView.font!.fontName, size: 14)
+        }
         
         letterSpacing(label: descriptionLabel, value: 5.0)
+        
+        if venueIsFavourite == true {
+            favouriteButton.tintColor = .red
+        } else {
+            favouriteButton.tintColor = .darkGray
+        }
         
         
     }
@@ -77,6 +101,30 @@ class VenueDetailsVC: UIViewController {
     @IBAction func favouriteButtonTapped(_ sender: Any) {
         
         //TODO: PERSIST FAVOURITES TO CORE DATA OR USERDEFAULTS?
+        
+        if venueIsFavourite {
+            FavouritesModel.favourites = FavouritesModel.favourites.filter() {$0 != venue}
+            FavouritesModel.favouriteRemoved = true
+            favouriteButton.tintColor = .darkGray
+        } else {
+            FavouritesModel.favourites.append(venue)
+            favouriteButton.tintColor = .red
+        }
+        
+        print("--------------------------------")
+        for venue in FavouritesModel.favourites {
+            print("Favourites: \(venue.name)")
+        }
+        print("--------------------------------")
+
+        var array: [String] = []
+        for venue in FavouritesModel.favourites {
+            array.append(venue.name)
+        }
+
+        defaults.set(array, forKey: "Favourites")
+
+        
     }
     
     
@@ -90,12 +138,8 @@ class VenueDetailsVC: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-//        let vc = segue.destination as! MapVC
-//        vc.chosenVenue = venue
-        // Pass the selected object to the new view controller.
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    }
 
 
 }

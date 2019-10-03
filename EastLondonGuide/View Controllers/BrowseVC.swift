@@ -16,6 +16,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgroundButton: UIButton!
     @IBOutlet var categorySelector: UISegmentedControl!
+    @IBOutlet var showFavouritesButton: UIBarButtonItem!
     
     
     
@@ -39,6 +40,40 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                categorySelector.backgroundColor = .clear
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        
+        if FavouritesModel.favouriteRemoved == true {
+            showFavouritesButton.isEnabled = false
+            filteredVenues = FavouritesModel.favourites
+            animateTableviewReload()
+        }
+        
+        if FavouritesModel.favourites.isEmpty == true {
+            showFavouritesButton.isEnabled = false
+            filteredVenues = allVenues
+            tableView.reloadData()
+        } else {
+            showFavouritesButton.isEnabled = true
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if FavouritesModel.favourites.count == filteredVenues.count {
+            showFavouritesButton.isEnabled = false
+        } else {
+            showFavouritesButton.isEnabled = true
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        FavouritesModel.favouriteRemoved = false
+    }
+    
 
     // MARK: - Table view data source
 
@@ -92,8 +127,8 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.reloadData()
     }
     
+    
     fileprivate func filterLocation(for venueArea: String) {
-        
         if filteredByCategory == false {
             self.filteredVenues = []
             for venue in self.allVenues {
@@ -104,17 +139,13 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             animateTableviewReload()
         } else {
             // Filtered by category is TRUE
-
             filteredVenues = alreadyFilteredByCategory
             
-            var arrayPosition = 0
             for venue in self.filteredVenues {
                 if venue.area != venueArea {
                     // Remove venues from filtered venues array from other locations
-                    self.filteredVenues.remove(at: arrayPosition)
-                    arrayPosition -= 1
+                    self.filteredVenues = self.filteredVenues.filter() {$0 != venue}
                 }
-                arrayPosition += 1
                 filteredByArea = true
             }
             animateTableviewReload()
@@ -154,6 +185,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
     @IBAction func areaSelected(_ sender: UIButton) {
+        showFavouritesButton.isEnabled = true
         centerPopupConstraint.constant = 1200
         
         UIView.animate(withDuration: 0.4, delay: 0.5, options: .curveEaseOut, animations: {
@@ -178,6 +210,8 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func categorySelection(_ sender: Any) {
+        showFavouritesButton.isEnabled = true
+
         
         switch categorySelector.selectedSegmentIndex {
         case 0: print("Show all")
@@ -199,11 +233,22 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
+    @IBAction func showFavourites(_ sender: Any) {
+        filteredVenues = FavouritesModel.favourites
+        showFavouritesButton.isEnabled = false
+        animateTableviewReload()
+    }
+    
+    
+    
     @IBAction func resetToAllVenues(_ sender: Any) {
         filteredByCategory = false
         filteredByArea = false
         filteredVenues = allVenues
+        showFavouritesButton.isEnabled = true
         animateTableviewReload()
+        categorySelector.selectedSegmentIndex = 0
     }
     
 

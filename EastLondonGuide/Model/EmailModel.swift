@@ -42,7 +42,7 @@ enum Email: String {
     
     // Drinks
 //    case SatansWhiskers = ""
-    case TheRoyalOak = "http://royaloaklondon.com/contact"
+//    case TheRoyalOak = "http://royaloaklondon.com/contact"
     
     
     //Coffee

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-struct Venue {
+struct Venue: Equatable {
     
     // MARK: Properties
     
@@ -99,7 +99,7 @@ extension Venue {
             [Venue.NameKey : "The Marksman", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.TheMarksman.rawValue,Venue.AddressKey : Address.TheMarksman.rawValue, Venue.OpeningTimesKey : OpeningTimes.TheMarksman.rawValue, Venue.EmailKey : Email.TheMarksman.rawValue, Venue.PhoneKey : Telephone.TheMarksman.rawValue],
             [Venue.NameKey : "Bistrotheque", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.Bistrotheque.rawValue, Venue.AddressKey : Address.Bistrotheque.rawValue, Venue.OpeningTimesKey : OpeningTimes.Bistrotheque.rawValue, Venue.EmailKey : Email.Bistrotheque.rawValue, Venue.PhoneKey : Telephone.Bistrotheque.rawValue],
             [Venue.NameKey : "Satan’s Whiskers", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Drinks", Venue.DescritptionKey : Description.SatansWhiskers.rawValue,Venue.AddressKey : Address.SatansWhiskers.rawValue, Venue.OpeningTimesKey : OpeningTimes.SatansWhiskers.rawValue, Venue.PhoneKey : Telephone.SatansWhiskers.rawValue],
-            [Venue.NameKey : "The Royal Oak", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Drinks", Venue.DescritptionKey : Description.TheRoyalOak.rawValue,Venue.AddressKey : Address.TheRoyalOak.rawValue, Venue.OpeningTimesKey : OpeningTimes.TheRoyalOak.rawValue, Venue.EmailKey : Email.TheRoyalOak.rawValue, Venue.PhoneKey : Telephone.TheRoyalOak.rawValue],
+            [Venue.NameKey : "The Royal Oak", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Drinks", Venue.DescritptionKey : Description.TheRoyalOak.rawValue,Venue.AddressKey : Address.TheRoyalOak.rawValue, Venue.OpeningTimesKey : OpeningTimes.TheRoyalOak.rawValue, Venue.PhoneKey : Telephone.TheRoyalOak.rawValue],
             [Venue.NameKey : "Conservatory Archives", Venue.AreaKey : Area.BethnalGreen.rawValue, Venue.CategoryKey : "Shopping", Venue.DescritptionKey : Description.ConservatoryArchives.rawValue, Venue.AddressKey : Address.ConservatoryArchives.rawValue, Venue.OpeningTimesKey : OpeningTimes.ConservatoryArchives.rawValue, Venue.EmailKey : Email.ConservatoryArchives.rawValue, Venue.PhoneKey : Telephone.ConservatoryArchives.rawValue],
             
             // London Fields & Hackney Central
@@ -124,7 +124,7 @@ extension Venue {
             [Venue.NameKey : "Lord Morpeth", Venue.AreaKey : Area.Bow.rawValue, Venue.CategoryKey : "Food", Venue.DescritptionKey : Description.LordMorpeth.rawValue, Venue.AddressKey : Address.LordMorpeth.rawValue, Venue.OpeningTimesKey : OpeningTimes.LordMorpeth.rawValue, Venue.EmailKey : Email.LordMorpeth.rawValue, Venue.PhoneKey : Telephone.LordMorpeth.rawValue],
             [Venue.NameKey : "East London Liquor Company", Venue.AreaKey : Area.Bow.rawValue, Venue.CategoryKey : "Drinks", Venue.DescritptionKey : Description.EastLondonLiquorCompany.rawValue,Venue.AddressKey : Address.EastLondonLiquorCompany.rawValue, Venue.OpeningTimesKey : OpeningTimes.EastLondonLiquorCompany.rawValue, Venue.EmailKey : Email.EastLondonLiquorCompany.rawValue, Venue.PhoneKey : Telephone.EastLondonLiquorCompany.rawValue],
             [Venue.NameKey : "The Morgan Arms", Venue.AreaKey : Area.Bow.rawValue, Venue.CategoryKey : "Drinks", Venue.DescritptionKey : Description.TheMorganArms.rawValue,Venue.AddressKey : Address.TheMorganArms.rawValue, Venue.OpeningTimesKey : OpeningTimes.TheMorganArms.rawValue, Venue.EmailKey : Email.TheMorganArms.rawValue, Venue.PhoneKey : Telephone.TheMorganArms.rawValue],
-            [Venue.NameKey : "Mae + Harvey", Venue.AreaKey : Area.Bow.rawValue, Venue.CategoryKey : "Coffee", Venue.DescritptionKey : Description.MaeAndHarvey.rawValue, Venue.AddressKey : Address.MaeAndHarvey.rawValue, Venue.OpeningTimesKey : OpeningTimes.MaeAndHarvey.rawValue, Venue.EmailKey : Email.MaeAndHarvey.rawValue, Venue.PhoneKey : Telephone.MaeAndHarvey.rawValue],
+            [Venue.NameKey : "Mae + Harvey", Venue.AreaKey : Area.Bow.rawValue, Venue.CategoryKey : "Coffee", Venue.DescritptionKey : Description.MaeAndHarvey.rawValue, Venue.AddressKey : Address.MaeAndHarvey.rawValue, Venue.OpeningTimesKey : OpeningTimes.MaeAndHarvey.rawValue, Venue.EmailKey : Email.MaeAndHarvey.rawValue],
         ]
     }
     

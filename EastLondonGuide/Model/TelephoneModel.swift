@@ -111,7 +111,7 @@ enum Telephone: String {
     
     
     //Coffee
-    case MaeAndHarvey
+//    case MaeAndHarvey
     
     //Shopping
     

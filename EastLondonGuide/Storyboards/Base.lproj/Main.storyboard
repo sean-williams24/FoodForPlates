@@ -55,7 +55,7 @@ PLATES</string>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mGO-ce-e95">
                                                     <rect key="frame" x="20" y="21" width="374" height="168"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-PH-xkP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-PH-xkP">
                                                     <rect key="frame" x="185" y="91" width="44" height="18"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="18"/>
@@ -114,17 +114,17 @@ PLATES</string>
             <objects>
                 <viewController storyboardIdentifier="MapVC" title="Map" id="jOo-sd-yq5" customClass="MapVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zp7-Hb-ihM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-4k-jhY">
-                                <rect key="frame" x="0.0" y="31" width="414" height="777"/>
+                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <connections>
                                     <outlet property="delegate" destination="jOo-sd-yq5" id="oBW-S3-6Pb"/>
                                 </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Nn1-nl-ZQp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <segments>
                                     <segment title="ALL"/>
                                     <segment title="FOOD"/>
@@ -138,14 +138,14 @@ PLATES</string>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12y-Dn-mUz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="xfk-cx-Ivp"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdR-4j-cP2" userLabel="Area Menu">
-                                <rect key="frame" x="-705" y="321" width="350" height="200"/>
+                                <rect key="frame" x="-705" y="348" width="350" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="5if-6O-Qad">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
@@ -357,7 +357,7 @@ PLATES</string>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBh-k6-w2a">
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
                                             <rect key="frame" x="179" y="88.666666666666671" width="56.333333333333343" height="23"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
@@ -418,7 +418,7 @@ PLATES</string>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrV-Mr-RZp">
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
                                             <rect key="frame" x="178.66666666666666" y="88.666666666666671" width="56.666666666666657" height="23"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
@@ -479,7 +479,7 @@ PLATES</string>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WUw-DT-FwL">
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
                                             <rect key="frame" x="167" y="83" width="80" height="34"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="34"/>
@@ -622,7 +622,7 @@ PLATES</string>
                                     <outlet property="delegate" destination="fBw-xg-fI1" id="cxm-iH-V76"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSG-Xe-H7E">
+                            <button opaque="NO" alpha="0.0" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSG-Xe-H7E">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
@@ -756,6 +756,11 @@ PLATES</string>
                                     <action selector="areaButtonTapped:" destination="fBw-xg-fI1" id="bhF-bD-NcK"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Item" image="heart.circle" catalog="system" id="3uY-vt-jc9">
+                                <connections>
+                                    <action selector="showFavourites:" destination="fBw-xg-fI1" id="Nqg-nD-1Z3"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="O3c-Se-lXt">
                                 <connections>
                                     <action selector="resetToAllVenues:" destination="fBw-xg-fI1" id="LVo-un-B9g"/>
@@ -768,6 +773,7 @@ PLATES</string>
                         <outlet property="backgroundButton" destination="QSG-Xe-H7E" id="ZGP-nA-oL3"/>
                         <outlet property="categorySelector" destination="PYi-Ne-O2d" id="0e7-E6-PxR"/>
                         <outlet property="centerPopupConstraint" destination="bqF-PO-ETJ" id="Kdl-ah-9lD"/>
+                        <outlet property="showFavouritesButton" destination="3uY-vt-jc9" id="rw7-QA-hrp"/>
                         <outlet property="tableView" destination="cGe-UG-W51" id="oLK-sy-Zmk"/>
                         <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails2" id="Mef-Nu-gQf"/>
                     </connections>
@@ -781,11 +787,11 @@ PLATES</string>
             <objects>
                 <viewController id="LRO-7z-mCz" customClass="VenueDetailsVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o54-aw-pny">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxp-HA-N6u">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ua-Jic">
                                         <rect key="frame" x="20" y="0.0" width="374" height="923.66666666666663"/>
@@ -846,7 +852,7 @@ PLATES</string>
                                                         </constraints>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" textContentType="street-address"/>
                                                         <dataDetectorType key="dataDetectorTypes" address="YES"/>
                                                     </textView>
                                                 </subviews>
@@ -894,7 +900,7 @@ PLATES</string>
                                                         </constraints>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" textContentType="tel"/>
                                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                                     </textView>
                                                 </subviews>
@@ -910,7 +916,7 @@ PLATES</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-gZ-f0M">
                                                 <rect key="frame" x="0.0" y="883.66666666666663" width="374" height="40"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="azc-N8-TT3">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azc-N8-TT3">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -919,7 +925,7 @@ PLATES</string>
                                                         </constraints>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" textContentType="email"/>
                                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                     </textView>
                                                 </subviews>
@@ -990,7 +996,6 @@ PLATES</string>
                         <outlet property="openingTimesTextView" destination="hcm-y3-dWY" id="Moy-0B-plk"/>
                         <outlet property="telephoneTextView" destination="X8U-mC-4dv" id="f5w-uY-S4q"/>
                         <outlet property="venueImageView" destination="tV9-ff-omc" id="UfP-UQ-Blc"/>
-                        <segue destination="jOo-sd-yq5" kind="show" identifier="MapVC" id="8f8-nB-TPj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH4-oq-lld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1032,6 +1037,7 @@ PLATES</string>
         <image name="eye" catalog="system" width="64" height="40"/>
         <image name="eye.fill" catalog="system" width="64" height="40"/>
         <image name="heart" catalog="system" width="64" height="58"/>
+        <image name="heart.circle" catalog="system" width="64" height="62"/>
         <image name="location.fill" catalog="system" width="64" height="60"/>
         <image name="map" catalog="system" width="64" height="58"/>
         <image name="map.fill" catalog="system" width="64" height="54"/>
@@ -1039,7 +1045,6 @@ PLATES</string>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zgK-WH-3pv"/>
-        <segue reference="8f8-nB-TPj"/>
+        <segue reference="Mef-Nu-gQf"/>
     </inferredMetricsTieBreakers>
 </document>

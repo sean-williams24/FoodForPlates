@@ -12,25 +12,25 @@ import UIKit
 extension UIViewController {
     
     func loadNavBarGradient() {
-        guard
-            let navigationController = navigationController,
-            let flareGradientImage = CAGradientLayer.primaryGradient(on: navigationController.navigationBar)
-            else {
-                print("Error creating gradient color!")
-                return
-            }
-        navigationController.navigationBar.barTintColor = UIColor(patternImage: flareGradientImage)
+//        guard
+//            let navigationController = navigationController,
+//            let flareGradientImage = CAGradientLayer.primaryGradient(on: navigationController.navigationBar)
+//            else {
+//                print("Error creating gradient color!")
+//                return
+//            }
+//        navigationController.navigationBar.barTintColor = UIColor(patternImage: flareGradientImage)
     }
     
     func loadTabBarGradient() {
-        guard
-            let tabBarController = tabBarController,
-            let flare = CAGradientLayer.primaryGradient(on: tabBarController.tabBar)
-            else {
-                print("Error creating gradient color!")
-                return
-        }
-        tabBarController.tabBar.barTintColor = UIColor(patternImage: flare)
+//        guard
+//            let tabBarController = tabBarController,
+//            let flare = CAGradientLayer.primaryGradient(on: tabBarController.tabBar)
+//            else {
+//                print("Error creating gradient color!")
+//                return
+//        }
+//        tabBarController.tabBar.barTintColor = UIColor(patternImage: flare)
     }
     
     func letterSpacing(label: UILabel, value: Double) {
@@ -43,27 +43,27 @@ extension UIViewController {
 
 extension CAGradientLayer {
     
-    class func primaryGradient(on view: UIView) -> UIImage? {
-        let gradient = CAGradientLayer()
-        let zinc = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.1, alpha: 0.8)
-        let lightGrey = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
-        var bounds = view.bounds
-        bounds.size.height += UIApplication.shared.statusBarFrame.size.height
-        gradient.frame = bounds
-        gradient.colors = [UIColor.lightGray.cgColor, lightGrey.cgColor, UIColor.lightGray.cgColor, UIColor.lightGray.cgColor, zinc.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 1, y: 0)
-        return gradient.createGradientImage(on: view)
-    }
-    
-    private func createGradientImage(on view: UIView) -> UIImage? {
-        var gradientImage: UIImage?
-        UIGraphicsBeginImageContext(view.frame.size)
-        if let context = UIGraphicsGetCurrentContext() {
-            render(in: context)
-            gradientImage = UIGraphicsGetImageFromCurrentImageContext()?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
-        }
-        UIGraphicsEndImageContext()
-        return gradientImage
-    }
+//    class func primaryGradient(on view: UIView) -> UIImage? {
+//        let gradient = CAGradientLayer()
+//        let zinc = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.1, alpha: 0.8)
+//        let lightGrey = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
+//        var bounds = view.bounds
+//        bounds.size.height += UIApplication.shared.statusBarFrame.size.height
+//        gradient.frame = bounds
+//        gradient.colors = [UIColor.lightGray.cgColor, lightGrey.cgColor, UIColor.lightGray.cgColor, UIColor.lightGray.cgColor, zinc.cgColor]
+//        gradient.startPoint = CGPoint(x: 0, y: 0)
+//        gradient.endPoint = CGPoint(x: 1, y: 0)
+//        return gradient.createGradientImage(on: view)
+//    }
+//
+//    private func createGradientImage(on view: UIView) -> UIImage? {
+//        var gradientImage: UIImage?
+//        UIGraphicsBeginImageContext(view.frame.size)
+//        if let context = UIGraphicsGetCurrentContext() {
+//            render(in: context)
+//            gradientImage = UIGraphicsGetImageFromCurrentImageContext()?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
+//        }
+//        UIGraphicsEndImageContext()
+//        return gradientImage
+//    }
 }
