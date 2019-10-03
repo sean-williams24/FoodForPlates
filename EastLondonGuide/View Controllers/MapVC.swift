@@ -68,65 +68,50 @@ class MapVC: UIViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! VenueDetailsVC
-//        print(chosenVenue.name)
         vc.venue = chosenVenue
     }
+    
+    
+    //MARK: - Helper Methods
+    
+    fileprivate func filterMapAnnotations(for category: String) {
+        for venue in allAnnotations {
+            if venue.subtitle != category {
+                mapView.removeAnnotation(venue)
+            } else {
+                mapView.addAnnotation(venue)
+            }
+        }
+    }
+    
+    
+    fileprivate func setMapRegion(_ area: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: area, latitudinalMeters: 2500, longitudinalMeters: 2500)
+        self.mapView.setRegion(region, animated: true)
+    }
+    
+    
+    //MARK: - Action Methods
     
     @IBAction func categorySelection(_ sender: Any) {
         
         switch categorySelector.selectedSegmentIndex {
-        case 0: print("case 0")
+        case 0:
             mapView.addAnnotations(allAnnotations)
-            
-        case 1: print("case 1")
-            for venue in allAnnotations {
-                if venue.subtitle != "Food" {
-                    mapView.removeAnnotation(venue)
-                } else {
-                    mapView.addAnnotation(venue)
-                    }
-                }
-            
-        case 2: print("case 2")
-            for venue in allAnnotations {
-                 if venue.subtitle != "Drinks" {
-                    mapView.removeAnnotation(venue)
-                 } else {
-                    mapView.addAnnotation(venue)
-                    }
-                 }
-            
-        case 3: print("case 3")
-            for venue in allAnnotations {
-                 if venue.subtitle != "Coffee" {
-                    mapView.removeAnnotation(venue)
-                 } else {
-                    mapView.addAnnotation(venue)
-                    }
-                 }
-        case 4: print("case 4")
-            for venue in allAnnotations {
-                 if venue.subtitle != "Shopping" {
-                    mapView.removeAnnotation(venue)
-                 } else {
-                    mapView.addAnnotation(venue)
-                    }
-                 }
-        case 5: print("case 5")
-            for venue in allAnnotations {
-                 if venue.subtitle != "Markets" {
-                    mapView.removeAnnotation(venue)
-                 } else {
-                    mapView.addAnnotation(venue)
-                    }
-                 }
+        case 1:
+            filterMapAnnotations(for: "Food")
+        case 2:
+            filterMapAnnotations(for: "Drinks")
+        case 3:
+            filterMapAnnotations(for: "Coffee")
+        case 4:
+            filterMapAnnotations(for: "Shopping")
+        case 5:
+            filterMapAnnotations(for: "Markets")
         default: break
-            
         }
-        
     }
     
     
@@ -175,20 +160,14 @@ class MapVC: UIViewController {
                     break
             }
         }
-        
         UIView.animate(withDuration: 0.2) {
             self.backgroundButton.alpha = 0
         }
     }
     
-    fileprivate func setMapRegion(_ area: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: area, latitudinalMeters: 2500, longitudinalMeters: 2500)
-        self.mapView.setRegion(region, animated: true)
-    }
-    
 }
 
-//MARK: MapView Delegate
+//MARK: - MapView Delegate
 
 extension MapVC: MKMapViewDelegate {
     
@@ -205,6 +184,8 @@ extension MapVC: MKMapViewDelegate {
           view.canShowCallout = true
           view.calloutOffset = CGPoint(x: -5, y: 5)
           view.rightCalloutAccessoryView = UIButton(type: .infoDark)
+          view.displayPriority = .required
+            
         }
         
         return view

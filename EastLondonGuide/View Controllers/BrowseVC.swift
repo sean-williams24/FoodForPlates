@@ -109,8 +109,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             var arrayPosition = 0
             for venue in self.filteredVenues {
-                print(venue.name)
-                print(arrayPosition)
                 if venue.area != venueArea {
                     // Remove venues from filtered venues array from other locations
                     self.filteredVenues.remove(at: arrayPosition)
@@ -129,7 +127,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.alreadyFilteredByCategory = []
         for venue in allVenues {
             if venue.category == category {
-                filteredVenues.append(venue)
+                self.filteredVenues.append(venue)
                 self.alreadyFilteredByCategory.append(venue)
             }
         }
