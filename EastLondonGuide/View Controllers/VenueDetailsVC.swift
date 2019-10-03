@@ -25,28 +25,25 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var menuButton: UIBarButtonItem!
     
     var venue: Venue!
+    var arrivedFromMapView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppDelegate.venueForMap = venue
         
-
+        if arrivedFromMapView == true {
+            mapButton.isEnabled = false
+        }
+        
         // Set UI elements with venue model data.
         venueImageView.image = UIImage(named: venue.name)
         descriptionLabel.text = venue.name.uppercased()
         descriptionTextView.text = venue.description
         addressTextView.text = venue.address?.uppercased()
         openingTimesTextView.text = venue.openingTimes?.uppercased()
-        bookTextView.text = venue.email?.uppercased()
         telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
         
         letterSpacing(label: descriptionLabel, value: 5.0)
-        
- 
-        if venue.category == "Shopping" || venue.category == "Markets" {
-            bookTextView.text = ""
-        }
-        
-        
         
         
     }
@@ -64,8 +61,17 @@ class VenueDetailsVC: UIViewController {
     }
     
     @IBAction func viewOnMapTapped(_ sender: Any) {
+        AppDelegate.viewVenueOnMap = true
+        let tabIndex = 3
+        let tabBar = self.tabBarController
+        // Change the selected tab item to MapVC
+        tabBar?.selectedIndex = tabIndex
         
-        //TODO: NAVIGATE TO MAP VIEW AND SHOW THIS VENUE
+        // Pop to the navigation controller of that index
+        let vc = tabBar?.viewControllers?[tabIndex]
+        if let navController = vc?.navigationController {
+            navController.popToRootViewController(animated: true)
+        }
     }
     
     @IBAction func favouriteButtonTapped(_ sender: Any) {
@@ -80,14 +86,16 @@ class VenueDetailsVC: UIViewController {
 
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+//        let vc = segue.destination as! MapVC
+//        vc.chosenVenue = venue
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

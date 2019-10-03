@@ -24,10 +24,7 @@ class MapVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let eastLondon = CLLocationCoordinate2D(latitude: 51.529330, longitude: -0.055910)
-        let region = MKCoordinateRegion(center: eastLondon, latitudinalMeters: 6000, longitudinalMeters: 6000)
-        self.mapView.setRegion(region, animated: true)
+          
         
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
@@ -60,17 +57,41 @@ class MapVC: UIViewController {
                     self.mapView.addAnnotation(annotation)
                     self.allAnnotations.insert(annotation, at: 0)
                 }
+                
+                // Once Geocoding is complete, check if we have arrived from Venue details VC, if so focus map on that venue
+                if self.allAnnotations.count == self.venues?.count {
+                    if AppDelegate.viewVenueOnMap == true {
+                        self.zoomToVenue()
+                    } else {
+                        let eastLondon = CLLocationCoordinate2D(latitude: 51.529330, longitude: -0.055910)
+                        self.setMapRegion(to: eastLondon, atZoomLevel: 6000)
+                    }
+                }
             }
         }
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if AppDelegate.viewVenueOnMap == true {
+            zoomToVenue()
+       }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        AppDelegate.viewVenueOnMap = false
+    }
 
     
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! VenueDetailsVC
         vc.venue = chosenVenue
+        vc.arrivedFromMapView = true
     }
     
     
@@ -87,8 +108,18 @@ class MapVC: UIViewController {
     }
     
     
-    fileprivate func setMapRegion(_ area: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: area, latitudinalMeters: 2500, longitudinalMeters: 2500)
+    fileprivate func zoomToVenue() {
+        let venueToZoomTo = AppDelegate.venueForMap?.name
+        for annotation in self.allAnnotations {
+            if annotation.title == venueToZoomTo?.uppercased() {
+                setMapRegion(to: annotation.coordinate, atZoomLevel: 700)
+            }
+        }
+    }
+    
+    
+    fileprivate func setMapRegion(to area: CLLocationCoordinate2D, atZoomLevel: Double) {
+        let region = MKCoordinateRegion(center: area, latitudinalMeters: atZoomLevel, longitudinalMeters: atZoomLevel)
         self.mapView.setRegion(region, animated: true)
     }
     
@@ -134,27 +165,27 @@ class MapVC: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
         }) { (tapped) in
-
+            let zoomLevel: Double = 2500
             switch sender.tag {
                 case 0:
                     let shoreditch = CLLocationCoordinate2D(latitude: 51.5236637, longitude: -0.0729336)
-                    self.setMapRegion(shoreditch)
+                    self.setMapRegion(to: shoreditch, atZoomLevel: zoomLevel)
         
                 case 1:
                     let bethnalGreen = CLLocationCoordinate2D(latitude: 51.529330, longitude: -0.055910)
-                    self.setMapRegion(bethnalGreen)
+                    self.setMapRegion(to: bethnalGreen, atZoomLevel: zoomLevel)
 
                 case 2:
                     let londonFields = CLLocationCoordinate2D(latitude: 51.540238, longitude: -0.057775)
-                    self.setMapRegion(londonFields)
+                    self.setMapRegion(to: londonFields, atZoomLevel: zoomLevel)
 
                 case 3:
                     let hackneyWick = CLLocationCoordinate2D(latitude: 51.545790, longitude: -0.055420)
-                    self.setMapRegion(hackneyWick)
+                    self.setMapRegion(to: hackneyWick, atZoomLevel: zoomLevel)
 
                 case 4:
                     let bowAndMileEnd = CLLocationCoordinate2D(latitude: 51.527500, longitude: -0.023540)
-                    self.setMapRegion(bowAndMileEnd)
+                    self.setMapRegion(to: bowAndMileEnd, atZoomLevel: zoomLevel)
                     
                 default:
                     break

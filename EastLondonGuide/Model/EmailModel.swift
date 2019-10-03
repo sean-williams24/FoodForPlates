@@ -26,11 +26,11 @@ enum Email: String {
     
     
     //Shopping
-    case Goodhood
+//    case Goodhood
     
     
     //Markets
-    case BricklaneMarket
+//    case BricklaneMarket
     
 
 //Bethnal Green
@@ -41,7 +41,7 @@ enum Email: String {
     
     
     // Drinks
-    case SatansWhiskers = ""
+//    case SatansWhiskers = ""
     case TheRoyalOak = "http://royaloaklondon.com/contact"
     
     
@@ -58,7 +58,7 @@ enum Email: String {
 //London Fields & Hackney Central
     
     //Food
-    case ElGansoCafe = "http://elgansocafe.co.uk/booking/"
+//    case ElGansoCafe
     
     
     // Drinks
@@ -74,7 +74,7 @@ enum Email: String {
     
     
     //Markets
-    case BroadwayMarket 
+//    case BroadwayMarket
     
 
 //Hackney Wick
@@ -85,11 +85,11 @@ enum Email: String {
     
     // Drinks
     case BeerMerchantsTap = "tap@beermerchants.com"
-    case HowlingHops
+//    case HowlingHops
     
     
     //Coffee
-    case HWK
+//    case HWK
     case StourSpace = "info@stourspace.co.uk"
     
     //Shopping
