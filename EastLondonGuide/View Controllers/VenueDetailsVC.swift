@@ -24,7 +24,6 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var favouriteButton: UIBarButtonItem!
     @IBOutlet var menuButton: UIBarButtonItem!
     
-    let defaults = UserDefaults.standard
     var venue: Venue!
     var arrivedFromMapView = false
     var venueIsFavourite: Bool {
@@ -100,7 +99,7 @@ class VenueDetailsVC: UIViewController {
     
     @IBAction func favouriteButtonTapped(_ sender: Any) {
         
-        //TODO: PERSIST FAVOURITES TO CORE DATA OR USERDEFAULTS?
+        // Persist favourites to user defaults using venue name strings
         
         if venueIsFavourite {
             FavouritesModel.favourites = FavouritesModel.favourites.filter() {$0 != venue}
@@ -122,7 +121,7 @@ class VenueDetailsVC: UIViewController {
             array.append(venue.name)
         }
 
-        defaults.set(array, forKey: "Favourites")
+        UserDefaults.standard.set(array, forKey: "Favourites")
 
         
     }

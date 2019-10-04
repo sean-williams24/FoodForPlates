@@ -99,15 +99,37 @@ PLATES</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4vv-Of-gAf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fdt-KU-ga6"/>
+                    <navigationItem key="navigationItem" id="fdt-KU-ga6">
+                        <barButtonItem key="backBarButtonItem" title="-" id="Io0-DO-qDZ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="inspoTableView" destination="SvV-E0-kWC" id="DVa-iH-Yif"/>
                         <outlet property="titleLabel" destination="Ikb-CH-SAz" id="3k9-gU-cNU"/>
+                        <segue destination="5HB-Hp-ZHv" kind="show" identifier="ArticleVC" id="BPr-kN-2wk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kga-wP-H6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1433.3333333333335" y="-417.85714285714283"/>
+        </scene>
+        <!--ArticleVC-->
+        <scene sceneID="0PS-DZ-AOk">
+            <objects>
+                <tableViewController id="5HB-Hp-ZHv" customClass="ArticleVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dhy-T6-OU6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="5HB-Hp-ZHv" id="396-FG-zzr"/>
+                            <outlet property="delegate" destination="5HB-Hp-ZHv" id="mwF-q1-sSg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="g63-yG-X3A"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qu-nB-nPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293" y="-418"/>
         </scene>
         <!--Map-->
         <scene sceneID="biQ-Vh-LoR">
@@ -137,7 +159,7 @@ PLATES</string>
                                     <action selector="categorySelection:" destination="jOo-sd-yq5" eventType="valueChanged" id="Fi9-5f-xhJ"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12y-Dn-mUz">
+                            <button opaque="NO" alpha="0.0" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12y-Dn-mUz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
@@ -157,21 +179,21 @@ PLATES</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I1v-KH-L7R">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-CG-Qmm">
+                                            <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-CG-Qmm">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
-                                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="17"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="17"/>
                                                 <state key="normal" title="SHOREDITCH &amp; HOXTON">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="CsE-nk-DcX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.45000000000000001" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNI-oj-rIw">
+                                            <button opaque="NO" alpha="0.84999999999999998" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNI-oj-rIw">
                                                 <rect key="frame" x="0.0" y="40" width="350" height="40"/>
                                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="17"/>
                                                 <state key="normal" title="BETHNAL GREEN">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -179,21 +201,21 @@ PLATES</string>
                                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="CZJ-hz-9q3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.45000000000000001" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-Ca-6W4">
+                                            <button opaque="NO" alpha="0.84999999999999998" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-Ca-6W4">
                                                 <rect key="frame" x="0.0" y="80" width="350" height="40"/>
-                                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="17"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="17"/>
                                                 <state key="normal" title=" LONDON FIELDS &amp; HACKNEY CENTRAL ">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="1mP-ML-4YN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.45000000000000001" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-jd-Kfv">
+                                            <button opaque="NO" alpha="0.84999999999999998" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-jd-Kfv">
                                                 <rect key="frame" x="0.0" y="120" width="350" height="40"/>
                                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="17"/>
                                                 <state key="normal" title="HACKNEY WICK">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -201,12 +223,12 @@ PLATES</string>
                                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="cXh-xV-qUd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.45000000000000001" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkD-bj-4yM">
+                                            <button opaque="NO" alpha="0.84999999999999998" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkD-bj-4yM">
                                                 <rect key="frame" x="0.0" y="160" width="350" height="40"/>
-                                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="17"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="17"/>
                                                 <state key="normal" title="BOW &amp; MILE END">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="WHb-SL-cyF"/>
@@ -1045,6 +1067,6 @@ PLATES</string>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mef-Nu-gQf"/>
+        <segue reference="zgK-WH-3pv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,6 +22,7 @@ struct Venue: Equatable {
     let openingTimes: String?
     let email: String?
     let phone: String?
+    let tags: String?
 //    let menu: Menu
     
     static let NameKey = "NameKey"
@@ -32,6 +33,7 @@ struct Venue: Equatable {
     static let OpeningTimesKey = "OpeningTimesKey"
     static let EmailKey = "BookKey"
     static let PhoneKey = "PhoneKey"
+    static let TagsKey = "TagsKey"
     
  
     
@@ -46,6 +48,7 @@ struct Venue: Equatable {
         self.openingTimes = dictionary[Venue.OpeningTimesKey]
         self.email = dictionary[Venue.EmailKey]
         self.phone = dictionary[Venue.PhoneKey]
+        self.tags = dictionary[Venue.TagsKey]
     }
     
 }
@@ -92,7 +95,7 @@ extension Venue {
             [Venue.NameKey : "Well & Bucket", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Drinks", Venue.DescritptionKey : Description.WellAndBucket.rawValue, Venue.AddressKey : Address.WellAndBucket.rawValue, Venue.OpeningTimesKey : OpeningTimes.WellAndBucket.rawValue, Venue.EmailKey : Email.WellAndBucket.rawValue, Venue.PhoneKey : Telephone.WellAndBucket.rawValue],
             [Venue.NameKey : "Shoreditch Grind", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Coffee", Venue.DescritptionKey : Description.ShoreditchGrind.rawValue, Venue.AddressKey : Address.ShoreditchGrind.rawValue, Venue.OpeningTimesKey : OpeningTimes.ShoreditchGrind.rawValue, Venue.EmailKey : Email.ShoreditchGrind.rawValue, Venue.PhoneKey : Telephone.ShoreditchGrind.rawValue],
             [Venue.NameKey : "Goodhood", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Shopping", Venue.DescritptionKey : Description.Goodhood.rawValue, Venue.AddressKey : Address.Goodhood.rawValue, Venue.OpeningTimesKey : OpeningTimes.Goodhood.rawValue, Venue.PhoneKey : Telephone.Goodhood.rawValue],
-            [Venue.NameKey : "Brick Lane Market", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Markets", Venue.DescritptionKey : Description.BricklaneMarket.rawValue, Venue.AddressKey : Address.BricklaneMarket.rawValue, Venue.OpeningTimesKey : OpeningTimes.BricklaneMarket.rawValue, Venue.PhoneKey : Telephone.BricklaneMarket.rawValue],
+            [Venue.NameKey : "Brick Lane Market", Venue.AreaKey : Area.Shoreditch.rawValue, Venue.CategoryKey : "Markets", Venue.DescritptionKey : Description.BricklaneMarket.rawValue, Venue.AddressKey : Address.BricklaneMarket.rawValue, Venue.OpeningTimesKey : OpeningTimes.BricklaneMarket.rawValue, Venue.PhoneKey : Telephone.BricklaneMarket.rawValue, Venue.TagsKey : "Vegan, Outdoor Space, Hipster"],
             
             // Bethnal Green
             

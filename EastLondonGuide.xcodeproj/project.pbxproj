@@ -45,6 +45,8 @@
 		CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */; };
 		CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF423420E6800BD70CE /* MapVC.swift */; };
 		CEE58009234623AC0068A774 /* FavouritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58008234623AC0068A774 /* FavouritesModel.swift */; };
+		CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800A234746610068A774 /* ArticlesModel.swift */; };
+		CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800E234788F80068A774 /* ArticleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
 		CE9C6CF423420E6800BD70CE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CEE58008234623AC0068A774 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
+		CEE5800A234746610068A774 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
+		CEE5800E234788F80068A774 /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */,
+				CEE5800E234788F80068A774 /* ArticleVC.swift */,
 				CE9C6CB1233A6E4800BD70CE /* GuidesVC.swift */,
 				CE9C6CB8233B645F00BD70CE /* CategoriesVC.swift */,
 				CE9C6CBC233B86CB00BD70CE /* VenuesVC.swift */,
@@ -161,6 +166,7 @@
 			children = (
 				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
 				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
+				CEE5800A234746610068A774 /* ArticlesModel.swift */,
 				CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */,
 				CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */,
 				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
@@ -300,8 +306,10 @@
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
 				CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */,
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
+				CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */,
 				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
 				CE9C6CD1233E138E00BD70CE /* EmailModel.swift in Sources */,
+				CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */,
 				CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */,

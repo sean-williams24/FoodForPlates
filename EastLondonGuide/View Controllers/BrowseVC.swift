@@ -156,6 +156,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         filteredByCategory = true
         self.filteredVenues = []
         self.alreadyFilteredByCategory = []
+        
         for venue in allVenues {
             if venue.category == category {
                 self.filteredVenues.append(venue)
