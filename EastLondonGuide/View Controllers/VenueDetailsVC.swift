@@ -44,9 +44,6 @@ class VenueDetailsVC: UIViewController {
             mapButton.isEnabled = false
         }
         
-
-        
-        
         // Set UI elements with venue model data.
         venueImageView.image = UIImage(named: venue.name)
         descriptionLabel.text = venue.name.uppercased()

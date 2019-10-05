@@ -15,13 +15,9 @@ class InspirationVC: UIViewController {
     @IBOutlet var inspoTableView: UITableView!
     
     let articleImages = ["Roast", "Breakfast", "Brewery", "Pizza"]
-    let articles = ["THE BEST \nSUNDAY \nROASTS IN \nEAST LONDON",
-                    "OUR \nFAVOURITE \nEAST LONDON \nBREAKFASTS",
-                    "EAST LONDON \nBREWERIES \nAND \nTAPROOMS",
-                    "BEST PIZZA IN \nEAST LONDON"]
     
     let articleData = Article.allArticles!
-    var chosenArticle: Article!
+    var chosenArticle: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +33,7 @@ class InspirationVC: UIViewController {
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let vc = segue.destination as! ArticleVC
-         vc.article = chosenArticle
+        vc.chosenArticleTitle = chosenArticle
      }
     
     // MARK: - Table View Delegates
@@ -46,21 +42,21 @@ class InspirationVC: UIViewController {
 
 extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        articles.count
+        Article.articleTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InspirationCell", for: indexPath) as! InspirationCell
         
         cell.customImageView.image = UIImage(named: articleImages[indexPath.row])
-        cell.customTextLabel.text = articles[indexPath.row]
+        cell.customTextLabel.text = Article.articleTitles[indexPath.row]
         letterSpacing(label: cell.customTextLabel, value: 8.0)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenArticle = articleData[indexPath.row]
+        chosenArticle = Article.articleTitles[indexPath.row]
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
     
