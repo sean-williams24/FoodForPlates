@@ -48,6 +48,7 @@
 		CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800A234746610068A774 /* ArticlesModel.swift */; };
 		CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800E234788F80068A774 /* ArticleVC.swift */; };
 		CEE580112348E7880068A774 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE580102348E7880068A774 /* ArticleCell.swift */; };
+		CEE580132349E99C0068A774 /* ArticleDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		CEE5800A234746610068A774 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
 		CEE5800E234788F80068A774 /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
 		CEE580102348E7880068A774 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescriptionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
-				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
 				CEE5800A234746610068A774 /* ArticlesModel.swift */,
+				CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */,
+				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
 				CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */,
 				CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */,
 				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
@@ -202,12 +205,12 @@
 		CE9C6CF32341EF5800BD70CE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CEE580102348E7880068A774 /* ArticleCell.swift */,
 				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
 				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
 				CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */,
 				CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */,
 				CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */,
-				CEE580102348E7880068A774 /* ArticleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
 				CE9C6CD1233E138E00BD70CE /* EmailModel.swift in Sources */,
 				CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */,
+				CEE580132349E99C0068A774 /* ArticleDescriptionModel.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */,
 				CEE580112348E7880068A774 /* ArticleCell.swift in Sources */,

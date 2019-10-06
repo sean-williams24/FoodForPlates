@@ -20,7 +20,7 @@ class ArticleVC: UITableViewController {
         chosenArticleTitle = chosenArticleTitle.replacingOccurrences(of: "\n", with: "")
 
         title = chosenArticleTitle.uppercased()
-        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "JosefinSans-Light", size: 15)!]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "JosefinSans-Light", size: 12)!]
         
         if let allArticles = Article.allArticles {
             for article in allArticles {

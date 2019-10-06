@@ -134,7 +134,7 @@ PLATES</string>
                                                 <constraint firstAttribute="height" constant="250" id="B2F-T3-KQ0"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-I4-o9H">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-I4-o9H">
                                             <rect key="frame" x="20" y="311" width="374" height="22"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,7 +187,9 @@ PLATES</string>
                             <outlet property="delegate" destination="5HB-Hp-ZHv" id="mwF-q1-sSg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g63-yG-X3A"/>
+                    <navigationItem key="navigationItem" id="g63-yG-X3A">
+                        <barButtonItem key="backBarButtonItem" title="-" id="xjD-mL-Flw"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails1" id="NtA-aH-v9X"/>
                     </connections>
