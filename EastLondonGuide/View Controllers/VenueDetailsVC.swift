@@ -38,10 +38,16 @@ class VenueDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(venue.name)
         AppDelegate.venueForMap = venue
         
         if arrivedFromMapView == true {
             mapButton.isEnabled = false
+        }
+        
+        if venue.menu == nil {
+            menuButton.isEnabled = false
+            menuButton.tintColor = .white
         }
         
         // Set UI elements with venue model data.
@@ -127,15 +133,23 @@ class VenueDetailsVC: UIViewController {
     @IBAction func menuButtonTapped(_ sender: Any) {
         
         //TODO: DOWNLOAD MENU FROM ZOMATO API, PRESENT ON SLIDING MODAL VC AND PERSIST IN CORE DATA
+        let menueVC = self.storyboard?.instantiateViewController(identifier: "MenuVC")
+        let navigationController = UINavigationController(rootViewController: menueVC!)
+        
+        self.present(navigationController, animated: true, completion: nil)
 
     }
     
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Pass venue to MenuVC \(venue.name)")
+
+        let vc = self.storyboard?.instantiateViewController(identifier: "MenuVC") as! MenuVC
+        print("Pass venue to MenuVC \(venue.name)")
+        vc.venue = venue
+    }
 
 
 }

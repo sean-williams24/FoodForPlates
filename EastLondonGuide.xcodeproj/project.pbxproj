@@ -49,6 +49,8 @@
 		CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800E234788F80068A774 /* ArticleVC.swift */; };
 		CEE580112348E7880068A774 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE580102348E7880068A774 /* ArticleCell.swift */; };
 		CEE580132349E99C0068A774 /* ArticleDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */; };
+		CEE58017234B247B0068A774 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58016234B247B0068A774 /* MenuVC.swift */; };
+		CEE58019234B3BE40068A774 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58018234B3BE40068A774 /* MenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		CEE5800E234788F80068A774 /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
 		CEE580102348E7880068A774 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescriptionModel.swift; sourceTree = "<group>"; };
+		CEE58016234B247B0068A774 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		CEE58018234B3BE40068A774 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 				CE9C6CF423420E6800BD70CE /* MapVC.swift */,
 				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
 				CE9C6CED2340CB0300BD70CE /* Gradient & VC UI Extension.swift */,
+				CEE58016234B247B0068A774 /* MenuVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -169,15 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
-				CEE5800A234746610068A774 /* ArticlesModel.swift */,
-				CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */,
-				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
-				CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */,
-				CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */,
-				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
-				CE9C6CD0233E138E00BD70CE /* EmailModel.swift */,
-				CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */,
-				CEE58008234623AC0068A774 /* FavouritesModel.swift */,
+				CEE580142349EAA10068A774 /* Articles */,
+				CEE580152349EAB50068A774 /* Venues */,
 				CE9C6CF32341EF5800BD70CE /* Cells */,
 			);
 			path = Model;
@@ -213,6 +211,30 @@
 				CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CEE580142349EAA10068A774 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5800A234746610068A774 /* ArticlesModel.swift */,
+				CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		CEE580152349EAB50068A774 /* Venues */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C6CBE233B8D5800BD70CE /* VenuesModel.swift */,
+				CE9C6CC6233CB5FF00BD70CE /* VenueDescriptionModel.swift */,
+				CE9C6CCC233E116E00BD70CE /* VenueAddressModel.swift */,
+				CE9C6CCE233E135300BD70CE /* OpeningTimesModel.swift */,
+				CE9C6CD0233E138E00BD70CE /* EmailModel.swift */,
+				CE9C6CD2233E13AC00BD70CE /* TelephoneModel.swift */,
+				CEE58008234623AC0068A774 /* FavouritesModel.swift */,
+				CEE58018234B3BE40068A774 /* MenuModel.swift */,
+			);
+			path = Venues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,11 +332,13 @@
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
 				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
+				CEE58019234B3BE40068A774 /* MenuModel.swift in Sources */,
 				CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */,
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
 				CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */,
 				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
 				CE9C6CD1233E138E00BD70CE /* EmailModel.swift in Sources */,
+				CEE58017234B247B0068A774 /* MenuVC.swift in Sources */,
 				CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */,
 				CEE580132349E99C0068A774 /* ArticleDescriptionModel.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,

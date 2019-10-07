@@ -33,11 +33,12 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
         
+        
         // Set font for segmented selector TODO: Refactor in MAPVC as well
                
-               let font: [AnyHashable : Any] = [NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
-               categorySelector.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
-               categorySelector.backgroundColor = .clear
+        let font: [AnyHashable : Any] = [NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
+        categorySelector.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
+        categorySelector.backgroundColor = .clear
 
     }
     
