@@ -1116,24 +1116,35 @@ PLATES</string>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zTX-w7-DSI">
+                                <rect key="frame" x="0.0" y="858" width="414" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="hkc-kx-S1P"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FXz-a7-pQ9" firstAttribute="bottom" secondItem="MtB-Po-2aA" secondAttribute="bottom" id="2TZ-qj-CWo"/>
+                            <constraint firstItem="zTX-w7-DSI" firstAttribute="leading" secondItem="tcz-h8-y4B" secondAttribute="leadingMargin" constant="-20" id="D33-BF-Znd"/>
                             <constraint firstItem="MtB-Po-2aA" firstAttribute="leading" secondItem="FXz-a7-pQ9" secondAttribute="leading" id="GWj-mn-86R"/>
                             <constraint firstItem="FXz-a7-pQ9" firstAttribute="trailing" secondItem="MtB-Po-2aA" secondAttribute="trailing" id="O8g-vW-gcP"/>
                             <constraint firstItem="MtB-Po-2aA" firstAttribute="top" secondItem="FXz-a7-pQ9" secondAttribute="top" id="jhq-UZ-why"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zTX-w7-DSI" secondAttribute="trailing" constant="-20" id="m5Y-H0-Wdz"/>
+                            <constraint firstItem="zTX-w7-DSI" firstAttribute="bottom" secondItem="FXz-a7-pQ9" secondAttribute="bottom" id="vbl-Kx-04R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FXz-a7-pQ9"/>
                     </view>
                     <navigationItem key="navigationItem" id="h0S-dS-rZn"/>
                     <connections>
+                        <outlet property="progressView" destination="zTX-w7-DSI" id="ITZ-kt-o9h"/>
                         <outlet property="webView" destination="MtB-Po-2aA" id="R8e-Cw-7m5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZq-0B-xXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4005.7971014492755" y="1341.9642857142856"/>
+            <point key="canvasLocation" x="4005.7971014492755" y="1341.2946428571429"/>
         </scene>
         <!--Map-->
         <scene sceneID="RoU-iF-kNz">

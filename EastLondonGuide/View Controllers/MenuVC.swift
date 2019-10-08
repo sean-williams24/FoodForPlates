@@ -12,6 +12,7 @@ import WebKit
 class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     @IBOutlet var webView: WKWebView!
+    @IBOutlet var progressView: UIProgressView!
     
     var venue: Venue!
     var popUpWebview: WKWebView?
@@ -40,6 +41,9 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
             let url = URL(string: (menuURL))!
             webView.load(URLRequest(url: url))
         }
+        
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +56,22 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         if webView.canGoBack {
             navigationController?.navigationBar.isHidden = false
         }
+        
+        if progressView.progress == 1.0 {
+            progressView.isHidden = true
+        } else {
+            progressView.isHidden = false
+        }
     }
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
+    }
+    
+ 
     
     
     @objc func back(sender: UIBarButtonItem) {
