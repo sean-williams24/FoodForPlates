@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SerpClient {
     
@@ -21,9 +22,14 @@ class SerpClient {
                 return
             }
             
+            print(String(data: data, encoding: .utf8))
             let decoder = JSONDecoder()
             do {
                 let response = try decoder.decode(GoogleImageResponse.self, from: data)
+                
+//                print(response.imagesResults.title)
+//                GoogleImages.imageUrls.append(response.imagesResults.link)
+                
                 completion(response, nil)
             } catch {
                 completion(nil, error)

@@ -109,7 +109,7 @@ class MapVC: UIViewController {
     
     
     fileprivate func zoomToVenue() {
-        let venueToZoomTo = AppDelegate.venueForMap?.name
+        let venueToZoomTo = AppDelegate.currentVenue?.name
         for annotation in self.allAnnotations {
             if annotation.title == venueToZoomTo?.uppercased() {
                 setMapRegion(to: annotation.coordinate, atZoomLevel: 700)

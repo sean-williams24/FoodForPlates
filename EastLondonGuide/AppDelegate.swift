@@ -12,7 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    static var venueForMap: Venue?
+    static var currentVenue: Venue?
     static var viewVenueOnMap = false
 
 

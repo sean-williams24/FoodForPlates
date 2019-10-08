@@ -14,7 +14,6 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     @IBOutlet var webView: WKWebView!
     @IBOutlet var progressView: UIProgressView!
     
-    var venue: Venue!
     var popUpWebview: WKWebView?
     
 
@@ -37,7 +36,7 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         newBackButton.tintColor = .darkGray
         self.navigationItem.leftBarButtonItem = newBackButton;
 
-        if let menuURL = AppDelegate.venueForMap?.menu {
+        if let menuURL = AppDelegate.currentVenue?.menu {
             let url = URL(string: (menuURL))!
             webView.load(URLRequest(url: url))
         }

@@ -23,6 +23,7 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var mapButton: UIBarButtonItem!
     @IBOutlet var favouriteButton: UIBarButtonItem!
     @IBOutlet var menuButton: UIBarButtonItem!
+    @IBOutlet var imagesButton: UIBarButtonItem!
     
     var venue: Venue!
     var arrivedFromMapView = false
@@ -38,8 +39,7 @@ class VenueDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(venue.name)
-        AppDelegate.venueForMap = venue
+        AppDelegate.currentVenue = venue
         
         if arrivedFromMapView == true {
             mapButton.isEnabled = false
@@ -131,10 +131,18 @@ class VenueDetailsVC: UIViewController {
     
     
     @IBAction func menuButtonTapped(_ sender: Any) {
+    
+        let menuVC = self.storyboard?.instantiateViewController(identifier: "MenuVC")
+        let navigationController = UINavigationController(rootViewController: menuVC!)
         
-        //TODO: DOWNLOAD MENU FROM ZOMATO API, PRESENT ON SLIDING MODAL VC AND PERSIST IN CORE DATA
-        let menueVC = self.storyboard?.instantiateViewController(identifier: "MenuVC")
-        let navigationController = UINavigationController(rootViewController: menueVC!)
+        self.present(navigationController, animated: true, completion: nil)
+
+    }
+    
+    
+    @IBAction func imagesButtonTapped(_ sender: Any) {
+        let imagesVC = self.storyboard?.instantiateViewController(identifier: "VenueImages")
+        let navigationController = UINavigationController(rootViewController: imagesVC!)
         
         self.present(navigationController, animated: true, completion: nil)
 
@@ -142,14 +150,17 @@ class VenueDetailsVC: UIViewController {
     
 
     // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Pass venue to MenuVC \(venue.name)")
-
-        let vc = self.storyboard?.instantiateViewController(identifier: "MenuVC") as! MenuVC
-        print("Pass venue to MenuVC \(venue.name)")
-        vc.venue = venue
-    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        let vc = self.storyboard?.instantiateViewController(identifier: "MenuVC") as! MenuVC
+//        vc.venue = venue
+//        
+//        let vc1 = self.storyboard?.instantiateViewController(identifier: "VenueImages") as! VenueImagesVC
+//        vc1.venue = venue
+//        print("Prep for segue \(venue.name)")
+//                
+//    }
 
 
 }

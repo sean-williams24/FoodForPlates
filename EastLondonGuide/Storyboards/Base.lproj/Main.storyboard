@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -1069,6 +1070,11 @@ PLATES</string>
                                     <action selector="favouriteButtonTapped:" destination="LRO-7z-mCz" id="hmO-4I-Eus"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="photo.fill" catalog="system" id="Nvz-x0-pM9">
+                                <connections>
+                                    <action selector="imagesButtonTapped:" destination="LRO-7z-mCz" id="ADc-qz-p3f"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="map.fill" catalog="system" id="xvN-Ez-E1u">
                                 <connections>
                                     <action selector="viewOnMapTapped:" destination="LRO-7z-mCz" id="rsE-96-RbL"/>
@@ -1089,6 +1095,7 @@ PLATES</string>
                         <outlet property="descriptionLabel" destination="QHB-Nr-9aA" id="wvS-zT-QmZ"/>
                         <outlet property="descriptionTextView" destination="hiw-5z-HqQ" id="437-Y2-fu2"/>
                         <outlet property="favouriteButton" destination="81Z-TS-qX2" id="ojr-aa-EbK"/>
+                        <outlet property="imagesButton" destination="Nvz-x0-pM9" id="1bn-3g-dfB"/>
                         <outlet property="mapButton" destination="xvN-Ez-E1u" id="v9c-RG-fm7"/>
                         <outlet property="menuButton" destination="ejq-DV-lRo" id="KDU-ah-jan"/>
                         <outlet property="openingTimesHeight" destination="x0D-9d-omf" id="EAL-NW-5TK"/>
@@ -1145,7 +1152,41 @@ PLATES</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZq-0B-xXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4005.7971014492755" y="1341.2946428571429"/>
+            <point key="canvasLocation" x="4010" y="1022"/>
+        </scene>
+        <!--VenueImages-->
+        <scene sceneID="g08-cv-dxr">
+            <objects>
+                <collectionViewController storyboardIdentifier="VenueImages" title="VenueImages" modalTransitionStyle="flipHorizontal" id="L4l-HS-bNf" customClass="VenueImagesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xpm-fk-NFu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0PH-Yz-RxA">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="VZU-TI-JI1">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mdU-yi-s49">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="L4l-HS-bNf" id="rRy-YE-qyl"/>
+                            <outlet property="delegate" destination="L4l-HS-bNf" id="6oz-ZS-3ue"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4w-y1-p91" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4009" y="1704"/>
         </scene>
         <!--Map-->
         <scene sceneID="RoU-iF-kNz">
@@ -1186,6 +1227,7 @@ PLATES</string>
         <image name="location.fill" catalog="system" width="64" height="60"/>
         <image name="map" catalog="system" width="64" height="58"/>
         <image name="map.fill" catalog="system" width="64" height="54"/>
+        <image name="photo.fill" catalog="system" width="64" height="48"/>
         <image name="wand.and.rays" catalog="system" width="64" height="62"/>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
     </resources>

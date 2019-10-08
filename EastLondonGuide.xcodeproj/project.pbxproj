@@ -53,6 +53,8 @@
 		CEE58019234B3BE40068A774 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58018234B3BE40068A774 /* MenuModel.swift */; };
 		CEE5801B234CB7130068A774 /* SerpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5801A234CB7130068A774 /* SerpClient.swift */; };
 		CEE5801D234CB73C0068A774 /* GoogleImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5801C234CB73C0068A774 /* GoogleImagesResponse.swift */; };
+		CEE58020234CC2FC0068A774 /* VenueImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5801F234CC2FC0068A774 /* VenueImagesVC.swift */; };
+		CEE58022234CD69A0068A774 /* GoogleImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58021234CD69A0068A774 /* GoogleImagesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		CEE58018234B3BE40068A774 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		CEE5801A234CB7130068A774 /* SerpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerpClient.swift; sourceTree = "<group>"; };
 		CEE5801C234CB73C0068A774 /* GoogleImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleImagesResponse.swift; sourceTree = "<group>"; };
+		CEE5801F234CC2FC0068A774 /* VenueImagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueImagesVC.swift; sourceTree = "<group>"; };
+		CEE58021234CD69A0068A774 /* GoogleImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleImagesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				CE9C6CCA233D2F1E00BD70CE /* VenueDetailsVC.swift */,
 				CE9C6CED2340CB0300BD70CE /* Gradient & VC UI Extension.swift */,
 				CEE58016234B247B0068A774 /* MenuVC.swift */,
+				CEE5801F234CC2FC0068A774 /* VenueImagesVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				CEE580152349EAB50068A774 /* Venues */,
 				CE9C6CF32341EF5800BD70CE /* Cells */,
 				CEE5801E234CBF820068A774 /* Serp API */,
+				CEE58021234CD69A0068A774 /* GoogleImagesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE58020234CC2FC0068A774 /* VenueImagesVC.swift in Sources */,
 				CEE58009234623AC0068A774 /* FavouritesModel.swift in Sources */,
 				CE9C6CBF233B8D5800BD70CE /* VenuesModel.swift in Sources */,
 				CE9C6CC7233CB5FF00BD70CE /* VenueDescriptionModel.swift in Sources */,
@@ -351,6 +358,7 @@
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,
 				CEE5801D234CB73C0068A774 /* GoogleImagesResponse.swift in Sources */,
 				CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */,
+				CEE58022234CD69A0068A774 /* GoogleImagesModel.swift in Sources */,
 				CE9C6CCF233E135300BD70CE /* OpeningTimesModel.swift in Sources */,
 				CE9C6CD1233E138E00BD70CE /* EmailModel.swift in Sources */,
 				CEE58017234B247B0068A774 /* MenuVC.swift in Sources */,

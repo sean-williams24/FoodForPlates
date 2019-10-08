@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
-struct GoogleImageResponse: Codable{
-    let imageResults: Image
+//struct GOOGLEResponse: Codable {
+//    let googleImages: GoogleImageResponse
+//}
+
+struct GoogleImageResponse: Codable {
+    let imagesResults: [Image]
+    let suggestedSearches: [SuggestedSearches]
+    
 }
 
 struct Image: Codable {
@@ -22,6 +29,11 @@ struct Image: Codable {
 }
 
 
+struct SuggestedSearches: Codable {
+    let name, link, chips, thumbnail, serpapiLink: String
+}
+
 enum CodingKeys: String, CodingKey {
-    case imageResults = "image_results"
+    case imagesResults = "images_results"
+    case serpapiLink = "serpapi_link"
 }
