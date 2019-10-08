@@ -228,7 +228,7 @@ PLATES</string>
                             </segmentedControl>
                             <button opaque="NO" alpha="0.0" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12y-Dn-mUz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="areaSelected:" destination="jOo-sd-yq5" eventType="touchUpInside" id="xfk-cx-Ivp"/>
                                 </connections>
@@ -641,6 +641,7 @@ PLATES</string>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-Ne-O2d">
                                 <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="ALL"/>
                                     <segment title="FOOD"/>

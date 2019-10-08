@@ -38,7 +38,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                
         let font: [AnyHashable : Any] = [NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
         categorySelector.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
-        categorySelector.backgroundColor = .clear
 
     }
     
@@ -123,7 +122,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.fillMode = CAMediaTimingFillMode.forwards
         transition.duration = 0.9
-        transition.subtype = CATransitionSubtype.fromTop
+        transition.subtype = CATransitionSubtype.fromBottom
         self.tableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
         self.tableView.reloadData()
     }

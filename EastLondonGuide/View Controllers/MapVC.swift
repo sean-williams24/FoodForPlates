@@ -33,7 +33,7 @@ class MapVC: UIViewController {
         
         let font: [AnyHashable : Any] = [NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
         categorySelector.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
-        categorySelector.backgroundColor = .clear
+//        categorySelector.backgroundColor = .clear
 
         // Load venue annotations.
         
