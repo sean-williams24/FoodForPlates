@@ -40,7 +40,8 @@ class VenueDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.currentVenue = venue
-        
+ 
+
         if arrivedFromMapView == true {
             mapButton.isEnabled = false
         }
@@ -134,16 +135,14 @@ class VenueDetailsVC: UIViewController {
     
         let menuVC = self.storyboard?.instantiateViewController(identifier: "MenuVC")
         let navigationController = UINavigationController(rootViewController: menuVC!)
-        
         self.present(navigationController, animated: true, completion: nil)
 
     }
     
     
     @IBAction func imagesButtonTapped(_ sender: Any) {
-        let imagesVC = self.storyboard?.instantiateViewController(identifier: "VenueImages")
-        let navigationController = UINavigationController(rootViewController: imagesVC!)
-        
+        let imagesVC = self.storyboard?.instantiateViewController(identifier: "VenueImages") as! VenueImagesVC
+        let navigationController = UINavigationController(rootViewController: imagesVC)
         self.present(navigationController, animated: true, completion: nil)
 
     }

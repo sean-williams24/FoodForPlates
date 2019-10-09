@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDPhoto" representedClassName="CDPhoto" syncable="YES" codeGenerationType="class">
+        <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="urlString" optional="YES" attributeType="String"/>
+        <attribute name="venueName" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
         <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="urlString" optional="YES" attributeType="String"/>
-        <attribute name="venue" optional="YES" attributeType="String"/>
+        <attribute name="venue" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
     </entity>
     <elements>
-        <element name="Photo" positionX="-54" positionY="-18" width="128" height="103"/>
+        <element name="CDPhoto" positionX="-2206.50390625" positionY="-112.10546875" width="128" height="103"/>
+        <element name="Photo" positionX="-2176.82421875" positionY="72.71875" width="128" height="103"/>
     </elements>
 </model>

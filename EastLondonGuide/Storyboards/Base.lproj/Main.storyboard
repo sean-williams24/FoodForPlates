@@ -57,7 +57,7 @@ PLATES</string>
                                                     <rect key="frame" x="20" y="21" width="374" height="168"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-PH-xkP">
-                                                    <rect key="frame" x="185" y="89.666666666666671" width="44.333333333333343" height="21"/>
+                                                    <rect key="frame" x="185" y="91" width="44" height="18"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="18"/>
                                                     <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -136,13 +136,13 @@ PLATES</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-I4-o9H">
-                                            <rect key="frame" x="20" y="311" width="374" height="25.666666666666686"/>
+                                            <rect key="frame" x="20" y="311" width="374" height="22"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQz-M4-GTe">
-                                            <rect key="frame" x="20" y="361.66666666666669" width="374" height="68.333333333333314"/>
+                                            <rect key="frame" x="20" y="358" width="374" height="72"/>
                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -448,7 +448,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
-                                            <rect key="frame" x="179" y="86.666666666666671" width="56.333333333333343" height="27"/>
+                                            <rect key="frame" x="179" y="88.666666666666671" width="56.333333333333343" height="23"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -509,7 +509,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
-                                            <rect key="frame" x="178.66666666666666" y="86.666666666666671" width="57" height="27"/>
+                                            <rect key="frame" x="178.66666666666666" y="88.666666666666671" width="57" height="23"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -570,7 +570,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
-                                            <rect key="frame" x="165.33333333333334" y="80.333333333333329" width="83.333333333333343" height="39.666666666666671"/>
+                                            <rect key="frame" x="167" y="83" width="80" height="34"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="34"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -885,7 +885,7 @@ PLATES</string>
         <!--Venue DetailsVC-->
         <scene sceneID="1Ko-5l-0hF">
             <objects>
-                <viewController id="LRO-7z-mCz" customClass="VenueDetailsVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VenueDetailsVC" id="LRO-7z-mCz" customClass="VenueDetailsVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o54-aw-pny">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
