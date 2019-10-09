@@ -1,5 +1,5 @@
 //
-//  SerpClient.swift
+//  FlickrClient.swift
 //  EastLondonGuide
 //
 //  Created by Sean Williams on 08/10/2019.
@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class SerpClient {
+class FlickrClient {
     
     
-    class func taskForGettingGoogleImage(url: String, completion: @escaping(GoogleImageResponse?, Error?) -> Void) {
+    class func taskForGettingGoogleImage(url: String, completion: @escaping(FlickrResponse?, Error?) -> Void) {
         
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -22,14 +22,12 @@ class SerpClient {
                 return
             }
             
-            print(String(data: data, encoding: .utf8))
+//            print(String(data: data, encoding: .utf8))
             let decoder = JSONDecoder()
             do {
-                let response = try decoder.decode(GoogleImageResponse.self, from: data)
-                
-//                print(response.imagesResults.title)
-//                GoogleImages.imageUrls.append(response.imagesResults.link)
-                
+                let response = try decoder.decode(FlickrResponse.self, from: data)
+                Auth.flickrPages = min(response.photos.pages, 4000/21)
+                Auth.flickrPhotos = response.photos.photo
                 completion(response, nil)
             } catch {
                 completion(nil, error)
@@ -43,7 +41,7 @@ class SerpClient {
     
     class func getImageForVenue(venueName: String, completion: @escaping (Bool, Error?) -> Void) {
         
-        let urlString = "https://serpapi.com/search?q=\(venueName)&google_domain=google.co.uk&tbm=isch&num=9"
+        let urlString = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Auth.APIKey)&text=\(venueName)&format=json&nojsoncallback=1&&per_page=12&page=\(Int.random(in: 0..<Auth.flickrPages))"
         
         taskForGettingGoogleImage(url: urlString) { (response, error) in
             if let _ = response {

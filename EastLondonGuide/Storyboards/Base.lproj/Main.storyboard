@@ -57,7 +57,7 @@ PLATES</string>
                                                     <rect key="frame" x="20" y="21" width="374" height="168"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-PH-xkP">
-                                                    <rect key="frame" x="185" y="91" width="44" height="18"/>
+                                                    <rect key="frame" x="185" y="89.666666666666671" width="44.333333333333343" height="21"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="18"/>
                                                     <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -136,13 +136,13 @@ PLATES</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-I4-o9H">
-                                            <rect key="frame" x="20" y="311" width="374" height="22"/>
+                                            <rect key="frame" x="20" y="311" width="374" height="25.666666666666686"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQz-M4-GTe">
-                                            <rect key="frame" x="20" y="358" width="374" height="72"/>
+                                            <rect key="frame" x="20" y="361.66666666666669" width="374" height="68.333333333333314"/>
                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -366,8 +366,8 @@ PLATES</string>
                     <tabBar key="tabBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vdT-69-ZUd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                         <color key="selectedImageTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
@@ -387,7 +387,7 @@ PLATES</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQI-Rr-DBJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inspiration" image="wand.and.rays.inverse" catalog="system" selectedImage="wand.and.rays" id="cTi-9Y-HIe">
-                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulU-B3-ULe">
@@ -410,7 +410,7 @@ PLATES</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Kk-xw-Z1v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Guides" image="book.fill" catalog="system" selectedImage="book" id="80g-J5-IxD">
-                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tu-fv-Mub">
@@ -448,7 +448,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
-                                            <rect key="frame" x="179" y="88.666666666666671" width="56.333333333333343" height="23"/>
+                                            <rect key="frame" x="179" y="86.666666666666671" width="56.333333333333343" height="27"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -509,7 +509,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
-                                            <rect key="frame" x="178.66666666666666" y="88.666666666666671" width="57" height="23"/>
+                                            <rect key="frame" x="178.66666666666666" y="86.666666666666671" width="57" height="27"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -570,7 +570,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
-                                            <rect key="frame" x="167" y="83" width="80" height="34"/>
+                                            <rect key="frame" x="165.33333333333334" y="80.333333333333329" width="83.333333333333343" height="39.666666666666671"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="34"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1054,7 +1054,7 @@ PLATES</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JLp-EA-Ep2"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="bottom" secondItem="tO6-vM-ru7" secondAttribute="bottom" id="Spk-Wr-CpX"/>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="leading" secondItem="tO6-vM-ru7" secondAttribute="leading" id="fPR-ic-Kkk"/>
@@ -1154,28 +1154,49 @@ PLATES</string>
             </objects>
             <point key="canvasLocation" x="4010" y="1022"/>
         </scene>
-        <!--VenueImages-->
+        <!--Venue ImagesVC-->
         <scene sceneID="g08-cv-dxr">
             <objects>
-                <collectionViewController storyboardIdentifier="VenueImages" title="VenueImages" modalTransitionStyle="flipHorizontal" id="L4l-HS-bNf" customClass="VenueImagesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xpm-fk-NFu">
+                <collectionViewController storyboardIdentifier="VenueImages" modalTransitionStyle="flipHorizontal" id="L4l-HS-bNf" customClass="VenueImagesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-fk-NFu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0PH-Yz-RxA">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0PH-Yz-RxA">
+                            <size key="itemSize" width="135" height="135"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="VZU-TI-JI1">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hIS-XF-Ozh" customClass="PhotoCell" customModule="EastLondonGuide" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mdU-yi-s49">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VLo-0w-YIm">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YUw-9m-Cyd">
+                                            <rect key="frame" x="55" y="55" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNL-rA-Vxa">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yNL-rA-Vxa" firstAttribute="centerY" secondItem="YUw-9m-Cyd" secondAttribute="centerY" id="2Sn-YX-ISH"/>
+                                        <constraint firstItem="yNL-rA-Vxa" firstAttribute="centerX" secondItem="YUw-9m-Cyd" secondAttribute="centerX" id="C2V-Up-iZc"/>
+                                        <constraint firstItem="yNL-rA-Vxa" firstAttribute="leading" secondItem="VLo-0w-YIm" secondAttribute="leading" id="Hu4-5f-CsL"/>
+                                        <constraint firstAttribute="trailing" secondItem="yNL-rA-Vxa" secondAttribute="trailing" id="f6K-T1-JR2"/>
+                                        <constraint firstAttribute="bottom" secondItem="yNL-rA-Vxa" secondAttribute="bottom" id="phe-cZ-vJf"/>
+                                        <constraint firstItem="yNL-rA-Vxa" firstAttribute="top" secondItem="VLo-0w-YIm" secondAttribute="top" id="vUR-pe-ZzP"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="130" height="130"/>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="YUw-9m-Cyd" id="xWT-hO-OsY"/>
+                                    <outlet property="imageVIew" destination="yNL-rA-Vxa" id="Inq-z5-Wse"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1183,10 +1204,13 @@ PLATES</string>
                             <outlet property="delegate" destination="L4l-HS-bNf" id="6oz-ZS-3ue"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="flowLayout" destination="0PH-Yz-RxA" id="fXp-Ub-7sC"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4w-y1-p91" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4009" y="1704"/>
+            <point key="canvasLocation" x="4008.6956521739135" y="1703.5714285714284"/>
         </scene>
         <!--Map-->
         <scene sceneID="RoU-iF-kNz">

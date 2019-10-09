@@ -7,31 +7,66 @@
 //
 
 import UIKit
+import CoreData
 
-private let reuseIdentifier = "ImageCell"
+private let reuseIdentifier = "PhotoCell"
 
 
 class VenueImagesVC: UICollectionViewController {
 
-//    let imageURLs: [String] = []
+    @IBOutlet var flowLayout: UICollectionViewFlowLayout!
+    
     var venue = AppDelegate.currentVenue!
+    var FlickrURLs: [String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(venue.name)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        SerpClient.getImageForVenue(venueName: venue.name, completion: handleImageDownloadResponse(success:error:))
-    }
-
-    func handleImageDownloadResponse(success: Bool?, error: Error?) {
         
+        let space: CGFloat = 3.0
+        let size = (view.frame.size.width - (2 * space)) / 2.0
+
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSize(width: size, height: size)
+
+//         Uncomment the following line to preserve selection between presentations
+//         self.clearsSelectionOnViewWillAppear = false
+        
+        let venueName = venue.name.replacingOccurrences(of: " ", with: "-")
+        
+        FlickrClient.getImageForVenue(venueName: venueName, completion: handleImageDownloadResponse(success:error:))
     }
+
+    func handleImageDownloadResponse(success: Bool, error: Error?) {
+        if success {
+            
+            let photoResponse = FlickrClient.Auth.flickrPhotos
+            
+            if let photoResponse = photoResponse {
+                for photo in photoResponse {
+                    
+                        // Convert downloaded photo data into url string
+                        let URLString = "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg"
+                        self.FlickrURLs.append(URLString)
+                        
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+
+                    }
+                    
+//                        let photo = Photo(context: self.dataController.viewContext)
+//                        photo.pin = self.pin
+//                        photo.urlString = URLString
+//                        photo.dateAdded = Date()
+//
+//                        try? self.dataController.viewContext.save()
+                    }
+                }
+            }
+        }
+    
     
     /*
     // MARK: - Navigation
@@ -46,32 +81,39 @@ class VenueImagesVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return FlickrURLs.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
+        
+        let urlString = FlickrURLs[indexPath.row]
+        let url = URL(string: urlString)
+        if let imageData = try? Data(contentsOf: url!) {
+            let image = UIImage(data: imageData)
+            cell.imageVIew.image = image
+        }
+        
         // Configure the cell
     
         return cell
     }
 
+    
+    
+    
+    
+    
+    
+    
     // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+ 
 
     /*
     // Uncomment this method to specify if the specified item should be selected
