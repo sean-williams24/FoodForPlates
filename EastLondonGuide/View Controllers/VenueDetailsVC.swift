@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UberRides
+import CoreLocation
 
 class VenueDetailsVC: UIViewController {
 
@@ -24,9 +26,11 @@ class VenueDetailsVC: UIViewController {
     @IBOutlet var favouriteButton: UIBarButtonItem!
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var imagesButton: UIBarButtonItem!
+    @IBOutlet var uberView: UIView!
     
     var venue: Venue!
     var arrivedFromMapView = false
+    var venueCoordinate: CLLocationCoordinate2D?
     var venueIsFavourite: Bool {
         return FavouritesModel.favourites.contains(venue)
     }
@@ -37,10 +41,13 @@ class VenueDetailsVC: UIViewController {
     }
     
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.currentVenue = venue
  
+//        print(venueCoordinate!)
 
         if arrivedFromMapView == true {
             mapButton.isEnabled = false
@@ -60,6 +67,11 @@ class VenueDetailsVC: UIViewController {
         telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
         bookTextView.text = venue.email?.uppercased()
         
+        
+
+        setupUberButton()
+        
+        
         if venue.email?.count ?? 10 > 22 {
             bookTextView.font = UIFont(name: bookTextView.font!.fontName, size: 14)
         }
@@ -71,9 +83,49 @@ class VenueDetailsVC: UIViewController {
         } else {
             favouriteButton.tintColor = .darkGray
         }
-        
+    
         
     }
+    
+    
+    fileprivate func setupUberButton() {
+        
+        // ride request button
+        let uberButton = RideRequestButton()
+        var dropOffLocation = CLLocation()
+        let address = venue.address?.replacingOccurrences(of: "\n", with: "")
+
+        
+        if venueCoordinate == nil {
+            
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(address!) { (placemarks, error) in
+                guard   let placemarks = placemarks,
+                        let location = placemarks.first?.location
+                    else {
+                        print("No location found")
+                        return
+                }
+                dropOffLocation = location
+            }
+        } else {
+            if let venueCoordinate = venueCoordinate {
+            dropOffLocation = CLLocation(latitude: venueCoordinate.latitude, longitude: venueCoordinate.longitude)
+            }
+        }
+        
+        // set a dropoffLocation
+        let builder = RideParametersBuilder()
+        builder.dropoffLocation = dropOffLocation
+        builder.dropoffAddress = address
+        builder.dropoffNickname = venue.name
+        uberButton.setContent()
+        uberButton.loadRideInformation()
+        uberButton.rideParameters = builder.build()
+        uberButton.center = uberView.center
+        uberView.addSubview(uberButton)
+    }
+    
     
     fileprivate func calculateTextViewHeights(textView: UITextView, constraint: NSLayoutConstraint) {
         let size: CGSize = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))

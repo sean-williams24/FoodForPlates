@@ -21,6 +21,7 @@ class MapVC: UIViewController {
     let venues = Venue.allVenues
     var allAnnotations: [MKPointAnnotation] = []
     var chosenVenue: Venue!
+    var venueCoordinate: CLLocationCoordinate2D!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,7 @@ class MapVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! VenueDetailsVC
         vc.venue = chosenVenue
+        vc.venueCoordinate = venueCoordinate
         vc.arrivedFromMapView = true
     }
     
@@ -231,6 +233,10 @@ extension MapVC: MKMapViewDelegate {
                 }
             }
         }
+        
+        print("Annotation tapped")
+        venueCoordinate = view.annotation?.coordinate
+        
         
         if control == view.rightCalloutAccessoryView {
             performSegue(withIdentifier: "VenueDetails3", sender: self)

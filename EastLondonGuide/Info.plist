@@ -67,5 +67,15 @@
         <true/>
     </dict>
     
+    <key>UberClientID</key>
+    <string>YnHA0DlRvNJmGHVlzuA-BfikJswGYpOR</string>
+    <key>UberDisplayName</key>
+    <string>Food For Plates</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>uber</string>
+        <string>uberauth</string>
+    </array>
+    
 </dict>
 </plist>

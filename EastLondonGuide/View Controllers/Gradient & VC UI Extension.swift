@@ -11,6 +11,21 @@ import UIKit
 
 extension UIViewController {
     
+    func letterSpacing(label: UILabel, value: Double) {
+        let attributedString = NSMutableAttributedString(string: label.text!)
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(value), range: NSRange(location: 0, length: attributedString.length))
+        label.attributedText = attributedString
+    }
+    
+    
+    func showErrorAlert(title: String, error: String) {
+        let ac = UIAlertController(title: title, message: error, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(ac, animated: true)
+    }
+    
+    
+    
     func loadNavBarGradient() {
 //        guard
 //            let navigationController = navigationController,
@@ -33,11 +48,7 @@ extension UIViewController {
 //        tabBarController.tabBar.barTintColor = UIColor(patternImage: flare)
     }
     
-    func letterSpacing(label: UILabel, value: Double) {
-        let attributedString = NSMutableAttributedString(string: label.text!)
-        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(value), range: NSRange(location: 0, length: attributedString.length))
-        label.attributedText = attributedString
-    }
+
 }
 
 

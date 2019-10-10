@@ -28,8 +28,7 @@ class VenueImagesVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(currentVenue.name)
-        dataController = FavouritesModel.dataController
+        dataController = FlickrClient.Auth.dataController
         
         let space: CGFloat = 3.0
         let size = (view.frame.size.width - (2 * space)) / 2.0
@@ -37,11 +36,26 @@ class VenueImagesVC: UICollectionViewController {
         flowLayout.minimumLineSpacing = space
         flowLayout.minimumInteritemSpacing = space
         flowLayout.itemSize = CGSize(width: size, height: size)
+        
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadPhotos))
+        refreshButton.tintColor = .darkGray
+        self.navigationItem.rightBarButtonItem = refreshButton
 
 //         Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
     }
  
+    @objc func reloadPhotos() {
+        let coreDataPhotos = fetchedResultsController.fetchedObjects
+        
+        if let coreDataPhotos = coreDataPhotos {
+            for photo in coreDataPhotos {
+                dataController.viewContext.delete(photo)
+                try? dataController.viewContext.save()
+            }
+        }
+        downloadPhotosFromFlickr()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,6 +98,10 @@ class VenueImagesVC: UICollectionViewController {
     func handleImageDownloadResponse(success: Bool, error: Error?) {
         if success {
             
+            DispatchQueue.main.async {
+                self.collectionView.backgroundView = .none
+            }
+            
             let photoResponse = FlickrClient.Auth.flickrPhotos
             
             if let photoResponse = photoResponse {
@@ -120,15 +138,16 @@ class VenueImagesVC: UICollectionViewController {
             
         } else {
             print("Error downloading photos from flickr")
-//                showErrorAlert(title: "Download Error", error: "An error was encountered whilst downloading photos from Flickr, please try again.")
+            showErrorAlert(title: "Download Error", error: "An error was encountered whilst downloading photos from Flickr, please try again.")
         }
     }
     
     
      fileprivate func downloadPhotosFromFlickr() {
-        let venueName = currentVenue.name.replacingOccurrences(of: " ", with: "-")
-        let finalVenueName = venueName.replacingOccurrences(of: "'", with: "")
-        FlickrClient.getImageForVenue(venueName: "\(finalVenueName)-london", completion: handleImageDownloadResponse(success:error:))
+        let vn1 = currentVenue.name.replacingOccurrences(of: " ", with: "+")
+        let vn2 = vn1.replacingOccurrences(of: "&", with: "%26")
+        let finalVenueName = vn2.replacingOccurrences(of: "'", with: "%27")
+        FlickrClient.getImageForVenue(venueName: "\(finalVenueName)+\(currentVenue.category)", completion: handleImageDownloadResponse(success:error:))
      }
     
     

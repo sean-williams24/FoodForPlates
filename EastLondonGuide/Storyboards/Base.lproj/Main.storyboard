@@ -894,7 +894,7 @@ PLATES</string>
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ua-Jic">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="923.66666666666663"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="1023.6666666666666"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duN-Be-DkZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
@@ -1038,6 +1038,25 @@ PLATES</string>
                                                     <constraint firstItem="azc-N8-TT3" firstAttribute="height" secondItem="WoC-gZ-f0M" secondAttribute="height" id="sJh-oi-mfY"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-gF-h3j">
+                                                <rect key="frame" x="0.0" y="933.66666666666663" width="374" height="90"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-LF-BKn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="90" id="XMP-Kx-InD"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="uRx-LF-BKn" secondAttribute="bottom" id="DDL-Ll-Mae"/>
+                                                    <constraint firstItem="uRx-LF-BKn" firstAttribute="top" secondItem="ZGU-gF-h3j" secondAttribute="top" id="cCB-5L-YQ8"/>
+                                                    <constraint firstItem="uRx-LF-BKn" firstAttribute="leading" secondItem="ZGU-gF-h3j" secondAttribute="leading" id="hyx-iT-lob"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uRx-LF-BKn" secondAttribute="trailing" id="m9P-RZ-MDk"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
@@ -1101,6 +1120,7 @@ PLATES</string>
                         <outlet property="openingTimesHeight" destination="x0D-9d-omf" id="EAL-NW-5TK"/>
                         <outlet property="openingTimesTextView" destination="hcm-y3-dWY" id="Moy-0B-plk"/>
                         <outlet property="telephoneTextView" destination="X8U-mC-4dv" id="f5w-uY-S4q"/>
+                        <outlet property="uberView" destination="uRx-LF-BKn" id="UXQ-sm-l9C"/>
                         <outlet property="venueImageView" destination="tV9-ff-omc" id="UfP-UQ-Blc"/>
                     </connections>
                 </viewController>
@@ -1256,6 +1276,6 @@ PLATES</string>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mef-Nu-gQf"/>
+        <segue reference="zgK-WH-3pv"/>
     </inferredMetricsTieBreakers>
 </document>

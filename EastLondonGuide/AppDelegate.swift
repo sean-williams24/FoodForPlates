@@ -19,12 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         dataController.load()
-//        let navigationController = window?.rootViewController as! UITabBarController
-//        let venueImagesVC = navigationController.viewControllers![3] as! VenueImagesVC
-//        venueImagesVC.dataController = dataController
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "VenueDetailsVC") as! VenueDetailsVC
-        FavouritesModel.dataController = dataController
+        FlickrClient.Auth.dataController = dataController
         
         let userDefaultsArray = UserDefaults.standard.object(forKey: "Favourites") as? [String] ?? [String]()
         let venues = Venue.allVenues
