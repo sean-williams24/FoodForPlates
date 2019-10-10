@@ -26,7 +26,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var filteredByArea = false
     var filteredByCategory = false
     var alreadyFilteredByCategory = [Venue]()
-    var dataController: DataController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let dataController = DataController(modelName: "EastLondonGuide")
+//    let dataController = DataController(modelName: "EastLondonGuide")
 
 
     public var venueForMap: Venue!
@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
-        saveViewContext()
+//        saveViewContext()
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -54,12 +54,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
 //        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-        saveViewContext()
+//        saveViewContext()
     }
 
-    func saveViewContext () {
-          try? dataController.viewContext.save()
-      }
+//    func saveViewContext () {
+//          try? dataController.viewContext.save()
+//      }
 
 }
 

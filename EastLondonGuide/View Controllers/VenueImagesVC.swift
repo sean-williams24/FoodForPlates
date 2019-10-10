@@ -18,48 +18,17 @@ class VenueImagesVC: UICollectionViewController {
     
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<CDPhoto>!
-    var venue = AppDelegate.currentVenue!
+    var currentVenue = AppDelegate.currentVenue!
     var FlickrURLs: [String] = []
     
     
-    fileprivate func setupFetchedResultsController() {
-        
-        let fetchRequest: NSFetchRequest<CDPhoto> = CDPhoto.fetchRequest()
-        let predicate = NSPredicate(format: "venueName == %@", venue.name)
-        fetchRequest.predicate = predicate
-
-        let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-            
-//         Instantiate fetched results controller
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext , sectionNameKeyPath: nil, cacheName: nil)
-        
-
-        fetchedResultsController.delegate = self
-            do {
-                try fetchedResultsController.performFetch()
-            } catch {
-                fatalError("The fetch could not be performed: \(error.localizedDescription)")
-            }
-    }
     
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupFetchedResultsController()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        fetchedResultsController = nil
-    }
-    
+    //MARK: - Lifecylce Methods
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(venue.name)
+        print(currentVenue.name)
         dataController = FavouritesModel.dataController
         
         let space: CGFloat = 3.0
@@ -71,10 +40,45 @@ class VenueImagesVC: UICollectionViewController {
 
 //         Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
+    }
+ 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupFetchedResultsController()
         
-        let venueName = venue.name.replacingOccurrences(of: " ", with: "-")
+        if fetchedResultsController.fetchedObjects?.count == 0 {
+            print("No photos on fetched results controller - download new set")
+            downloadPhotosFromFlickr()
+         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        fetchedResultsController = nil
+    }
+    
+    
+    //MARK: - Private Methods
+    
+    fileprivate func setupFetchedResultsController() {
         
-        FlickrClient.getImageForVenue(venueName: venueName, completion: handleImageDownloadResponse(success:error:))
+        let fetchRequest: NSFetchRequest<CDPhoto> = CDPhoto.fetchRequest()
+        let predicate = NSPredicate(format: "venueName == %@", currentVenue.name)
+        fetchRequest.predicate = predicate
+
+        let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+            
+        //Instantiate fetched results controller
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext , sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+            do {
+                try fetchedResultsController.performFetch()
+            } catch {
+                fatalError("The fetch could not be performed: \(error.localizedDescription)")
+            }
     }
 
     func handleImageDownloadResponse(success: Bool, error: Error?) {
@@ -91,15 +95,41 @@ class VenueImagesVC: UICollectionViewController {
                         
                     let photo = CDPhoto(context: self.dataController.viewContext)
                     photo.urlString = URLString
-                    photo.venueName = venue.name
+                    photo.venueName = currentVenue.name
                     photo.dateAdded = Date()
-                    
                     try? self.dataController.viewContext.save()
                     
                     }
                 }
+            
+            if self.FlickrURLs.count == 0 {
+                // If there are no photos at location then display message on collection view background
+                DispatchQueue.main.async {
+                    let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height))
+                    messageLabel.text = "SORRY, NO ADDITIONAL PHOTOS \nFOUND FOR THIS LOCATION"
+                    messageLabel.textColor = .black
+                    messageLabel.numberOfLines = 0;
+                    messageLabel.textAlignment = .center;
+                    messageLabel.font = UIFont(name: "JosefinSans-Light", size: 15)
+                    messageLabel.sizeToFit()
+                    self.collectionView.backgroundView = messageLabel;
+                }
+
             }
+            
+            
+        } else {
+            print("Error downloading photos from flickr")
+//                showErrorAlert(title: "Download Error", error: "An error was encountered whilst downloading photos from Flickr, please try again.")
         }
+    }
+    
+    
+     fileprivate func downloadPhotosFromFlickr() {
+        let venueName = currentVenue.name.replacingOccurrences(of: " ", with: "-")
+        let finalVenueName = venueName.replacingOccurrences(of: "'", with: "")
+        FlickrClient.getImageForVenue(venueName: "\(finalVenueName)-london", completion: handleImageDownloadResponse(success:error:))
+     }
     
     
     /*
@@ -112,10 +142,7 @@ class VenueImagesVC: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
-
-
-
+    // MARK: - UICollectionViewDataSource & Delegates
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 12
@@ -124,45 +151,49 @@ class VenueImagesVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
         let photo = fetchedResultsController.object(at: indexPath)
-        
-        
-        if let urlString = photo.urlString {
-            let url = URL(string: urlString)
-            if let imageData = try? Data(contentsOf: url!) {
-                let image = UIImage(data: imageData)
                 
-                photo.image = imageData
-                try? dataController.viewContext.save()
-                
-                cell.imageVIew.image = image
-            }
-        }
+        if photo.image == nil {
+            cell.activityIndicator.startAnimating()
+            
+            DispatchQueue.global(qos: .background).async {
+                if let urlString = photo.urlString {
+                    let url = URL(string: urlString)
+                    if let imageData = try? Data(contentsOf: url!) {
+                        let image = UIImage(data: imageData)
+                        
+                        DispatchQueue.main.async {
+                            photo.image = imageData
+                            cell.activityIndicator.stopAnimating()
+                            try? self.dataController.viewContext.save()
+                            cell.imageVIew.image = image
+                        }
 
-        
-        
-        
-        // Configure the cell
-    
+                    }
+                }
+            }
+        }  else {
+                   
+            // If image already exist for the photo, show previously downloaded images from FRC
+            if let photo = photo.image {
+               let image = UIImage(data: photo)
+               DispatchQueue.main.async {
+                   cell.imageVIew.image = image
+               }
+           }
+       }
         return cell
     }
 
     
-    
-    
-    
-    
-    
-    
-    // MARK: UICollectionViewDelegate
-
- 
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let photoToDelete = fetchedResultsController.object(at: indexPath)
+//        dataController.viewContext.delete(photoToDelete)
+//        try? dataController.viewContext.save()
     }
-    */
+    
+    
+    
+ 
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
@@ -182,7 +213,7 @@ class VenueImagesVC: UICollectionViewController {
 }
 
 
-// MARK: Fetched results controller delegate methods
+// MARK: - Fetched results controller delegate method
 
 extension VenueImagesVC: NSFetchedResultsControllerDelegate {
     
