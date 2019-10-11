@@ -37,38 +37,15 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         return FavouritesModel.favourites.contains(venue)
     }
     
+    var dropOffLocation = CLLocation()
+    var currentUserLocation = CLLocation()
+    
     
     //MARK: - Lifecycle Methods
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.currentVenue = venue
- 
-
-        if arrivedFromMapView == true {
-            mapButton.isEnabled = false
-        }
-        
-        if venue.menu == nil {
-            menuButton.isEnabled = false
-            menuButton.tintColor = .white
-        }
-        
-        // Set UI elements with venue model data.
-        venueImageView.image = UIImage(named: venue.name)
-        descriptionLabel.text = venue.name.uppercased()
-        descriptionTextView.text = venue.description
-        addressTextView.text = venue.address?.uppercased()
-        openingTimesTextView.text = venue.openingTimes?.uppercased()
-        telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
-        bookTextView.text = venue.email?.uppercased()
         
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -78,8 +55,36 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        setupUberButton()
+        setupUI()
+        setUberDropLocation()
+    }
+    
+    
+    //MARK: - Private Methods
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        userLocation = locationManager.location
+//        print("Did update location: \(userLocation?.coordinate)")
+    }
+    
+    fileprivate func setupUI() {
+        // Set UI elements
+        if arrivedFromMapView == true {
+            mapButton.isEnabled = false
+        }
         
+        if venue.menu == nil {
+            menuButton.isEnabled = false
+            menuButton.tintColor = .white
+        }
+        
+        venueImageView.image = UIImage(named: venue.name)
+        descriptionLabel.text = venue.name.uppercased()
+        descriptionTextView.text = venue.description
+        addressTextView.text = venue.address?.uppercased()
+        openingTimesTextView.text = venue.openingTimes?.uppercased()
+        telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
+        bookTextView.text = venue.email?.uppercased()
         
         if venue.email?.count ?? 10 > 22 {
             bookTextView.font = UIFont(name: bookTextView.font!.fontName, size: 14)
@@ -92,24 +97,16 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         } else {
             favouriteButton.tintColor = .darkGray
         }
-    
-        
     }
     
-    
-    //MARK: - Private Methods
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        userLocation = locationManager.location
-    }
-    
-    fileprivate func setupUberButton() {
+    fileprivate func setUberDropLocation() {
+        // Set drop Uber off location - If we havent arrived from MapVC, need to obtain coordinate from address
         
-        // ride request button
-        let uberButton = RideRequestButton()
-        var dropOffLocation = CLLocation()
+//        if let userLocation = userLocation {
+//                  currentUserLocation = userLocation
+//              }
+        
         let address = venue.address?.replacingOccurrences(of: "\n", with: "")
-
         if venueCoordinate == nil {
             
             let geoCoder = CLGeocoder()
@@ -117,42 +114,52 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
                 guard
                     let placemarks = placemarks,
                     let location = placemarks.first?.location
-                else {
-                    print("No location found")
-                    return
+                    else {
+                        print("No location found")
+                        return
                 }
-                dropOffLocation = location
+                self.dropOffLocation = location
+                self.setupUberButton()
             }
         } else {
             if let venueCoordinate = venueCoordinate {
-            dropOffLocation = CLLocation(latitude: venueCoordinate.latitude, longitude: venueCoordinate.longitude)
+                dropOffLocation = CLLocation(latitude: venueCoordinate.latitude, longitude: venueCoordinate.longitude)
+                self.setupUberButton()
             }
         }
+    }
+    
+    fileprivate func setupUberButton() {
+        
+        // ride request button
+        let uberButton = RideRequestButton()
         
         // set a journey details
         let builder = RideParametersBuilder()
-        builder.pickupLocation = userLocation
+//        builder.pickupLocation = currentUserLocation
         builder.dropoffLocation = dropOffLocation
-        builder.dropoffAddress = address
+//        builder.dropoffAddress = address
         builder.dropoffNickname = venue.name
-//        uberButton.setContent()
         uberButton.rideParameters = builder.build()
         
-        var productID = ""
-        let ridesClient = RidesClient()
-        if let userLocation = userLocation {
-            ridesClient.fetchProducts(pickupLocation: userLocation) { (product, response) in
-                productID = product[1].productID!
-                builder.productID = productID
-            }
-            
-            ridesClient.fetchPriceEstimates(pickupLocation: userLocation, dropoffLocation: dropOffLocation) { (price, response) in
-                print(price[0].estimate!)
-                
-                uberButton.rideParameters = builder.build()
-                uberButton.loadRideInformation()
-            }
-        }
+//        var productID = ""
+//        let ridesClient = RidesClient()
+
+//
+//        ridesClient.fetchProducts(pickupLocation: currentUserLocation) { (product, response) in
+//            debugPrint(product)
+//            debugPrint(response)
+//            productID = product[1].productID!
+//            builder.productID = productID
+//         }
+//
+//         ridesClient.fetchPriceEstimates(pickupLocation: currentUserLocation, dropoffLocation: dropOffLocation) { (price, response) in
+//             print(price[0].estimate!)
+//
+//             uberButton.rideParameters = builder.build()
+//             uberButton.loadRideInformation()
+//         }
+        
         uberButton.center = uberView.center
         uberView.addSubview(uberButton)
     }
@@ -201,12 +208,6 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
             FavouritesModel.favourites.append(venue)
             favouriteButton.tintColor = .red
         }
-        
-        print("--------------------------------")
-        for venue in FavouritesModel.favourites {
-            print("Favourites: \(venue.name)")
-        }
-        print("--------------------------------")
 
         var array: [String] = []
         for venue in FavouritesModel.favourites {
@@ -214,8 +215,6 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         }
 
         UserDefaults.standard.set(array, forKey: "Favourites")
-
-        
     }
         
     

@@ -1038,10 +1038,10 @@ PLATES</string>
                                                     <constraint firstItem="azc-N8-TT3" firstAttribute="height" secondItem="WoC-gZ-f0M" secondAttribute="height" id="sJh-oi-mfY"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-gF-h3j">
+                                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-gF-h3j">
                                                 <rect key="frame" x="0.0" y="933.66666666666663" width="374" height="90"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-LF-BKn">
+                                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-LF-BKn">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
                                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>

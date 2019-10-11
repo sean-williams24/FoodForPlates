@@ -1,0 +1,6 @@
+framework module Pods_EastLondonGuide {
+  umbrella header "Pods-EastLondonGuide-umbrella.h"
+
+  export *
+  module * { export * }
+}

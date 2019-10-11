@@ -233,10 +233,7 @@ extension MapVC: MKMapViewDelegate {
                 }
             }
         }
-        
-        print("Annotation tapped")
         venueCoordinate = view.annotation?.coordinate
-        
         
         if control == view.rightCalloutAccessoryView {
             performSegue(withIdentifier: "VenueDetails3", sender: self)
