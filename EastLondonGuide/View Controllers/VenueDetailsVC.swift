@@ -161,7 +161,9 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
 //         }
         
         uberButton.center = uberView.center
+        uberButton.translatesAutoresizingMaskIntoConstraints = false
         uberView.addSubview(uberButton)
+        uberButton.centerXAnchor.constraint(equalTo: uberView.centerXAnchor).isActive = true
     }
     
     

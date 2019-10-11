@@ -108,7 +108,4 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         self.navigationItem.leftBarButtonItem = newBackButton;
         return popUpWebview
     }
-    
-    
-
 }

@@ -28,7 +28,7 @@ class VenueImagesVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataController = FlickrClient.Auth.dataController
+        dataController = DC.dataController
         
         let space: CGFloat = 3.0
         let size = (view.frame.size.width - (2 * space)) / 2.0
@@ -63,7 +63,6 @@ class VenueImagesVC: UICollectionViewController {
         setupFetchedResultsController()
         
         if fetchedResultsController.fetchedObjects?.count == 0 {
-            print("No photos on fetched results controller - download new set")
             downloadPhotosFromFlickr()
          }
     }
@@ -98,7 +97,6 @@ class VenueImagesVC: UICollectionViewController {
 
     func handleImageDownloadResponse(success: Bool, error: Error?) {
         if success {
-            
             DispatchQueue.main.async {
                 self.collectionView.backgroundView = .none
             }
@@ -117,7 +115,6 @@ class VenueImagesVC: UICollectionViewController {
                     photo.venueName = currentVenue.name
                     photo.dateAdded = Date()
                     try? self.dataController.viewContext.save()
-                    
                     }
                 }
             
@@ -133,12 +130,8 @@ class VenueImagesVC: UICollectionViewController {
                     messageLabel.sizeToFit()
                     self.collectionView.backgroundView = messageLabel;
                 }
-
             }
-            
-            
         } else {
-            print("Error downloading photos from flickr")
             showErrorAlert(title: "Download Error", error: "An error was encountered whilst downloading photos from Flickr, please try again.")
         }
     }
@@ -152,15 +145,6 @@ class VenueImagesVC: UICollectionViewController {
      }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: - UICollectionViewDataSource & Delegates
 
@@ -203,32 +187,6 @@ class VenueImagesVC: UICollectionViewController {
        }
         return cell
     }
-
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let photoToDelete = fetchedResultsController.object(at: indexPath)
-//        dataController.viewContext.delete(photoToDelete)
-//        try? dataController.viewContext.save()
-    }
-    
-    
-    
- 
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
 

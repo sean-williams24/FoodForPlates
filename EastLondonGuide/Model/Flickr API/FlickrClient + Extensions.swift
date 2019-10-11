@@ -14,6 +14,6 @@ extension FlickrClient {
         static let APIKey = "6fc73c69adc5c8d33679b0b1d91fcd55"
         static var flickrPages = 1
         static var flickrPhotos: [FlickrPhoto]!
-        static var dataController: DataController!
+//        static var dataController: DataController!
     }
 }

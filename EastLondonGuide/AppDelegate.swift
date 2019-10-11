@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         dataController.load()
-        FlickrClient.Auth.dataController = dataController
+        DC.dataController = dataController
         
         let userDefaultsArray = UserDefaults.standard.object(forKey: "Favourites") as? [String] ?? [String]()
         let venues = Venue.allVenues
