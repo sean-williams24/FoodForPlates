@@ -10,7 +10,7 @@ import UIKit
 import UberRides
 import CoreLocation
 
-class VenueDetailsVC: UIViewController {
+class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var venueImageView: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
@@ -31,9 +31,15 @@ class VenueDetailsVC: UIViewController {
     var venue: Venue!
     var arrivedFromMapView = false
     var venueCoordinate: CLLocationCoordinate2D?
+    var userLocation: CLLocation?
+    var locationManager = CLLocationManager()
     var venueIsFavourite: Bool {
         return FavouritesModel.favourites.contains(venue)
     }
+    
+    
+    //MARK: - Lifecycle Methods
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,13 +47,10 @@ class VenueDetailsVC: UIViewController {
     }
     
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.currentVenue = venue
  
-//        print(venueCoordinate!)
 
         if arrivedFromMapView == true {
             mapButton.isEnabled = false
@@ -67,8 +70,14 @@ class VenueDetailsVC: UIViewController {
         telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
         bookTextView.text = venue.email?.uppercased()
         
+        self.locationManager.requestWhenInUseAuthorization()
         
-
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         setupUberButton()
         
         
@@ -88,6 +97,12 @@ class VenueDetailsVC: UIViewController {
     }
     
     
+    //MARK: - Private Methods
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        userLocation = locationManager.location
+    }
+    
     fileprivate func setupUberButton() {
         
         // ride request button
@@ -95,16 +110,16 @@ class VenueDetailsVC: UIViewController {
         var dropOffLocation = CLLocation()
         let address = venue.address?.replacingOccurrences(of: "\n", with: "")
 
-        
         if venueCoordinate == nil {
             
             let geoCoder = CLGeocoder()
             geoCoder.geocodeAddressString(address!) { (placemarks, error) in
-                guard   let placemarks = placemarks,
-                        let location = placemarks.first?.location
-                    else {
-                        print("No location found")
-                        return
+                guard
+                    let placemarks = placemarks,
+                    let location = placemarks.first?.location
+                else {
+                    print("No location found")
+                    return
                 }
                 dropOffLocation = location
             }
@@ -114,17 +129,34 @@ class VenueDetailsVC: UIViewController {
             }
         }
         
-        // set a dropoffLocation
+        // set a journey details
         let builder = RideParametersBuilder()
+        builder.pickupLocation = userLocation
         builder.dropoffLocation = dropOffLocation
         builder.dropoffAddress = address
         builder.dropoffNickname = venue.name
-        uberButton.setContent()
-        uberButton.loadRideInformation()
+//        uberButton.setContent()
         uberButton.rideParameters = builder.build()
+        
+        var productID = ""
+        let ridesClient = RidesClient()
+        if let userLocation = userLocation {
+            ridesClient.fetchProducts(pickupLocation: userLocation) { (product, response) in
+                productID = product[1].productID!
+                builder.productID = productID
+            }
+            
+            ridesClient.fetchPriceEstimates(pickupLocation: userLocation, dropoffLocation: dropOffLocation) { (price, response) in
+                print(price[0].estimate!)
+                
+                uberButton.rideParameters = builder.build()
+                uberButton.loadRideInformation()
+            }
+        }
         uberButton.center = uberView.center
         uberView.addSubview(uberButton)
     }
+    
     
     
     fileprivate func calculateTextViewHeights(textView: UITextView, constraint: NSLayoutConstraint) {
@@ -138,6 +170,10 @@ class VenueDetailsVC: UIViewController {
         calculateTextViewHeights(textView: addressTextView, constraint: addressHeight)
         calculateTextViewHeights(textView: openingTimesTextView, constraint: openingTimesHeight)
     }
+    
+    
+    //MARK: - Action Methods
+
     
     @IBAction func viewOnMapTapped(_ sender: Any) {
         AppDelegate.viewVenueOnMap = true
@@ -181,7 +217,7 @@ class VenueDetailsVC: UIViewController {
 
         
     }
-    
+        
     
     @IBAction func menuButtonTapped(_ sender: Any) {
     

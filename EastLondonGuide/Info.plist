@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Food For Plates would like to use your location to get you an Uber ride estimate.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -60,22 +62,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoadsInWebContent</key>
-        <true/>
-    </dict>
-    
-    <key>UberClientID</key>
-    <string>YnHA0DlRvNJmGHVlzuA-BfikJswGYpOR</string>
-    <key>UberDisplayName</key>
-    <string>Food For Plates</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>uber</string>
-        <string>uberauth</string>
-    </array>
-    
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
+	<key>UberClientID</key>
+	<string>YnHA0DlRvNJmGHVlzuA-BfikJswGYpOR</string>
+	<key>UberDisplayName</key>
+	<string>Food For Plates</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>uber</string>
+		<string>uberauth</string>
+	</array>
 </dict>
 </plist>
