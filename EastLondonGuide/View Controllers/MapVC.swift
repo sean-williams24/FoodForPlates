@@ -25,7 +25,6 @@ class MapVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-          
         
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true

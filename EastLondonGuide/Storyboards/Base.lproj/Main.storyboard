@@ -366,8 +366,8 @@ PLATES</string>
                     <tabBar key="tabBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vdT-69-ZUd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                         <color key="selectedImageTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
@@ -387,7 +387,7 @@ PLATES</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQI-Rr-DBJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inspiration" image="wand.and.rays.inverse" catalog="system" selectedImage="wand.and.rays" id="cTi-9Y-HIe">
-                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulU-B3-ULe">
@@ -410,7 +410,7 @@ PLATES</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Kk-xw-Z1v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Guides" image="book.fill" catalog="system" selectedImage="book" id="80g-J5-IxD">
-                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tu-fv-Mub">
@@ -1053,6 +1053,7 @@ PLATES</string>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="uRx-LF-BKn" secondAttribute="bottom" id="DDL-Ll-Mae"/>
                                                     <constraint firstItem="uRx-LF-BKn" firstAttribute="top" secondItem="ZGU-gF-h3j" secondAttribute="top" id="cCB-5L-YQ8"/>
+                                                    <constraint firstAttribute="height" secondItem="uRx-LF-BKn" secondAttribute="height" id="ee5-U1-HuD"/>
                                                     <constraint firstItem="uRx-LF-BKn" firstAttribute="leading" secondItem="ZGU-gF-h3j" secondAttribute="leading" id="hyx-iT-lob"/>
                                                     <constraint firstAttribute="trailing" secondItem="uRx-LF-BKn" secondAttribute="trailing" id="m9P-RZ-MDk"/>
                                                 </constraints>
@@ -1073,7 +1074,7 @@ PLATES</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JLp-EA-Ep2"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="bottom" secondItem="tO6-vM-ru7" secondAttribute="bottom" id="Spk-Wr-CpX"/>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="leading" secondItem="tO6-vM-ru7" secondAttribute="leading" id="fPR-ic-Kkk"/>
@@ -1149,7 +1150,7 @@ PLATES</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="hkc-kx-S1P"/>
                                 </constraints>
-                                <color key="progressTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="progressTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
