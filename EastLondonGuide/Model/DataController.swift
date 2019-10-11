@@ -20,11 +20,12 @@ class DataController {
     }
     
     var backgroundContext: NSManagedObjectContext!
-    
+
     
     init(modelName: String) {
         persistentContainer = NSPersistentContainer(name: modelName)
     }
+    
     
     func configureContexts() {
         //create context associated with a private queue
@@ -38,6 +39,7 @@ class DataController {
         // in case of conflict prefer values from persistent store
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
     }
+
     
     // Load persistent Store with convenience function
     func load(completion: (() -> Void)? = nil) {

@@ -11,6 +11,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+//    var dataController: DataController!
+
 //    let dataController = DataController(modelName: "EastLondonGuide")
 
 
@@ -53,13 +55,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-//        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-//        saveViewContext()
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-//    func saveViewContext () {
-//          try? dataController.viewContext.save()
-//      }
 
 }
 

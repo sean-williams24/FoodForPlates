@@ -24,7 +24,7 @@ class InspirationVC: UIViewController {
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
     
-
+        
     }
     
 

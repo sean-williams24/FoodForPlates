@@ -55,6 +55,7 @@ class VenueImagesVC: UICollectionViewController {
             }
         }
         downloadPhotosFromFlickr()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
