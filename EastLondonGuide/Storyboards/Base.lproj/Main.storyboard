@@ -32,6 +32,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-CH-SAz">
                                 <rect key="frame" x="17" y="88" width="397" height="150"/>
+                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="QMS-qO-b5F"/>
                                 </constraints>
@@ -44,7 +45,7 @@ PLATES</string>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SvV-E0-kWC">
                                 <rect key="frame" x="0.0" y="238" width="414" height="658"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="EastLondonGuide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -88,7 +89,7 @@ PLATES</string>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ikb-CH-SAz" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" constant="17" id="FbP-vJ-i3K"/>
                             <constraint firstAttribute="bottom" secondItem="SvV-E0-kWC" secondAttribute="bottom" id="bkI-TZ-VbO"/>
@@ -120,7 +121,7 @@ PLATES</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dhy-T6-OU6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="526" id="Ysh-Nm-wSe" customClass="ArticleCell" customModule="EastLondonGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="526"/>
@@ -144,7 +145,7 @@ PLATES</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQz-M4-GTe">
                                             <rect key="frame" x="20" y="358" width="374" height="72"/>
                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-vx-4BR">
@@ -158,6 +159,7 @@ PLATES</string>
                                             </state>
                                         </button>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="eQz-M4-GTe" secondAttribute="trailing" id="43W-YW-WN7"/>
                                         <constraint firstItem="Sdm-vx-4BR" firstAttribute="top" secondItem="eQz-M4-GTe" secondAttribute="bottom" constant="30" id="4YQ-CY-VZy"/>
@@ -215,6 +217,7 @@ PLATES</string>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Nn1-nl-ZQp">
                                 <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <segments>
                                     <segment title="ALL"/>
                                     <segment title="FOOD"/>
@@ -223,6 +226,7 @@ PLATES</string>
                                     <segment title="SHOPPING"/>
                                     <segment title="MARKETS"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="categorySelection:" destination="jOo-sd-yq5" eventType="valueChanged" id="Fi9-5f-xhJ"/>
                                 </connections>
@@ -318,7 +322,7 @@ PLATES</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="kdR-4j-cP2" firstAttribute="centerY" secondItem="Zp7-Hb-ihM" secondAttribute="centerY" id="2Ky-jw-w28"/>
                             <constraint firstItem="Nn1-nl-ZQp" firstAttribute="top" secondItem="dOZ-oD-uml" secondAttribute="top" id="7MX-nO-xwO"/>
@@ -651,6 +655,7 @@ PLATES</string>
                                     <segment title="SHOPPING"/>
                                     <segment title="MARKETS"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="categorySelection:" destination="fBw-xg-fI1" eventType="valueChanged" id="Pb9-Vv-7zF"/>
                                     <action selector="categorySelection:" destination="jOo-sd-yq5" eventType="valueChanged" id="p1E-CE-eJM"/>
@@ -679,29 +684,33 @@ PLATES</string>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoreditch &amp; Hoxton" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-pO-geX">
                                                             <rect key="frame" x="10" y="152" width="394" height="2"/>
+                                                            <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="11"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dishoom" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gkm-xh-bll">
                                                             <rect key="frame" x="10" y="159" width="394" height="21"/>
+                                                            <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="mCH-yQ-iMi"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jW-bW-9P2">
                                                             <rect key="frame" x="10" y="180" width="394" height="21"/>
+                                                            <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="5Nd-Ku-mnw"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="11"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="AfA-G5-jxv" firstAttribute="top" secondItem="NFS-vg-mL1" secondAttribute="top" constant="10" id="0kq-dH-Dmy"/>
                                                         <constraint firstItem="AfA-G5-jxv" firstAttribute="leading" secondItem="NFS-vg-mL1" secondAttribute="leading" constant="10" id="6t2-jH-Gjl"/>
@@ -718,6 +727,7 @@ PLATES</string>
                                                         <constraint firstAttribute="trailing" secondItem="AfA-G5-jxv" secondAttribute="trailing" constant="10" id="rZw-gm-Bl0"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
                                                     <outlet property="areaLabel" destination="YvE-pO-geX" id="hNe-Na-2au"/>
                                                     <outlet property="categoryLabel" destination="4jW-bW-9P2" id="oT0-4O-10z"/>
@@ -830,7 +840,7 @@ PLATES</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="QSG-Xe-H7E" firstAttribute="trailing" secondItem="cgP-ls-V34" secondAttribute="trailing" id="9sS-MH-TTa"/>
                             <constraint firstItem="QSG-Xe-H7E" firstAttribute="leading" secondItem="cgP-ls-V34" secondAttribute="leading" id="B9L-5d-uHW"/>

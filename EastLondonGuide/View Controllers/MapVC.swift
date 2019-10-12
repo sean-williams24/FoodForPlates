@@ -29,14 +29,9 @@ class MapVC: UIViewController {
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
         
-        // Set font for segmented selector
-        
-        let font: [AnyHashable : Any] = [NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
-        categorySelector.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
-//        categorySelector.backgroundColor = .clear
+        setSegmentedControlAttributes(control: categorySelector)
 
         // Load venue annotations.
-        
         for venue in venues! {
             let address = venue.address?.replacingOccurrences(of: "\n", with: "")
             
@@ -96,7 +91,7 @@ class MapVC: UIViewController {
     }
     
     
-    //MARK: - Helper Methods
+    //MARK: - Private Methods
     
     fileprivate func filterMapAnnotations(for category: String) {
         for venue in allAnnotations {
@@ -110,10 +105,14 @@ class MapVC: UIViewController {
     
     
     fileprivate func zoomToVenue() {
-        let venueToZoomTo = AppDelegate.currentVenue?.name
+        let venueToZoomTo = AppDelegate.currentVenue
         for annotation in self.allAnnotations {
-            if annotation.title == venueToZoomTo?.uppercased() {
+            if annotation.title == venueToZoomTo?.name.uppercased() {
                 setMapRegion(to: annotation.coordinate, atZoomLevel: 700)
+                mapView.showAnnotations([annotation], animated: true)
+                if venueToZoomTo?.category != categorySelector.titleForSegment(at: categorySelector.selectedSegmentIndex) {
+                    categorySelector.selectedSegmentIndex = 0
+                }
             }
         }
     }

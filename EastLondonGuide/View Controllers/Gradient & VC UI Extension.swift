@@ -24,7 +24,11 @@ extension UIViewController {
         present(ac, animated: true)
     }
     
-    
+    func setSegmentedControlAttributes(control: UISegmentedControl) {
+        let font: [AnyHashable : Any] = [NSAttributedString.Key.foregroundColor : UIColor.black,
+                                         NSAttributedString.Key.font : UIFont(name: "JosefinSans-Light", size: 10) as Any]
+        control.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
+    }
     
     func loadNavBarGradient() {
 //        guard
