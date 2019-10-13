@@ -18,7 +18,7 @@ class VenueImagesVC: UICollectionViewController {
     
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<CDPhoto>!
-    var currentVenue = AppDelegate.currentVenue!
+    var currentVenue = Global.currentVenue!
     var FlickrURLs: [String] = []
     
     
@@ -28,7 +28,7 @@ class VenueImagesVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataController = DC.dataController
+        dataController = Global.dataController
         
         let space: CGFloat = 3.0
         let size = (view.frame.size.width - (2 * space)) / 2.0

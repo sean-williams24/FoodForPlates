@@ -40,29 +40,38 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        if FavouritesModel.viewingFavourites == true {
+            showFavouritesButton.isEnabled = false
+        } else {
+            showFavouritesButton.isEnabled = true
+        }
         
-        if FavouritesModel.favouriteRemoved == true {
+        if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == true {
             showFavouritesButton.isEnabled = false
             filteredVenues = FavouritesModel.favourites
             animateTableviewReload()
+        } else if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == false {
+            filteredVenues = allVenues
         }
         
-        if FavouritesModel.favourites.isEmpty == true {
+        if FavouritesModel.favourites.count == 0 {
             showFavouritesButton.isEnabled = false
             filteredVenues = allVenues
             tableView.reloadData()
-        } else {
-            showFavouritesButton.isEnabled = true
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if FavouritesModel.favourites.count == filteredVenues.count {
-            showFavouritesButton.isEnabled = false
-        } else {
-            showFavouritesButton.isEnabled = true
-        }
+//        if FavouritesModel.favourites.count == filteredVenues.count {
+//            showFavouritesButton.isEnabled = false
+//        } else {
+//            showFavouritesButton.isEnabled = true
+//        }
+        
+        print("Filtered venues: \(filteredVenues.count)")
+        print("Favoutites: \(FavouritesModel.favourites.count)")
+        print("Favourite Removed: \(FavouritesModel.favouriteRemoved)")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -207,7 +216,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func categorySelection(_ sender: Any) {
-        showFavouritesButton.isEnabled = true
+//        showFavouritesButton.isEnabled = true
 
         
         switch categorySelector.selectedSegmentIndex {
@@ -232,8 +241,15 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBAction func showFavourites(_ sender: Any) {
+        FavouritesModel.viewingFavourites = !FavouritesModel.viewingFavourites
+        print("Viewing favourites: \(FavouritesModel.viewingFavourites)")
+        
         filteredVenues = FavouritesModel.favourites
-        showFavouritesButton.isEnabled = false
+        if FavouritesModel.viewingFavourites {
+            showFavouritesButton.isEnabled = false
+        } else {
+            showFavouritesButton.isEnabled = true
+        }
         animateTableviewReload()
     }
     
@@ -243,6 +259,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         filteredByCategory = false
         filteredByArea = false
         filteredVenues = allVenues
+        FavouritesModel.viewingFavourites = false
         showFavouritesButton.isEnabled = true
         animateTableviewReload()
         categorySelector.selectedSegmentIndex = 0

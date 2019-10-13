@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		625FAE0DDDB7D3806D5F54BB /* Pods_EastLondonGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D544CD3C3843D85E78B6AC /* Pods_EastLondonGuide.framework */; };
-		CE200EB02350DDD300098AA8 /* DataControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE200EAF2350DDD300098AA8 /* DataControllerModel.swift */; };
+		CE200EB02350DDD300098AA8 /* GlobalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */; };
 		CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C77233A23D000BD70CE /* AppDelegate.swift */; };
 		CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */; };
 		CE9C6C7F233A23D000BD70CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6C7D233A23D000BD70CE /* Main.storyboard */; };
@@ -65,7 +65,7 @@
 		67D544CD3C3843D85E78B6AC /* Pods_EastLondonGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EastLondonGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A4433EFDA6D50D4054643F /* Pods-EastLondonGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EastLondonGuide.debug.xcconfig"; path = "Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		9C0BAF0A7B55A610E191F675 /* Pods-EastLondonGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EastLondonGuide.release.xcconfig"; path = "Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide.release.xcconfig"; sourceTree = "<group>"; };
-		CE200EAF2350DDD300098AA8 /* DataControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerModel.swift; sourceTree = "<group>"; };
+		CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProperties.swift; sourceTree = "<group>"; };
 		CE9C6C74233A23D000BD70CE /* Food For Plates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food For Plates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9C6C77233A23D000BD70CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 			children = (
 				CE9C6C80233A23D000BD70CE /* EastLondonGuide.xcdatamodeld */,
 				CEEFD5B4234E1C1300AC73C4 /* DataController.swift */,
-				CE200EAF2350DDD300098AA8 /* DataControllerModel.swift */,
+				CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */,
 				CEE580142349EAA10068A774 /* Articles */,
 				CEE580152349EAB50068A774 /* Venues */,
 				CE9C6CF32341EF5800BD70CE /* Cells */,
@@ -439,7 +439,7 @@
 				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
 				CEEFD5B5234E1C1300AC73C4 /* DataController.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
-				CE200EB02350DDD300098AA8 /* DataControllerModel.swift in Sources */,
+				CE200EB02350DDD300098AA8 /* GlobalProperties.swift in Sources */,
 				CEE58019234B3BE40068A774 /* MenuModel.swift in Sources */,
 				CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */,
 				CE9C6CC1233BC20F00BD70CE /* VenuesCell.swift in Sources */,

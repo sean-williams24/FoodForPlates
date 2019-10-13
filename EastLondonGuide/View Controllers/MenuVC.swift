@@ -36,7 +36,7 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         newBackButton.tintColor = .darkGray
         self.navigationItem.leftBarButtonItem = newBackButton;
 
-        if let menuURL = AppDelegate.currentVenue?.menu {
+        if let menuURL = Global.currentVenue?.menu {
             let url = URL(string: (menuURL))!
             webView.load(URLRequest(url: url))
         }

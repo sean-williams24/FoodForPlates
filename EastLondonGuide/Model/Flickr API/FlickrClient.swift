@@ -43,8 +43,8 @@ class FlickrClient {
         if Auth.flickrPages == 0 {
             Auth.flickrPages = 1
         }
-        let urlString = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Auth.APIKey)&text=\(venueName)&safe_search=1&lat=51.529330&lon=-0.055910&radius=20&radius_units=mi&format=json&nojsoncallback=1&&per_page=12&page=\(Int.random(in: 0..<Auth.flickrPages))"
-        print(urlString)
+        let urlString = Endpoints.base + Endpoints.query + Endpoints.apiKey + "&text=\(venueName)&safe_search=1" + Endpoints.location + "&format=json&nojsoncallback=1&&per_page=12&page=\(Int.random(in: 0..<Auth.flickrPages))"
+
         taskForGettingFlickrImages(url: urlString) { (response, error) in
             if let _ = response {
                 completion(true, nil)

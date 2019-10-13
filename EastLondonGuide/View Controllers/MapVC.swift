@@ -55,7 +55,7 @@ class MapVC: UIViewController {
                 
                 // Once Geocoding is complete, check if we have arrived from Venue details VC, if so focus map on that venue
                 if self.allAnnotations.count == self.venues?.count {
-                    if AppDelegate.viewVenueOnMap == true {
+                    if Global.viewVenueOnMap == true {
                         self.zoomToVenue()
                     } else {
                         let eastLondon = CLLocationCoordinate2D(latitude: 51.529330, longitude: -0.055910)
@@ -69,14 +69,14 @@ class MapVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if AppDelegate.viewVenueOnMap == true {
+        if Global.viewVenueOnMap == true {
             zoomToVenue()
        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        AppDelegate.viewVenueOnMap = false
+        Global.viewVenueOnMap = false
     }
 
     
@@ -105,7 +105,7 @@ class MapVC: UIViewController {
     
     
     fileprivate func zoomToVenue() {
-        let venueToZoomTo = AppDelegate.currentVenue
+        let venueToZoomTo = Global.currentVenue
         for annotation in self.allAnnotations {
             if annotation.title == venueToZoomTo?.name.uppercased() {
                 setMapRegion(to: annotation.coordinate, atZoomLevel: 700)

@@ -45,7 +45,7 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppDelegate.currentVenue = venue
+        Global.currentVenue = venue
         
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -185,7 +185,7 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
 
     
     @IBAction func viewOnMapTapped(_ sender: Any) {
-        AppDelegate.viewVenueOnMap = true
+        Global.viewVenueOnMap = true
         let tabIndex = 3
         let tabBar = self.tabBarController
         // Change the selected tab item to MapVC

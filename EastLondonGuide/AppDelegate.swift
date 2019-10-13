@@ -12,15 +12,13 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    static var currentVenue: Venue?
-    static var viewVenueOnMap = false
     
     let dataController = DataController(modelName: "EastLondonGuide")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         dataController.load()
-        DC.dataController = dataController
+        Global.dataController = dataController
         
         let userDefaultsArray = UserDefaults.standard.object(forKey: "Favourites") as? [String] ?? [String]()
         let venues = Venue.allVenues

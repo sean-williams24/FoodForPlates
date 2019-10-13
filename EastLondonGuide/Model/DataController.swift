@@ -58,9 +58,7 @@ class DataController {
 }
 
 extension DataController {
-    func autoSaveViewContext(interval: TimeInterval = 30) {
-        print("Autosaving")
-        
+    func autoSaveViewContext(interval: TimeInterval = 30) {        
         guard interval > 0 else {
             print("cannot save negative autosave interval")
             return

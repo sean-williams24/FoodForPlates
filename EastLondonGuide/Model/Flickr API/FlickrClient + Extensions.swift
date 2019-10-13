@@ -14,6 +14,12 @@ extension FlickrClient {
         static let APIKey = "6fc73c69adc5c8d33679b0b1d91fcd55"
         static var flickrPages = 1
         static var flickrPhotos: [FlickrPhoto]!
-//        static var dataController: DataController!
+    }
+    
+    enum Endpoints {
+        static let base = "https://www.flickr.com/services/rest/"
+        static let query = "?method=flickr.photos.search"
+        static let apiKey = "&api_key=\(Auth.APIKey)"
+        static let location = "&lat=51.529330&lon=-0.055910&radius=20&radius_units=mi"
     }
 }
