@@ -11,18 +11,30 @@ import UIKit
 class CategoriesVC: UITableViewController {
 
     
-    let categories = ["Food", "Drinks", "Coffee", "Shopping", "Markets"]
+    var categories: [String] = []
     var area: String!
     var chosenCategory = ""
+    var allVenues = Venue.allVenues
+    var venuesInArea: [Venue] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 300
 
         
+        for venue in allVenues! {
+            if venue.area == area! {
+                venuesInArea.append(venue)
+            }
+        }
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        for venue in venuesInArea {
+            if categories.contains(venue.category) == false {
+                categories.append(venue.category)
+            }
+        }
+
+        
     }
 
     // MARK: - Table view data source

@@ -18,11 +18,11 @@ enum Menu: String {
         
         
         // Drinks
-        case WellAndBucket = "info@wellandbucket.com"
+        case WellAndBucket = "http://www.wellandbucket.com/assets/wnb_menu.pdf"
         
         
         //Coffee
-        case ShoreditchGrind = "Walks in only"
+//        case ShoreditchGrind = "Walks in only"
         
         
         //Shopping
@@ -42,7 +42,7 @@ enum Menu: String {
         
         // Drinks
     //    case SatansWhiskers = ""
-    //    case TheRoyalOak = "http://royaloaklondon.com/contact"
+        case TheRoyalOak = "http://royaloaklondon.com/dinner-dishes#"
         
         
         //Coffee
@@ -61,11 +61,11 @@ enum Menu: String {
         
         
         // Drinks
-        case NTs = "INFO@NTBAR.CO.UK"
+//        case NTs = "INFO@NTBAR.CO.UK"
         
         
         //Coffee
-        case ClimpsonAndSons = "sales@climpsonandsons.com"
+//        case ClimpsonAndSons = "sales@climpsonandsons.com"
         
         
         //Shopping
@@ -78,17 +78,17 @@ enum Menu: String {
     //Hackney Wick
         
         //Food
-        case CRATEBrewery = "bar@cratebrewery.com"
+        case CRATEBrewery = "https://cdn.sanity.io/files/f4bld5iw/production/4651289070a0dc354930fdacb641f5d3831bee88.pdf"
         
         
         // Drinks
-        case BeerMerchantsTap = "tap@beermerchants.com"
+        case BeerMerchantsTap = "https://beermerchantstap.com/beer/"
     //    case HowlingHops
         
         
         //Coffee
     //    case HWK
-        case StourSpace = "info@stourspace.co.uk"
+//        case StourSpace = "info@stourspace.co.uk"
         
         //Shopping
         
@@ -99,17 +99,17 @@ enum Menu: String {
     //Bow & Mile End
         
         //Food
-        case RustyBike = "info@rustybike.pub"
-        case LordMorpeth = "hello@lordmorpeth.co.uk"
+        case RustyBike = "http://rustybike.pub/our-menu/"
+        case LordMorpeth = "http://www.lordmorpeth.co.uk/menus"
         
         
         // Drinks
-        case EastLondonLiquorCompany = "bar@eastlondonliquorcompany.com"
-        case TheMorganArms = "enquiries@morganarmsbow.com"
+        case EastLondonLiquorCompany = "https://eastlondonliquorcompany.com/wp-content/uploads/2019/10/ELLC_Bar_Menu.pdf"
+        case TheMorganArms = "http://www.morganarmsbow.com/food-and-drink/lunch"
         
         
         //Coffee
-        case MaeAndHarvey = "natasha@maeandharvey.com"
+//        case MaeAndHarvey = "natasha@maeandharvey.com"
         
         //Shopping
         
