@@ -64,7 +64,6 @@ enum Area: String {
 }
 
 
-
 // MARK: All Venues
 
 extension Venue {

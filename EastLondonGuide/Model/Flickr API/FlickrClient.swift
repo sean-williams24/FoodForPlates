@@ -25,7 +25,6 @@ class FlickrClient {
             let decoder = JSONDecoder()
             do {
                 let response = try decoder.decode(FlickrResponse.self, from: data)
-                print(response.photos.pages)
                 Auth.flickrPages = min(response.photos.pages, 4000/12)
                 Auth.flickrPhotos = response.photos.photo
                 completion(response, nil)
@@ -35,7 +34,6 @@ class FlickrClient {
             }
         }
         task.resume()
-    
     }
     
     
@@ -43,6 +41,7 @@ class FlickrClient {
         if Auth.flickrPages == 0 {
             Auth.flickrPages = 1
         }
+        
         let urlString = Endpoints.base + Endpoints.query + Endpoints.apiKey + "&text=\(venueName)&safe_search=1" + Endpoints.location + "&format=json&nojsoncallback=1&&per_page=12&page=\(Int.random(in: 0..<Auth.flickrPages))"
 
         taskForGettingFlickrImages(url: urlString) { (response, error) in
@@ -52,6 +51,5 @@ class FlickrClient {
                 completion(false, error)
             }
         }
-        
     }
 }

@@ -32,15 +32,10 @@ class ArticleVC: UITableViewController {
                 }
             }
         }
-
-        
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tempArticlesArray.count
@@ -51,7 +46,6 @@ class ArticleVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
         let article = tempArticlesArray[indexPath.row]
         
-        // Configure the cell...
         cell.articleImageView.image = UIImage(named: article.venue)
         cell.venueNameLabel.text = article.venue.uppercased()
         cell.venueDescriptionLabel.text = article.info
@@ -59,7 +53,6 @@ class ArticleVC: UITableViewController {
         
         cell.venueInfoButton.tag = indexPath.row
         cell.venueInfoButton.addTarget(self, action: #selector(venueInfoButtonTapped(_:)), for: .touchUpInside)
-        
         
         return cell
     }

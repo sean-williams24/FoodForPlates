@@ -22,7 +22,7 @@ enum Menu: String {
         
         
         //Coffee
-//        case ShoreditchGrind = "Walks in only"
+//        case ShoreditchGrind
         
         
         //Shopping
@@ -61,11 +61,11 @@ enum Menu: String {
         
         
         // Drinks
-//        case NTs = "INFO@NTBAR.CO.UK"
+//        case NTs
         
         
         //Coffee
-//        case ClimpsonAndSons = "sales@climpsonandsons.com"
+//        case ClimpsonAndSons
         
         
         //Shopping
@@ -88,7 +88,7 @@ enum Menu: String {
         
         //Coffee
     //    case HWK
-//        case StourSpace = "info@stourspace.co.uk"
+//        case StourSpace
         
         //Shopping
         
@@ -109,7 +109,7 @@ enum Menu: String {
         
         
         //Coffee
-//        case MaeAndHarvey = "natasha@maeandharvey.com"
+//        case MaeAndHarvey
         
         //Shopping
         

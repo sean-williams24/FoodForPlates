@@ -167,6 +167,7 @@ class VenueImagesVC: UICollectionViewController {
                         
                         DispatchQueue.main.async {
                             photo.image = imageData
+                            
                             cell.activityIndicator.stopAnimating()
                             try? self.dataController.viewContext.save()
                             cell.imageVIew.image = image

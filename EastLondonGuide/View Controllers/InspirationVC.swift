@@ -23,8 +23,6 @@ class InspirationVC: UIViewController {
         super.viewDidLoad()
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
-    
-        
     }
     
 
@@ -59,7 +57,4 @@ extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
         chosenArticle = Article.articleTitles[indexPath.row]
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
-    
-    
- 
 }
