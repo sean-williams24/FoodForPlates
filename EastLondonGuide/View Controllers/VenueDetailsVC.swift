@@ -32,13 +32,11 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     var arrivedFromMapView = false
     var venueCoordinate: CLLocationCoordinate2D?
     var userLocation: CLLocation?
+    var dropOffLocation = CLLocation()
     var locationManager = CLLocationManager()
     var venueIsFavourite: Bool {
         return FavouritesModel.favourites.contains(venue)
     }
-    
-    var dropOffLocation = CLLocation()
-    var currentUserLocation = CLLocation()
     
     
     //MARK: - Lifecycle Methods
@@ -64,7 +62,6 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locationManager.location
-//        print("Did update location: \(userLocation?.coordinate)")
     }
     
     fileprivate func setupUI() {
@@ -101,11 +98,7 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     
     fileprivate func setUberDropLocation() {
         // Set drop Uber off location - If we havent arrived from MapVC, need to obtain coordinate from address
-        
-//        if let userLocation = userLocation {
-//                  currentUserLocation = userLocation
-//              }
-        
+
         let address = venue.address?.replacingOccurrences(of: "\n", with: "")
         if venueCoordinate == nil {
             
@@ -115,7 +108,7 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
                     let placemarks = placemarks,
                     let location = placemarks.first?.location
                     else {
-                        print("No location found")
+                        self.showErrorAlert(title: "", error: "")
                         return
                 }
                 self.dropOffLocation = location
@@ -134,38 +127,17 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         // ride request button
         let uberButton = RideRequestButton()
         
-        // set a journey details
+        // set journey details
         let builder = RideParametersBuilder()
-//        builder.pickupLocation = currentUserLocation
         builder.dropoffLocation = dropOffLocation
-//        builder.dropoffAddress = address
         builder.dropoffNickname = venue.name
         uberButton.rideParameters = builder.build()
-        
-//        var productID = ""
-//        let ridesClient = RidesClient()
-
-//
-//        ridesClient.fetchProducts(pickupLocation: currentUserLocation) { (product, response) in
-//            debugPrint(product)
-//            debugPrint(response)
-//            productID = product[1].productID!
-//            builder.productID = productID
-//         }
-//
-//         ridesClient.fetchPriceEstimates(pickupLocation: currentUserLocation, dropoffLocation: dropOffLocation) { (price, response) in
-//             print(price[0].estimate!)
-//
-//             uberButton.rideParameters = builder.build()
-//             uberButton.loadRideInformation()
-//         }
         
         uberButton.center = uberView.center
         uberButton.translatesAutoresizingMaskIntoConstraints = false
         uberView.addSubview(uberButton)
         uberButton.centerXAnchor.constraint(equalTo: uberView.centerXAnchor).isActive = true
     }
-    
     
     
     fileprivate func calculateTextViewHeights(textView: UITextView, constraint: NSLayoutConstraint) {
@@ -235,20 +207,4 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         self.present(navigationController, animated: true, completion: nil)
 
     }
-    
-
-    // MARK: - Navigation
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        let vc = self.storyboard?.instantiateViewController(identifier: "MenuVC") as! MenuVC
-//        vc.venue = venue
-//        
-//        let vc1 = self.storyboard?.instantiateViewController(identifier: "VenueImages") as! VenueImagesVC
-//        vc1.venue = venue
-//        print("Prep for segue \(venue.name)")
-//                
-//    }
-
-
 }

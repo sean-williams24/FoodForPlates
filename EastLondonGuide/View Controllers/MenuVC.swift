@@ -16,6 +16,8 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     var popUpWebview: WKWebView?
     
+    
+    //MARK: - Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,6 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         
-
-            
         let newBackButton = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(back(sender:)))
         newBackButton.tintColor = .darkGray
         self.navigationItem.leftBarButtonItem = newBackButton;
@@ -42,7 +42,6 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +50,20 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {        
+    
+    //MARK: - Navigation Delegate Methods
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
+    }
+    
+ 
+    //MARK: - Webkit Delegate Methods
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if webView.canGoBack {
             navigationController?.navigationBar.isHidden = false
         }
@@ -63,16 +75,6 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
     }
     
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress" {
-            progressView.progress = Float(webView.estimatedProgress)
-        }
-    }
-    
- 
-    
-    
     @objc func back(sender: UIBarButtonItem) {
         if(webView.canGoBack) {
              webView.goBack()
@@ -81,20 +83,19 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
     }
     
-       @objc func backPopUp(sender: UIBarButtonItem) {
-            if(popUpWebview!.canGoBack) {
-                 popUpWebview!.goBack()
-            } else {
-                popUpWebview?.removeFromSuperview()
-                let vc = storyboard?.instantiateViewController(identifier: "MenuVC") as! MenuVC
-                self.navigationController?.pushViewController(vc, animated: false)
-            }
+    @objc func backPopUp(sender: UIBarButtonItem) {
+        if(popUpWebview!.canGoBack) {
+             popUpWebview!.goBack()
+        } else {
+            popUpWebview?.removeFromSuperview()
+            let vc = storyboard?.instantiateViewController(identifier: "MenuVC") as! MenuVC
+            self.navigationController?.pushViewController(vc, animated: false)
         }
+    }
 
-    // Create pop up webview for new page load in new window
+    // Create pop up webview for new page load in current window
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        print("PopUp view")
         navigationController?.navigationBar.isHidden = false
 
         popUpWebview = WKWebView(frame: view.bounds, configuration: configuration)

@@ -23,6 +23,9 @@ class MapVC: UIViewController {
     var chosenVenue: Venue!
     var venueCoordinate: CLLocationCoordinate2D!
 
+
+    //MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,8 +41,7 @@ class MapVC: UIViewController {
             CLGeocoder().geocodeAddressString(address ?? "") { (placemarks, error) in
                 if error != nil {
                     DispatchQueue.main.async {
-                        //TODO: show error alert
-                        print("Error Geocoding \(venue.name)")
+                        self.showErrorAlert(title: "Error geocoding address", error: "We were unable to find addresses for all locations, all pins may not be displayed.")
                     }
                 }
                 
@@ -69,7 +71,7 @@ class MapVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if Global.viewVenueOnMap == true {
+        if Global.viewVenueOnMap {
             zoomToVenue()
        }
     }
@@ -195,7 +197,6 @@ class MapVC: UIViewController {
             self.backgroundButton.alpha = 0
         }
     }
-    
 }
 
 //MARK: - MapView Delegate

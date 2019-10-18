@@ -9,7 +9,7 @@
 import UIKit
 
 class InspirationVC: UIViewController {
-
+    
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var inspoTableView: UITableView!
@@ -25,17 +25,17 @@ class InspirationVC: UIViewController {
         letterSpacing(label: titleLabel, value: 13.0)
     }
     
-
+    
     //MARK: - Navigation
-     
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         let vc = segue.destination as! ArticleVC
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ArticleVC
         vc.chosenArticleTitle = chosenArticle
-     }
+    }
     
     // MARK: - Table View Delegates
-
+    
 }
 
 extension InspirationVC: UITableViewDelegate, UITableViewDataSource {

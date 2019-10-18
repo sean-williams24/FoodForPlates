@@ -239,4 +239,5 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         animateTableviewReload()
         categorySelector.selectedSegmentIndex = 0
     }
+    
 }
