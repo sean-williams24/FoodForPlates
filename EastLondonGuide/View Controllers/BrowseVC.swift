@@ -55,7 +55,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == true {
             showFavouritesButton.isEnabled = false
             filteredVenues = FavouritesModel.favourites
-            animateTableviewReload()
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         } else if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == false {
             filteredVenues = allVenues
         }
@@ -103,17 +103,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Helper Methods
     
-    fileprivate func animateTableviewReload() {
-        let transition = CATransition()
-        transition.type = CATransitionType.push
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.fillMode = CAMediaTimingFillMode.forwards
-        transition.duration = 0.9
-        transition.subtype = CATransitionSubtype.fromBottom
-        self.tableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
-        self.tableView.reloadData()
-    }
-    
     
     fileprivate func filterLocation(for venueArea: String) {
         if filteredByCategory == false {
@@ -123,7 +112,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.filteredVenues.append(venue)
                 }
             }
-            animateTableviewReload()
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         } else {
             // Filtered by category is TRUE
             filteredVenues = alreadyFilteredByCategory
@@ -135,7 +124,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
                 filteredByArea = true
             }
-            animateTableviewReload()
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         }
     }
     
@@ -150,7 +139,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.alreadyFilteredByCategory.append(venue)
             }
         }
-        animateTableviewReload()
+        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
     }
     
     
@@ -199,7 +188,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         switch categorySelector.selectedSegmentIndex {
         case 0:
             filteredVenues = allVenues
-            animateTableviewReload()
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         case 1:
             filterCategory(for: "Food")
         case 2:
@@ -224,7 +213,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             showFavouritesButton.isEnabled = true
         }
-        animateTableviewReload()
+        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
     }
     
 
@@ -236,7 +225,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if FavouritesModel.favourites.count > 0 {
             showFavouritesButton.isEnabled = true
         }
-        animateTableviewReload()
+        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         categorySelector.selectedSegmentIndex = 0
     }
     

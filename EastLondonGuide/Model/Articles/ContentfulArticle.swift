@@ -9,8 +9,6 @@
 import Contentful
 import Foundation
 
-
-
 final class ContentfulArticle: EntryDecodable, FieldKeysQueryable {
     
     static let contentTypeId: String = "articles"

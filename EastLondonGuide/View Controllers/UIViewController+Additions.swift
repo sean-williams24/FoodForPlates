@@ -29,5 +29,14 @@ extension UIViewController {
         control.setTitleTextAttributes(font as? [NSAttributedString.Key : Any], for: .normal)
     }
     
-    //GIt Testing
+    func animateTableviewReload(tableView: UITableView, transitionType: CATransitionSubtype) {
+        let transition = CATransition()
+        transition.type = CATransitionType.push
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.fillMode = CAMediaTimingFillMode.forwards
+        transition.duration = 0.9
+        transition.subtype = transitionType
+        tableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
+        tableView.reloadData()
+    }
 }

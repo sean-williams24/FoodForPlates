@@ -58,14 +58,7 @@ class InspirationVC: UIViewController {
                         self.view.layoutIfNeeded()
                     })
                     
-                    let transition = CATransition()
-                    transition.type = CATransitionType.push
-                    transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-                    transition.fillMode = CAMediaTimingFillMode.forwards
-                    transition.duration = 0.9
-                    transition.subtype = CATransitionSubtype.fromTop
-                    self.inspoTableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
-                    self.inspoTableView.reloadData()
+                    self.animateTableviewReload(tableView: self.inspoTableView, transitionType: .fromTop)
                 }
                 
             case .error:
