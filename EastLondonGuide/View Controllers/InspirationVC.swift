@@ -13,7 +13,6 @@ class InspirationVC: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var inspoTableView: UITableView!
-    @IBOutlet var titleLabelHeight: NSLayoutConstraint!
     
     var articleImages = [UIImage]()
     var articleData = [ArticleType]()
@@ -25,7 +24,10 @@ class InspirationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabelHeight.constant = UIScreen.main.bounds.height
+        NSLayoutConstraint.activate([
+            titleLabel.heightAnchor.constraint(equalToConstant: view.frame.height)
+        ])
+        
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
         
@@ -54,7 +56,9 @@ class InspirationVC: UIViewController {
                 
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 2, delay: 0, options: .curveEaseInOut, animations: {
-                        self.titleLabelHeight.constant = 150
+//                        NSLayoutConstraint.activate([
+//                            self.titleLabel.heightAnchor.constraint(equalToConstant: 150)
+//                        ])
                         self.view.layoutIfNeeded()
                     })
                     

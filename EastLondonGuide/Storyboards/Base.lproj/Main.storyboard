@@ -31,20 +31,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-CH-SAz">
-                                <rect key="frame" x="17" y="88" width="397" height="150"/>
+                                <rect key="frame" x="17" y="98" width="397" height="240"/>
                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="QMS-qO-b5F"/>
-                                </constraints>
                                 <string key="text">FOOD
 FOR 
 PLATES</string>
-                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="42"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="80"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SvV-E0-kWC">
-                                <rect key="frame" x="0.0" y="238" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="338" width="414" height="558"/>
                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="Food_For_Plates" customModuleProvider="target">
@@ -88,12 +85,16 @@ PLATES</string>
                                     <outlet property="delegate" destination="qn6-tK-Fmw" id="ahI-v0-lDY"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUB-Zo-X2q">
+                                <rect key="frame" x="74" y="202" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ikb-CH-SAz" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" constant="17" id="FbP-vJ-i3K"/>
                             <constraint firstAttribute="bottom" secondItem="SvV-E0-kWC" secondAttribute="bottom" id="bkI-TZ-VbO"/>
-                            <constraint firstItem="Ikb-CH-SAz" firstAttribute="top" secondItem="4vv-Of-gAf" secondAttribute="top" id="gmo-yX-6B0"/>
+                            <constraint firstItem="Ikb-CH-SAz" firstAttribute="top" secondItem="4vv-Of-gAf" secondAttribute="top" constant="10" id="gmo-yX-6B0"/>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" id="pVZ-I1-2HY"/>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="top" secondItem="Ikb-CH-SAz" secondAttribute="bottom" id="rnz-Fl-43p"/>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="trailing" secondItem="4vv-Of-gAf" secondAttribute="trailing" id="tTN-vd-B9b"/>
@@ -107,7 +108,6 @@ PLATES</string>
                     <connections>
                         <outlet property="inspoTableView" destination="SvV-E0-kWC" id="DVa-iH-Yif"/>
                         <outlet property="titleLabel" destination="Ikb-CH-SAz" id="3k9-gU-cNU"/>
-                        <outlet property="titleLabelHeight" destination="QMS-qO-b5F" id="zYL-p1-qQf"/>
                         <segue destination="5HB-Hp-ZHv" kind="show" identifier="ArticleVC" id="BPr-kN-2wk"/>
                     </connections>
                 </viewController>
@@ -905,13 +905,13 @@ PLATES</string>
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-ua-Jic">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="1023.6666666666666"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="1020"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duN-Be-DkZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bethnal Green" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-ff-omc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374.00000000000011" height="300"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -924,13 +924,13 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Venue Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-Nr-9aA">
-                                                <rect key="frame" x="0.0" y="310" width="374" height="25.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="310" width="374" height="22"/>
                                                 <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-I2-Ac8">
-                                                <rect key="frame" x="0.0" y="345.66666666666669" width="374" height="250.00000000000006"/>
+                                                <rect key="frame" x="0.0" y="342" width="374" height="250"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="Descritption" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hiw-5z-HqQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
@@ -953,7 +953,7 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-k1-y99">
-                                                <rect key="frame" x="0.0" y="605.66666666666663" width="374" height="128"/>
+                                                <rect key="frame" x="0.0" y="602" width="374" height="128"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Address:" translatesAutoresizingMaskIntoConstraints="NO" id="1HC-4e-tzu">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
@@ -977,7 +977,7 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEt-pD-6IQ">
-                                                <rect key="frame" x="0.0" y="743.66666666666663" width="374" height="80"/>
+                                                <rect key="frame" x="0.0" y="740" width="374" height="80"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-y3-dWY">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
@@ -1000,7 +1000,7 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fp-6b-Lom">
-                                                <rect key="frame" x="0.0" y="833.66666666666663" width="374" height="40"/>
+                                                <rect key="frame" x="0.0" y="830" width="374" height="40"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8U-mC-4dv">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -1025,7 +1025,7 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-gZ-f0M">
-                                                <rect key="frame" x="0.0" y="883.66666666666663" width="374" height="40"/>
+                                                <rect key="frame" x="0.0" y="880" width="374" height="40"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azc-N8-TT3">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -1050,7 +1050,7 @@ PLATES</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-gF-h3j">
-                                                <rect key="frame" x="0.0" y="933.66666666666663" width="374" height="90"/>
+                                                <rect key="frame" x="0.0" y="930" width="374" height="90"/>
                                                 <subviews>
                                                     <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-LF-BKn">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
