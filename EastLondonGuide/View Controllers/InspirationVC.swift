@@ -14,6 +14,7 @@ class InspirationVC: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var inspoTableView: UITableView!
+    @IBOutlet var titleLabelHeight: NSLayoutConstraint!
     
     
     var articleImages = [UIImage]()
@@ -28,28 +29,20 @@ class InspirationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabelHeight.constant = UIScreen.main.bounds.height
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
         
-        
-//        let query = Query.where(contentTypeId: "articles")
-//        let articleQuery = QueryOn<ContentfulArticle>.where(contentTypeId: "articles")
-//
-//        contentfulClient.fetchArray(of: ContentfulArticle.self, matching: articleQuery) { (result: Result<ArrayResponse<ContentfulArticle>>) in
-//          switch result {
-//          case .success(let entriesArrayResponse):
-//            let articles = entriesArrayResponse.items
-//            // Do stuff with article entries.
-//
-//          case .error(let error):
-//            print("Oh no something went wrong: \(error)")
-//          }
-//        }
-        
+        titleLabel.center = CGPoint(x: UIScreen.main.bounds.width / 8, y: 0)
+        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseInOut, animations: {
+            self.titleLabel.center = CGPoint(x: 0, y: 0)
+        }) { (success) in
+            
+        }
         
         let articleTypeQuery = QueryOn<ArticleType>.where(contentTypeId: "articleType")
         
-        contentfulClient.fetchArray(of: ArticleType.self, matching: articleTypeQuery) { (result: Result<ArrayResponse<ArticleType>>) in
+        contentfulClient.fetchArray(of: ArticleType.self, matching: articleTypeQuery) { (result: Result<HomogeneousArrayResponse<ArticleType>>) in
           switch result {
           case .success(let entriesArrayResponse):
             self.articleData = entriesArrayResponse.items
@@ -68,7 +61,24 @@ class InspirationVC: UIViewController {
                 }
             }
             
+            
+
+            
             DispatchQueue.main.async {
+                UIView.animate(withDuration: 2, delay: 0, options: .curveEaseInOut, animations: {
+                    self.titleLabelHeight.constant = 150
+                    self.view.layoutIfNeeded()
+                }) { (success) in
+                    
+                }
+                
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+                transition.fillMode = CAMediaTimingFillMode.forwards
+                transition.duration = 0.9
+                transition.subtype = CATransitionSubtype.fromTop
+                self.inspoTableView.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
                 self.inspoTableView.reloadData()
             }
             
@@ -76,6 +86,24 @@ class InspirationVC: UIViewController {
             print("Oh no something went wrong: \(error)")
           }
         }
+        
+        
+                
+                
+        //        let query = Query.where(contentTypeId: "articles")
+        //        let articleQuery = QueryOn<ContentfulArticle>.where(contentTypeId: "articles")
+        //
+        //        contentfulClient.fetchArray(of: ContentfulArticle.self, matching: articleQuery) { (result: Result<ArrayResponse<ContentfulArticle>>) in
+        //          switch result {
+        //          case .success(let entriesArrayResponse):
+        //            let articles = entriesArrayResponse.items
+        //            // Do stuff with article entries.
+        //
+        //          case .error(let error):
+        //            print("Oh no something went wrong: \(error)")
+        //          }
+        //        }
+        
     }
     
     
@@ -100,17 +128,18 @@ extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InspirationCell", for: indexPath) as! InspirationCell
 
         cell.customImageView.image = articleImages[indexPath.row]
-        cell.customTextLabel.text = articleData[indexPath.row].title
+        cell.customTextLabel.text = articleData[indexPath.row].title?.uppercased()
         letterSpacing(label: cell.customTextLabel, value: 8.0)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenArticle = Article.articleTitles[indexPath.row]
+        chosenArticle = articleData[indexPath.row].title
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
 }
+
 
 
 //        contentfulClient.fetch(Entry.self, id: "3CByBM1l0weMSOBF3bkbOM") { (result: Result<Entry>) in
