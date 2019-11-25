@@ -16,7 +16,7 @@ class InspirationVC: UIViewController {
     @IBOutlet var inspoTableView: UITableView!
     
     
-    let articleImages = ["Roast", "Breakfast", "Brewery", "Pizza"]
+    var articleImages = [UIImage]()
     
 //    let articleData = Article.allArticles!
     var articleData = [ArticleType]()
@@ -32,21 +32,19 @@ class InspirationVC: UIViewController {
         letterSpacing(label: titleLabel, value: 13.0)
         
         
-        
 //        let query = Query.where(contentTypeId: "articles")
-        let articleQuery = QueryOn<ContentfulArticle>.where(contentTypeId: "articles")
-
-        contentfulClient.fetchArray(of: ContentfulArticle.self, matching: articleQuery) { (result: Result<ArrayResponse<ContentfulArticle>>) in
-          switch result {
-          case .success(let entriesArrayResponse):
-            let articles = entriesArrayResponse.items
-            // Do stuff with article entries.
-//            print(articles.first?.info)
-
-          case .error(let error):
-            print("Oh no something went wrong: \(error)")
-          }
-        }
+//        let articleQuery = QueryOn<ContentfulArticle>.where(contentTypeId: "articles")
+//
+//        contentfulClient.fetchArray(of: ContentfulArticle.self, matching: articleQuery) { (result: Result<ArrayResponse<ContentfulArticle>>) in
+//          switch result {
+//          case .success(let entriesArrayResponse):
+//            let articles = entriesArrayResponse.items
+//            // Do stuff with article entries.
+//
+//          case .error(let error):
+//            print("Oh no something went wrong: \(error)")
+//          }
+//        }
         
         
         let articleTypeQuery = QueryOn<ArticleType>.where(contentTypeId: "articleType")
@@ -54,61 +52,30 @@ class InspirationVC: UIViewController {
         contentfulClient.fetchArray(of: ArticleType.self, matching: articleTypeQuery) { (result: Result<ArrayResponse<ArticleType>>) in
           switch result {
           case .success(let entriesArrayResponse):
-            let articleType = entriesArrayResponse.items
-            // Do stuff with article entries.
-            print(articleType.count)
-            
-            self.articleData = articleType
-            
-            if let firstArticle = articleType.first {
-//                print(firstArticle.title)
-                if let articles = firstArticle.articleData {
-                    print(articles.count)
+            self.articleData = entriesArrayResponse.items
+                        
+            // Assign article images to local array
+            for articleType in self.articleData {
+                if let url = articleType.image?.url {
+                    do {
+                        let imageData = try Data(contentsOf: url)
+                        if let image = UIImage(data: imageData) {
+                            self.articleImages.append(image)
+                        }
+                    } catch {
+                        print(error)
+                    }
                 }
             }
             
             DispatchQueue.main.async {
                 self.inspoTableView.reloadData()
             }
-
-//            print(articles?.count)
             
           case .error(let error):
             print("Oh no something went wrong: \(error)")
           }
         }
-        
-        
-        
-        
-        
-        
-        
-//        contentfulClient.fetch(Entry.self, id: "3CByBM1l0weMSOBF3bkbOM") { (result: Result<Entry>) in
-//            switch result {
-//                case .success(let entry):
-//                    print(entry.id)
-//                case .error(let error):
-//                    print("Error \(error)!")
-//            }
-//        }
-        
-
-        
-//        let query2 = QueryOn<Cat>.where(field: .color, .equals("gray"))
-//
-//        // Note the type in the asynchronously returned result: An `ArrayResponse` with `Cat` as the item type.
-//        contentfulClient.fetchArray(of: Cat.self, matching: query2) { (result: Result<ArrayResponse<Cat>>) in
-//          switch result {
-//          case .success(let catsResponse):
-//            guard let cat = catsResponse.items.first else { return }
-//            print(cat.color!) // Prints "gray" to console.
-//
-//          case .error(let error):
-//            print("Oh no something went wrong: \(error)")
-//          }
-//        }
-        
     }
     
     
@@ -131,27 +98,9 @@ extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InspirationCell", for: indexPath) as! InspirationCell
-        
-//        cell.customImageView.image = UIImage(named: articleImages[indexPath.row])
-//        cell.customTextLabel.text = Article.articleTitles[indexPath.row]
-        
-        let article = articleData[indexPath.row]
-        
-        if let url = article.image?.url {
-            do {
-                let imageData = try Data(contentsOf: url)
-                let image = UIImage(data: imageData)
-                cell.customImageView.image = image
 
-            } catch {
-                print(error)
-            }
-
-        }
-        
-        cell.customTextLabel.text = article.title
-        print(article.title as Any)
-        
+        cell.customImageView.image = articleImages[indexPath.row]
+        cell.customTextLabel.text = articleData[indexPath.row].title
         letterSpacing(label: cell.customTextLabel, value: 8.0)
         
         return cell
@@ -162,3 +111,27 @@ extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
 }
+
+
+//        contentfulClient.fetch(Entry.self, id: "3CByBM1l0weMSOBF3bkbOM") { (result: Result<Entry>) in
+//            switch result {
+//                case .success(let entry):
+//                    print(entry.id)
+//                case .error(let error):
+//                    print("Error \(error)!")
+//            }
+//        }
+     
+//        let query2 = QueryOn<Cat>.where(field: .color, .equals("gray"))
+//
+//        // Note the type in the asynchronously returned result: An `ArrayResponse` with `Cat` as the item type.
+//        contentfulClient.fetchArray(of: Cat.self, matching: query2) { (result: Result<ArrayResponse<Cat>>) in
+//          switch result {
+//          case .success(let catsResponse):
+//            guard let cat = catsResponse.items.first else { return }
+//            print(cat.color!) // Prints "gray" to console.
+//
+//          case .error(let error):
+//            print("Oh no something went wrong: \(error)")
+//          }
+//        }
