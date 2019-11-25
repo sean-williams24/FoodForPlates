@@ -11,7 +11,8 @@ import UIKit
 class ArticleVC: UITableViewController {
 
     var chosenArticleTitle: String!
-    var tempArticlesArray = [Article]()
+    var contentfulArticles = [ContentfulArticle]()
+    var tempArticlesArray = [ContentfulArticle]()
     var chosenVenue: String!
     
     override func viewDidLoad() {
@@ -24,12 +25,9 @@ class ArticleVC: UITableViewController {
             [NSAttributedString.Key.font: UIFont(name: "JosefinSans-Light", size: 12)!,
              NSAttributedString.Key.foregroundColor : UIColor.black]
         
-        if let allArticles = Article.allArticles {
-            for article in allArticles {
-
-                if article.title.uppercased() == chosenArticleTitle {
-                    tempArticlesArray.append(article)
-                }
+        for article in contentfulArticles {
+            if article.title == chosenArticleTitle {
+                tempArticlesArray.append(article)
             }
         }
     }
@@ -46,10 +44,10 @@ class ArticleVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
         let article = tempArticlesArray[indexPath.row]
         
-        cell.articleImageView.image = UIImage(named: article.venue)
-        cell.venueNameLabel.text = article.venue.uppercased()
+        cell.articleImageView.image = UIImage(named: article.venue ?? "")
+        cell.venueNameLabel.text = article.venue?.uppercased()
         cell.venueDescriptionLabel.text = article.info
-        cell.venueInfoButton.setTitle("\(article.venue.uppercased()) INFO", for: .normal)
+        cell.venueInfoButton.setTitle("\(article.venue?.uppercased() ?? "VENUE") INFO", for: .normal)
         
         cell.venueInfoButton.tag = indexPath.row
         cell.venueInfoButton.addTarget(self, action: #selector(venueInfoButtonTapped(_:)), for: .touchUpInside)
