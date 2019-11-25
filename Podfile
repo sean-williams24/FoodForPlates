@@ -7,5 +7,6 @@ target 'EastLondonGuide' do
 
   # Pods for EastLondonGuide
   pod 'UberRides', '~> 0.9'
+  pod 'Contentful'
 
 end

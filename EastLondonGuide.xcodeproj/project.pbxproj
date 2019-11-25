@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		625FAE0DDDB7D3806D5F54BB /* Pods_EastLondonGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D544CD3C3843D85E78B6AC /* Pods_EastLondonGuide.framework */; };
 		CE0C262F2355ED25000C8089 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE0C262E2355ED25000C8089 /* README.txt */; };
 		CE200EB02350DDD300098AA8 /* GlobalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */; };
+		CE69C80923882C82004F599B /* ContentfulArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69C80823882C82004F599B /* ContentfulArticle.swift */; };
+		CE69C80B238843E3004F599B /* ArticleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69C80A238843E3004F599B /* ArticleType.swift */; };
 		CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C77233A23D000BD70CE /* AppDelegate.swift */; };
 		CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */; };
 		CE9C6C7F233A23D000BD70CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9C6C7D233A23D000BD70CE /* Main.storyboard */; };
@@ -47,6 +49,7 @@
 		CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */; };
 		CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */; };
 		CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF423420E6800BD70CE /* MapVC.swift */; };
+		CEAD3629238800C300F662E5 /* ContentfulClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD3628238800C300F662E5 /* ContentfulClient.swift */; };
 		CEE58009234623AC0068A774 /* FavouritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58008234623AC0068A774 /* FavouritesModel.swift */; };
 		CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800A234746610068A774 /* ArticlesModel.swift */; };
 		CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800E234788F80068A774 /* ArticleVC.swift */; };
@@ -68,6 +71,8 @@
 		9C0BAF0A7B55A610E191F675 /* Pods-EastLondonGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EastLondonGuide.release.xcconfig"; path = "Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide.release.xcconfig"; sourceTree = "<group>"; };
 		CE0C262E2355ED25000C8089 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 		CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProperties.swift; sourceTree = "<group>"; };
+		CE69C80823882C82004F599B /* ContentfulArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulArticle.swift; sourceTree = "<group>"; };
+		CE69C80A238843E3004F599B /* ArticleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleType.swift; sourceTree = "<group>"; };
 		CE9C6C74233A23D000BD70CE /* Food For Plates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food For Plates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9C6C77233A23D000BD70CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationVC.swift; sourceTree = "<group>"; };
 		CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
 		CE9C6CF423420E6800BD70CE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		CEAD3628238800C300F662E5 /* ContentfulClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulClient.swift; sourceTree = "<group>"; };
 		CEE58008234623AC0068A774 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
 		CEE5800A234746610068A774 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
 		CEE5800E234788F80068A774 /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 			children = (
 				CE9C6C77233A23D000BD70CE /* AppDelegate.swift */,
 				CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */,
+				CEAD3628238800C300F662E5 /* ContentfulClient.swift */,
 				CE9C6CB7233B630E00BD70CE /* Model */,
 				CE9C6CB5233B62A300BD70CE /* View Controllers */,
 				CE9C6CB6233B62E600BD70CE /* Storyboards */,
@@ -255,6 +262,8 @@
 			children = (
 				CEE5800A234746610068A774 /* ArticlesModel.swift */,
 				CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */,
+				CE69C80823882C82004F599B /* ContentfulArticle.swift */,
+				CE69C80A238843E3004F599B /* ArticleType.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -381,18 +390,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
-				"${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberRides.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -441,6 +443,7 @@
 				CE9C6CC3233CA27A00BD70CE /* BrowseVC.swift in Sources */,
 				CE9C6C78233A23D000BD70CE /* AppDelegate.swift in Sources */,
 				CE9C6CBD233B86CB00BD70CE /* VenuesVC.swift in Sources */,
+				CE69C80B238843E3004F599B /* ArticleType.swift in Sources */,
 				CEEFD5B5234E1C1300AC73C4 /* DataController.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
 				CE200EB02350DDD300098AA8 /* GlobalProperties.swift in Sources */,
@@ -460,9 +463,11 @@
 				CEE580112348E7880068A774 /* ArticleCell.swift in Sources */,
 				CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */,
 				CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */,
+				CEAD3629238800C300F662E5 /* ContentfulClient.swift in Sources */,
 				CEE5801B234CB7130068A774 /* FlickrClient.swift in Sources */,
 				CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */,
 				CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */,
+				CE69C80923882C82004F599B /* ContentfulArticle.swift in Sources */,
 				CE9C6CB9233B645F00BD70CE /* CategoriesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

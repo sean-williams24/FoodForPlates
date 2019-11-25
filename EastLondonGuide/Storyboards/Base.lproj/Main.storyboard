@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ULD-HF-x9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ULD-HF-x9b">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="02c5086e8616653dade6e7cb3a1f0498.ttf">
+            <string>LTCBodoni175W01-Regular</string>
+        </array>
         <array key="JosefinSans-Light.ttf">
             <string>JosefinSans-Light</string>
         </array>
@@ -17,15 +20,12 @@
         <array key="JosefinSans-Thin.ttf">
             <string>JosefinSans-Thin</string>
         </array>
-        <array key="LTC Bodoni 175 W01 Regular.ttf">
-            <string>LTCBodoni175W01-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Inspiration-->
         <scene sceneID="cW6-mm-hJG">
             <objects>
-                <viewController title="Inspiration" id="qn6-tK-Fmw" customClass="InspirationVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Inspiration" id="qn6-tK-Fmw" customClass="InspirationVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvA-pV-zGZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@ PLATES</string>
                                 <rect key="frame" x="0.0" y="238" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="EastLondonGuide" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="Food_For_Plates" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gVN-uh-k3P" id="qKA-Tb-h5Q">
@@ -117,13 +117,13 @@ PLATES</string>
         <!--ArticleVC-->
         <scene sceneID="0PS-DZ-AOk">
             <objects>
-                <tableViewController id="5HB-Hp-ZHv" customClass="ArticleVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5HB-Hp-ZHv" customClass="ArticleVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dhy-T6-OU6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="526" id="Ysh-Nm-wSe" customClass="ArticleCell" customModule="EastLondonGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="526" id="Ysh-Nm-wSe" customClass="ArticleCell" customModule="Food_For_Plates" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="526"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ysh-Nm-wSe" id="bXJ-S4-XNJ">
@@ -137,13 +137,13 @@ PLATES</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-I4-o9H">
-                                            <rect key="frame" x="20" y="311" width="374" height="22"/>
+                                            <rect key="frame" x="20" y="311" width="374" height="25.666666666666686"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQz-M4-GTe">
-                                            <rect key="frame" x="20" y="358" width="374" height="72"/>
+                                            <rect key="frame" x="20" y="361.66666666666669" width="374" height="68.333333333333314"/>
                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="14"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@ PLATES</string>
         <!--Map-->
         <scene sceneID="biQ-Vh-LoR">
             <objects>
-                <viewController storyboardIdentifier="MapVC" title="Map" id="jOo-sd-yq5" customClass="MapVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapVC" title="Map" id="jOo-sd-yq5" customClass="MapVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zp7-Hb-ihM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,8 +370,8 @@ PLATES</string>
                     <tabBar key="tabBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vdT-69-ZUd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
                         <color key="selectedImageTintColor" red="0.79594868419999998" green="0.7769952416" blue="0.73724848030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
@@ -391,7 +391,7 @@ PLATES</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQI-Rr-DBJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inspiration" image="wand.and.rays.inverse" catalog="system" selectedImage="wand.and.rays" id="cTi-9Y-HIe">
-                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ulU-B3-ULe">
@@ -414,7 +414,7 @@ PLATES</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Kk-xw-Z1v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Guides" image="book.fill" catalog="system" selectedImage="book" id="80g-J5-IxD">
-                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tu-fv-Mub">
@@ -435,13 +435,13 @@ PLATES</string>
         <!--Guides-->
         <scene sceneID="Ids-Nq-i3u">
             <objects>
-                <tableViewController title="Guides" id="AYg-Ll-hu3" customClass="GuidesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Guides" id="AYg-Ll-hu3" customClass="GuidesVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="15" sectionFooterHeight="15" id="SWy-Se-8cD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AreaCell" rowHeight="200" id="6XR-j1-bEo" customClass="AreaCell" customModule="EastLondonGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AreaCell" rowHeight="200" id="6XR-j1-bEo" customClass="AreaCell" customModule="Food_For_Plates" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6XR-j1-bEo" id="cSN-3D-pYK">
@@ -496,13 +496,13 @@ PLATES</string>
         <!--Categories-->
         <scene sceneID="ksl-d7-D7P">
             <objects>
-                <tableViewController title="Categories" id="PVl-Wz-qzS" customClass="CategoriesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Categories" id="PVl-Wz-qzS" customClass="CategoriesVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6cd-lw-4bL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoriesCell" rowHeight="200" id="Qyf-9m-VRd" customClass="CategoriesCell" customModule="EastLondonGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoriesCell" rowHeight="200" id="Qyf-9m-VRd" customClass="CategoriesCell" customModule="Food_For_Plates" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qyf-9m-VRd" id="sFC-Tz-Z5l">
@@ -557,13 +557,13 @@ PLATES</string>
         <!--Venues-->
         <scene sceneID="9VP-nL-kv0">
             <objects>
-                <tableViewController title="Venues" id="VOj-6G-v7q" customClass="VenuesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Venues" id="VOj-6G-v7q" customClass="VenuesVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2m-Ov-Q2e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenuesCell" rowHeight="200" id="jVM-e5-4qO" customClass="VenuesCell" customModule="EastLondonGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenuesCell" rowHeight="200" id="jVM-e5-4qO" customClass="VenuesCell" customModule="Food_For_Plates" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jVM-e5-4qO" id="fAV-DF-eIn">
@@ -639,7 +639,7 @@ PLATES</string>
         <!--BrowseVC-->
         <scene sceneID="eR1-Yt-dkB">
             <objects>
-                <viewController id="fBw-xg-fI1" customClass="BrowseVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fBw-xg-fI1" customClass="BrowseVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YRS-UN-y1K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -669,7 +669,7 @@ PLATES</string>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowseCell" rowHeight="211" id="xJm-ul-6ox" customClass="BrowseCell" customModule="EastLondonGuide" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowseCell" rowHeight="211" id="xJm-ul-6ox" customClass="BrowseCell" customModule="Food_For_Plates" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="211"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJm-ul-6ox" id="NFS-vg-mL1">
@@ -895,7 +895,7 @@ PLATES</string>
         <!--Venue DetailsVC-->
         <scene sceneID="1Ko-5l-0hF">
             <objects>
-                <viewController storyboardIdentifier="VenueDetailsVC" id="LRO-7z-mCz" customClass="VenueDetailsVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VenueDetailsVC" id="LRO-7z-mCz" customClass="VenueDetailsVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o54-aw-pny">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1084,7 +1084,7 @@ PLATES</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JLp-EA-Ep2"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="bottom" secondItem="tO6-vM-ru7" secondAttribute="bottom" id="Spk-Wr-CpX"/>
                             <constraint firstItem="Fxp-HA-N6u" firstAttribute="leading" secondItem="tO6-vM-ru7" secondAttribute="leading" id="fPR-ic-Kkk"/>
@@ -1142,7 +1142,7 @@ PLATES</string>
         <!--MenuVC-->
         <scene sceneID="dMg-se-WzP">
             <objects>
-                <viewController storyboardIdentifier="MenuVC" title="MenuVC" modalPresentationStyle="overFullScreen" id="w2R-ZY-CTj" customClass="MenuVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuVC" title="MenuVC" modalPresentationStyle="overFullScreen" id="w2R-ZY-CTj" customClass="MenuVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tcz-h8-y4B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1160,7 +1160,7 @@ PLATES</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="hkc-kx-S1P"/>
                                 </constraints>
-                                <color key="progressTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1188,7 +1188,7 @@ PLATES</string>
         <!--Venue ImagesVC-->
         <scene sceneID="g08-cv-dxr">
             <objects>
-                <collectionViewController storyboardIdentifier="VenueImages" modalTransitionStyle="flipHorizontal" id="L4l-HS-bNf" customClass="VenueImagesVC" customModule="EastLondonGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="VenueImages" modalTransitionStyle="flipHorizontal" id="L4l-HS-bNf" customClass="VenueImagesVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-fk-NFu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1200,7 +1200,7 @@ PLATES</string>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hIS-XF-Ozh" customClass="PhotoCell" customModule="EastLondonGuide" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hIS-XF-Ozh" customClass="PhotoCell" customModule="Food_For_Plates" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VLo-0w-YIm">
@@ -1272,21 +1272,21 @@ PLATES</string>
         <image name="Big Ben" width="1600" height="1066"/>
         <image name="Cityscape" width="530" height="353"/>
         <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
-        <image name="book" catalog="system" width="64" height="52"/>
-        <image name="book.circle" catalog="system" width="64" height="62"/>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="book.circle" catalog="system" width="64" height="60"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="eye" catalog="system" width="64" height="40"/>
-        <image name="eye.fill" catalog="system" width="64" height="40"/>
-        <image name="heart" catalog="system" width="64" height="58"/>
-        <image name="heart.circle" catalog="system" width="64" height="62"/>
-        <image name="location.fill" catalog="system" width="64" height="60"/>
-        <image name="map" catalog="system" width="64" height="58"/>
-        <image name="map.fill" catalog="system" width="64" height="54"/>
-        <image name="photo.fill" catalog="system" width="64" height="48"/>
-        <image name="wand.and.rays" catalog="system" width="64" height="62"/>
-        <image name="wand.and.rays.inverse" catalog="system" width="64" height="62"/>
+        <image name="eye.fill" catalog="system" width="64" height="38"/>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="heart.circle" catalog="system" width="64" height="60"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="map" catalog="system" width="64" height="56"/>
+        <image name="map.fill" catalog="system" width="64" height="56"/>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="wand.and.rays" catalog="system" width="64" height="60"/>
+        <image name="wand.and.rays.inverse" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zgK-WH-3pv"/>
+        <segue reference="Mef-Nu-gQf"/>
     </inferredMetricsTieBreakers>
 </document>

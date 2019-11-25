@@ -1,20 +1,26 @@
 PODS:
-  - UberCore (0.11.0)
-  - UberRides (0.11.0):
+  - Contentful (5.0.5):
+    - Contentful/ImageOptions (= 5.0.5)
+  - Contentful/ImageOptions (5.0.5)
+  - UberCore (0.12.0)
+  - UberRides (0.12.0):
     - UberCore
 
 DEPENDENCIES:
+  - Contentful
   - UberRides (~> 0.9)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - Contentful
     - UberCore
     - UberRides
 
 SPEC CHECKSUMS:
-  UberCore: b72013357bff720a30a1b12669e724750b775ef7
-  UberRides: d39c7c9f612d8f5ebfb69f475a553e1a54c3c4b5
+  Contentful: 625b804580b7cd9c18d0b86c12730e330193f728
+  UberCore: 3fcebb483e716536462d82ad84ef94dd59b75061
+  UberRides: d9f02d2122b6df7316ff9668e03a5f71e170618b
 
-PODFILE CHECKSUM: 55d91fc9adcc2806d201f6e66fdd79055ad4c137
+PODFILE CHECKSUM: e0d29b54f1bc8f8c822ab9cd38988a57732506a1
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

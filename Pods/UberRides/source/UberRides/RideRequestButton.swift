@@ -183,8 +183,7 @@ import UberCore
     override public func setContent() {
         super.setContent()
         
-        uberMetadataLabel.numberOfLines = 0
-        uberMetadataLabel.sizeToFit()
+        uberMetadataLabel.numberOfLines = 2
         uberMetadataLabel.textColor = colorStyle == .black ? ColorUtil.colorForUberButtonColor(.uberWhite) : ColorUtil.colorForUberButtonColor(.uberBlack)
         uberMetadataLabel.textAlignment = .right
         
@@ -262,7 +261,7 @@ import UberCore
         let logoSize = uberImageView.image?.size ?? CGSize.zero
         let titleSize = uberTitleLabel.intrinsicContentSize
         let metadataSize = uberMetadataLabel.intrinsicContentSize
-        var width: CGFloat = 4*horizontalEdgePadding + imageLabelPadding + logoSize.width + titleSize.width+30
+        var width: CGFloat = 4*horizontalEdgePadding + imageLabelPadding + logoSize.width + titleSize.width
         var height: CGFloat = 2*verticalPadding + max(logoSize.height, titleSize.height)
         
         if let _ = metadata.productID {
@@ -311,7 +310,7 @@ import UberCore
      - parameter surge:    Whether the price estimate should include a surge image. Default false.
      */
     private func setMultilineAttributedString(title: String, subtitle: String = "", surge: Bool = false) {
-        let metadataFont = UIFont(name: "JosefinSans-Light", size: 10) ?? UIFont.systemFont(ofSize: 12)
+        let metadataFont = UIFont(name: "HelveticaNeue-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12)
         
         let attrString = NSMutableAttributedString(string: title)
         
