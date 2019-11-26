@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var categorySelector: UISegmentedControl!
@@ -22,6 +23,8 @@ class MapVC: UIViewController {
     var allAnnotations: [MKPointAnnotation] = []
     var chosenVenue: Venue!
     var venueCoordinate: CLLocationCoordinate2D!
+    var locationManager = CLLocationManager()
+    var userLocation = CLLocationCoordinate2D()
 
 
     //MARK: - Lifecycle Methods
@@ -33,6 +36,14 @@ class MapVC: UIViewController {
         areaMenu.layer.masksToBounds = true
         
         setSegmentedControlAttributes(control: categorySelector)
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
 
         // Load venue annotations.
         for venue in venues! {
@@ -125,6 +136,11 @@ class MapVC: UIViewController {
         self.mapView.setRegion(region, animated: true)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let user = locations.last else { return }
+        userLocation = user.coordinate
+    }
+    
     
     //MARK: - Action Methods
     
@@ -197,6 +213,15 @@ class MapVC: UIViewController {
             self.backgroundButton.alpha = 0
         }
     }
+    
+    @IBAction func userLocationButtonTapped(_ sender: Any) {
+        setMapRegion(to: userLocation, atZoomLevel: 3000)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = userLocation
+        annotation.title = "\(UIDevice.current.name)"
+        mapView.addAnnotation(annotation)
+    }
+    
 }
 
 //MARK: - MapView Delegate

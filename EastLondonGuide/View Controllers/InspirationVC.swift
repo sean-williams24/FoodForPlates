@@ -27,7 +27,6 @@ class InspirationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleHeightConstraint.constant = view.frame.size.height
-        
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
         
@@ -81,7 +80,6 @@ class InspirationVC: UIViewController {
                     }
             }
         }
-        
     }
     
     
