@@ -6,6 +6,7 @@ target 'EastLondonGuide' do
   use_frameworks!
 
   # Pods for EastLondonGuide
+  pod 'UIImageViewAlignedSwift'
   pod 'UberRides', '~> 0.9'
   pod 'Contentful'
 

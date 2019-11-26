@@ -8,25 +8,25 @@
 
 import Contentful
 import UIKit
+import UIImageViewAlignedSwift
 
 class InspirationVC: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var inspoTableView: UITableView!
+    @IBOutlet var titleHeightConstraint: NSLayoutConstraint!
     
     var articleImages = [UIImage]()
     var articleData = [ArticleType]()
     var contentfulArticles = [ContentfulArticle]()
     var chosenArticle = ""
-    
+
     let contentfulClient = Client(spaceId: "c9r6nen9oeba", accessToken: "fVnA9iHijhpv1paHJVpG3mWe1xSssghByKiwHPvvJbs", contentTypeClasses: [ContentfulArticle.self, ArticleType.self])
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: view.frame.height)
-        ])
+        titleHeightConstraint.constant = view.frame.size.height
         
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
@@ -55,13 +55,10 @@ class InspirationVC: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    UIView.animate(withDuration: 2, delay: 0, options: .curveEaseInOut, animations: {
-//                        NSLayoutConstraint.activate([
-//                            self.titleLabel.heightAnchor.constraint(equalToConstant: 150)
-//                        ])
+                    UIView.animate(withDuration: 3, delay: 2, options: .curveEaseInOut, animations: {
+                        self.titleHeightConstraint.constant = 150
                         self.view.layoutIfNeeded()
                     })
-                    
                     self.animateTableviewReload(tableView: self.inspoTableView, transitionType: .fromTop)
                 }
                 

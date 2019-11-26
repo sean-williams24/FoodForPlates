@@ -18,6 +18,13 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>UIImageViewAlignedSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>UberCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>

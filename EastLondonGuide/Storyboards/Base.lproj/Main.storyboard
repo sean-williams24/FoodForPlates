@@ -30,18 +30,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-CH-SAz">
-                                <rect key="frame" x="17" y="98" width="397" height="240"/>
-                                <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">FOOD
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-7X-j0C">
+                                <rect key="frame" x="20" y="93" width="394" height="150"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="C5d-9Y-QkE"/>
+                                </constraints>
+                                <string key="text">FOOD 
 FOR 
 PLATES</string>
-                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="80"/>
-                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="40"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SvV-E0-kWC">
-                                <rect key="frame" x="0.0" y="338" width="414" height="558"/>
+                                <rect key="frame" x="0.0" y="238" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="Food_For_Plates" customModuleProvider="target">
@@ -85,20 +88,16 @@ PLATES</string>
                                     <outlet property="delegate" destination="qn6-tK-Fmw" id="ahI-v0-lDY"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUB-Zo-X2q">
-                                <rect key="frame" x="74" y="202" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Ikb-CH-SAz" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" constant="17" id="FbP-vJ-i3K"/>
+                            <constraint firstItem="SvV-E0-kWC" firstAttribute="top" secondItem="FJc-7X-j0C" secondAttribute="bottom" constant="-5" id="1zt-u9-PS3"/>
+                            <constraint firstItem="FJc-7X-j0C" firstAttribute="top" secondItem="4vv-Of-gAf" secondAttribute="top" constant="5" id="YDj-2c-VkE"/>
                             <constraint firstAttribute="bottom" secondItem="SvV-E0-kWC" secondAttribute="bottom" id="bkI-TZ-VbO"/>
-                            <constraint firstItem="Ikb-CH-SAz" firstAttribute="top" secondItem="4vv-Of-gAf" secondAttribute="top" constant="10" id="gmo-yX-6B0"/>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" id="pVZ-I1-2HY"/>
-                            <constraint firstItem="SvV-E0-kWC" firstAttribute="top" secondItem="Ikb-CH-SAz" secondAttribute="bottom" id="rnz-Fl-43p"/>
+                            <constraint firstItem="FJc-7X-j0C" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" constant="20" id="t3K-c9-z39"/>
+                            <constraint firstItem="FJc-7X-j0C" firstAttribute="trailing" secondItem="4vv-Of-gAf" secondAttribute="trailing" id="t4c-lm-r9X"/>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="trailing" secondItem="4vv-Of-gAf" secondAttribute="trailing" id="tTN-vd-B9b"/>
-                            <constraint firstItem="Ikb-CH-SAz" firstAttribute="trailing" secondItem="4vv-Of-gAf" secondAttribute="trailing" id="zrH-Uw-FlC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4vv-Of-gAf"/>
                     </view>
@@ -107,7 +106,8 @@ PLATES</string>
                     </navigationItem>
                     <connections>
                         <outlet property="inspoTableView" destination="SvV-E0-kWC" id="DVa-iH-Yif"/>
-                        <outlet property="titleLabel" destination="Ikb-CH-SAz" id="3k9-gU-cNU"/>
+                        <outlet property="titleHeightConstraint" destination="C5d-9Y-QkE" id="rrl-vg-pgt"/>
+                        <outlet property="titleLabel" destination="FJc-7X-j0C" id="sKS-3N-Q0f"/>
                         <segue destination="5HB-Hp-ZHv" kind="show" identifier="ArticleVC" id="BPr-kN-2wk"/>
                     </connections>
                 </viewController>
@@ -138,13 +138,13 @@ PLATES</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-I4-o9H">
-                                            <rect key="frame" x="20" y="311" width="374" height="22"/>
+                                            <rect key="frame" x="20" y="311" width="374" height="25.666666666666686"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="22"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQz-M4-GTe">
-                                            <rect key="frame" x="20" y="358" width="374" height="72"/>
+                                            <rect key="frame" x="20" y="361.66666666666669" width="374" height="68.333333333333314"/>
                                             <fontDescription key="fontDescription" name="LTCBodoni175W01-Regular" family="LTCBodoni175W01-Regular" pointSize="14"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -453,7 +453,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-S2-OQb">
-                                            <rect key="frame" x="179" y="88.666666666666671" width="56.333333333333343" height="23"/>
+                                            <rect key="frame" x="179" y="86.666666666666671" width="56.333333333333343" height="27"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -514,7 +514,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="woe-J1-S23">
-                                            <rect key="frame" x="178.66666666666666" y="88.666666666666671" width="57" height="23"/>
+                                            <rect key="frame" x="178.66666666666666" y="86.666666666666671" width="57" height="27"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Light" family="Josefin Sans" pointSize="23"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -575,7 +575,7 @@ PLATES</string>
                                             <rect key="frame" x="20" y="21" width="374" height="168"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-As-tLK">
-                                            <rect key="frame" x="167" y="83" width="80" height="34"/>
+                                            <rect key="frame" x="165.33333333333334" y="80.333333333333329" width="83.333333333333343" height="39.666666666666671"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" name="JosefinSans-Thin" family="Josefin Sans" pointSize="34"/>
                                             <color key="textColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
