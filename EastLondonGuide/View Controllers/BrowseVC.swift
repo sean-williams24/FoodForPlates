@@ -164,7 +164,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         UIView.animate(withDuration: 0.4, delay: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
-        }) { (tapped) in
+        }) {  (tapped)  in
             if sender.tag == 0 {
                 self.filterLocation(for: Area.Shoreditch.rawValue)
             } else if sender.tag == 1 {

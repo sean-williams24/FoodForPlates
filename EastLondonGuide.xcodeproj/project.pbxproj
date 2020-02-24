@@ -620,7 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.EastLondonGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.FoodForPlates;
 				PRODUCT_NAME = "Food For Plates";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.EastLondonGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.FoodForPlates;
 				PRODUCT_NAME = "Food For Plates";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
