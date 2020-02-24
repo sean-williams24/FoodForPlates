@@ -30,7 +30,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     //MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
         
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
