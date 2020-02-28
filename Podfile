@@ -9,5 +9,6 @@ target 'EastLondonGuide' do
   pod 'UIImageViewAlignedSwift'
   pod 'UberRides', '~> 0.9'
   pod 'Contentful'
+  pod 'FSPagerView'
 
 end

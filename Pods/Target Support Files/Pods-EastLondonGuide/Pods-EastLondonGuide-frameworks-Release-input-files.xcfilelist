@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework
+${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
 ${BUILT_PRODUCTS_DIR}/UIImageViewAlignedSwift/UIImageViewAlignedSwift.framework
 ${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework
 ${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework

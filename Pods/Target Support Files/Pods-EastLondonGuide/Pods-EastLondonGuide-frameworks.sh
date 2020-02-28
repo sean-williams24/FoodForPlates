@@ -162,12 +162,14 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIImageViewAlignedSwift/UIImageViewAlignedSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIImageViewAlignedSwift/UIImageViewAlignedSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework"

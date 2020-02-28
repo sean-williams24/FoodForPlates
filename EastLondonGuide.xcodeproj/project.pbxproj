@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		625FAE0DDDB7D3806D5F54BB /* Pods_EastLondonGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D544CD3C3843D85E78B6AC /* Pods_EastLondonGuide.framework */; };
-		CE0C262F2355ED25000C8089 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE0C262E2355ED25000C8089 /* README.txt */; };
+		CE0C262F2355ED25000C8089 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE0C262E2355ED25000C8089 /* README.md */; };
 		CE200EB02350DDD300098AA8 /* GlobalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */; };
 		CE69C80923882C82004F599B /* ContentfulArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69C80823882C82004F599B /* ContentfulArticle.swift */; };
 		CE69C80B238843E3004F599B /* ArticleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69C80A238843E3004F599B /* ArticleType.swift */; };
@@ -69,7 +69,7 @@
 		67D544CD3C3843D85E78B6AC /* Pods_EastLondonGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EastLondonGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A4433EFDA6D50D4054643F /* Pods-EastLondonGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EastLondonGuide.debug.xcconfig"; path = "Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		9C0BAF0A7B55A610E191F675 /* Pods-EastLondonGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EastLondonGuide.release.xcconfig"; path = "Target Support Files/Pods-EastLondonGuide/Pods-EastLondonGuide.release.xcconfig"; sourceTree = "<group>"; };
-		CE0C262E2355ED25000C8089 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
+		CE0C262E2355ED25000C8089 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CE200EAF2350DDD300098AA8 /* GlobalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProperties.swift; sourceTree = "<group>"; };
 		CE69C80823882C82004F599B /* ContentfulArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulArticle.swift; sourceTree = "<group>"; };
 		CE69C80A238843E3004F599B /* ArticleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleType.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				CE9C6C83233A23D300BD70CE /* Assets.xcassets */,
 				CE9C6CD4233E337300BD70CE /* Fonts */,
 				CE9C6C88233A23D300BD70CE /* Info.plist */,
-				CE0C262E2355ED25000C8089 /* README.txt */,
+				CE0C262E2355ED25000C8089 /* README.md */,
 			);
 			path = EastLondonGuide;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 				CE9C6CE5233E34ED00BD70CE /* JosefinSans-SemiBoldItalic.ttf in Resources */,
 				CE9C6CE6233E34ED00BD70CE /* JosefinSans-Light.ttf in Resources */,
 				CE9C6CE3233E34ED00BD70CE /* JosefinSans-Bold.ttf in Resources */,
-				CE0C262F2355ED25000C8089 /* README.txt in Resources */,
+				CE0C262F2355ED25000C8089 /* README.md in Resources */,
 				CE9C6C87233A23D300BD70CE /* LaunchScreen.storyboard in Resources */,
 				CE9C6C84233A23D300BD70CE /* Assets.xcassets in Resources */,
 				CE9C6CE4233E34ED00BD70CE /* JosefinSans-BoldItalic.ttf in Resources */,
