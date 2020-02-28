@@ -19,6 +19,11 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var centerPopupConstraint: NSLayoutConstraint!
     @IBOutlet var areaMenu: UIView!
     @IBOutlet var backgroundButton: UIButton!
+    @IBOutlet weak var pagerView: FSPagerView! {
+        didSet {
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        }
+    }
     
     let venues = Venue.allVenues
     var allAnnotations: [MKPointAnnotation] = []
@@ -26,6 +31,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     var venueCoordinate: CLLocationCoordinate2D!
     var locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
+    var pagerViewVenues = Venue.allVenues
 
 
     //MARK: - Lifecycle Methods
@@ -52,6 +58,8 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             
             CLGeocoder().geocodeAddressString(address ?? "") { (placemarks, error) in
                 if error != nil {
+                    print(venue.name)
+                    print(address!)
                     DispatchQueue.main.async {
                         self.showErrorAlert(title: "Error geocoding address", error: "We were unable to find addresses for all locations, all pins may not be displayed.")
                     }
@@ -78,6 +86,12 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }
+        
+        pagerView.transformer = FSPagerViewTransformer(type: .linear)
+        let width = view.frame.width / 2
+        pagerView.itemSize = CGSize(width: width, height: 130)
+//        pagerView.interitemSpacing = 50
+        pagerView.layer.cornerRadius = 15
     }
     
     
@@ -264,4 +278,45 @@ extension MapVC: MKMapViewDelegate {
             performSegue(withIdentifier: "VenueDetails3", sender: self)
         }
     }
+}
+
+
+extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return venues?.count ?? 0
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        let venue = venues?[index]
+        
+//        cell.layer.cornerRadius = 15
+//        cell.layer.borderWidth = 1
+        cell.imageView?.layer.borderWidth = 0.1
+        cell.imageView?.layer.borderColor = UIColor.lightGray.cgColor
+        cell.imageView?.layer.cornerRadius = 10
+        cell.imageView?.image =  UIImage(named: venue?.name ?? "")
+
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.clipsToBounds = true
+
+           
+//        cell.seansLabel.text = "BELLOOOOOO"
+        cell.textLabel?.text = venue?.name ?? ""
+        cell.textLabel?.layer.masksToBounds = true
+        cell.textLabel?.layer.borderWidth = 0.1
+        cell.textLabel?.layer.borderColor = UIColor.black.cgColor
+        cell.textLabel?.layer.cornerRadius = 10
+        
+        
+        return cell
+    }
+    
+    
+    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+        false
+    }
+    
+    
 }

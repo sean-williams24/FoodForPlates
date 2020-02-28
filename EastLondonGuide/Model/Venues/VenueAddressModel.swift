@@ -101,7 +101,7 @@ enum Address: String {
 //Bow & Mile End
     
     //Food
-    case RustyBike = "588 Mile End Rd, \nMile End, \nLondon \nE3 4PH"
+    case RustyBike = "588 Mile End Road, London"
     case LordMorpeth = "402 Old Ford Rd, \nBow, \nLondon \nE3 5NR"
     
     

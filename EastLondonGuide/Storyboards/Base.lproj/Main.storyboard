@@ -202,7 +202,7 @@ PLATES</string>
             </objects>
             <point key="canvasLocation" x="2292.753623188406" y="-418.52678571428572"/>
         </scene>
-        <!--Map-->
+        <!--Data Source-->
         <scene sceneID="biQ-Vh-LoR">
             <objects>
                 <viewController storyboardIdentifier="MapVC" title="Map" id="jOo-sd-yq5" customClass="MapVC" customModule="Food_For_Plates" customModuleProvider="target" sceneMemberID="viewController">
@@ -322,6 +322,19 @@ PLATES</string>
                                     <constraint firstItem="5if-6O-Qad" firstAttribute="top" secondItem="kdR-4j-cP2" secondAttribute="top" id="xZh-V9-yOS"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjF-5J-F1h" customClass="FSPagerView" customModule="FSPagerView">
+                                <rect key="frame" x="0.0" y="640" width="414" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GjF-5J-F1h" secondAttribute="height" multiplier="414:173" id="yCg-h0-tBj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jOo-sd-yq5" id="kxx-Sw-sYz"/>
+                                    <outlet property="delegate" destination="jOo-sd-yq5" id="EpK-ov-Ye7"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -330,10 +343,13 @@ PLATES</string>
                             <constraint firstItem="kdR-4j-cP2" firstAttribute="centerX" secondItem="Zp7-Hb-ihM" secondAttribute="centerX" constant="-737" id="Anv-7r-Jqy"/>
                             <constraint firstItem="12y-Dn-mUz" firstAttribute="top" secondItem="dOZ-oD-uml" secondAttribute="top" id="BGf-vt-ezP"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="trailing" secondItem="12y-Dn-mUz" secondAttribute="trailing" id="Erc-Lh-kB1"/>
+                            <constraint firstItem="GjF-5J-F1h" firstAttribute="trailing" secondItem="dOZ-oD-uml" secondAttribute="trailing" id="Puu-rz-ars"/>
                             <constraint firstItem="4rv-4k-jhY" firstAttribute="top" secondItem="Nn1-nl-ZQp" secondAttribute="bottom" id="Q9K-0I-aiu"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="bottom" secondItem="4rv-4k-jhY" secondAttribute="bottom" id="WFO-r6-Prk"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="trailing" secondItem="4rv-4k-jhY" secondAttribute="trailing" id="bJ2-UC-6hG"/>
                             <constraint firstItem="4rv-4k-jhY" firstAttribute="leading" secondItem="dOZ-oD-uml" secondAttribute="leading" id="cUC-uu-3O8"/>
+                            <constraint firstItem="GjF-5J-F1h" firstAttribute="bottom" secondItem="dOZ-oD-uml" secondAttribute="bottom" id="dWU-jl-mxO"/>
+                            <constraint firstItem="GjF-5J-F1h" firstAttribute="leading" secondItem="dOZ-oD-uml" secondAttribute="leading" id="f5f-Vc-UCd"/>
                             <constraint firstItem="Nn1-nl-ZQp" firstAttribute="leading" secondItem="dOZ-oD-uml" secondAttribute="leading" id="mII-a0-cCd"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="trailing" secondItem="Nn1-nl-ZQp" secondAttribute="trailing" id="pIl-nT-hYI"/>
                             <constraint firstItem="dOZ-oD-uml" firstAttribute="bottom" secondItem="12y-Dn-mUz" secondAttribute="bottom" id="pep-JQ-mqn"/>
@@ -363,6 +379,7 @@ PLATES</string>
                         <outlet property="categorySelector" destination="Nn1-nl-ZQp" id="ijl-Nb-8rV"/>
                         <outlet property="centerPopupConstraint" destination="Anv-7r-Jqy" id="yvC-L3-6M1"/>
                         <outlet property="mapView" destination="4rv-4k-jhY" id="lT9-YM-tsq"/>
+                        <outlet property="pagerView" destination="GjF-5J-F1h" id="LO6-sr-fS2"/>
                         <segue destination="LRO-7z-mCz" kind="show" identifier="VenueDetails3" id="zgK-WH-3pv"/>
                     </connections>
                 </viewController>
@@ -1296,6 +1313,6 @@ PLATES</string>
         <image name="wand.and.rays.inverse" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mef-Nu-gQf"/>
+        <segue reference="zgK-WH-3pv"/>
     </inferredMetricsTieBreakers>
 </document>
