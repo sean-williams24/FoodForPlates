@@ -60,9 +60,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                 if error != nil {
                     print(venue.name)
                     print(address!)
-                    DispatchQueue.main.async {
-                        self.showErrorAlert(title: "Error geocoding address", error: "We were unable to find addresses for all locations, all pins may not be displayed.")
-                    }
+//                    DispatchQueue.main.async {
+//                        self.showErrorAlert(title: "Error geocoding address", error: "We were unable to find addresses for all locations, all pins may not be displayed.")
+//                    }
                 }
                 
                 if let placemark = placemarks?.first, let location = placemark.location {
@@ -291,29 +291,13 @@ extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index) as! PagerViewCell
         let venue = venues?[index]
         
-//        cell.layer.cornerRadius = 15
-//        cell.layer.borderWidth = 1
         cell.imageView?.layer.borderWidth = 0.1
         cell.imageView?.layer.borderColor = UIColor.lightGray.cgColor
         cell.imageView?.layer.cornerRadius = 10
         cell.imageView?.image =  UIImage(named: venue?.name ?? "")
-
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
-
-           
-//        cell.seansLabel.text = "BELLOOOOOO"
-//        cell.textLabel?.text = venue?.name ?? ""
-//        cell.textLabel?.layer.masksToBounds = true
-//        cell.textLabel?.layer.borderWidth = 2
-//        cell.textLabel?.layer.borderColor = UIColor.white.cgColor
-//        cell.textLabel?.layer.cornerRadius = 10
-        
-        cell.customLabel?.text = venue?.name ?? ""
-        
-        cell.seansLabel.text = "BELOLOLOLO"
-        
-        
+        cell.venueNameLabel?.text = venue?.name ?? ""
         
         return cell
     }
