@@ -21,7 +21,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var backgroundButton: UIButton!
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
-            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.pagerView.register(PagerViewCell.self, forCellWithReuseIdentifier: "cell")
         }
     }
     
@@ -288,7 +288,7 @@ extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index) as! PagerViewCell
         let venue = venues?[index]
         
 //        cell.layer.cornerRadius = 15
@@ -303,11 +303,16 @@ extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
 
            
 //        cell.seansLabel.text = "BELLOOOOOO"
-        cell.textLabel?.text = venue?.name ?? ""
-        cell.textLabel?.layer.masksToBounds = true
-        cell.textLabel?.layer.borderWidth = 0.1
-        cell.textLabel?.layer.borderColor = UIColor.black.cgColor
-        cell.textLabel?.layer.cornerRadius = 10
+//        cell.textLabel?.text = venue?.name ?? ""
+//        cell.textLabel?.layer.masksToBounds = true
+//        cell.textLabel?.layer.borderWidth = 2
+//        cell.textLabel?.layer.borderColor = UIColor.white.cgColor
+//        cell.textLabel?.layer.cornerRadius = 10
+        
+        cell.customLabel?.text = venue?.name ?? ""
+        
+        cell.seansLabel.text = "BELOLOLOLO"
+        
         
         
         return cell

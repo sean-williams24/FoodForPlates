@@ -54,7 +54,7 @@ class InspirationVC: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    UIView.animate(withDuration: 3, delay: 2, options: .curveEaseInOut, animations: {
+                    UIView.animate(withDuration: 1.7, delay: 0, options: .curveEaseInOut, animations: {
                         self.titleHeightConstraint.constant = 150
                         self.view.layoutIfNeeded()
                     })
