@@ -6,6 +6,7 @@
 //  Copyright © 2019 Sean Williams. All rights reserved.
 //
 
+import FSPagerView
 import UIKit
 import MapKit
 import CoreLocation
