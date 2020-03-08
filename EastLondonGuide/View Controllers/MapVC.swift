@@ -38,7 +38,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad() 
-        
+
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
         
@@ -90,8 +90,8 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         pagerView.transformer = FSPagerViewTransformer(type: .linear)
         let width = view.frame.width / 2
         pagerView.itemSize = CGSize(width: width, height: 130)
-//        pagerView.interitemSpacing = 50
         pagerView.layer.cornerRadius = 15
+        pagerView.isUserInteractionEnabled = true
     }
     
     
@@ -136,7 +136,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         let venueToZoomTo = Global.currentVenue
         for annotation in self.allAnnotations {
             if annotation.title == venueToZoomTo?.name.uppercased() {
-                setMapRegion(to: annotation.coordinate, atZoomLevel: 700)
+                setMapRegion(to: annotation.coordinate, atZoomLevel: 500)
                 mapView.showAnnotations([annotation], animated: true)
                 if venueToZoomTo?.category != categorySelector.titleForSegment(at: categorySelector.selectedSegmentIndex) {
                     categorySelector.selectedSegmentIndex = 0
@@ -244,19 +244,20 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
 extension MapVC: MKMapViewDelegate {
     
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-                
+        
         let identifier = "marker"
         var view: MKMarkerAnnotationView
         
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
-          dequeuedView.annotation = annotation
-          view = dequeuedView
+            dequeuedView.annotation = annotation
+            view = dequeuedView
         } else {
-          view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-          view.canShowCallout = true
-          view.calloutOffset = CGPoint(x: -5, y: 5)
-          view.rightCalloutAccessoryView = UIButton(type: .infoDark)
-          view.displayPriority = .required
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = false
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = .none
+            view.displayPriority = .defaultHigh
+            view.markerTintColor = .black
             
         }
         
@@ -276,6 +277,20 @@ extension MapVC: MKMapViewDelegate {
         
         if control == view.rightCalloutAccessoryView {
             performSegue(withIdentifier: "VenueDetails3", sender: self)
+        }
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.displayPriority = .required
+        
+        if let venues = venues {
+            for (i, venue) in venues.enumerated() {
+                if venue.name.uppercased() == view.annotation?.title {
+                    pagerView.selectItem(at: i, animated: true)
+                    setMapRegion(to: view.annotation!.coordinate, atZoomLevel: 500)
+                }
+            }
         }
     }
 }
@@ -304,8 +319,34 @@ extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
     
     
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
-        false
+        true
     }
     
     
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        let selectedVenue = venues?[targetIndex]
+        
+        for annotation in allAnnotations {
+            if annotation.title == selectedVenue?.name.uppercased() {
+                mapView.selectAnnotation(annotation, animated: true)
+                setMapRegion(to: annotation.coordinate, atZoomLevel: 500)
+            }
+        }
+    }
+    
+    
+    func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool {
+        return true
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        if let venues = venues {
+            for (i, venue) in venues.enumerated() {
+                if i == index {
+                    chosenVenue = venue
+                    performSegue(withIdentifier: "VenueDetails3", sender: self)
+                }
+            }
+        }
+    }
 }
