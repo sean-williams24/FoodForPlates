@@ -25,7 +25,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    let venues = Venue.allVenues
+    var venues = Venue.allVenues
     var allAnnotations: [MKPointAnnotation] = []
     var chosenVenue: Venue!
     var venueCoordinate: CLLocationCoordinate2D!
@@ -59,10 +59,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             CLGeocoder().geocodeAddressString(address ?? "") { (placemarks, error) in
                 if error != nil {
                     print(venue.name)
-                    print(address!)
-//                    DispatchQueue.main.async {
-//                        self.showErrorAlert(title: "Error geocoding address", error: "We were unable to find addresses for all locations, all pins may not be displayed.")
-//                    }
                 }
                 
                 if let placemark = placemarks?.first, let location = placemark.location {
@@ -122,12 +118,24 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     //MARK: - Private Methods
     
     fileprivate func filterMapAnnotations(for category: String) {
-        for venue in allAnnotations {
-            if venue.subtitle != category {
-                mapView.removeAnnotation(venue)
+        for annotation in allAnnotations {
+            if annotation.subtitle != category {
+                mapView.removeAnnotation(annotation)
             } else {
-                mapView.addAnnotation(venue)
+                mapView.addAnnotation(annotation)
             }
+        }
+        
+        venues = Venue.allVenues
+        var filteredVenues: [Venue] = []
+        if let venues = venues {
+            for venue in venues {
+                if category == venue.category {
+                    filteredVenues.append(venue)
+                }
+            }
+            self.venues = filteredVenues
+            pagerView.reloadData()
         }
     }
     
@@ -138,6 +146,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             if annotation.title == venueToZoomTo?.name.uppercased() {
                 setMapRegion(to: annotation.coordinate, atZoomLevel: 500)
                 mapView.showAnnotations([annotation], animated: true)
+                mapView.selectAnnotation(annotation, animated: true)
                 if venueToZoomTo?.category != categorySelector.titleForSegment(at: categorySelector.selectedSegmentIndex) {
                     categorySelector.selectedSegmentIndex = 0
                 }
@@ -150,6 +159,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: area, latitudinalMeters: atZoomLevel, longitudinalMeters: atZoomLevel)
         self.mapView.setRegion(region, animated: true)
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let user = locations.last else { return }
@@ -164,6 +174,8 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         switch categorySelector.selectedSegmentIndex {
         case 0:
             mapView.addAnnotations(allAnnotations)
+            venues = Venue.allVenues
+            pagerView.reloadData()
         case 1:
             filterMapAnnotations(for: "Food")
         case 2:
