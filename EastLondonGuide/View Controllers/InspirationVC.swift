@@ -12,23 +12,39 @@ import UIImageViewAlignedSwift
 
 class InspirationVC: UIViewController {
     
+    // MARK: - Outlets
+
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var inspoTableView: UITableView!
     @IBOutlet var titleHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     
-    var articleImages = [UIImage]()
+    
+    // MARK: - Properties
+
+    var articleImages = [UIImage]() {
+        didSet {
+            if articleData.count == articleImages.count {
+                loadTableAndAnimate()
+            }
+        }
+    }
     var articleData = [ArticleType]()
     var contentfulArticles = [ContentfulArticle]()
     var chosenArticle = ""
-
     let contentfulClient = Client(spaceId: "c9r6nen9oeba", accessToken: "fVnA9iHijhpv1paHJVpG3mWe1xSssghByKiwHPvvJbs", contentTypeClasses: [ContentfulArticle.self, ArticleType.self])
+    let titleMinHeight: CGFloat = 0.0
+    var titleViewMaxHeight: CGFloat!
     
-    
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         titleHeightConstraint.constant = view.frame.size.height
         inspoTableView.rowHeight = 300
         letterSpacing(label: titleLabel, value: 13.0)
+        
+        titleViewMaxHeight = view.frame.height / 3
         
         let articleTypeQuery = QueryOn<ArticleType>.where(contentTypeId: "articleType")
         
@@ -53,13 +69,7 @@ class InspirationVC: UIViewController {
                     }
                 }
                 
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 1.7, delay: 0, options: .curveEaseInOut, animations: {
-                        self.titleHeightConstraint.constant = 150
-                        self.view.layoutIfNeeded()
-                    })
-                    self.animateTableviewReload(tableView: self.inspoTableView, transitionType: .fromTop)
-                }
+                self.loadTableAndAnimate()
                 
             case .error:
                 DispatchQueue.main.async {
@@ -82,6 +92,18 @@ class InspirationVC: UIViewController {
         }
     }
     
+    // MARK: - Private Methods
+    
+    fileprivate func loadTableAndAnimate() {
+        DispatchQueue.main.async {
+            self.animateTableviewReload(tableView: self.inspoTableView, transitionType: .fromBottom)
+            UIView.animate(withDuration: 1.7, delay: 0, options: .curveEaseInOut, animations: {
+                self.titleHeightConstraint.constant = self.titleViewMaxHeight
+                self.titleLabelTopConstraint.constant = 15
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     
     //MARK: - Navigation
     
@@ -116,5 +138,22 @@ extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
             chosenArticle = articleTitle
         }
         performSegue(withIdentifier: "ArticleVC", sender: self)
+    }
+}
+
+extension InspirationVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let newTitleHeight = titleHeightConstraint.constant - contentOffsetY
+        
+        if newTitleHeight < titleMinHeight {
+            titleHeightConstraint.constant = titleMinHeight
+        } else if newTitleHeight > titleViewMaxHeight {
+            titleHeightConstraint.constant = titleViewMaxHeight
+        } else {
+            titleHeightConstraint.constant = titleHeightConstraint.constant - contentOffsetY
+            scrollView.contentOffset.y = 0.0
+        }
     }
 }

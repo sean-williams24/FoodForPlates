@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="02c5086e8616653dade6e7cb3a1f0498.ttf">
-            <string>LTCBodoni175W01-Regular</string>
-        </array>
         <array key="JosefinSans-Light.ttf">
             <string>JosefinSans-Light</string>
         </array>
@@ -19,6 +16,9 @@
         </array>
         <array key="JosefinSans-Thin.ttf">
             <string>JosefinSans-Thin</string>
+        </array>
+        <array key="LTC Bodoni 175 W01 Regular.ttf">
+            <string>LTCBodoni175W01-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -30,8 +30,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-7X-j0C">
-                                <rect key="frame" x="20" y="93" width="394" height="150"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-7X-j0C">
+                                <rect key="frame" x="20" y="88" width="394" height="150"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="C5d-9Y-QkE"/>
@@ -39,12 +39,12 @@
                                 <string key="text">FOOD 
 FOR 
 PLATES</string>
-                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="70"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SvV-E0-kWC">
-                                <rect key="frame" x="0.0" y="238" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="233" width="414" height="663"/>
                                 <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InspirationCell" rowHeight="200" id="gVN-uh-k3P" userLabel="InspirationCell" customClass="InspirationCell" customModule="Food_For_Plates" customModuleProvider="target">
@@ -92,7 +92,7 @@ PLATES</string>
                         <color key="backgroundColor" red="0.93332451579999998" green="0.9333273768" blue="0.93333357569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="top" secondItem="FJc-7X-j0C" secondAttribute="bottom" constant="-5" id="1zt-u9-PS3"/>
-                            <constraint firstItem="FJc-7X-j0C" firstAttribute="top" secondItem="4vv-Of-gAf" secondAttribute="top" constant="5" id="YDj-2c-VkE"/>
+                            <constraint firstItem="FJc-7X-j0C" firstAttribute="top" secondItem="4vv-Of-gAf" secondAttribute="top" id="YDj-2c-VkE"/>
                             <constraint firstAttribute="bottom" secondItem="SvV-E0-kWC" secondAttribute="bottom" id="bkI-TZ-VbO"/>
                             <constraint firstItem="SvV-E0-kWC" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" id="pVZ-I1-2HY"/>
                             <constraint firstItem="FJc-7X-j0C" firstAttribute="leading" secondItem="4vv-Of-gAf" secondAttribute="leading" constant="20" id="t3K-c9-z39"/>
@@ -108,6 +108,7 @@ PLATES</string>
                         <outlet property="inspoTableView" destination="SvV-E0-kWC" id="DVa-iH-Yif"/>
                         <outlet property="titleHeightConstraint" destination="C5d-9Y-QkE" id="rrl-vg-pgt"/>
                         <outlet property="titleLabel" destination="FJc-7X-j0C" id="sKS-3N-Q0f"/>
+                        <outlet property="titleLabelTopConstraint" destination="YDj-2c-VkE" id="asm-Tb-tYF"/>
                         <segue destination="5HB-Hp-ZHv" kind="show" identifier="ArticleVC" id="BPr-kN-2wk"/>
                     </connections>
                 </viewController>

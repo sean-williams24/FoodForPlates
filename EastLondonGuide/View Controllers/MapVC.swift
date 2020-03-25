@@ -58,7 +58,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             
             CLGeocoder().geocodeAddressString(address ?? "") { (placemarks, error) in
                 if error != nil {
-                    print(venue.name)
+                    print(venue.name)   
                 }
                 
                 if let placemark = placemarks?.first, let location = placemark.location {
