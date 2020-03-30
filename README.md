@@ -2,6 +2,8 @@
 
 This app is a guide for the public on places to eat, drink and shop in East London. The idea was to focus on a preferred selection of venues that, rather than including everywhere like most other guides. This app was designed with a clean and easy to navigate structure and user-experience in mind, again differentiating from other similar apps which are overloaded with information, controls and features which bombard the user and unnecessarily over-complicate things. This app was built for my final project in the Udacity iOS Nanodegree with the intention of releasing it to the app store eventually once I have all the required content.
 
+<img align="center" src="gifs/gif1.gif" data-canonical-src="gifs/gif1.gif" width="400" height="800" />
+
 ## Pre-requisites
 
 - Uber Rides iOS SDK (included in project files)
