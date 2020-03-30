@@ -8,7 +8,7 @@
 
 import Contentful
 import UIKit
-import UIImageViewAlignedSwift
+//import UIImageViewAlignedSwift
 
 class InspirationVC: UIViewController {
     
