@@ -6,7 +6,10 @@ This app is a guide for the public on places to eat, drink and shop in East Lond
 
 ## Pre-requisites
 
-- Uber Rides iOS SDK (included in project files)
+SDK's included in repo:
+
+- Uber Rides
+- Contentful
 
 ## Getting Started
 
