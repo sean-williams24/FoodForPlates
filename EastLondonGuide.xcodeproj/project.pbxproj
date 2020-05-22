@@ -52,6 +52,7 @@
 		CEAD3629238800C300F662E5 /* ContentfulClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD3628238800C300F662E5 /* ContentfulClient.swift */; };
 		CEC13F412477FE14003DBBC1 /* FoodForPlatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F402477FE14003DBBC1 /* FoodForPlatesTests.swift */; };
 		CEC13F4924780294003DBBC1 /* VenuesModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */; };
+		CEC13F5124781EE3003DBBC1 /* FoodForPlatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */; };
 		CEE1E97E2409370B00A529C6 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E97D2409370B00A529C6 /* PagerView.swift */; };
 		CEE58009234623AC0068A774 /* FavouritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58008234623AC0068A774 /* FavouritesModel.swift */; };
 		CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800A234746610068A774 /* ArticlesModel.swift */; };
@@ -70,6 +71,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		CEC13F432477FE14003DBBC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE9C6C6C233A23D000BD70CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE9C6C73233A23D000BD70CE;
+			remoteInfo = EastLondonGuide;
+		};
+		CEC13F5324781EE3003DBBC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE9C6C6C233A23D000BD70CE /* Project object */;
 			proxyType = 1;
@@ -130,6 +138,9 @@
 		CEC13F402477FE14003DBBC1 /* FoodForPlatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForPlatesTests.swift; sourceTree = "<group>"; };
 		CEC13F422477FE14003DBBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesModelTests.swift; sourceTree = "<group>"; };
+		CEC13F4E24781EE3003DBBC1 /* FoodForPlatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodForPlatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForPlatesUITests.swift; sourceTree = "<group>"; };
+		CEC13F5224781EE3003DBBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE1E97D2409370B00A529C6 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		CEE58008234623AC0068A774 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
 		CEE5800A234746610068A774 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
@@ -162,6 +173,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC13F4B24781EE3003DBBC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -178,6 +196,7 @@
 			children = (
 				CE9C6C76233A23D000BD70CE /* EastLondonGuide */,
 				CEC13F3F2477FE14003DBBC1 /* FoodForPlatesTests */,
+				CEC13F4F24781EE3003DBBC1 /* FoodForPlatesUITests */,
 				CE9C6C75233A23D000BD70CE /* Products */,
 				D06BDAE1C583D3F7857E2D31 /* Pods */,
 				619CB7CE192E9D964845D367 /* Frameworks */,
@@ -189,6 +208,7 @@
 			children = (
 				CE9C6C74233A23D000BD70CE /* Food For Plates.app */,
 				CEC13F3E2477FE14003DBBC1 /* FoodForPlatesTests.xctest */,
+				CEC13F4E24781EE3003DBBC1 /* FoodForPlatesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,6 +315,15 @@
 			path = FoodForPlatesTests;
 			sourceTree = "<group>";
 		};
+		CEC13F4F24781EE3003DBBC1 /* FoodForPlatesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */,
+				CEC13F5224781EE3003DBBC1 /* Info.plist */,
+			);
+			path = FoodForPlatesUITests;
+			sourceTree = "<group>";
+		};
 		CEE580142349EAA10068A774 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +409,24 @@
 			productReference = CEC13F3E2477FE14003DBBC1 /* FoodForPlatesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CEC13F4D24781EE3003DBBC1 /* FoodForPlatesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC13F5524781EE3003DBBC1 /* Build configuration list for PBXNativeTarget "FoodForPlatesUITests" */;
+			buildPhases = (
+				CEC13F4A24781EE3003DBBC1 /* Sources */,
+				CEC13F4B24781EE3003DBBC1 /* Frameworks */,
+				CEC13F4C24781EE3003DBBC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC13F5424781EE3003DBBC1 /* PBXTargetDependency */,
+			);
+			name = FoodForPlatesUITests;
+			productName = FoodForPlatesUITests;
+			productReference = CEC13F4E24781EE3003DBBC1 /* FoodForPlatesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -394,6 +441,10 @@
 						CreatedOnToolsVersion = 11.0;
 					};
 					CEC13F3D2477FE14003DBBC1 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = CE9C6C73233A23D000BD70CE;
+					};
+					CEC13F4D24781EE3003DBBC1 = {
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = CE9C6C73233A23D000BD70CE;
 					};
@@ -414,6 +465,7 @@
 			targets = (
 				CE9C6C73233A23D000BD70CE /* EastLondonGuide */,
 				CEC13F3D2477FE14003DBBC1 /* FoodForPlatesTests */,
+				CEC13F4D24781EE3003DBBC1 /* FoodForPlatesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -443,6 +495,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEC13F3C2477FE14003DBBC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC13F4C24781EE3003DBBC1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -550,6 +609,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC13F4A24781EE3003DBBC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC13F5124781EE3003DBBC1 /* FoodForPlatesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -557,6 +624,11 @@
 			isa = PBXTargetDependency;
 			target = CE9C6C73233A23D000BD70CE /* EastLondonGuide */;
 			targetProxy = CEC13F432477FE14003DBBC1 /* PBXContainerItemProxy */;
+		};
+		CEC13F5424781EE3003DBBC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE9C6C73233A23D000BD70CE /* EastLondonGuide */;
+			targetProxy = CEC13F5324781EE3003DBBC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -774,6 +846,46 @@
 			};
 			name = Release;
 		};
+		CEC13F5624781EE3003DBBC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = FoodForPlatesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.FoodForPlatesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EastLondonGuide;
+			};
+			name = Debug;
+		};
+		CEC13F5724781EE3003DBBC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = FoodForPlatesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.FoodForPlatesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EastLondonGuide;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -800,6 +912,15 @@
 			buildConfigurations = (
 				CEC13F452477FE14003DBBC1 /* Debug */,
 				CEC13F462477FE14003DBBC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC13F5524781EE3003DBBC1 /* Build configuration list for PBXNativeTarget "FoodForPlatesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC13F5624781EE3003DBBC1 /* Debug */,
+				CEC13F5724781EE3003DBBC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
