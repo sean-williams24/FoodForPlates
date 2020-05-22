@@ -14,7 +14,7 @@ struct Venue: Equatable {
     
     // MARK: Properties
     
-    let name: String
+    var name: String
     let area: String
     let category: String
     let description: String?
