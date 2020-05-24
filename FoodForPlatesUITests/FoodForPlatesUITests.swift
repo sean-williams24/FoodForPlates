@@ -54,6 +54,15 @@ class FoodForPlatesUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 26, "There should be 26 cells in total")
     }
 
+    func testCategoryFilterSpeed() {
+        let app = XCUIApplication()
+        app.tabBars.buttons["Browse"].tap()
+        measure {
+            app.buttons["FOOD"].tap()
+            app.buttons["ALL"].tap()
+        }
+    }
+    
 
     func testAreaFilterOnBrowseMenu() {
         

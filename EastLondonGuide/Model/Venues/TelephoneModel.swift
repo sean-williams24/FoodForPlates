@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Telephone: String {
+enum Telephone: String, CaseIterable {
     
 //Shoreditch & Hoxton
     
@@ -74,7 +74,7 @@ enum Telephone: String {
     
     
     //Markets
-    case BroadwayMarket
+//    case BroadwayMarket
     
 
 //Hackney Wick

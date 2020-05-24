@@ -20,9 +20,7 @@ class FoodForPlatesTests: XCTestCase {
  
     }
 
-    func testExample() throws {
-        
-    }
+  
 
  
  

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Description: String {
+enum Description: String, CaseIterable {
     
 //Shoreditch & Hoxton
     

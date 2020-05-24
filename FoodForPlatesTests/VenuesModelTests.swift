@@ -65,4 +65,24 @@ class VenuesModelTests: XCTestCase {
             XCTAssertFalse(venue.category.isEmpty, "missing category")
         }
     }
+    
+    
+    func testAddressFormatting() {
+        Address.allCases.forEach {
+            XCTAssertFalse($0.rawValue.contains("/n"), "New line address formatting incorrect for \($0)")
+        }
+    }
+    
+    func testDescriptionFormatting() {
+        Description.allCases.forEach {
+            XCTAssertFalse($0.rawValue.contains("/n"), "New line address formatting incorrect for \($0)")
+        }
+    }
+    
+    func testTelephoneFormatting() {
+        Telephone.allCases.forEach {
+            let telNumber = $0.rawValue.replacingOccurrences(of: " ", with: "")
+            XCTAssertEqual(telNumber.count, 11, "Telephone number formatting incorrect for \($0)")
+        }
+    }
 }

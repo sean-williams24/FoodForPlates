@@ -106,7 +106,7 @@ extension Venue {
             [NameKey : "NT's", AreaKey : Area.LondonFields.rawValue, CategoryKey : "Drinks", DescriptionKey : Description.NTs.rawValue, AddressKey : Address.NTs.rawValue, OpeningTimesKey : OpeningTimes.NTs.rawValue, EmailKey : Email.NTs.rawValue, PhoneKey : Telephone.NTs.rawValue],
             [NameKey : "Climpson & Sons Cafe", AreaKey : Area.LondonFields.rawValue, CategoryKey : "Coffee", DescriptionKey : Description.ClimpsonAndSons.rawValue, AddressKey : Address.ClimpsonAndSons.rawValue, OpeningTimesKey : OpeningTimes.ClimpsonAndSons.rawValue, EmailKey : Email.ClimpsonAndSons.rawValue, PhoneKey : Telephone.ClimpsonAndSons.rawValue],
             [NameKey : "Stranger Than Paradise", AreaKey : Area.LondonFields.rawValue, CategoryKey : "Shopping", DescriptionKey : Description.StrangerThanParadise.rawValue, AddressKey : Address.StrangerThanParadise.rawValue, OpeningTimesKey : OpeningTimes.StrangerThanParadise.rawValue, EmailKey : Email.StrangerThanParadise.rawValue, PhoneKey : Telephone.StrangerThanParadise.rawValue],
-            [NameKey : "Broadway Market", AreaKey : Area.LondonFields.rawValue, CategoryKey : "Markets", DescriptionKey : Description.BroadwayMarket.rawValue, AddressKey : Address.BroadwayMarket.rawValue, OpeningTimesKey : OpeningTimes.BroadwayMarket.rawValue, PhoneKey : Telephone.BroadwayMarket.rawValue],
+            [NameKey : "Broadway Market", AreaKey : Area.LondonFields.rawValue, CategoryKey : "Markets", DescriptionKey : Description.BroadwayMarket.rawValue, AddressKey : Address.BroadwayMarket.rawValue, OpeningTimesKey : OpeningTimes.BroadwayMarket.rawValue,],
             
             // Hackney Wick
             
