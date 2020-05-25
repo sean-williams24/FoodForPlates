@@ -50,7 +50,6 @@
 		CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */; };
 		CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF423420E6800BD70CE /* MapVC.swift */; };
 		CEAD3629238800C300F662E5 /* ContentfulClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD3628238800C300F662E5 /* ContentfulClient.swift */; };
-		CEC13F412477FE14003DBBC1 /* FoodForPlatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F402477FE14003DBBC1 /* FoodForPlatesTests.swift */; };
 		CEC13F4924780294003DBBC1 /* VenuesModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */; };
 		CEC13F5124781EE3003DBBC1 /* FoodForPlatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */; };
 		CEE1E97E2409370B00A529C6 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E97D2409370B00A529C6 /* PagerView.swift */; };
@@ -135,7 +134,6 @@
 		CE9C6CF423420E6800BD70CE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CEAD3628238800C300F662E5 /* ContentfulClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulClient.swift; sourceTree = "<group>"; };
 		CEC13F3E2477FE14003DBBC1 /* FoodForPlatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodForPlatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEC13F402477FE14003DBBC1 /* FoodForPlatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForPlatesTests.swift; sourceTree = "<group>"; };
 		CEC13F422477FE14003DBBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesModelTests.swift; sourceTree = "<group>"; };
 		CEC13F4E24781EE3003DBBC1 /* FoodForPlatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodForPlatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */,
-				CEC13F402477FE14003DBBC1 /* FoodForPlatesTests.swift */,
 				CEC13F422477FE14003DBBC1 /* Info.plist */,
 			);
 			path = FoodForPlatesTests;
@@ -604,7 +601,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC13F412477FE14003DBBC1 /* FoodForPlatesTests.swift in Sources */,
 				CEC13F4924780294003DBBC1 /* VenuesModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
