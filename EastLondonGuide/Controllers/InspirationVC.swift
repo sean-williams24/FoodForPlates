@@ -32,7 +32,7 @@ class InspirationVC: UIViewController {
     var articleData = [ArticleType]()
     var contentfulArticles = [ContentfulArticle]()
     var chosenArticle = ""
-    let contentfulClient = Client(spaceId: "c9r6nen9oeba", accessToken: "fVnA9iHijhpv1paHJVpG3mWe1xSssghByKiwHPvvJbs", contentTypeClasses: [ContentfulArticle.self, ArticleType.self])
+    let contentfulClient = Client(spaceId: "c9r6nen9oeba", accessToken: "", contentTypeClasses: [ContentfulArticle.self, ArticleType.self])
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat!
     

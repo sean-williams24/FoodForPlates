@@ -87,10 +87,9 @@ class FoodForPlatesUITests: XCTestCase {
         navBar.buttons["arrow.clockwise"].tap()
         
         XCTAssertEqual(app.tables.cells.count, 26, "should show 26 venues when not viewing favourites")
-
-    
         
     }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

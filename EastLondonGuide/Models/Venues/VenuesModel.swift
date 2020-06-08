@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-struct Venue: Equatable {
+public struct Venue: Equatable {
     
     // MARK: Properties
     
