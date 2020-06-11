@@ -30,8 +30,6 @@ struct Article {
 
 extension Article {
 
-    
-    
     static var allArticles: [Article]! {
 
         var articlesArray = [Article]()
@@ -42,7 +40,6 @@ extension Article {
         return articlesArray
     }
     
-
     
     static func articleData() -> [[String : String]] {
 

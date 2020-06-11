@@ -22,8 +22,8 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var filteredVenues = [Venue]()
     var chosenVenue: Venue!
     var filteredByArea = false
-    var filteredByCategory = false
-    var alreadyFilteredByCategory = [Venue]()
+    var alreadyFilteredByCategory = false
+    var alreadyFilteredVenues = [Venue]()
     
     
     //MARK: - Lifecycle Methods
@@ -105,38 +105,26 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     fileprivate func filterLocation(for venueArea: String) {
-        if filteredByCategory == false {
-            self.filteredVenues = []
-            for venue in self.allVenues {
-                if venue.area == venueArea {
-                    self.filteredVenues.append(venue)
-                }
-            }
+        if !alreadyFilteredByCategory {
+            filteredVenues = allVenues.filter() {$0.area == venueArea}
             animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         } else {
-            // Filtered by category is TRUE
-            filteredVenues = alreadyFilteredByCategory
-            
-            for venue in self.filteredVenues {
-                if venue.area != venueArea {
-                    // Remove venues from filtered venues array from other locations
-                    self.filteredVenues = self.filteredVenues.filter() {$0 != venue}
-                }
-                filteredByArea = true
-            }
+            filteredVenues = alreadyFilteredVenues.filter() {$0.area == venueArea}
+            filteredByArea = true
             animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         }
     }
     
+    
     func filterCategory(for category: String) {
-        filteredByCategory = true
-        self.filteredVenues = []
-        self.alreadyFilteredByCategory = []
+        alreadyFilteredByCategory = true
+        filteredVenues = []
+        alreadyFilteredVenues = []
         
         for venue in allVenues {
             if venue.category == category {
-                self.filteredVenues.append(venue)
-                self.alreadyFilteredByCategory.append(venue)
+                filteredVenues.append(venue)
+                alreadyFilteredVenues.append(venue)
             }
         }
         animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
@@ -218,7 +206,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
     @IBAction func resetToAllVenues(_ sender: Any) {
-        filteredByCategory = false
+        alreadyFilteredByCategory = false
         filteredByArea = false
         filteredVenues = allVenues
         FavouritesModel.viewingFavourites = false
