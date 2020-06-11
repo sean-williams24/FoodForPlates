@@ -2,6 +2,7 @@
 
 This app is a guide on places to eat, drink and shop in East London, focussing on a preferred selection of venues. The client specified a clean and easy to navigate structure with user-experience at the forefront of design, differentiating from other similar apps which are overloaded with information and features, which my client believes over-complicate things. This app was also built for my final project in the Udacity iOS Nanodegree for which it received an excellent review.
 
+
 <img align="center" src="Gifs/gif1.gif" data-canonical-src="gifs/gif1.gif" width="400" height="800" />
 
 ## Pre-requisites
