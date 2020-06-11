@@ -1,6 +1,6 @@
 # Food For Plates 
 
-This app is a guide for the public on places to eat, drink and shop in East London. The idea was to focus on a preferred selection of venues that, rather than including everywhere like most other guides. This app was designed with a clean and easy to navigate structure and user-experience in mind, again differentiating from other similar apps which are overloaded with information, controls and features which bombard the user and unnecessarily over-complicate things. This app was built for my final project in the Udacity iOS Nanodegree with the intention of releasing it to the app store eventually once I have all the required content.
+This app is a guide on places to eat, drink and shop in East London, focussing on a preferred selection of venues. The client specified a clean and easy to navigate structure with user-experience at the forefront of design, differentiating from other similar apps which are overloaded with information and features, which my client believes over-complicate things. This app was also built for my final project in the Udacity iOS Nanodegree for which it received an excellent review.
 
 <img align="center" src="Gifs/gif1.gif" data-canonical-src="gifs/gif1.gif" width="400" height="800" />
 
