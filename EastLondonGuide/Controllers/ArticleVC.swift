@@ -10,11 +10,16 @@ import UIKit
 
 class ArticleVC: UITableViewController {
 
+    // MARK: - Properties
+
     var chosenArticleTitle: String!
     var contentfulArticles = [ContentfulArticle]()
     var tempArticlesArray = [ContentfulArticle]()
     var chosenVenue: String!
     
+    
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,8 +37,8 @@ class ArticleVC: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
-
+    
+    // MARK: - TableView Delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tempArticlesArray.count

@@ -10,12 +10,17 @@ import UIKit
 
 class VenuesVC: UITableViewController {
 
+    // MARK: - Properties
+
     var area: String!
     var category: String!
     var allVenues = Venue.allVenues
     var venuesToDisplay: [Venue] = []
     var chosenVenue: Venue!
     
+    
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 350
@@ -27,7 +32,8 @@ class VenuesVC: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    
+    // MARK: - TableView delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return venuesToDisplay.count

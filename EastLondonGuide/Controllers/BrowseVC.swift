@@ -10,7 +10,8 @@ import UIKit
 
 class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
+    // MARK: - Outlets
+
     @IBOutlet var areaMenu: UIView!
     @IBOutlet var centerPopupConstraint: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
@@ -18,6 +19,9 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var categorySelector: UISegmentedControl!
     @IBOutlet var showFavouritesButton: UIBarButtonItem!
     
+    
+    // MARK: - Properties
+
     let allVenues = Venue.allVenues!
     var filteredVenues = [Venue]()
     var chosenVenue: Venue!
@@ -26,7 +30,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var alreadyFilteredVenues = [Venue]()
     
     
-    //MARK: - Lifecycle Methods
+    //MARK: - Lifecycle 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,42 +71,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
 
-    // MARK: - Table view data source
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredVenues.count
-    }
-
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BrowseCell", for: indexPath) as! BrowseCell
-        let venue = filteredVenues[indexPath.row]
-
-        cell.areaLabel.text = venue.area
-        cell.venueLabel.text = venue.name.uppercased()
-        cell.categoryLabel.text = venue.category
-        cell.customImageView.image = UIImage(named: venue.name)
-
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenVenue = filteredVenues[indexPath.row]
-        performSegue(withIdentifier: "VenueDetails2", sender: self)
-    }
-
-   
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! VenueDetailsVC
-        vc.venue = chosenVenue
-    }
-    
-    
-    
     // MARK: - Helper Methods
-    
     
     fileprivate func filterLocation(for venueArea: String) {
         if !alreadyFilteredByCategory {
@@ -114,7 +83,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
         }
     }
-    
     
     func filterCategory(for category: String) {
         alreadyFilteredByCategory = true
@@ -131,6 +99,14 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
+     // MARK: - Navigation
+
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let vc = segue.destination as! VenueDetailsVC
+         vc.venue = chosenVenue
+     }
+     
+    
     // MARK: - Action Methods
     
     @IBAction func areaButtonTapped(_ sender: Any) {
@@ -145,7 +121,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-
     @IBAction func areaSelected(_ sender: UIButton) {
         showFavouritesButton.isEnabled = true
         centerPopupConstraint.constant = 1200
@@ -192,10 +167,10 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     @IBAction func showFavourites(_ sender: Any) {
         FavouritesModel.viewingFavourites = !FavouritesModel.viewingFavourites
         filteredVenues = FavouritesModel.favourites
+        
         if FavouritesModel.viewingFavourites {
             showFavouritesButton.isEnabled = false
         } else {
@@ -210,6 +185,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         filteredByArea = false
         filteredVenues = allVenues
         FavouritesModel.viewingFavourites = false
+        
         if FavouritesModel.favourites.count > 0 {
             showFavouritesButton.isEnabled = true
         }
@@ -217,4 +193,27 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         categorySelector.selectedSegmentIndex = 0
     }
     
+    
+    // MARK: - TableView delegates & data source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredVenues.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BrowseCell", for: indexPath) as! BrowseCell
+        let venue = filteredVenues[indexPath.row]
+
+        cell.areaLabel.text = venue.area
+        cell.venueLabel.text = venue.name.uppercased()
+        cell.categoryLabel.text = venue.category
+        cell.customImageView.image = UIImage(named: venue.name)
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenVenue = filteredVenues[indexPath.row]
+        performSegue(withIdentifier: "VenueDetails2", sender: self)
+    }
 }

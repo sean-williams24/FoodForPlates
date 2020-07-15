@@ -10,12 +10,17 @@ import UIKit
 
 class CategoriesVC: UITableViewController {
 
+    // MARK: - Properties
+
     var categories: [String] = []
     var area: String!
     var chosenCategory = ""
     var allVenues = Venue.allVenues
     var venuesInArea: [Venue] = []
     
+    
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 300
@@ -33,7 +38,7 @@ class CategoriesVC: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
