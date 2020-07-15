@@ -11,9 +11,7 @@ import UIKit
 
 class FlickrClient {
     
-    
     class func taskForGettingFlickrImages(url: String, completion: @escaping(FlickrResponse?, Error?) -> Void) {
-        
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
