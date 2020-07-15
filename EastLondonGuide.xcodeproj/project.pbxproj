@@ -49,7 +49,6 @@
 		CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */; };
 		CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */; };
 		CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF423420E6800BD70CE /* MapVC.swift */; };
-		CEAD3629238800C300F662E5 /* ContentfulClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD3628238800C300F662E5 /* ContentfulClient.swift */; };
 		CEC13F4924780294003DBBC1 /* VenuesModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */; };
 		CEC13F5124781EE3003DBBC1 /* FoodForPlatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */; };
 		CEE1E97E2409370B00A529C6 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E97D2409370B00A529C6 /* PagerView.swift */; };
@@ -134,7 +133,6 @@
 		CE9C6CEF23410DF300BD70CE /* InspirationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationVC.swift; sourceTree = "<group>"; };
 		CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
 		CE9C6CF423420E6800BD70CE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
-		CEAD3628238800C300F662E5 /* ContentfulClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulClient.swift; sourceTree = "<group>"; };
 		CEC13F3E2477FE14003DBBC1 /* FoodForPlatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodForPlatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC13F422477FE14003DBBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesModelTests.swift; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 			children = (
 				CE9C6C77233A23D000BD70CE /* AppDelegate.swift */,
 				CE9C6C79233A23D000BD70CE /* SceneDelegate.swift */,
-				CEAD3628238800C300F662E5 /* ContentfulClient.swift */,
 				CEEE0B6B248D16D600320223 /* Networking */,
 				CE9C6CB7233B630E00BD70CE /* Models */,
 				CEEE0B6C248D18E900320223 /* ViewModels */,
@@ -628,7 +625,6 @@
 				CEE580112348E7880068A774 /* ArticleCell.swift in Sources */,
 				CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */,
 				CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */,
-				CEAD3629238800C300F662E5 /* ContentfulClient.swift in Sources */,
 				CEE5801B234CB7130068A774 /* FlickrClient.swift in Sources */,
 				CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */,
 				CE9C6C7A233A23D000BD70CE /* SceneDelegate.swift in Sources */,
