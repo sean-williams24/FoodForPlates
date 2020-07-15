@@ -8,7 +8,6 @@
 
 import Contentful
 import UIKit
-//import UIImageViewAlignedSwift
 
 class InspirationVC: UIViewController {
     
@@ -36,6 +35,7 @@ class InspirationVC: UIViewController {
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat!
     
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -46,6 +46,8 @@ class InspirationVC: UIViewController {
         
         titleViewMaxHeight = view.frame.height / 3
         
+        
+        // Fetch article data from Contentful API and get images for tableView
         let articleTypeQuery = QueryOn<ArticleType>.where(contentTypeId: "articleType")
         
         contentfulClient.fetchArray(of: ArticleType.self, matching: articleTypeQuery) { (result: Result<HomogeneousArrayResponse<ArticleType>>) in
@@ -78,6 +80,7 @@ class InspirationVC: UIViewController {
             }
         }
         
+        // Fetch articles from Contentful API
         let articleQuery = QueryOn<ContentfulArticle>.where(contentTypeId: "articles")
         
         contentfulClient.fetchArray(of: ContentfulArticle.self, matching: articleQuery) { (result: Result<HomogeneousArrayResponse<ContentfulArticle>>) in
@@ -92,11 +95,13 @@ class InspirationVC: UIViewController {
         }
     }
     
-    // MARK: - Private Methods
+    
+    // MARK: - Helper Methods
     
     fileprivate func loadTableAndAnimate() {
         DispatchQueue.main.async {
             self.animateTableviewReload(tableView: self.inspoTableView, transitionType: .fromBottom)
+            
             UIView.animate(withDuration: 1.7, delay: 0, options: .curveEaseInOut, animations: {
                 self.titleHeightConstraint.constant = self.titleViewMaxHeight
                 self.titleLabelTopConstraint.constant = 15
@@ -105,18 +110,18 @@ class InspirationVC: UIViewController {
         }
     }
     
-    //MARK: - Navigation
     
+    //MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ArticleVC
         vc.chosenArticleTitle = chosenArticle
         vc.contentfulArticles = contentfulArticles
     }
-    
-    // MARK: - Table View Delegates
-    
 }
+
+
+// MARK: - Table View Delegates
 
 extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +145,9 @@ extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
 }
+
+
+// MARK: - Scroll View Delegates
 
 extension InspirationVC: UIScrollViewDelegate {
     

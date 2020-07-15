@@ -53,8 +53,6 @@ class DataController {
             completion?()
         }
     }
-    
- 
 }
 
 extension DataController {

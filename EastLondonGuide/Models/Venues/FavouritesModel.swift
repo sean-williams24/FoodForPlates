@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class FavouritesModel {
     static var favourites = [Venue]()
     static var favouriteRemoved = false

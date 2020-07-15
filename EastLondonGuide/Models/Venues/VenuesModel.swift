@@ -125,7 +125,6 @@ extension Venue {
             [NameKey : "Mae + Harvey", AreaKey : Area.Bow.rawValue, CategoryKey : "Coffee", DescriptionKey : Description.MaeAndHarvey.rawValue, AddressKey : Address.MaeAndHarvey.rawValue, OpeningTimesKey : OpeningTimes.MaeAndHarvey.rawValue, EmailKey : Email.MaeAndHarvey.rawValue],
         ]
     }
-    
 }
 
 
