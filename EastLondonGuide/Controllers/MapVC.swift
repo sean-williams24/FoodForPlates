@@ -13,6 +13,8 @@ import CoreLocation
 
 class MapVC: UIViewController, CLLocationManagerDelegate {
     
+     // MARK: - Outlets
+     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var categorySelector: UISegmentedControl!
     @IBOutlet var areaButton: UIBarButtonItem!
@@ -25,6 +27,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    
+    // MARK: - Properties
+
     var venues = Venue.allVenues
     var allAnnotations: [MKPointAnnotation] = []
     var chosenVenue: Venue!
@@ -90,7 +95,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         pagerView.isUserInteractionEnabled = true
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if Global.viewVenueOnMap {
@@ -102,20 +106,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         super.viewDidDisappear(animated)
         Global.viewVenueOnMap = false
     }
-
-    
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! VenueDetailsVC
-        vc.venue = chosenVenue
-        vc.venueCoordinate = venueCoordinate
-        vc.arrivedFromMapView = true
-    }
     
     
-    //MARK: - Private Methods
+    //MARK: - Helper Methods
     
     fileprivate func filterMapAnnotations(for category: String) {
         for annotation in allAnnotations {
@@ -139,7 +132,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
     fileprivate func zoomToVenue() {
         let venueToZoomTo = Global.currentVenue
         for annotation in self.allAnnotations {
@@ -154,16 +146,24 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
     fileprivate func setMapRegion(to area: CLLocationCoordinate2D, atZoomLevel: Double) {
         let region = MKCoordinateRegion(center: area, latitudinalMeters: atZoomLevel, longitudinalMeters: atZoomLevel)
         self.mapView.setRegion(region, animated: true)
     }
     
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let user = locations.last else { return }
         userLocation = user.coordinate
+    }
+    
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! VenueDetailsVC
+        vc.venue = chosenVenue
+        vc.venueCoordinate = venueCoordinate
+        vc.arrivedFromMapView = true
     }
     
     
@@ -190,7 +190,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
     @IBAction func areaButtonTapped(_ sender: Any) {
         centerPopupConstraint.constant = 0
         
@@ -202,7 +201,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             self.backgroundButton.alpha = 0.3
         }
     }
-    
     
     @IBAction func areaSelected(_ sender: UIButton) {
         centerPopupConstraint.constant = -1000
@@ -248,8 +246,8 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         annotation.title = "\(UIDevice.current.name)"
         mapView.addAnnotation(annotation)
     }
-    
 }
+
 
 //MARK: - MapView Delegate
 
@@ -270,9 +268,7 @@ extension MapVC: MKMapViewDelegate {
             view.rightCalloutAccessoryView = .none
             view.displayPriority = .defaultHigh
             view.markerTintColor = .black
-            
         }
-        
         return view
     }
     
@@ -292,7 +288,6 @@ extension MapVC: MKMapViewDelegate {
         }
     }
     
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         view.displayPriority = .required
         
@@ -307,6 +302,8 @@ extension MapVC: MKMapViewDelegate {
     }
 }
 
+
+// MARK: - PagerView Delegates
 
 extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
     
@@ -329,11 +326,9 @@ extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
         return cell
     }
     
-    
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
         true
     }
-    
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         let selectedVenue = venues?[targetIndex]
@@ -345,7 +340,6 @@ extension MapVC: FSPagerViewDelegate, FSPagerViewDataSource {
             }
         }
     }
-    
     
     func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool {
         return true

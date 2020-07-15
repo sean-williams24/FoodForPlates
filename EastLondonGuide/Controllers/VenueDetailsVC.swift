@@ -1,5 +1,5 @@
 //
-//  VenueDetailsVC2.swift
+//  VenueDetailsVC.swift
 //  EastLondonGuide
 //
 //  Created by Sean Williams on 26/09/2019.
@@ -11,6 +11,8 @@ import UberRides
 import CoreLocation
 
 class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
+
+    //MARK: - Outlets
 
     @IBOutlet var venueImageView: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
@@ -28,6 +30,9 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var imagesButton: UIBarButtonItem!
     @IBOutlet var uberView: UIView!
     
+    
+    //MARK: - Properties
+
     var venue: Venue!
     var arrivedFromMapView = false
     var venueCoordinate: CLLocationCoordinate2D?
@@ -57,15 +62,16 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         setUberDropLocation()
     }
     
-    
-    //MARK: - Private Methods
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        userLocation = locationManager.location
+    override func viewDidLayoutSubviews() {
+        calculateTextViewHeights(textView: descriptionTextView, constraint: descriptionHeight)
+        calculateTextViewHeights(textView: addressTextView, constraint: addressHeight)
+        calculateTextViewHeights(textView: openingTimesTextView, constraint: openingTimesHeight)
     }
     
+    
+    //MARK: - Helper Methods
+    
     fileprivate func setupUI() {
-        // Set UI elements
         if arrivedFromMapView == true {
             mapButton.isEnabled = false
         }
@@ -97,20 +103,18 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     }
     
     fileprivate func setUberDropLocation() {
-        // Set drop Uber off location - If we havent arrived from MapVC, need to obtain coordinate from address
-
         let address = venue.address?.replacingOccurrences(of: "\n", with: "")
+        
         if venueCoordinate == nil {
-            
+            //If we havent arrived from MapVC, need to obtain coordinate from address
+
             let geoCoder = CLGeocoder()
             geoCoder.geocodeAddressString(address!) { (placemarks, error) in
                 guard
                     let placemarks = placemarks,
                     let location = placemarks.first?.location
-                    else {
-                        self.showErrorAlert(title: "", error: "")
-                        return
-                }
+                    else { return }
+
                 self.dropOffLocation = location
                 self.setupUberButton()
             }
@@ -123,12 +127,9 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     }
     
     fileprivate func setupUberButton() {
-        
-        // ride request button
         let uberButton = RideRequestButton()
-        
-        // set journey details
         let builder = RideParametersBuilder()
+        
         builder.dropoffLocation = dropOffLocation
         builder.dropoffNickname = venue.name
         uberButton.rideParameters = builder.build()
@@ -139,23 +140,19 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         uberButton.centerXAnchor.constraint(equalTo: uberView.centerXAnchor).isActive = true
     }
     
-    
     fileprivate func calculateTextViewHeights(textView: UITextView, constraint: NSLayoutConstraint) {
         let size: CGSize = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
         let insets: UIEdgeInsets = textView.textContainerInset
         constraint.constant = size.height + insets.top + insets.bottom
     }
-    
-    override func viewDidLayoutSubviews() {
-        calculateTextViewHeights(textView: descriptionTextView, constraint: descriptionHeight)
-        calculateTextViewHeights(textView: addressTextView, constraint: addressHeight)
-        calculateTextViewHeights(textView: openingTimesTextView, constraint: openingTimesHeight)
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        userLocation = locationManager.location
     }
     
     
     //MARK: - Action Methods
 
-    
     @IBAction func viewOnMapTapped(_ sender: Any) {
         Global.viewVenueOnMap = true
         let tabIndex = 3
@@ -171,7 +168,6 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func favouriteButtonTapped(_ sender: Any) {
-        
         // Persist favourites to user defaults using venue name strings
         
         if venueIsFavourite {
@@ -182,29 +178,24 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
             FavouritesModel.favourites.append(venue)
             favouriteButton.tintColor = .red
         }
-
-        var array: [String] = []
+        
+        var favourites: [String] = []
         for venue in FavouritesModel.favourites {
-            array.append(venue.name)
+            favourites.append(venue.name)
         }
 
-        UserDefaults.standard.set(array, forKey: "Favourites")
+        UserDefaults.standard.set(favourites, forKey: "Favourites")
     }
         
-    
     @IBAction func menuButtonTapped(_ sender: Any) {
-    
         let menuVC = self.storyboard?.instantiateViewController(identifier: "MenuVC")
         let navigationController = UINavigationController(rootViewController: menuVC!)
         self.present(navigationController, animated: true, completion: nil)
-
     }
-    
     
     @IBAction func imagesButtonTapped(_ sender: Any) {
         let imagesVC = self.storyboard?.instantiateViewController(identifier: "VenueImages") as! VenueImagesVC
         let navigationController = UINavigationController(rootViewController: imagesVC)
         self.present(navigationController, animated: true, completion: nil)
-
     }
 }
