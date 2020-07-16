@@ -39,7 +39,7 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         let newBackButton = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(back(sender:)))
         newBackButton.tintColor = .darkGray
-        self.navigationItem.leftBarButtonItem = newBackButton;
+        self.navigationItem.leftBarButtonItem = newBackButton
 
         if let menuURL = Global.currentVenue?.menu {
             let url = URL(string: (menuURL))!
@@ -109,7 +109,7 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
         let newBackButton = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(backPopUp(sender:)))
         newBackButton.tintColor = .darkGray
-        self.navigationItem.leftBarButtonItem = newBackButton;
+        self.navigationItem.leftBarButtonItem = newBackButton
         return popUpWebview
     }
 }
