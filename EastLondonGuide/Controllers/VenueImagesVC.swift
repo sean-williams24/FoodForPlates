@@ -122,11 +122,11 @@ class VenueImagesVC: UICollectionViewController {
                     let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height))
                     messageLabel.text = "SORRY, NO ADDITIONAL PHOTOS \nFOUND FOR THIS LOCATION"
                     messageLabel.textColor = .black
-                    messageLabel.numberOfLines = 0;
-                    messageLabel.textAlignment = .center;
+                    messageLabel.numberOfLines = 0
+                    messageLabel.textAlignment = .center
                     messageLabel.font = UIFont(name: "JosefinSans-Light", size: 15)
                     messageLabel.sizeToFit()
-                    self.collectionView.backgroundView = messageLabel;
+                    self.collectionView.backgroundView = messageLabel
                 }
             }
         } else {
