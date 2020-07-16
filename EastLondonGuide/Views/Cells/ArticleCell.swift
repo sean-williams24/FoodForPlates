@@ -29,7 +29,6 @@ class ArticleCell: UITableViewCell {
         attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(value), range: NSRange(location: 0, length: attributedString.length))
         label.attributedText = attributedString
     }
-
 }
 
 

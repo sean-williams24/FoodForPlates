@@ -9,21 +9,24 @@
 import UIKit
 import CoreData
 
-private let reuseIdentifier = "PhotoCell"
-
 
 class VenueImagesVC: UICollectionViewController {
 
+    //MARK: - Outlets
+
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     
+    
+    //MARK: - Properties
+
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<CDPhoto>!
     var currentVenue = Global.currentVenue!
     var FlickrURLs: [String] = []
-    
+    private let reuseIdentifier = "PhotoCell"
+
     
     //MARK: - Lifecylce Methods
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +44,6 @@ class VenueImagesVC: UICollectionViewController {
         self.navigationItem.rightBarButtonItem = refreshButton
     }
  
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupFetchedResultsController()
@@ -57,26 +59,26 @@ class VenueImagesVC: UICollectionViewController {
     }
     
     
-    //MARK: - Private Methods
+    //MARK: - Helper Methods
     
     fileprivate func setupFetchedResultsController() {
         
         let fetchRequest: NSFetchRequest<CDPhoto> = CDPhoto.fetchRequest()
         let predicate = NSPredicate(format: "venueName == %@", currentVenue.name)
         fetchRequest.predicate = predicate
-
+        
         let sortDescriptor = NSSortDescriptor(key: "dateAdded", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
-            
+        
         //Instantiate fetched results controller
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext , sectionNameKeyPath: nil, cacheName: nil)
         
         fetchedResultsController.delegate = self
-            do {
-                try fetchedResultsController.performFetch()
-            } catch {
-                fatalError("The fetch could not be performed: \(error.localizedDescription)")
-            }
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
     }
     
     @objc func reloadPhotos() {
@@ -132,7 +134,6 @@ class VenueImagesVC: UICollectionViewController {
         }
     }
     
-    
      fileprivate func downloadPhotosFromFlickr() {
         let venueName = currentVenue.name.replacingOccurrences(of: " ", with: "+")
         let editedVenueName = venueName.replacingOccurrences(of: "&", with: "%26")
@@ -141,7 +142,6 @@ class VenueImagesVC: UICollectionViewController {
      }
     
     
-
     // MARK: - UICollectionViewDataSource & Delegates
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -168,7 +168,6 @@ class VenueImagesVC: UICollectionViewController {
                             try? self.dataController.viewContext.save()
                             cell.imageVIew.image = image
                         }
-
                     }
                 }
             }

@@ -11,9 +11,14 @@ import WebKit
 
 class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
+    //MARK: - Outlets
+
     @IBOutlet var webView: WKWebView!
     @IBOutlet var progressView: UIProgressView!
     
+    
+    //MARK: - Properties
+
     var popUpWebview: WKWebView?
     
     
@@ -47,12 +52,10 @@ class MenuVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        
     }
     
     
     //MARK: - Navigation Delegate Methods
-    
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {

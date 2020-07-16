@@ -45,29 +45,6 @@ class PagerViewCell: FSPagerViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    fileprivate weak var _textLabel: UILabel?
-    
-//    override open var textLabel: UILabel? {
-//        if let _ = _textLabel {
-//            return _textLabel
-//        }
-//        let view = UIView(frame: .zero)
-//        view.isUserInteractionEnabled = false
-//        view.backgroundColor = UIColor.red.withAlphaComponent(0.6)
-//
-//        let textLabel = UILabel(frame: .zero)
-//        textLabel.textColor = .white
-//        textLabel.font = UIFont.preferredFont(forTextStyle: .body)
-//        self.contentView.addSubview(view)
-//        view.addSubview(textLabel)
-//
-////        textLabel.addObserver(self, forKeyPath: "font", options: [.old,.new], context: kvoContext)
-//
-//        _textLabel = textLabel
-//        return textLabel
-//    }
-
 }
 
 

@@ -14,6 +14,4 @@ class AreaCell: UITableViewCell {
     @IBOutlet var customImageView: UIImageView!
     @IBOutlet var customTextLabel: UILabel!
     
-    
-
 }
