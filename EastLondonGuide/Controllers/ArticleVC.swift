@@ -42,13 +42,7 @@ class ArticleVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        let article = contentfulArticles[indexPath.row]
-        
-        cell.articleImageView.image = UIImage(named: article.venue ?? "")
-        cell.venueNameLabel.text = article.venue?.uppercased()
-        cell.venueDescriptionLabel.text = article.info
-        cell.venueInfoButton.setTitle("\(article.venue?.uppercased() ?? "VENUE") INFO", for: .normal)
-        
+        cell.article = contentfulArticles[indexPath.row]        
         cell.venueInfoButton.tag = indexPath.row
         cell.venueInfoButton.addTarget(self, action: #selector(venueInfoButtonTapped(_:)), for: .touchUpInside)
         

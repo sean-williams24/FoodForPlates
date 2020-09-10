@@ -18,6 +18,15 @@ class ArticleCell: UITableViewCell {
     @IBOutlet var venueInfoButton: UIButton!
     
 
+    var article: ContentfulArticle! {
+        didSet {
+            articleImageView.image = UIImage(named: article.venue ?? "")
+            venueNameLabel.text = article.venue?.uppercased()
+            venueDescriptionLabel.text = article.info
+            venueInfoButton.setTitle("\(article.venue?.uppercased() ?? "VENUE") INFO", for: .normal)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         letterSpacing(label: venueNameLabel, value: 5.0)

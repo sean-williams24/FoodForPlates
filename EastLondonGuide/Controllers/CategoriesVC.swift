@@ -24,15 +24,11 @@ class CategoriesVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 300
-
-        for venue in allVenues! {
-            if venue.area == area! {
-                venuesInArea.append(venue)
-            }
-        }
+        
+        venuesInArea = Venue.allVenues.filter({$0.area == area})
         
         for venue in venuesInArea {
-            if categories.contains(venue.category) == false {
+            if !categories.contains(venue.category) {
                 categories.append(venue.category)
             }
         }

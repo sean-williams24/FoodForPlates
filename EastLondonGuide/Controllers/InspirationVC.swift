@@ -21,14 +21,14 @@ class InspirationVC: UIViewController {
     
     // MARK: - Properties
 
-    var articleImages = [UIImage]() {
-        didSet {
-            if articleData.count == articleImages.count {
-                loadTableAndAnimate()
-            }
-        }
-    }
-    var articleData = [ArticleType]()
+//    var articleImages = [UIImage]() {
+//        didSet {
+//            if articleViewModels.count == articleImages.count {
+//                loadTableAndAnimate()
+//            }
+//        }
+//    }
+    var articleViewModels = [ArticleViewModel]()
     var contentfulArticles = [ContentfulArticle]()
     var chosenArticle = ""
     let contentfulClient = Client(spaceId: Keys.spaceID, accessToken: Keys.contentfulAccessToken, contentTypeClasses: [ContentfulArticle.self, ArticleType.self])
@@ -52,25 +52,8 @@ class InspirationVC: UIViewController {
         
         contentfulClient.fetchArray(of: ArticleType.self, matching: articleTypeQuery) { (result: Result<HomogeneousArrayResponse<ArticleType>>) in
             switch result {
-            case .success(let entriesArrayResponse):
-                self.articleData = entriesArrayResponse.items
-                
-                // Assign article images to local array
-                for articleType in self.articleData {
-                    if let url = articleType.image?.url {
-                        do {
-                            let imageData = try Data(contentsOf: url)
-                            if let image = UIImage(data: imageData) {
-                                self.articleImages.append(image)
-                            }
-                        } catch {
-                            DispatchQueue.main.async {
-                            self.showErrorAlert(title: "Error downloading images.", error: "Something went wrong whilst trying to download images, please try reloading the application.")
-                            }
-                        }
-                    }
-                }
-                
+            case .success(let entriesArrayResponse):               
+                self.articleViewModels = entriesArrayResponse.items.map({ArticleViewModel(article: $0)})
                 self.loadTableAndAnimate()
                 
             case .error:
@@ -125,23 +108,20 @@ class InspirationVC: UIViewController {
 
 extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        articleData.count
+        articleViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InspirationCell", for: indexPath) as! InspirationCell
         
-        cell.customImageView.image = articleImages[indexPath.row]
-        cell.customTextLabel.text = articleData[indexPath.row].title?.uppercased()
+        cell.articleViewModel = articleViewModels[indexPath.row]
         letterSpacing(label: cell.customTextLabel, value: 8.0)
-        
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let articleTitle = articleData[indexPath.row].title {
-            chosenArticle = articleTitle
-        }
+        chosenArticle = articleViewModels[indexPath.row].title
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
 }

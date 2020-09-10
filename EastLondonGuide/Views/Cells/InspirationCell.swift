@@ -13,4 +13,21 @@ class InspirationCell: UITableViewCell {
     @IBOutlet var customImageView: UIImageView!
     @IBOutlet var customTextLabel: UILabel!
 
+    var articleViewModel: ArticleViewModel! {
+        didSet {
+            customTextLabel.text = articleViewModel.title.uppercased()
+            
+            DispatchQueue.global(qos: .background).async {
+                let image = self.articleViewModel.getImage()
+                
+                DispatchQueue.main.async {
+                    self.customImageView.image = image
+                }
+            }
+        }
+    }
+    
+    
 }
+
+

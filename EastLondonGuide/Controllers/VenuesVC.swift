@@ -14,8 +14,7 @@ class VenuesVC: UITableViewController {
 
     var area: String!
     var category: String!
-    var allVenues = Venue.allVenues
-    var venuesToDisplay: [Venue] = []
+    var venues: [Venue] = []
     var chosenVenue: Venue!
     
     
@@ -25,31 +24,27 @@ class VenuesVC: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 350
         
-        for venue in allVenues! {
-            if venue.area == area && venue.category == category {
-                venuesToDisplay.append(venue)
-            }
-        }
+        venues = Venue.allVenues.filter({$0.area == area && $0.category == category })
     }
 
     
     // MARK: - TableView delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return venuesToDisplay.count
+        return venues.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VenuesCell", for: indexPath) as! VenuesCell
 
-        cell.customTextLabel.text = venuesToDisplay[indexPath.row].name.uppercased()
-        cell.customImageView.image = UIImage(named: venuesToDisplay[indexPath.row].name)
+        cell.customTextLabel.text = venues[indexPath.row].name.uppercased()
+        cell.customImageView.image = UIImage(named: venues[indexPath.row].name)
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenVenue = venuesToDisplay[indexPath.row]
+        chosenVenue = venues[indexPath.row]
         performSegue(withIdentifier: "VenueDetails", sender: self)
     }
 

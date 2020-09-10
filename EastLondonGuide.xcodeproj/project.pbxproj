@@ -296,12 +296,12 @@
 		CE9C6CF32341EF5800BD70CE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */,
 				CEE580102348E7880068A774 /* ArticleCell.swift */,
 				CE9C6CB3233A6EF600BD70CE /* AreaCell.swift */,
 				CE9C6CBA233B6E9300BD70CE /* CategoriesCell.swift */,
 				CE9C6CC0233BC20F00BD70CE /* VenuesCell.swift */,
 				CE9C6CC4233CA29B00BD70CE /* BrowseCell.swift */,
-				CE9C6CF12341EF4C00BD70CE /* InspirationCell.swift */,
 				CEE58025234DF06F0068A774 /* PhotoCell.swift */,
 				CEE1E97D2409370B00A529C6 /* PagerView.swift */,
 			);
