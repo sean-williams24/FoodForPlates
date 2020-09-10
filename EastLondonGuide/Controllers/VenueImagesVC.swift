@@ -77,7 +77,7 @@ class VenueImagesVC: UICollectionViewController {
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+            print("The fetch could not be performed: \(error.localizedDescription)")
         }
     }
     

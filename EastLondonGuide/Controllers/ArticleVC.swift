@@ -14,7 +14,6 @@ class ArticleVC: UITableViewController {
 
     var chosenArticleTitle: String!
     var contentfulArticles = [ContentfulArticle]()
-    var tempArticlesArray = [ContentfulArticle]()
     var chosenVenue: String!
     
     
@@ -30,24 +29,20 @@ class ArticleVC: UITableViewController {
             [NSAttributedString.Key.font: UIFont(name: "JosefinSans-Light", size: 12)!,
              NSAttributedString.Key.foregroundColor : UIColor.black]
         
-        for article in contentfulArticles {
-            if article.title == chosenArticleTitle {
-                tempArticlesArray.append(article)
-            }
-        }
+        contentfulArticles = contentfulArticles.filter({$0.title == chosenArticleTitle})
     }
 
     
     // MARK: - TableView Delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempArticlesArray.count
+        return contentfulArticles.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        let article = tempArticlesArray[indexPath.row]
+        let article = contentfulArticles[indexPath.row]
         
         cell.articleImageView.image = UIImage(named: article.venue ?? "")
         cell.venueNameLabel.text = article.venue?.uppercased()
@@ -62,7 +57,7 @@ class ArticleVC: UITableViewController {
 
 
     @objc func venueInfoButtonTapped(_ sender: UIButton) {
-        let article = tempArticlesArray[sender.tag]
+        let article = contentfulArticles[sender.tag]
         chosenVenue = article.venue
         performSegue(withIdentifier: "VenueDetails1", sender: sender)
     }

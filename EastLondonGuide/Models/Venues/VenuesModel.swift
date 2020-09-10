@@ -82,7 +82,7 @@ extension Venue {
     
     static func venueData() -> [[String : String]] {
         return [
-            
+        
             // Shoreditch & Hoxton
             
             [NameKey : "SMOKESTAK", AreaKey : Area.Shoreditch.rawValue, CategoryKey : "Food", DescriptionKey : Description.Smokestak.rawValue, AddressKey : Address.Smokestak.rawValue, OpeningTimesKey : OpeningTimes.Smokestak.rawValue, EmailKey : Email.Smokestak.rawValue, PhoneKey : Telephone.Smokestak.rawValue, MenuKey : Menu.SMOKESTAK.rawValue],
