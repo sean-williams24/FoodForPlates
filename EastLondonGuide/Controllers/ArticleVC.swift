@@ -12,8 +12,7 @@ class ArticleVC: UITableViewController {
 
     // MARK: - Properties
 
-    var chosenArticleTitle: String!
-    var contentfulArticles = [ContentfulArticle]()
+    var articleTypeViewModel: ArticleTypeViewModel!
     var chosenVenue: String!
     
     
@@ -22,27 +21,24 @@ class ArticleVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chosenArticleTitle = chosenArticleTitle.replacingOccurrences(of: "\n", with: "")
-
-        title = chosenArticleTitle.uppercased()
+        title = articleTypeViewModel.title.uppercased()
+        
         self.navigationController!.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: "JosefinSans-Light", size: 12)!,
              NSAttributedString.Key.foregroundColor : UIColor.black]
-        
-        contentfulArticles = contentfulArticles.filter({$0.title == chosenArticleTitle})
     }
 
     
     // MARK: - TableView Delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contentfulArticles.count
+        return articleTypeViewModel.articles.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        cell.article = contentfulArticles[indexPath.row]        
+        cell.articleViewModel = articleTypeViewModel.articles[indexPath.row]
         cell.venueInfoButton.tag = indexPath.row
         cell.venueInfoButton.addTarget(self, action: #selector(venueInfoButtonTapped(_:)), for: .touchUpInside)
         
@@ -51,8 +47,8 @@ class ArticleVC: UITableViewController {
 
 
     @objc func venueInfoButtonTapped(_ sender: UIButton) {
-        let article = contentfulArticles[sender.tag]
-        chosenVenue = article.venue
+        let article = articleTypeViewModel.articles[sender.tag]
+        chosenVenue = article.venueName
         performSegue(withIdentifier: "VenueDetails1", sender: sender)
     }
     
@@ -61,13 +57,7 @@ class ArticleVC: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! VenueDetailsVC
-        if let allVenues = Venue.allVenues {
-            for venue in allVenues {
-                if venue.name.uppercased() == chosenVenue.uppercased() {
-                    vc.venue = venue
-                }
-            }
-        }
+        let vc = segue.destination as! VenueDetailsVC        
+        vc.venue = Venue.allVenues.first(where: {$0.name.uppercased() == chosenVenue.uppercased()})
     }
 }

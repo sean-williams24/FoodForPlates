@@ -17,13 +17,13 @@ class ArticleCell: UITableViewCell {
     @IBOutlet var venueDescriptionLabel: UILabel!
     @IBOutlet var venueInfoButton: UIButton!
     
-
-    var article: ContentfulArticle! {
+    var articleViewModel: ArticleViewModel! {
         didSet {
-            articleImageView.image = UIImage(named: article.venue ?? "")
-            venueNameLabel.text = article.venue?.uppercased()
-            venueDescriptionLabel.text = article.info
-            venueInfoButton.setTitle("\(article.venue?.uppercased() ?? "VENUE") INFO", for: .normal)
+            articleImageView.image = articleViewModel.image
+            venueNameLabel.text = articleViewModel.venueName
+            venueDescriptionLabel.text = articleViewModel.venueDescription
+            venueInfoButton.setTitle("\(articleViewModel.venueName.uppercased()) INFO", for: .normal)
+
         }
     }
     

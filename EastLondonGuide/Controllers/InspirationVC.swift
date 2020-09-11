@@ -21,17 +21,9 @@ class InspirationVC: UIViewController {
     
     // MARK: - Properties
 
-//    var articleImages = [UIImage]() {
-//        didSet {
-//            if articleViewModels.count == articleImages.count {
-//                loadTableAndAnimate()
-//            }
-//        }
-//    }
-    var articleViewModels = [ArticleViewModel]()
-    var contentfulArticles = [ContentfulArticle]()
-    var chosenArticle = ""
-    let contentfulClient = Client(spaceId: Keys.spaceID, accessToken: Keys.contentfulAccessToken, contentTypeClasses: [ContentfulArticle.self, ArticleType.self])
+    var articleTypeViewModels = [ArticleTypeViewModel]()
+//    var contentfulArticles = [ContentfulArticle]()
+    var chosenArticle: ArticleTypeViewModel!
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat!
     
@@ -47,34 +39,16 @@ class InspirationVC: UIViewController {
         titleViewMaxHeight = view.frame.height / 3
         
         
-        // Fetch article data from Contentful API and get images for tableView
-        let articleTypeQuery = QueryOn<ArticleType>.where(contentTypeId: "articleType")
-        
-        contentfulClient.fetchArray(of: ArticleType.self, matching: articleTypeQuery) { (result: Result<HomogeneousArrayResponse<ArticleType>>) in
-            switch result {
-            case .success(let entriesArrayResponse):               
-                self.articleViewModels = entriesArrayResponse.items.map({ArticleViewModel(article: $0)})
-                self.loadTableAndAnimate()
-                
-            case .error:
+        ContentfulClient.fetchArticleTypes { [weak self] results, error  in
+            guard error == nil else {
                 DispatchQueue.main.async {
-                    self.showErrorAlert(title: "No inspiration at this time!", error: "Something went wrong whilst trying to download inspiration articles, please try reloading the application.")
+                    self?.showErrorAlert(title: "No inspiration at this time!", error: "Something went wrong whilst trying to download inspiration articles, please try reloading the application.")
                 }
+                return
             }
-        }
-        
-        // Fetch articles from Contentful API
-        let articleQuery = QueryOn<ContentfulArticle>.where(contentTypeId: "articles")
-        
-        contentfulClient.fetchArray(of: ContentfulArticle.self, matching: articleQuery) { (result: Result<HomogeneousArrayResponse<ContentfulArticle>>) in
-            switch result {
-            case .success(let entriesArrayResponse):
-                self.contentfulArticles = entriesArrayResponse.items
-            case .error:
-                DispatchQueue.main.async {
-                self.showErrorAlert(title: "No inspiration at this time!", error: "Something went wrong whilst trying to download inspiration articles, please try reloading the application.")
-                    }
-            }
+            
+            self?.articleTypeViewModels = results
+            self?.loadTableAndAnimate()
         }
     }
     
@@ -98,8 +72,9 @@ class InspirationVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ArticleVC
-        vc.chosenArticleTitle = chosenArticle
-        vc.contentfulArticles = contentfulArticles
+        vc.articleTypeViewModel = chosenArticle
+        
+//        vc.contentfulArticles = contentfulArticles
     }
 }
 
@@ -108,20 +83,20 @@ class InspirationVC: UIViewController {
 
 extension InspirationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        articleViewModels.count
+        articleTypeViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InspirationCell", for: indexPath) as! InspirationCell
         
-        cell.articleViewModel = articleViewModels[indexPath.row]
+        cell.articleTypeViewModel = articleTypeViewModels[indexPath.row]
         letterSpacing(label: cell.customTextLabel, value: 8.0)
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenArticle = articleViewModels[indexPath.row].title
+        chosenArticle = articleTypeViewModels[indexPath.row]
         performSegue(withIdentifier: "ArticleVC", sender: self)
     }
 }

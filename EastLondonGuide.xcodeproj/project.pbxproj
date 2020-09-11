@@ -51,8 +51,10 @@
 		CE9C6CF523420E6800BD70CE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6CF423420E6800BD70CE /* MapVC.swift */; };
 		CEC13F4924780294003DBBC1 /* VenuesModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F4824780294003DBBC1 /* VenuesModelTests.swift */; };
 		CEC13F5124781EE3003DBBC1 /* FoodForPlatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */; };
+		CEC90FA9250B82E000A1607F /* ContentfulClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FA8250B82E000A1607F /* ContentfulClient.swift */; };
+		CEC90FAB250B831B00A1607F /* ContentfulClient + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FAA250B831B00A1607F /* ContentfulClient + Extensions.swift */; };
 		CEE1E97E2409370B00A529C6 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E97D2409370B00A529C6 /* PagerView.swift */; };
-		CEE3CCA6250A620D00D51639 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3CCA5250A620D00D51639 /* ArticleViewModel.swift */; };
+		CEE3CCA6250A620D00D51639 /* ArticleTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3CCA5250A620D00D51639 /* ArticleTypeViewModel.swift */; };
 		CEE58009234623AC0068A774 /* FavouritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE58008234623AC0068A774 /* FavouritesModel.swift */; };
 		CEE5800B234746610068A774 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800A234746610068A774 /* ArticlesModel.swift */; };
 		CEE5800F234788F80068A774 /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5800E234788F80068A774 /* ArticleVC.swift */; };
@@ -140,8 +142,10 @@
 		CEC13F4E24781EE3003DBBC1 /* FoodForPlatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodForPlatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC13F5024781EE3003DBBC1 /* FoodForPlatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForPlatesUITests.swift; sourceTree = "<group>"; };
 		CEC13F5224781EE3003DBBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC90FA8250B82E000A1607F /* ContentfulClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulClient.swift; sourceTree = "<group>"; };
+		CEC90FAA250B831B00A1607F /* ContentfulClient + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentfulClient + Extensions.swift"; sourceTree = "<group>"; };
 		CEE1E97D2409370B00A529C6 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
-		CEE3CCA5250A620D00D51639 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		CEE3CCA5250A620D00D51639 /* ArticleTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTypeViewModel.swift; sourceTree = "<group>"; };
 		CEE58008234623AC0068A774 /* FavouritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesModel.swift; sourceTree = "<group>"; };
 		CEE5800A234746610068A774 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
 		CEE5800E234788F80068A774 /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
@@ -326,13 +330,38 @@
 			path = FoodForPlatesUITests;
 			sourceTree = "<group>";
 		};
+		CEC90FA6250B81FF00A1607F /* Contentful API */ = {
+			isa = PBXGroup;
+			children = (
+				CEC90FA8250B82E000A1607F /* ContentfulClient.swift */,
+				CEC90FAC250B832100A1607F /* Extensions */,
+				CEC90FA7250B82BF00A1607F /* Models */,
+			);
+			path = "Contentful API";
+			sourceTree = "<group>";
+		};
+		CEC90FA7250B82BF00A1607F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE69C80823882C82004F599B /* ContentfulArticle.swift */,
+				CE69C80A238843E3004F599B /* ArticleType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEC90FAC250B832100A1607F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEC90FAA250B831B00A1607F /* ContentfulClient + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CEE580142349EAA10068A774 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
 				CEE5800A234746610068A774 /* ArticlesModel.swift */,
 				CEE580122349E99C0068A774 /* ArticleDescriptionModel.swift */,
-				CE69C80823882C82004F599B /* ContentfulArticle.swift */,
-				CE69C80A238843E3004F599B /* ArticleType.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -365,6 +394,7 @@
 		CEEE0B6B248D16D600320223 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CEC90FA6250B81FF00A1607F /* Contentful API */,
 				CEE5801E234CBF820068A774 /* Flickr API */,
 			);
 			path = Networking;
@@ -374,7 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				CEEE0B6D248D192100320223 /* VenueViewModel.swift */,
-				CEE3CCA5250A620D00D51639 /* ArticleViewModel.swift */,
+				CEE3CCA5250A620D00D51639 /* ArticleTypeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -610,6 +640,7 @@
 				CEEFD5B5234E1C1300AC73C4 /* DataController.swift in Sources */,
 				CE9C6CB4233A6EF600BD70CE /* AreaCell.swift in Sources */,
 				CE200EB02350DDD300098AA8 /* GlobalProperties.swift in Sources */,
+				CEC90FAB250B831B00A1607F /* ContentfulClient + Extensions.swift in Sources */,
 				CEEE0B6E248D192100320223 /* VenueViewModel.swift in Sources */,
 				CEE58019234B3BE40068A774 /* MenuModel.swift in Sources */,
 				CE9C6CF22341EF4C00BD70CE /* InspirationCell.swift in Sources */,
@@ -625,9 +656,10 @@
 				CEE1E97E2409370B00A529C6 /* PagerView.swift in Sources */,
 				CE9C6CBB233B6E9300BD70CE /* CategoriesCell.swift in Sources */,
 				CE9C6CCD233E116E00BD70CE /* VenueAddressModel.swift in Sources */,
-				CEE3CCA6250A620D00D51639 /* ArticleViewModel.swift in Sources */,
+				CEE3CCA6250A620D00D51639 /* ArticleTypeViewModel.swift in Sources */,
 				CEE580112348E7880068A774 /* ArticleCell.swift in Sources */,
 				CE9C6CF023410DF300BD70CE /* InspirationVC.swift in Sources */,
+				CEC90FA9250B82E000A1607F /* ContentfulClient.swift in Sources */,
 				CE9C6CD3233E13AC00BD70CE /* TelephoneModel.swift in Sources */,
 				CEE5801B234CB7130068A774 /* FlickrClient.swift in Sources */,
 				CE9C6CC5233CA29B00BD70CE /* BrowseCell.swift in Sources */,
