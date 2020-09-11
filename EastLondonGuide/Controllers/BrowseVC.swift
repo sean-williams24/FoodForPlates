@@ -23,7 +23,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Properties
 
     let allVenues = Venue.allVenues!
-    var filteredVenues = [Venue]()
+    var filteredVenues = [VenueViewModel]()
     var chosenVenue: Venue!
     var filteredByArea = false
     var alreadyFilteredByCategory = false
@@ -34,7 +34,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filteredVenues = allVenues
+        filteredVenues = allVenues.map({VenueViewModel(venue: $0)})
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
         setSegmentedControlAttributes(control: categorySelector)
@@ -43,26 +43,26 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if FavouritesModel.favourites.count == 0 {
-            showFavouritesButton.isEnabled = false
-            FavouritesModel.viewingFavourites = false
-            filteredVenues = allVenues
-            tableView.reloadData()
-        }
-        
-        if FavouritesModel.viewingFavourites == true {
-            showFavouritesButton.isEnabled = false
-        } else if FavouritesModel.viewingFavourites == false && FavouritesModel.favourites.count > 0 {
-            showFavouritesButton.isEnabled = true
-        }
-        
-        if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == true {
-            showFavouritesButton.isEnabled = false
-            filteredVenues = FavouritesModel.favourites
-            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-        } else if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == false {
-            filteredVenues = allVenues
-        }
+//        if FavouritesModel.favourites.count == 0 {
+//            showFavouritesButton.isEnabled = false
+//            FavouritesModel.viewingFavourites = false
+//            filteredVenues = allVenues
+//            tableView.reloadData()
+//        }
+//
+//        if FavouritesModel.viewingFavourites == true {
+//            showFavouritesButton.isEnabled = false
+//        } else if FavouritesModel.viewingFavourites == false && FavouritesModel.favourites.count > 0 {
+//            showFavouritesButton.isEnabled = true
+//        }
+//
+//        if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == true {
+//            showFavouritesButton.isEnabled = false
+//            filteredVenues = FavouritesModel.favourites
+//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        } else if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == false {
+//            filteredVenues = allVenues
+//        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -74,28 +74,28 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Helper Methods
     
     fileprivate func filterLocation(for venueArea: String) {
-        if !alreadyFilteredByCategory {
-            filteredVenues = allVenues.filter() {$0.area == venueArea}
-            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-        } else {
-            filteredVenues = alreadyFilteredVenues.filter() {$0.area == venueArea}
-            filteredByArea = true
-            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-        }
+//        if !alreadyFilteredByCategory {
+//            filteredVenues = allVenues.filter() {$0.area == venueArea}
+//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        } else {
+//            filteredVenues = alreadyFilteredVenues.filter() {$0.area == venueArea}
+//            filteredByArea = true
+//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        }
     }
     
     func filterCategory(for category: String) {
-        alreadyFilteredByCategory = true
-        filteredVenues = []
-        alreadyFilteredVenues = []
-        
-        for venue in allVenues {
-            if venue.category == category {
-                filteredVenues.append(venue)
-                alreadyFilteredVenues.append(venue)
-            }
-        }
-        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        alreadyFilteredByCategory = true
+//        filteredVenues = []
+//        alreadyFilteredVenues = []
+//        
+//        for venue in allVenues {
+//            if venue.category == category {
+//                filteredVenues.append(venue)
+//                alreadyFilteredVenues.append(venue)
+//            }
+//        }
+//        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
     }
     
     
@@ -148,49 +148,49 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func categorySelection(_ sender: Any) {
         
-        switch categorySelector.selectedSegmentIndex {
-        case 0:
-            filteredVenues = allVenues
-            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-        case 1:
-            filterCategory(for: "Food")
-        case 2:
-            filterCategory(for: "Drinks")
-        case 3:
-            filterCategory(for: "Coffee")
-        case 4:
-            filterCategory(for: "Shopping")
-        case 5:
-            filterCategory(for: "Markets")
-        default:
-            print("No Selection")
-        }
+//        switch categorySelector.selectedSegmentIndex {
+//        case 0:
+//            filteredVenues = allVenues
+//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        case 1:
+//            filterCategory(for: "Food")
+//        case 2:
+//            filterCategory(for: "Drinks")
+//        case 3:
+//            filterCategory(for: "Coffee")
+//        case 4:
+//            filterCategory(for: "Shopping")
+//        case 5:
+//            filterCategory(for: "Markets")
+//        default:
+//            print("No Selection")
+//        }
     }
     
     @IBAction func showFavourites(_ sender: Any) {
-        FavouritesModel.viewingFavourites = !FavouritesModel.viewingFavourites
-        filteredVenues = FavouritesModel.favourites
-        
-        if FavouritesModel.viewingFavourites {
-            showFavouritesButton.isEnabled = false
-        } else {
-            showFavouritesButton.isEnabled = true
-        }
-        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        FavouritesModel.viewingFavourites = !FavouritesModel.viewingFavourites
+//        filteredVenues = FavouritesModel.favourites
+//
+//        if FavouritesModel.viewingFavourites {
+//            showFavouritesButton.isEnabled = false
+//        } else {
+//            showFavouritesButton.isEnabled = true
+//        }
+//        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
     }
     
 
     @IBAction func resetToAllVenues(_ sender: Any) {
-        alreadyFilteredByCategory = false
-        filteredByArea = false
-        filteredVenues = allVenues
-        FavouritesModel.viewingFavourites = false
-        
-        if FavouritesModel.favourites.count > 0 {
-            showFavouritesButton.isEnabled = true
-        }
-        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-        categorySelector.selectedSegmentIndex = 0
+//        alreadyFilteredByCategory = false
+//        filteredByArea = false
+//        filteredVenues = allVenues
+//        FavouritesModel.viewingFavourites = false
+//
+//        if FavouritesModel.favourites.count > 0 {
+//            showFavouritesButton.isEnabled = true
+//        }
+//        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+//        categorySelector.selectedSegmentIndex = 0
     }
     
     
@@ -203,17 +203,14 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BrowseCell", for: indexPath) as! BrowseCell
         let venue = filteredVenues[indexPath.row]
-
-        cell.areaLabel.text = venue.area
-        cell.venueLabel.text = venue.name.uppercased()
-        cell.categoryLabel.text = venue.category
-        cell.customImageView.image = UIImage(named: venue.name)
+        
+        cell.venueViewModel = venue
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenVenue = filteredVenues[indexPath.row]
+//        chosenVenue = filteredVenues[indexPath.row]
         performSegue(withIdentifier: "VenueDetails2", sender: self)
     }
 }

@@ -16,4 +16,12 @@ class BrowseCell: UITableViewCell {
     @IBOutlet var venueLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
     
+    var venueViewModel: VenueViewModel! {
+        didSet {
+            areaLabel.text = venueViewModel.area
+            venueLabel.text = venueViewModel.name.uppercased()
+            categoryLabel.text = venueViewModel.category
+            customImageView.image = venueViewModel.image
+        }
+    }
 }

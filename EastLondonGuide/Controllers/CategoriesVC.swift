@@ -15,7 +15,7 @@ class CategoriesVC: UITableViewController {
     var categories: [String] = []
     var area: String!
     var chosenCategory = ""
-    var allVenues = Venue.allVenues
+//    var allVenues = Venue.allVenues
     var venuesInArea: [Venue] = []
     
     
