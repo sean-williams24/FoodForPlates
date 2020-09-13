@@ -22,9 +22,10 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Properties
 
-    let allVenues = Venue.allVenues!
-    var filteredVenues = [VenueViewModel]()
-    var chosenVenue: Venue!
+//    let allVenues = Venue.allVenues!
+    let allVenuesViewModel = AllVenuesViewModel()
+    var venueViewModels = [VenueViewModel]()
+    var chosenVenue: VenueViewModel!
     var filteredByArea = false
     var alreadyFilteredByCategory = false
     var alreadyFilteredVenues = [Venue]()
@@ -34,7 +35,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filteredVenues = allVenues.map({VenueViewModel(venue: $0)})
+        venueViewModels = allVenuesViewModel.allVenueViewModels
         areaMenu.layer.cornerRadius = 10
         areaMenu.layer.masksToBounds = true
         setSegmentedControlAttributes(control: categorySelector)
@@ -103,7 +104,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let vc = segue.destination as! VenueDetailsVC
-         vc.venue = chosenVenue
+         vc.venueViewModel = chosenVenue
      }
      
     
@@ -197,20 +198,20 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableView delegates & data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredVenues.count
+        return venueViewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BrowseCell", for: indexPath) as! BrowseCell
-        let venue = filteredVenues[indexPath.row]
+        let venueViewModel = venueViewModels[indexPath.row]
         
-        cell.venueViewModel = venue
+        cell.venueViewModel = venueViewModel
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        chosenVenue = filteredVenues[indexPath.row]
+        chosenVenue = venueViewModels[indexPath.row]
         performSegue(withIdentifier: "VenueDetails2", sender: self)
     }
 }

@@ -57,7 +57,9 @@ class ArticleVC: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! VenueDetailsVC        
-        vc.venue = Venue.allVenues.first(where: {$0.name.uppercased() == chosenVenue.uppercased()})
+        let vc = segue.destination as! VenueDetailsVC
+        let allVenuesViewModel = AllVenuesViewModel()
+        
+        vc.venueViewModel = allVenuesViewModel.filterVenueBy(name: chosenVenue)
     }
 }

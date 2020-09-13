@@ -10,6 +10,6 @@ import Foundation
 
 struct Global {
     static var dataController: DataController!
-    static var currentVenue: Venue?
+    static var currentVenue: VenueViewModel?
     static var viewVenueOnMap = false
  }

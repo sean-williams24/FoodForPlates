@@ -161,7 +161,10 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! VenueDetailsVC
-        vc.venue = chosenVenue
+        
+        // TODO: - change to viewmodel vibe
+        
+//        vc.venueViewModel = chosenVenue
         vc.venueCoordinate = venueCoordinate
         vc.arrivedFromMapView = true
     }

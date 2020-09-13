@@ -33,22 +33,22 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Properties
 
-    var venue: Venue!
+    var venueViewModel: VenueViewModel!
     var arrivedFromMapView = false
     var venueCoordinate: CLLocationCoordinate2D?
     var userLocation: CLLocation?
     var dropOffLocation = CLLocation()
     var locationManager = CLLocationManager()
-    var venueIsFavourite: Bool {
-        return FavouritesModel.favourites.contains(venue)
-    }
+//    var venueIsFavourite: Bool {
+//        return FavouritesModel.favourites.contains(venue)
+//    }
     
     
     //MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Global.currentVenue = venue
+        Global.currentVenue = venueViewModel
         
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -76,34 +76,34 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
             mapButton.isEnabled = false
         }
         
-        if venue.menu == nil {
+        if venueViewModel.menu == nil {
             menuButton.isEnabled = false
             menuButton.tintColor = .white
         }
         
-        venueImageView.image = UIImage(named: venue.name)
-        descriptionLabel.text = venue.name.uppercased()
-        descriptionTextView.text = venue.description
-        addressTextView.text = venue.address?.uppercased()
-        openingTimesTextView.text = venue.openingTimes?.uppercased()
-        telephoneTextView.text = "TEL: \(venue.phone?.uppercased() ?? "")"
-        bookTextView.text = venue.email?.uppercased()
+        venueImageView.image = UIImage(named: venueViewModel.name)
+        descriptionLabel.text = venueViewModel.name.uppercased()
+        descriptionTextView.text = venueViewModel.description
+        addressTextView.text = venueViewModel.address?.uppercased()
+        openingTimesTextView.text = venueViewModel.openingTimes?.uppercased()
+        telephoneTextView.text = "TEL: \(venueViewModel.phone?.uppercased() ?? "")"
+        bookTextView.text = venueViewModel.email?.uppercased()
         
-        if venue.email?.count ?? 10 > 22 {
+        if venueViewModel.email?.count ?? 10 > 22 {
             bookTextView.font = UIFont(name: bookTextView.font!.fontName, size: 14)
         }
         
         letterSpacing(label: descriptionLabel, value: 5.0)
         
-        if venueIsFavourite == true {
-            favouriteButton.tintColor = .red
-        } else {
-            favouriteButton.tintColor = .darkGray
-        }
+//        if venueIsFavourite == true {
+//            favouriteButton.tintColor = .red
+//        } else {
+//            favouriteButton.tintColor = .darkGray
+//        }
     }
     
     fileprivate func setUberDropLocation() {
-        let address = venue.address?.replacingOccurrences(of: "\n", with: "")
+        let address = venueViewModel.address?.replacingOccurrences(of: "\n", with: "")
         
         if venueCoordinate == nil {
             //If we havent arrived from MapVC, need to obtain coordinate from address
@@ -131,7 +131,7 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         let builder = RideParametersBuilder()
         
         builder.dropoffLocation = dropOffLocation
-        builder.dropoffNickname = venue.name
+        builder.dropoffNickname = venueViewModel.name
         uberButton.rideParameters = builder.build()
         
         uberButton.center = uberView.center
@@ -170,21 +170,21 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     @IBAction func favouriteButtonTapped(_ sender: Any) {
         // Persist favourites to user defaults using venue name strings
         
-        if venueIsFavourite {
-            FavouritesModel.favourites = FavouritesModel.favourites.filter() {$0 != venue}
-            FavouritesModel.favouriteRemoved = true
-            favouriteButton.tintColor = .darkGray
-        } else {
-            FavouritesModel.favourites.append(venue)
-            favouriteButton.tintColor = .red
-        }
-        
-        var favourites: [String] = []
-        for venue in FavouritesModel.favourites {
-            favourites.append(venue.name)
-        }
-
-        UserDefaults.standard.set(favourites, forKey: "Favourites")
+//        if venueIsFavourite {
+//            FavouritesModel.favourites = FavouritesModel.favourites.filter() {$0 != venue}
+//            FavouritesModel.favouriteRemoved = true
+//            favouriteButton.tintColor = .darkGray
+//        } else {
+//            FavouritesModel.favourites.append(venue)
+//            favouriteButton.tintColor = .red
+//        }
+//
+//        var favourites: [String] = []
+//        for venue in FavouritesModel.favourites {
+//            favourites.append(venue.name)
+//        }
+//
+//        UserDefaults.standard.set(favourites, forKey: "Favourites")
     }
         
     @IBAction func menuButtonTapped(_ sender: Any) {
