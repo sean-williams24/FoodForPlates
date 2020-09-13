@@ -12,11 +12,10 @@ class CategoriesVC: UITableViewController {
 
     // MARK: - Properties
 
-    var categories: [String] = []
+    var categories: [String]!
     var area: String!
     var chosenCategory = ""
-//    var allVenues = Venue.allVenues
-    var venuesInArea: [Venue] = []
+    let viewModel = AllVenuesViewModel()
     
     
     // MARK: - Lifecycle
@@ -25,13 +24,8 @@ class CategoriesVC: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 300
         
-        venuesInArea = Venue.allVenues.filter({$0.area == area})
-        
-        for venue in venuesInArea {
-            if !categories.contains(venue.category) {
-                categories.append(venue.category)
-            }
-        }
+        categories = viewModel.categoriesForVenuesIn(area: area)
+
     }
 
     // MARK: - Table view delegates & data source
@@ -42,9 +36,7 @@ class CategoriesVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
-
-        cell.customTextLabel.text = categories[indexPath.row].uppercased()
-        cell.customImageView.image = UIImage(named: categories[indexPath.row])
+        cell.category = categories[indexPath.row]
         
         return cell
     }

@@ -46,14 +46,29 @@ public final class AllVenuesViewModel {
     // MARK: - Instance Properties
     public var allVenueViewModels: [VenueViewModel]
     
-    public var areas: [String] {
-        return Area.allCases.map({$0.rawValue})
-    }
-    
     public init () {
         self.allVenueViewModels = Venue.allVenues.map({VenueViewModel(venue: $0)})
         
     }
+    
+    public var areas: [String] {
+        return Area.allCases.map({$0.rawValue})
+    }
+    
+    func categoriesForVenuesIn(area: String) -> [String] {
+        
+        let venuesInArea = Venue.allVenues.filter({$0.area == area})
+        
+        var categories: [String] = []
+        
+        for venue in venuesInArea {
+            if !categories.contains(venue.category) {
+                categories.append(venue.category)
+            }
+        }
+        return categories
+    }
+    
     
     func filterVenueBy(name: String) -> VenueViewModel {
         return allVenueViewModels.first(where: {$0.name.uppercased() == name.uppercased()})!

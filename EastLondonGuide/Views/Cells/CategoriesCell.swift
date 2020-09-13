@@ -13,4 +13,10 @@ class CategoriesCell: UITableViewCell {
     @IBOutlet var customImageView: UIImageView!
     @IBOutlet var customTextLabel: UILabel!
     
+    var category: String! {
+        didSet {
+            customTextLabel.text = category.uppercased()
+            customImageView.image = UIImage(named: category)
+        }
+    }
 }
