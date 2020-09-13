@@ -12,5 +12,12 @@ class VenuesCell: UITableViewCell {
 
     @IBOutlet var customImageView: UIImageView!
     @IBOutlet var customTextLabel: UILabel!
+    
+    var venue: VenueViewModel! {
+        didSet {
+            customTextLabel.text = venue.name.uppercased()
+            customImageView.image = UIImage(named: venue.name)
+        }
+    }
 
 }

@@ -14,8 +14,9 @@ class VenuesVC: UITableViewController {
 
     var area: String!
     var category: String!
-    var venuesToDisplay: [VenueViewModel] = []
-    var chosenVenue: Venue!
+    let viewModel = AllVenuesViewModel()
+    var venues: [VenueViewModel] = []
+    var chosenVenue: VenueViewModel!
     
     
     // MARK: - Lifecycle
@@ -24,27 +25,25 @@ class VenuesVC: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 350
         
-//        venuesToDisplay = vm.filterVenuesFor(category: category)
+        venues = viewModel.filterVenuesFor(category: category, area: area)
     }
 
     
     // MARK: - TableView delegates & data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return venuesToDisplay.count
+        return venues.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VenuesCell", for: indexPath) as! VenuesCell
-
-        cell.customTextLabel.text = venuesToDisplay[indexPath.row].name.uppercased()
-        cell.customImageView.image = UIImage(named: venuesToDisplay[indexPath.row].name)
+        cell.venue = venues[indexPath.row]
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        chosenVenue = venuesToDisplay[indexPath.row]
+        chosenVenue = venues[indexPath.row]
         performSegue(withIdentifier: "VenueDetails", sender: self)
     }
 
@@ -53,6 +52,6 @@ class VenuesVC: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! VenueDetailsVC
-//        vc.venueViewModel = chosenVenue
+        vc.venueViewModel = chosenVenue
     }
 }
