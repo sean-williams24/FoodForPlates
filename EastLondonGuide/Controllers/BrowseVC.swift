@@ -28,7 +28,7 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var chosenVenue: VenueViewModel!
     var filteredByArea = false
     var alreadyFilteredByCategory = false
-    var alreadyFilteredVenues = [Venue]()
+    var alreadyFilteredVenues = [VenueViewModel]()
     
     
     //MARK: - Lifecycle 
@@ -86,17 +86,17 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func filterCategory(for category: String) {
-//        alreadyFilteredByCategory = true
-//        filteredVenues = []
-//        alreadyFilteredVenues = []
-//        
-//        for venue in allVenues {
-//            if venue.category == category {
-//                filteredVenues.append(venue)
-//                alreadyFilteredVenues.append(venue)
-//            }
-//        }
-//        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        alreadyFilteredByCategory = true
+        venueViewModels = []
+        alreadyFilteredVenues = []
+        
+        for venue in allVenuesViewModel.allVenueViewModels {
+            if venue.category == category {
+                venueViewModels.append(venue)
+                alreadyFilteredVenues.append(venue)
+            }
+        }
+        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
     }
     
     
@@ -149,23 +149,23 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func categorySelection(_ sender: Any) {
         
-//        switch categorySelector.selectedSegmentIndex {
-//        case 0:
-//            filteredVenues = allVenues
-//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-//        case 1:
-//            filterCategory(for: "Food")
-//        case 2:
-//            filterCategory(for: "Drinks")
-//        case 3:
-//            filterCategory(for: "Coffee")
-//        case 4:
-//            filterCategory(for: "Shopping")
-//        case 5:
-//            filterCategory(for: "Markets")
-//        default:
-//            print("No Selection")
-//        }
+        switch categorySelector.selectedSegmentIndex {
+        case 0:
+            venueViewModels = allVenuesViewModel.allVenueViewModels
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        case 1:
+            filterCategory(for: "Food")
+        case 2:
+            filterCategory(for: "Drinks")
+        case 3:
+            filterCategory(for: "Coffee")
+        case 4:
+            filterCategory(for: "Shopping")
+        case 5:
+            filterCategory(for: "Markets")
+        default:
+            print("No Selection")
+        }
     }
     
     @IBAction func showFavourites(_ sender: Any) {
