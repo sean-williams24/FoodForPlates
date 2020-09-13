@@ -10,7 +10,7 @@ import UIKit
 
 class GuidesVC: UITableViewController {
 
-    let areaTitles = ["Shoreditch & Hoxton", "Bethnal Green", "London Fields & Hackney Central", "Hackney Wick", "Bow & Mile End"]
+    let venuesViewModel = AllVenuesViewModel()
     var chosenArea = ""
     
     override func viewDidLoad() {
@@ -21,20 +21,18 @@ class GuidesVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return areaTitles.count
+        return venuesViewModel.areas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AreaCell", for: indexPath) as! AreaCell
-        
-        cell.customTextLabel.text = areaTitles[indexPath.row].uppercased()
-        cell.customImageView.image = UIImage(named: areaTitles[indexPath.row])
+        cell.area = venuesViewModel.areas[indexPath.row]
     
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenArea = areaTitles[indexPath.row]
+        chosenArea = venuesViewModel.areas[indexPath.row]
         performSegue(withIdentifier: "Categories", sender: self)
     }
 

@@ -46,6 +46,10 @@ public final class AllVenuesViewModel {
     // MARK: - Instance Properties
     public var allVenueViewModels: [VenueViewModel]
     
+    public var areas: [String] {
+        return Area.allCases.map({$0.rawValue})
+    }
+    
     public init () {
         self.allVenueViewModels = Venue.allVenues.map({VenueViewModel(venue: $0)})
         

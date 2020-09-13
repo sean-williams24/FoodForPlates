@@ -10,8 +10,14 @@ import UIKit
 
 class AreaCell: UITableViewCell {
 
-    
     @IBOutlet var customImageView: UIImageView!
     @IBOutlet var customTextLabel: UILabel!
+    
+    var area: String! {
+        didSet {
+            customTextLabel.text = area.uppercased()
+            customImageView.image = UIImage(named: area)
+        }
+    }
     
 }

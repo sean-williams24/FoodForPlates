@@ -55,7 +55,7 @@ public struct Venue: Equatable {
     
 }
 
-enum Area: String {
+enum Area: String, CaseIterable {
     case Shoreditch = "Shoreditch & Hoxton"
     case BethnalGreen = "Bethnal Green"
     case LondonFields = "London Fields & Hackney Central"
