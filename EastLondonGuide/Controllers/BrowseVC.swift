@@ -75,14 +75,14 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Helper Methods
     
     fileprivate func filterLocation(for venueArea: String) {
-//        if !alreadyFilteredByCategory {
-//            filteredVenues = allVenues.filter() {$0.area == venueArea}
-//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-//        } else {
-//            filteredVenues = alreadyFilteredVenues.filter() {$0.area == venueArea}
-//            filteredByArea = true
-//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-//        }
+        if !alreadyFilteredByCategory {
+            venueViewModels = allVenuesViewModel.allVenueViewModels.filter() {$0.area == venueArea}
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        } else {
+            venueViewModels = alreadyFilteredVenues.filter() {$0.area == venueArea}
+            filteredByArea = true
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        }
     }
     
     func filterCategory(for category: String) {
@@ -128,17 +128,18 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         UIView.animate(withDuration: 0.4, delay: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
-        }) {  (tapped)  in
+        }) { _ in
+                        
             if sender.tag == 0 {
-                self.filterLocation(for: Area.Shoreditch.rawValue)
+                self.filterLocation(for: self.allVenuesViewModel.shoreditch)
             } else if sender.tag == 1 {
-                self.filterLocation(for: Area.BethnalGreen.rawValue)
+                self.filterLocation(for: self.allVenuesViewModel.bethnalGreen)
             } else if sender.tag == 2 {
-                self.filterLocation(for: Area.LondonFields.rawValue)
+                self.filterLocation(for: self.allVenuesViewModel.londonFields)
             } else if sender.tag == 3 {
-                self.filterLocation(for: Area.HackneyWick.rawValue)
+                self.filterLocation(for: self.allVenuesViewModel.hackney)
             }  else if sender.tag == 4 {
-                self.filterLocation(for: Area.Bow.rawValue)
+                self.filterLocation(for: self.allVenuesViewModel.bow)
             }
         }
         

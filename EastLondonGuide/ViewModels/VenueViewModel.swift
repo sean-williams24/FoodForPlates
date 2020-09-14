@@ -55,6 +55,26 @@ public final class AllVenuesViewModel {
         return Area.allCases.map({$0.rawValue})
     }
     
+    public var shoreditch: String {
+        return areas[0]
+    }
+    
+    public var bethnalGreen: String {
+        return areas[1]
+    }
+    
+    public var londonFields: String {
+        return areas[2]
+    }
+    
+    public var hackney: String {
+        return areas[3]
+    }
+    
+    public var bow: String {
+        return areas[4]
+    }
+    
     func categoriesForVenuesIn(area: String) -> [String] {
         
         let venuesInArea = Venue.allVenues.filter({$0.area == area})
