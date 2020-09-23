@@ -39,9 +39,9 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     var userLocation: CLLocation?
     var dropOffLocation = CLLocation()
     var locationManager = CLLocationManager()
-//    var venueIsFavourite: Bool {
-//        return FavouritesModel.favourites.contains(venue)
-//    }
+    var venueIsFavourite: Bool {
+        return FavouritesModel.favourites.contains(venueViewModel)
+    }
     
     
     //MARK: - Lifecycle Methods
@@ -95,11 +95,11 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
         
         letterSpacing(label: descriptionLabel, value: 5.0)
         
-//        if venueIsFavourite == true {
-//            favouriteButton.tintColor = .red
-//        } else {
-//            favouriteButton.tintColor = .darkGray
-//        }
+        if venueIsFavourite == true {
+            favouriteButton.tintColor = .red
+        } else {
+            favouriteButton.tintColor = .darkGray
+        }
     }
     
     fileprivate func setUberDropLocation() {
@@ -170,21 +170,21 @@ class VenueDetailsVC: UIViewController, CLLocationManagerDelegate {
     @IBAction func favouriteButtonTapped(_ sender: Any) {
         // Persist favourites to user defaults using venue name strings
         
-//        if venueIsFavourite {
-//            FavouritesModel.favourites = FavouritesModel.favourites.filter() {$0 != venue}
-//            FavouritesModel.favouriteRemoved = true
-//            favouriteButton.tintColor = .darkGray
-//        } else {
-//            FavouritesModel.favourites.append(venue)
-//            favouriteButton.tintColor = .red
-//        }
-//
-//        var favourites: [String] = []
-//        for venue in FavouritesModel.favourites {
-//            favourites.append(venue.name)
-//        }
-//
-//        UserDefaults.standard.set(favourites, forKey: "Favourites")
+        if venueIsFavourite {
+            FavouritesModel.favourites = FavouritesModel.favourites.filter() {$0 != venueViewModel}
+            FavouritesModel.favouriteRemoved = true
+            favouriteButton.tintColor = .darkGray
+        } else {
+            FavouritesModel.favourites.append(venueViewModel)
+            favouriteButton.tintColor = .red
+        }
+
+        var favourites: [String] = []
+        for venue in FavouritesModel.favourites {
+            favourites.append(venue.name)
+        }
+
+        UserDefaults.standard.set(favourites, forKey: "Favourites")
     }
         
     @IBAction func menuButtonTapped(_ sender: Any) {

@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-public final class VenueViewModel {
+public final class VenueViewModel: Equatable {
+    
+    public static func == (lhs: VenueViewModel, rhs: VenueViewModel) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     
     // MARK: - Instance Properties
     
@@ -26,6 +31,7 @@ public final class VenueViewModel {
     
     
     // MARK: - Object Lifecycle
+    
     public init (venue: Venue) {
         self.name = venue.name
         self.description = venue.description ?? ""

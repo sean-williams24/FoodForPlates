@@ -86,6 +86,7 @@ class VenueImagesVC: UICollectionViewController {
         
         if let coreDataPhotos = coreDataPhotos {
             for photo in coreDataPhotos {
+                
                 dataController.viewContext.delete(photo)
                 try? dataController.viewContext.save()
             }
@@ -107,7 +108,7 @@ class VenueImagesVC: UICollectionViewController {
                     // Convert downloaded photo data into url string
                     let URLString = "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg"
                     self.FlickrURLs.append(URLString)
-                        
+                    
                     let photo = CDPhoto(context: self.dataController.viewContext)
                     photo.urlString = URLString
                     photo.venueName = currentVenue.name

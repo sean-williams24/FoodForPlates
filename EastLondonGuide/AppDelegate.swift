@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Global.dataController = dataController
         
         let userDefaultsArray = UserDefaults.standard.object(forKey: "Favourites") as? [String] ?? [String]()
-        let venues = Venue.allVenues
+        let allVenuesViewModel = AllVenuesViewModel()
         
-        for venue in venues! {
+        for venue in allVenuesViewModel.allVenueViewModels {
             if userDefaultsArray.contains(venue.name) {
                 FavouritesModel.favourites.append(venue)
             }

@@ -22,7 +22,6 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Properties
 
-//    let allVenues = Venue.allVenues!
     let allVenuesViewModel = AllVenuesViewModel()
     var venueViewModels = [VenueViewModel]()
     var chosenVenue: VenueViewModel!
@@ -44,26 +43,26 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-//        if FavouritesModel.favourites.count == 0 {
-//            showFavouritesButton.isEnabled = false
-//            FavouritesModel.viewingFavourites = false
-//            filteredVenues = allVenues
-//            tableView.reloadData()
-//        }
-//
-//        if FavouritesModel.viewingFavourites == true {
-//            showFavouritesButton.isEnabled = false
-//        } else if FavouritesModel.viewingFavourites == false && FavouritesModel.favourites.count > 0 {
-//            showFavouritesButton.isEnabled = true
-//        }
-//
-//        if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == true {
-//            showFavouritesButton.isEnabled = false
-//            filteredVenues = FavouritesModel.favourites
-//            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-//        } else if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == false {
-//            filteredVenues = allVenues
-//        }
+        if FavouritesModel.favourites.count == 0 {
+            showFavouritesButton.isEnabled = false
+            FavouritesModel.viewingFavourites = false
+            venueViewModels = allVenuesViewModel.allVenueViewModels
+            tableView.reloadData()
+        }
+
+        if FavouritesModel.viewingFavourites == true {
+            showFavouritesButton.isEnabled = false
+        } else if FavouritesModel.viewingFavourites == false && FavouritesModel.favourites.count > 0 {
+            showFavouritesButton.isEnabled = true
+        }
+
+        if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == true {
+            showFavouritesButton.isEnabled = false
+            venueViewModels = FavouritesModel.favourites
+            animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        } else if FavouritesModel.favouriteRemoved == true && FavouritesModel.viewingFavourites == false {
+            venueViewModels = allVenuesViewModel.allVenueViewModels
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -170,29 +169,29 @@ class BrowseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func showFavourites(_ sender: Any) {
-//        FavouritesModel.viewingFavourites = !FavouritesModel.viewingFavourites
-//        filteredVenues = FavouritesModel.favourites
-//
-//        if FavouritesModel.viewingFavourites {
-//            showFavouritesButton.isEnabled = false
-//        } else {
-//            showFavouritesButton.isEnabled = true
-//        }
-//        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        FavouritesModel.viewingFavourites = !FavouritesModel.viewingFavourites
+        venueViewModels = FavouritesModel.favourites
+
+        if FavouritesModel.viewingFavourites {
+            showFavouritesButton.isEnabled = false
+        } else {
+            showFavouritesButton.isEnabled = true
+        }
+        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
     }
     
 
     @IBAction func resetToAllVenues(_ sender: Any) {
-//        alreadyFilteredByCategory = false
-//        filteredByArea = false
-//        filteredVenues = allVenues
-//        FavouritesModel.viewingFavourites = false
-//
-//        if FavouritesModel.favourites.count > 0 {
-//            showFavouritesButton.isEnabled = true
-//        }
-//        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
-//        categorySelector.selectedSegmentIndex = 0
+        alreadyFilteredByCategory = false
+        filteredByArea = false
+        venueViewModels = allVenuesViewModel.allVenueViewModels
+        FavouritesModel.viewingFavourites = false
+
+        if FavouritesModel.favourites.count > 0 {
+            showFavouritesButton.isEnabled = true
+        }
+        animateTableviewReload(tableView: self.tableView, transitionType: .fromBottom)
+        categorySelector.selectedSegmentIndex = 0
     }
     
     

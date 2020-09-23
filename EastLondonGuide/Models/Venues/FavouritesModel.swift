@@ -9,7 +9,7 @@
 import Foundation
 
 class FavouritesModel {
-    static var favourites = [Venue]()
+    static var favourites = [VenueViewModel]()
     static var favouriteRemoved = false
     static var viewingFavourites = false
 }
